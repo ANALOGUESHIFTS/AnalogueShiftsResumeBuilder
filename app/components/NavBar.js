@@ -266,7 +266,7 @@ export default function NavBar() {
         <div className="flex items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/">
+            <Link href="https://analogueshifts.com" target="_blank">
               <ApplicationLogo className="block h-10 w-auto fill-current text-gray-600" />
             </Link>
           </div>
@@ -276,7 +276,7 @@ export default function NavBar() {
             return (
               <button
                 onClick={() => updateSelectedMenu(menu)}
-                key={() => Math.randow() * Math.random()}
+                key={Math.random()}
                 className="border-none relative menu-link"
               >
                 <p
@@ -340,7 +340,7 @@ export default function NavBar() {
                     setSelectedMobileMenu(data);
                   }
                 }}
-                key={() => Math.randow() * Math.random()}
+                key={crypto.randomUUID()}
                 className="cursor-pointer w-full py-2 border-b flex items-center gap-2"
               >
                 {selectedMobileMenu === data && (
@@ -368,7 +368,7 @@ export default function NavBar() {
             {buldersLink.map((link) => {
               return (
                 <Link
-                  key={() => Math.randow() * Math.random()}
+                  key={crypto.randomUUID()}
                   href={link.path}
                   className="flex gap-3 items-center"
                 >
@@ -409,7 +409,7 @@ export default function NavBar() {
                 {templateLinks.map((data) => {
                   return (
                     <Link
-                      key={() => Math.randow() * Math.random()}
+                      key={crypto.randomUUID()}
                       href={data.path}
                       className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
                     >
@@ -437,7 +437,7 @@ export default function NavBar() {
                 {resumeHelpLinks.map((data) => {
                   return (
                     <Link
-                      key={() => Math.randow() * Math.random()}
+                      key={crypto.randomUUID()}
                       href={data.path}
                       className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
                     >
@@ -485,7 +485,7 @@ export default function NavBar() {
                 {coverLetterTemplateLinks.map((data) => {
                   return (
                     <Link
-                      key={() => Math.randow() * Math.random()}
+                      key={crypto.randomUUID()}
                       href={data.path}
                       className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
                     >
@@ -515,7 +515,7 @@ export default function NavBar() {
                 {coverLetterHelpLinks.map((data) => {
                   return (
                     <Link
-                      key={() => Math.randow() * Math.random()}
+                      key={crypto.randomUUID()}
                       href={data.path}
                       className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
                     >
@@ -563,7 +563,7 @@ export default function NavBar() {
                 {cvTemplateLinks.map((data) => {
                   return (
                     <Link
-                      key={() => Math.randow() * Math.random()}
+                      key={crypto.randomUUID()}
                       href={data.path}
                       className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
                     >
@@ -588,7 +588,7 @@ export default function NavBar() {
                 {cvHelpLinks.map((data) => {
                   return (
                     <Link
-                      key={() => Math.randow() * Math.random()}
+                      key={crypto.randomUUID()}
                       href={data.path}
                       className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
                     >
@@ -629,7 +629,7 @@ export default function NavBar() {
                 {faqsData.map((data) => {
                   return (
                     <Link
-                      key={() => Math.randow() * Math.random()}
+                      key={crypto.randomUUID()}
                       href={data.path}
                       className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
                     >
@@ -654,7 +654,7 @@ export default function NavBar() {
                 {blogData.map((data) => {
                   return (
                     <Link
-                      key={() => Math.randow() * Math.random()}
+                      key={crypto.randomUUID()}
                       href={data.path}
                       className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
                     >

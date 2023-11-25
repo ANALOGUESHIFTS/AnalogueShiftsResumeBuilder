@@ -99,7 +99,7 @@ export default function ResourcesSubMenu() {
             {faqsData.map((data) => {
               return (
                 <Link
-                  key={() => Math.randow() * Math.random()}
+                  key={crypto.randomUUID()}
                   href={data.path}
                   className="bg-gray-200/60 duration-300  hover:bg-[aliceblue] w-full p-2 rounded-lg flex gap-3 items-center"
                 >
@@ -143,7 +143,7 @@ export default function ResourcesSubMenu() {
             {blogData.map((data) => {
               return (
                 <Link
-                  key={() => Math.randow() * Math.random()}
+                  key={crypto.randomUUID()}
                   href={data.path}
                   className="flex flex-col w-[32%] resources-link"
                 >

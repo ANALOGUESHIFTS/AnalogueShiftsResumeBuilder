@@ -298,8 +298,8 @@ export default function Page() {
           </div>
         </div>
       </main>
-      <div className="w-full h-[500px] px-10 max-[500px]:px-4">
-        <div className="w-full h-full rounded-2xl bg-[#f8f9fb] p-7 flex flex-col items-center">
+      <div className="w-full h-max py-8 px-10 max-[500px]:px-4">
+        <div className="w-full h-max rounded-2xl bg-[#f8f9fb] p-7 flex flex-col items-center">
           <p className="py-5 text-[2rem] w-[750px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-bold text-black/80">
             Get job offers from top companies
           </p>

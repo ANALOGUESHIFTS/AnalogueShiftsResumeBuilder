@@ -66,7 +66,7 @@ export default function Home() {
   return (
     <main className="w-full h-auto bg-white">
       <main className="w-full box-border curvy-box h-[800px] relative pt-[150px] max-[1050px]:pt-[50px] px-10 max-[500px]:px-5 flex justify-between max-[1050px]:h-auto max-[1050px]:flex-col max-[1050px]:items-center">
-        <div className="w-[50%] pr-[50px] h-[610px] max-[800px]:h-auto max-[800px]:py-16 flex flex-col justify-center max-[1050px]:items-center max-[1050px]:w-full max-[1050px]:presume-0">
+        <div className="w-[50%] pr-[50px] max-[900px]:px-0 h-[610px] max-[800px]:h-auto max-[800px]:py-16 flex flex-col justify-center max-[1050px]:items-center max-[1050px]:w-full max-[1050px]:presume-0">
           <p className="text-black/50 max-[1050px]:text-center font-bold tracking-wide text-[13px]">
             THE BEST RESUME BUILDER ONLINE
           </p>

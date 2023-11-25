@@ -48,7 +48,7 @@ export default function BuildersSubMenu() {
         {buldersLink.map((link) => {
           return (
             <Link
-              key={() => Math.randow() * Math.random()}
+              key={crypto.randomUUID()}
               href={link.path}
               className="w-[32%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box"
             >

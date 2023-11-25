@@ -97,7 +97,7 @@ export default function CVSubMenu() {
               return (
                 <Link
                   href={data.path}
-                  key={() => Math.randow() * Math.random()}
+                  key={crypto.randomUUID()}
                   className="w-[calc(50%-10px)] h-[120px] hover:bg-[aliceblue] duration-300 rounded-lg bg-gray-200 p-5"
                 >
                   <p className="text-black/80 font-semibold text-sm pb-1">
@@ -139,7 +139,7 @@ export default function CVSubMenu() {
             {cvHelpLinks.map((data) => {
               return (
                 <Link
-                  key={() => Math.randow() * Math.random()}
+                  key={crypto.randomUUID()}
                   href={data.path}
                   className="p-2.5 w-full rounded-lg text-black/70 font-medium text-sm hover:bg-gray-200/80"
                 >
