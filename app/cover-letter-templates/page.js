@@ -132,7 +132,7 @@ export default function Page() {
             {resumeTemplates.map((data) => {
               return (
                 <Link
-                  key={() => Math.random() * Math.random()}
+                  key={crypto.randomUUID()}
                   href={data.path}
                   className="h-max p-4 w-[calc(33.3%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
                 >
@@ -323,7 +323,7 @@ export default function Page() {
           {blogData.map((data) => {
             return (
               <Link
-                key={() => Math.random() * Math.random()}
+                key={crypto.randomUUID()}
                 href={data.path}
                 className="w-[31%] h-[570px] max-[1000px]:w-[48%] max-[600px]:w-full overflow-hidden rounded-2xl shadow-xl flex flex-col blog-box"
               >

@@ -102,7 +102,7 @@ export default function ResumeSampleSearch({ cancel }) {
         {initialData.map((data) => {
           return (
             <Link
-              key={() => Math.random() + data.name}
+              key={crypto.randomUUID()}
               href={data.path}
               className="w-full py-3 border-b text-base font-medium text-black/60 hover:text-AnalogueShiftsTextColor/70"
             >

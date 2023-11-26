@@ -347,7 +347,7 @@ export default function Page() {
             {resumeTemplates.map((data) => {
               return (
                 <Link
-                  key={() => Math.random() * Math.random()}
+                  key={crypto.randomUUID()}
                   href={data.path}
                   className="h-max w-[calc(25%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full resume-template-link"
                 >
@@ -406,7 +406,7 @@ export default function Page() {
                   {categories.map((data) => {
                     return (
                       <Link
-                        key={() => Math.random() * Math.random()}
+                        key={crypto.randomUUID()}
                         href={data.path}
                         className="w-full max-[974px]:w-6/12 max-[540px]:w-full px-3 py-2 text-base font-medium text-black/60 hover:bg-black/10 rounded-lg"
                       >
@@ -447,7 +447,7 @@ export default function Page() {
               {samplesData.map((data) => {
                 return (
                   <div
-                    key={() => Math.random() * Math.random()}
+                    key={crypto.randomUUID()}
                     id={data.id}
                     className="w-full h-max rounded-xl overflow-hidden border"
                   >
@@ -465,10 +465,7 @@ export default function Page() {
                     <div className="w-full py-6 px-3 bg-white flex flex-col gap-8">
                       {data.samples.map((child) => {
                         return (
-                          <div
-                            key={() => Math.random() * Math.random()}
-                            className="w-full"
-                          >
+                          <div key={crypto.randomUUID()} className="w-full">
                             <p className="w-full pb-2 mb-3.5 border-b text-base font-medium text-black/70">
                               {child.name}
                             </p>
@@ -482,7 +479,7 @@ export default function Page() {
                                 {child.relatedLinks.map((link) => {
                                   return (
                                     <Link
-                                      key={() => Math.random() * Math.random()}
+                                      key={crypto.randomUUID()}
                                       href={link.path}
                                       className="w-6/12 flex max-[540px]:pl-2 max-[540px]:w-full items-center gap-2"
                                     >
@@ -576,7 +573,7 @@ export default function Page() {
             {differentResumeFormat.map((data) => {
               return (
                 <Link
-                  key={() => Math.random() * Math.random()}
+                  key={crypto.randomUUID()}
                   href={data.path}
                   className="w-[calc(25%-20px)] max-[1064px]:w-[calc(33.3%-20px)] max-[500px]:w-full max-[720px]:w-[calc(50%-20px)] h-max flex flex-col gap-3 hover:opacity-80 resume-format-link"
                 >

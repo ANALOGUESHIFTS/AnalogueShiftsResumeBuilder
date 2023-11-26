@@ -45,7 +45,7 @@ export default function Experts() {
             {logos.map((logo) => {
               return (
                 <div
-                  key={() => Math.random() * Math.random()}
+                  key={crypto.randomUUID()}
                   className=" w-[200px] h-[80px] border flex justify-center items-center border-dashed rounded-lg border-gray-300"
                 >
                   <Image src={logo} alt="Logo" />
@@ -62,12 +62,12 @@ export default function Experts() {
           <div
             id="logo-box2"
             className="moveFromLeftToRight translate-x-[-100%] w-max flex gap-4"
-            key={() => Math.random() * Math.random()}
+            key={crypto.randomUUID()}
           >
             {logos.map((logo) => {
               return (
                 <div
-                  key={() => Math.random() * Math.random()}
+                  key={crypto.randomUUID()}
                   className=" w-[200px] h-[80px] border flex justify-center items-center border-dashed rounded-lg border-gray-300"
                 >
                   <Image src={logo} alt="Logo" />

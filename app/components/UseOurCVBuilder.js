@@ -71,7 +71,7 @@ export default function UseOurCVBuilder() {
         {steps.map((data) => {
           return (
             <div
-              key={() => Math.random() * Math.random()}
+              key={crypto.randomUUID()}
               onClick={() => setSelected(data.step)}
               style={{ height: `${selected === data.step ? "160px" : "85px"}` }}
               className="overflow-y-hidden w-fulll rounded-xl shadow-2xl bg-white p-4 cursor-pointer duration-300"

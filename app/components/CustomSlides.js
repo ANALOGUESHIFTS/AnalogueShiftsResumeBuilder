@@ -93,7 +93,7 @@ export default function CustomSlides() {
             {steps.map((data) => {
               return (
                 <button
-                  key={() => Math.random() + data.title}
+                  key={crypto.randomUUID()}
                   onClick={() => setSelected(data.title)}
                   style={{
                     background: `${

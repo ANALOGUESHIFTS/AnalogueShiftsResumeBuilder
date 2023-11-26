@@ -190,7 +190,7 @@ export default function Page({ params }) {
           {icoLinks.map((data) => {
             return (
               <Link
-                key={() => Math.random() + data.title + Math.random()}
+                key={crypto.randomUUID()}
                 href={data.path}
                 className="w-[230px] h-[230px] hover:bg-AnalogueShiftsTextColor rounded-xl shadow-xl bg-white p-4 flex flex-col items-center justify-center"
               >
@@ -212,7 +212,7 @@ export default function Page({ params }) {
             {navLinks.map((link) => {
               return (
                 <Link
-                  key={() => Math.random() + link.name}
+                  key={crypto.randomUUID()}
                   href={link.path}
                   className={`w-max px-5 flex justify-center pb-5  text-base font-medium ${
                     pathname === link.path
@@ -249,7 +249,7 @@ export default function Page({ params }) {
             {blogData.map((data) => {
               return (
                 <Link
-                  key={() => Math.random() + data.title}
+                  key={crypto.randomUUID()}
                   href={data.path}
                   className="w-[31%] h-[570px] max-[1000px]:w-[48%] max-[600px]:w-full overflow-hidden rounded-2xl shadow-xl flex flex-col blog-box"
                 >

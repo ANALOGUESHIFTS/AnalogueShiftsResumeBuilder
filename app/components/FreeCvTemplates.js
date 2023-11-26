@@ -144,7 +144,7 @@ export default function FreeCvTemplates() {
           {links.map((data) => {
             return (
               <Link
-                key={() => Math.random() + data.text + Math.random()}
+                key={crypto.randomUUID()}
                 href={data.path}
                 className="py-2.5 bg-gray-200/80 hover:bg-black hover:text-white duration-300 w-max px-5 rounded-full text-sm font-semibold text-black/80"
               >
@@ -158,7 +158,7 @@ export default function FreeCvTemplates() {
         {ResumeTemplates.map((data) => {
           return (
             <section
-              key={() => Math.random() + data.id + Math.random()}
+              key={crypto.randomUUID()}
               className="w-full border-b pb-[80px] flex justify-between h-max max-[929px]:flex-col max-[929px]:gap-5"
               id={data.id}
             >

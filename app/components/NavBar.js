@@ -276,7 +276,7 @@ export default function NavBar() {
             return (
               <button
                 onClick={() => updateSelectedMenu(menu)}
-                key={Math.random()}
+                key={crypto.randomUUID()}
                 className="border-none relative menu-link"
               >
                 <p

@@ -69,7 +69,7 @@ export default function GuidesAndAdvice() {
         {blogData.map((data) => {
           return (
             <Link
-              key={() => Math.random() + data.title + Math.random()}
+              key={crypto.randomUUID()}
               href={data.path}
               className="w-[31%] h-[570px] max-[1000px]:w-[48%] max-[600px]:w-full overflow-hidden rounded-2xl shadow-xl flex flex-col blog-box"
             >

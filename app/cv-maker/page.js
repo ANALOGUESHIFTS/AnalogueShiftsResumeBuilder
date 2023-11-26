@@ -191,7 +191,7 @@ export default function Page() {
           {serviceData.map((data) => {
             return (
               <div
-                key={() => Math.random() * Math.random()}
+                key={crypto.randomUUID()}
                 className="w-[calc(33.3%-40px)] flex flex-col gap-5 max-[1000px]:w-[calc(50%-40px)] max-[700px]:w-full max-[700px]:items-center"
               >
                 <div className="w-[70px] h-[70px] flex justify-center items-center bg-AnalogueShiftsTextColor/40 shape-box">
@@ -255,7 +255,7 @@ export default function Page() {
             {resumeTemplates.map((data) => {
               return (
                 <div
-                  key={() => Math.random() * Math.random()}
+                  key={crypto.randomUUID()}
                   className="relative template-box w-[350px] max-w-[90%]"
                 >
                   <div className="w-full h-max pb-[60px]">
@@ -302,7 +302,7 @@ export default function Page() {
               {logos.map((logo) => {
                 return (
                   <div
-                    key={() => Math.random() * Math.random()}
+                    key={crypto.randomUUID()}
                     className=" w-[200px] h-[80px] border flex justify-center items-center border-dashed rounded-lg border-gray-300"
                   >
                     <Image src={logo} alt="Logo" />
@@ -323,7 +323,7 @@ export default function Page() {
               {logos.map((logo) => {
                 return (
                   <div
-                    key={() => Math.random() * Math.random()}
+                    key={crypto.randomUUID()}
                     className=" w-[200px] h-[80px] border flex justify-center items-center border-dashed rounded-lg border-gray-300"
                   >
                     <Image src={logo} alt="Logo" />

@@ -67,7 +67,7 @@ export default function LevelUpJobHunt() {
         {levelUpLinks.map((data) => {
           return (
             <Link
-              key={() => Math.random() + data.title + Math.random()}
+              key={crypto.randomUUID()}
               href={data.path}
               className="w-[23%] h-[400px] card-box max-[1174px]:w-[31%] max-[843px]:w-[45%] max-[556px]:w-full"
             >

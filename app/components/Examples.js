@@ -255,7 +255,7 @@ export default function Examples() {
             ? resumeLinks.map((data) => {
                 return (
                   <Link
-                    key={() => Math.random() + data.title}
+                    key={crypto.randomUUID()}
                     style={{ borderColor: data.color }}
                     href={data.path}
                     className={`py-2 px-6 text-black/75 duration-300 hover:scale-105 font-semibold text-sm rounded-full border`}
@@ -267,7 +267,7 @@ export default function Examples() {
             : coverLetterLinks.map((data) => {
                 return (
                   <Link
-                    key={() => Math.random() + data.title + Math.random()}
+                    key={crypto.randomUUID()}
                     style={{ borderColor: data.color }}
                     href={data.path}
                     className={`py-2 px-6 text-black/75 duration-300 hover:scale-105 font-semibold text-sm rounded-full border`}

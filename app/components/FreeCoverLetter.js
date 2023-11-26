@@ -486,7 +486,7 @@ export default function FreeCoverLetterTemplates() {
             {links.map((data) => {
               return (
                 <Link
-                  key={() => Math.random() + data.text + Math.random()}
+                  key={crypto.randomUUID()}
                   style={{ border: `1px solid ${data.color}` }}
                   href={data.path}
                   className="py-2.5 hover:scale-105 duration-300 w-max px-5 rounded-full text-sm font-semibold text-black/80"
@@ -501,7 +501,7 @@ export default function FreeCoverLetterTemplates() {
           {coverLetterTemplates.map((data) => {
             return (
               <section
-                key={() => Math.random() + data.name + Math.random()}
+                key={crypto.randomUUID()}
                 className="w-full"
                 id={data.id}
               >
@@ -535,9 +535,7 @@ export default function FreeCoverLetterTemplates() {
                   {data.templates.map((template) => {
                     return (
                       <div
-                        key={() =>
-                          Math.random() + template.name + Math.random()
-                        }
+                        key={crypto.randomUUID()}
                         className="h-max w-[calc(33.3%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full rounded-lg resume-template-link resume-template-link2"
                       >
                         <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">

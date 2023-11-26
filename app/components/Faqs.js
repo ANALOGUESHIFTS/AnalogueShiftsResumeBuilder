@@ -31,7 +31,7 @@ export default function Faqs() {
       {data.map((data) => {
         return (
           <div
-            key={() => Math.random() + data.question}
+            key={crypto.randomUUID()}
             style={{
               height: `${selected === data.question ? "auto" : "72px"}`,
             }}

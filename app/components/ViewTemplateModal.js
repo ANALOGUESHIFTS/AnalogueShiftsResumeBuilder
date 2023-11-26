@@ -51,7 +51,7 @@ export default function ViewTemplateModal({ data, closeModal, builder }) {
               {data.formatAndStylingDetails.majorFeatures.map((l) => {
                 return (
                   <li
-                    key={() => Math.random() * Math.random()}
+                    key={crypto.randomUUID()}
                     className="text-black/60 font-medium text-sm"
                   >
                     {l}
@@ -66,7 +66,7 @@ export default function ViewTemplateModal({ data, closeModal, builder }) {
               {data.formatAndStylingDetails.textDetails.map((l) => {
                 return (
                   <li
-                    key={() => Math.random() * Math.random()}
+                    key={crypto.randomUUID()}
                     className="text-black/60 font-medium text-sm"
                   >
                     {l}

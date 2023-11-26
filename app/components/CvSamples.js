@@ -199,7 +199,7 @@ export default function CvSamples() {
                 {coverLetterLinksOne.map((data) => {
                   return (
                     <Link
-                      key={() => Math.random() + data.title}
+                      key={crypto.randomUUID()}
                       style={{ borderColor: data.color }}
                       href={data.path}
                       className={`py-2 px-6 text-black/75 duration-300 hover:scale-105 font-semibold text-sm rounded-full border`}
@@ -222,7 +222,7 @@ export default function CvSamples() {
                 {coverLetterLinksTwo.map((data) => {
                   return (
                     <Link
-                      key={() => Math.random() + data.title}
+                      key={crypto.randomUUID()}
                       style={{ borderColor: data.color }}
                       href={data.path}
                       className={`py-2 px-6 text-black/75 duration-300 hover:scale-105 font-semibold text-sm rounded-full border`}
@@ -245,7 +245,7 @@ export default function CvSamples() {
                 {coverLetterLinksThree.map((data) => {
                   return (
                     <Link
-                      key={() => Math.random() + data.title + Math.random()}
+                      key={crypto.randomUUID()}
                       style={{ borderColor: data.color }}
                       href={data.path}
                       className={`py-2 px-6 text-black/75 duration-300 hover:scale-105 font-semibold text-sm rounded-full border`}
@@ -283,7 +283,7 @@ export default function CvSamples() {
             {blogData.map((data) => {
               return (
                 <Link
-                  key={() => Math.random() + data.title + Math.random()}
+                  key={crypto.randomUUID()}
                   href={data.path}
                   className="w-full p-3 bg-white hover:shadow-2xl duration-300 rounded-lg shadow-xl flex gap-5 items-center"
                 >

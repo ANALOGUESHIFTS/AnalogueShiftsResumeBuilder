@@ -218,7 +218,7 @@ export default function ResumeTemplateSection() {
             {resumeTemplates.map((data) => {
               return (
                 <div
-                  key={() => Math.random() * Math.random()}
+                  key={crypto.randomUUID()}
                   className="relative template-box w-[350px] max-w-[90%]"
                 >
                   <div className="w-full h-max pb-[60px]">
@@ -250,7 +250,7 @@ export default function ResumeTemplateSection() {
             {coverLetterTemplates.map((data) => {
               return (
                 <div
-                  key={() => Math.random() * Math.random()}
+                  key={crypto.randomUUID()}
                   className="relative template-box w-[350px] max-w-[90%]"
                 >
                   <div className="w-full h-max pb-[60px]">
