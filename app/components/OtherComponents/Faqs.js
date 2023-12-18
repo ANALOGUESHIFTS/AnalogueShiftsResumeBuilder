@@ -70,7 +70,7 @@ export default function Faqs() {
       })}
       <p className="text-sm tracking-wide text-black/70 text-center">
         More questions?{" "}
-        <Link href="/app/how-to-start" className="text-AnalogueShiftsTextColor">
+        <Link href="/faq" className="text-AnalogueShiftsTextColor">
           Visit our FAQ library
         </Link>{" "}
         .

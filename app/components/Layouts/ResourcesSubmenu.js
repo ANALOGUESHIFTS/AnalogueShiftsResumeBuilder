@@ -26,19 +26,14 @@ export default function ResourcesSubMenu() {
       path: "/faq#technical-assistance",
     },
     {
-      image: ResumeFaqNavIcon,
-      title: "Resume FAQs",
-      path: "/faq#resume-faqs",
-    },
-    {
       image: CoverLetterFaqNavIcon,
-      title: "Cover Letter FAQs",
-      path: "/faq#cover-letter-faqs",
+      title: "Payment Information",
+      path: "/faq#payment-information",
     },
     {
-      image: CvFaqNavIcon,
-      title: "CV FAQs",
-      path: "/faq#cv-faqs",
+      image: ResumeFaqNavIcon,
+      title: "Delete or request data",
+      path: "/faq#delete-or-request-data",
     },
   ];
 
@@ -75,7 +70,7 @@ export default function ResourcesSubMenu() {
     >
       <div className="w-full p-8 flex justify-between border-b">
         <div className="w-[35%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box">
-          <Link href="/faqs" className="w-full flex justify-between pb-5">
+          <Link href="/faq" className="w-full flex justify-between pb-5">
             <div className="flex items-center gap-2">
               <Image
                 src={QuestionIcon}

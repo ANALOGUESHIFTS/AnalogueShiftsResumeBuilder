@@ -4,66 +4,7 @@ import SearchIcon from "@/public/search-icon.png";
 import Image from "next/image";
 import Link from "next/link";
 
-const searchData = [
-  {
-    name: "Account Manager Resume",
-    path: "/resume-samples/account-manager-resume-example",
-  },
-  {
-    name: "Accounts Receivable Resume",
-    path: "/resume-samples/accounts-receivable-resume",
-  },
-  {
-    name: "Tax Intern Resume",
-    path: "/resume-samples/tax-intern-resume",
-  },
-  {
-    name: "Debt Collector Resume",
-    path: "/resume-samples/debt-collector-resume",
-  },
-  {
-    name: "BookKeeper Resume",
-    path: "/resume-samples/bookkeeper-resume-example",
-  },
-  {
-    name: "Finance Resume",
-    path: "/resume-samples/finance-resume",
-  },
-  {
-    name: "Loan Processor",
-    path: "/resume-samples/loan-processor-resume",
-  },
-  {
-    name: "Bank Teller Resume",
-    path: "/resume-samples/bank-teller-resume-example",
-  },
-  {
-    name: "Acting Resume",
-    path: "/resume-samples/acting-resume-example",
-  },
-  {
-    name: "Artist Resume",
-    path: "/resume-samples/artist-resume-example",
-  },
-  {
-    name: "Dance Resume",
-    path: "/resume-samples/dance-resume",
-  },
-  {
-    name: "Model Resume",
-    path: "/resume-samples/model-resume",
-  },
-  {
-    name: "Producer Resume",
-    path: "/resume-samples/producer-resume",
-  },
-  {
-    name: "Event Planner Resume",
-    path: "/resume-samples/event-planner-resume-example",
-  },
-];
-
-export default function ResumeSampleSearch({ cancel }) {
+export default function ResumeSampleSearch({ cancel, searchData }) {
   const [searchValue, setSearchValue] = useState("");
   const [initialData, setInitialData] = useState(searchData);
 

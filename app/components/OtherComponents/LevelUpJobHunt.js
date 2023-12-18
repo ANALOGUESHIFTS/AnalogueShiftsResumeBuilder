@@ -2,54 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 import RightArrow from "@/public/right-arrow-icon.png";
-import PickAResumeTemplate from "@/public/pick-a-resume-template.svg";
-import CustomizeEachSection from "@/public/generate-bullet-point.svg";
-import EmphasizeYourSkills from "@/public/emphasize-your-skill.svg";
-import AttachACoverLetter from "@/public/attach-cover-letter.svg";
+import { levelUpLinks } from "./data";
 
 export default function LevelUpJobHunt() {
-  const levelUpLinks = [
-    {
-      path: "/resume-templates/professional-templates",
-      number: "01",
-      color: "#4b94ea",
-      icon: PickAResumeTemplate,
-      title: "Pick A Resume Template",
-      description:
-        "With a good resume template, you don't need to worry about details like formatting.",
-      linkText: "Get a professional template",
-    },
-    {
-      path: "/blog/resume-help/how-to-write-a-resume",
-      number: "02",
-      color: "#ea723c",
-      icon: CustomizeEachSection,
-      title: "Customize Each Section",
-      description:
-        "Fill in your personal information and write about your work experience.",
-      linkText: "Learn how to write a resume",
-    },
-    {
-      path: "/blog/resume-help/skills-for-resume",
-      number: "03",
-      color: "#2ca482",
-      icon: EmphasizeYourSkills,
-      title: "Emphasize Your Skills",
-      description:
-        "Take skills from the job advertisement, then tie them into your resume.",
-      linkText: "Pick skills for your resume",
-    },
-    {
-      path: "/blog/cover-letter-help/how-to-write-a-cover-letter",
-      number: "04",
-      color: "#f892bc",
-      icon: AttachACoverLetter,
-      title: "Attach A Cover Letter",
-      description:
-        "A resume will get you the job, but a cover letter will get your foot in the door.",
-      linkText: "Write a winning cover letter",
-    },
-  ];
   return (
     <div className="w-full h-[850px] flex flex-col items-center bg-white justify-center p-5 max-[1200px]:h-max">
       <p className="text-black/50 text-center max-[1050px]:text-center font-bold tracking-wide text-[13px]">

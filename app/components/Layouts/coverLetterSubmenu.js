@@ -161,7 +161,7 @@ export default function CoverLetterSubMenu() {
                 className="w-4 h-4 opacity-90"
               />
               <p className="relative text-black/90 font-medium text-[13px] tracking-wider">
-                RESUME EXAMPLES
+                COVER LETTER EXAMPLES
                 <span className="absolute left-0 bottom-0 w-0 border-b border-black/70 border-solid duration-500 custom-line"></span>
               </p>
             </div>
