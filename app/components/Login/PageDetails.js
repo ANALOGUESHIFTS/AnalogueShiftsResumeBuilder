@@ -16,7 +16,7 @@ export default function LoginPageDetails() {
   };
 
   return (
-    <main className="w-screen h-auto min-h-screen fixed top-0 left-0 bg-[#f0f0f0] z-80 flex flex-col items-center justify-center gap-[70px] py-[70px]">
+    <main className="w-screen overflow-y-auto h-auto min-h-screen fixed top-0 left-0 bg-[#f0f0f0] z-80 flex flex-col items-center justify-center gap-[70px] py-[70px]">
       <ApplicationLogo />
       <div className="max-w-[90%] w-[500px] rounded-xl h-max p-8 bg-white shadow-xl flex flex-col max-[500px]:p-4">
         <p className="text-black/70 text-2xl text-center font-extrabold pb-3">
