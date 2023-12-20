@@ -39,7 +39,7 @@ export default function ResumeBuilderPageDetails() {
           <div className="pt-12">
             <Link
               className="bg-AnalogueShiftsTextColor w-max px-8 flex justify-center items-center duration-300 hover:-translate-y-1 text-black/70 font-medium text-sm py-3 rounded-lg"
-              href="#"
+              href="/resume-builder/app/how-to-start"
             >
               Build My Resume Now
             </Link>
