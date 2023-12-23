@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Background from "@/public/resumes-background.png";
 import BasicQuestion from "./BasicQuestions";
+import InfoScreen from "./InfoScreen";
 
 export default function BuilderPageDetails({ templateID }) {
   const [selectedScreen, setSelectedScreen] = useState("BasicQuestion");
@@ -14,10 +15,11 @@ export default function BuilderPageDetails({ templateID }) {
           submit={(data) => {
             setSelectedScreen("");
             setBasicQuestionData(data);
-            console.log(data);
+            setSelectedScreen("Info");
           }}
         />
       )}
+      {selectedScreen === "Info" && <InfoScreen />}
     </div>
   );
 }
