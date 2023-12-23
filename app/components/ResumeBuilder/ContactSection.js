@@ -86,7 +86,7 @@ export default function ContactSection({ submit }) {
     formData.forEach((item) => {
       data[item.label] = item.value;
     });
-    submit({ contactData: data });
+    submit(data);
   };
 
   return (
@@ -138,6 +138,7 @@ export default function ContactSection({ submit }) {
         {formData.map((data) => {
           return (
             <input
+              type={data.type}
               onChange={(e) => handleInputChange(data.label, e.target.value)}
               className="px-4 py-3.5 max-[613px]:w-full rounded-xl border outline-AnalogueShiftsTextColor text-base text-black/70"
               value={data.value}

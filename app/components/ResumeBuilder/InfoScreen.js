@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ContactSection from "./ContactSection";
+import ExperienceSection from "./ExperienceSection";
+import EducationSection from "./EducationSection";
 
 export default function InfoScreen() {
   const [selectedSection, setSelectedSection] = useState("Contact");
@@ -41,9 +43,11 @@ export default function InfoScreen() {
     },
   ];
 
+  useEffect(() => console.log(userData), [userData]);
+
   return (
     <section className="w-full flex h-max min-h-screen bg-[#f3f8ff] px-6 pb-8">
-      <aside className="w-[250px] max-[930px]:hidden h-[calc(100dvh-150px)] sticky top-[100px] bg-white rounded-2xl p-5 flex flex-col gap-1">
+      <aside className="w-[250px] max-[930px]:hidden h-[calc(100dvh-150px)] sticky top-0 bg-white rounded-2xl p-5 flex flex-col gap-1">
         {navSections.map((section) => {
           return (
             <div
@@ -68,14 +72,36 @@ export default function InfoScreen() {
           );
         })}
       </aside>
-      <section className="w-[calc(100%-250px)] max-[930px]:pl-5 max-[930px]:pr-5 max-[930px]:w-full h-max pl-14 pr-8">
+      <section className="w-[calc(100%-250px)] max-[930px]:pl-0 max-[930px]:pr-0 max-[930px]:w-full h-max pl-14 pr-8">
         {selectedSection === "Contact" && (
           <ContactSection
             submit={(data) => {
               setUserData((prev) => {
-                return { ...prev, data };
+                return { ...prev, contactData: data };
               });
-              console.log(data);
+              setSelectedSection("Experience");
+            }}
+          />
+        )}
+        {selectedSection === "Experience" && (
+          <ExperienceSection
+            back={() => setSelectedSection("Contact")}
+            submit={(data) => {
+              setUserData((prev) => {
+                return { ...prev, experienceData: data };
+              });
+              setSelectedSection("Education");
+            }}
+          />
+        )}
+        {selectedSection === "Education" && (
+          <EducationSection
+            back={() => setSelectedSection("Experience")}
+            submit={(data) => {
+              setUserData((prev) => {
+                return { ...prev, educationData: data };
+              });
+              setSelectedSection("Certifications");
             }}
           />
         )}
