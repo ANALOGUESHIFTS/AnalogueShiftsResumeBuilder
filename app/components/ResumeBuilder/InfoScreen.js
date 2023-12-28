@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ContactSection from "./ContactSection";
 import ExperienceSection from "./ExperienceSection";
 import EducationSection from "./EducationSection";
+import CertificationSection from "./CertificationSection";
 
 export default function InfoScreen() {
   const [selectedSection, setSelectedSection] = useState("Contact");
@@ -102,6 +103,17 @@ export default function InfoScreen() {
                 return { ...prev, educationData: data };
               });
               setSelectedSection("Certifications");
+            }}
+          />
+        )}
+        {selectedSection === "Certifications" && (
+          <CertificationSection
+            back={() => setSelectedSection("Education")}
+            submit={(data) => {
+              setUserData((prev) => {
+                return { ...prev, certificationData: data };
+              });
+              setSelectedSection("Skills");
             }}
           />
         )}
