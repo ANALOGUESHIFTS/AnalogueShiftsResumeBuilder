@@ -25,7 +25,7 @@ let months = [
   "December",
 ];
 
-export default function EducationSection({ submit, back }) {
+export default function EducationSection({ submit, back, data }) {
   const [schoolName, setSchoolName] = useState("");
   const [schoolLocation, setSchoolLocation] = useState("");
   const [degreeOfProgram, setDegreeOfProgram] = useState("");
@@ -33,7 +33,7 @@ export default function EducationSection({ submit, back }) {
   const [graduationMonth, setGraduationMonth] = useState("");
   const [graduationYear, setGraduationYear] = useState("");
   const [additionalInfo, setAdditionalInfo] = useState("");
-  const [education, setEducation] = useState([]);
+  const [education, setEducation] = useState(data ? data : []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -134,11 +134,11 @@ export default function EducationSection({ submit, back }) {
             placeholder="Additional Info"
             value={additionalInfo}
             onChange={(e) => setAdditionalInfo(e.target.value)}
-            className="px-4 py-3.5 max-[613px]:w-full w-[500px] h-40 rounded-xl border outline-AnalogueShiftsTextColor text-base text-black/70"
+            className="px-4 py-3.5 max-[613px]:w-full w-[500px] h-32 rounded-xl border outline-AnalogueShiftsTextColor text-base text-black/70"
           ></textarea>
         </div>
 
-        <div className="pt-4 flex gap-5">
+        <div className=" flex gap-5">
           <button
             type="submit"
             className="px-8 bg-black/90 max-[613px]:w-full duration-300 hover:-translate-y-1 text-white font-semibold py-2.5 rounded-xl"
@@ -147,36 +147,38 @@ export default function EducationSection({ submit, back }) {
           </button>
         </div>
       </form>
-      <div className="pt-10 flex flex-col gap-5">
-        {education.map((data) => {
-          return (
-            <div
-              key={data.title}
-              className="w-full rounded-xl bg-white border items-center p-4 flex justify-between"
-            >
-              <div className="flex flex-col gap-1">
-                <p className="font-bold text-black/80 text-base">
-                  {data.degreeOfProgram}
-                </p>
-                <p className=" text-black/80 text-base">
-                  {data.graduationMonth} {data.graduationYear}
-                </p>
-              </div>
-              <button
-                onClick={() =>
-                  setEducation((prev) =>
-                    prev.filter((item) => item.title !== data.title)
-                  )
-                }
-                className="w-10 h-10 rounded-full bg-slate-800 flex justify-center items-center"
+      {education[0] && (
+        <div className="pt-5 flex flex-col gap-5">
+          {education.map((data) => {
+            return (
+              <div
+                key={data.title}
+                className="w-full rounded-xl bg-white border items-center p-4 flex justify-between"
               >
-                <i className="fa-solid fa-trash text-white text-sm"></i>
-              </button>
-            </div>
-          );
-        })}
-      </div>
-      <div className="pt-10 flex gap-5 justify-between">
+                <div className="flex flex-col gap-1">
+                  <p className="font-bold text-black/80 text-base">
+                    {data.degreeOfProgram}
+                  </p>
+                  <p className=" text-black/80 text-base">
+                    {data.graduationMonth} {data.graduationYear}
+                  </p>
+                </div>
+                <button
+                  onClick={() =>
+                    setEducation((prev) =>
+                      prev.filter((item) => item.title !== data.title)
+                    )
+                  }
+                  className="w-10 h-10 rounded-full bg-slate-800 flex justify-center items-center"
+                >
+                  <i className="fa-solid fa-trash text-white text-sm"></i>
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      <div className="pt-7 flex gap-5 justify-between">
         <button
           onClick={back}
           type="button"

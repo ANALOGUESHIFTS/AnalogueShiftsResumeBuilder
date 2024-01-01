@@ -1,20 +1,18 @@
 "use client";
 import { useState } from "react";
 
-export default function CertificationSection({ submit, back, data }) {
-  const [certification, setCertification] = useState(
-    data
-      ? data
-      : [{ id: `certification-${crypto.randomUUID()}`, certification: "" }]
+export default function SkillsSection({ submit, back, data }) {
+  const [skills, setSkills] = useState(
+    data ? data : [{ id: `skill-${crypto.randomUUID()}`, skill: "" }]
   );
 
-  const updateCertification = (id, newValue) => {
-    setCertification((previous) =>
+  const updateSkill = (id, newValue) => {
+    setSkills((previous) =>
       previous.map((data) => {
         if (data.id !== id) {
           return data;
         } else {
-          return { ...data, certification: newValue };
+          return { ...data, skill: newValue };
         }
       })
     );
@@ -22,27 +20,25 @@ export default function CertificationSection({ submit, back, data }) {
 
   return (
     <div className="w-full flex flex-col">
-      <p className="font-extrabold text-3xl text-black/80 pb-5">
-        Certifications and licenses
-      </p>
+      <p className="font-extrabold text-3xl text-black/80 pb-5">Skills</p>
       <p className="text-base text-black/80 pb-6">
-        If the job requires you to have a certain certifications or licenses,
-        this is where you should list them.
+        You're on a roll. Let's find relevant skills for the job your applying
+        for. Listing 6-10 skills is best.
       </p>
 
       <div className="w-full flex flex-col gap-5">
-        {certification.map((data, index) => {
+        {skills.map((data, index) => {
           return (
             <div key={data.id} className="w-full relative h-14 ">
               <input
-                value={data.certification}
-                onChange={(e) => updateCertification(data.id, e.target.value)}
-                placeholder={`License or Certification #${index + 1}`}
+                value={data.skill}
+                onChange={(e) => updateSkill(data.id, e.target.value)}
+                placeholder={`Skill #${index + 1}`}
                 className="w-full rounded-2xl bg-white outline-AnalogueShiftsTextColor pr-8 pl-4 max-h-14 py-4 border text-base text-black/80"
               />
               <button
                 onClick={() =>
-                  setCertification((prev) =>
+                  setSkills((prev) =>
                     prev.filter((item) => item.id !== data.id)
                   )
                 }
@@ -57,15 +53,15 @@ export default function CertificationSection({ submit, back, data }) {
 
       <button
         onClick={() =>
-          setCertification((previous) => [
+          setSkills((previous) => [
             ...previous,
-            { id: `certification-${crypto.randomUUID()}`, certification: "" },
+            { id: `skill-${crypto.randomUUID()}`, certification: "" },
           ])
         }
-        className="mt-6 flex items-center gap-2 text-black/80 font-semibold text-base"
+        className="mt-8 flex items-center gap-2 text-black/80 font-semibold text-base"
       >
         <i className="fa-solid fa-plus"></i>
-        <p>Add another license or certificate</p>
+        <p>Add another skill</p>
       </button>
 
       <div className="pt-7 flex gap-5 justify-between">
@@ -77,7 +73,7 @@ export default function CertificationSection({ submit, back, data }) {
           Go Back
         </button>
         <button
-          onClick={() => submit(certification)}
+          onClick={() => submit(skills)}
           type="button"
           className="px-12 max-[613px]:px-3 bg-black/90 max-[613px]:w-full duration-300 hover:-translate-y-1 text-white font-semibold py-3.5 rounded-xl"
         >

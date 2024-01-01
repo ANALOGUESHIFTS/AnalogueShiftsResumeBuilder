@@ -24,7 +24,7 @@ let months = [
   "December",
 ];
 
-export default function ExperienceSection({ submit, back }) {
+export default function ExperienceSection({ submit, back, data }) {
   const [jobTitle, setJobTitle] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [country, setCountry] = useState("");
@@ -36,7 +36,7 @@ export default function ExperienceSection({ submit, back }) {
   const [endMonth, setEndMonth] = useState("");
   const [endYear, setEndYear] = useState("");
   const [currentlyWorkHere, setCurrentlyWorkHere] = useState(false);
-  const [experience, setExperience] = useState([]);
+  const [experience, setExperience] = useState(data ? data : []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -179,7 +179,7 @@ export default function ExperienceSection({ submit, back }) {
             placeholder="Job Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="px-4 py-3.5 max-[613px]:w-full w-[500px] h-40 rounded-xl border outline-AnalogueShiftsTextColor text-base text-black/70"
+            className="px-4 py-3.5 max-[613px]:w-full w-[500px] h-32 rounded-xl border outline-AnalogueShiftsTextColor text-base text-black/70"
           ></textarea>
         </div>
         <div
@@ -194,7 +194,7 @@ export default function ExperienceSection({ submit, back }) {
           />
           <p className="text-sm text-black/80">I currently work here</p>
         </div>
-        <div className="pt-4 flex gap-5">
+        <div className=" flex gap-5">
           <button
             type="submit"
             className="px-8 bg-black/90 max-[613px]:w-full duration-300 hover:-translate-y-1 text-white font-semibold py-2.5 rounded-xl"
@@ -203,39 +203,41 @@ export default function ExperienceSection({ submit, back }) {
           </button>
         </div>
       </form>
-      <div className="pt-10 flex flex-col gap-5">
-        {experience.map((data) => {
-          return (
-            <div
-              key={data.title}
-              className="w-full rounded-xl bg-white border items-center p-4 flex justify-between"
-            >
-              <div className="flex flex-col gap-1">
-                <p className="font-bold text-black/80 text-base">
-                  {data.jobTitle}
-                </p>
-                <p className=" text-black/80 text-base">
-                  {data.startMonth} {data.startYear} -{" "}
-                  {data.currentlyWorkHere
-                    ? "Present"
-                    : `${data.endMonth} ${data.endYear}`}
-                </p>
-              </div>
-              <button
-                onClick={() =>
-                  setExperience((prev) =>
-                    prev.filter((item) => item.title !== data.title)
-                  )
-                }
-                className="w-10 h-10 rounded-full bg-slate-800 flex justify-center items-center"
+      {experience[0] && (
+        <div className="pt-5 flex flex-col gap-5">
+          {experience.map((data) => {
+            return (
+              <div
+                key={data.title}
+                className="w-full rounded-xl bg-white border items-center p-4 flex justify-between"
               >
-                <i className="fa-solid fa-trash text-white text-sm"></i>
-              </button>
-            </div>
-          );
-        })}
-      </div>
-      <div className="pt-10 flex gap-5 justify-between">
+                <div className="flex flex-col gap-1">
+                  <p className="font-bold text-black/80 text-base">
+                    {data.jobTitle}
+                  </p>
+                  <p className=" text-black/80 text-base">
+                    {data.startMonth} {data.startYear} -{" "}
+                    {data.currentlyWorkHere
+                      ? "Present"
+                      : `${data.endMonth} ${data.endYear}`}
+                  </p>
+                </div>
+                <button
+                  onClick={() =>
+                    setExperience((prev) =>
+                      prev.filter((item) => item.title !== data.title)
+                    )
+                  }
+                  className="w-10 h-10 rounded-full bg-slate-800 flex justify-center items-center"
+                >
+                  <i className="fa-solid fa-trash text-white text-sm"></i>
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      <div className="pt-7 flex gap-5 justify-between">
         <button
           onClick={back}
           type="button"

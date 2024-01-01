@@ -5,6 +5,10 @@ import ContactSection from "./ContactSection";
 import ExperienceSection from "./ExperienceSection";
 import EducationSection from "./EducationSection";
 import CertificationSection from "./CertificationSection";
+import SkillsSection from "./SkillsSection";
+import SummarySection from "./SummarySection";
+import ReferencesSection from "./ReferencesSection";
+import FinalizeSection from "./FinalizeSection";
 
 export default function InfoScreen() {
   const [selectedSection, setSelectedSection] = useState("Contact");
@@ -44,8 +48,6 @@ export default function InfoScreen() {
     },
   ];
 
-  useEffect(() => console.log(userData), [userData]);
-
   return (
     <section className="w-full flex h-max min-h-screen bg-[#f3f8ff] px-6 pb-8">
       <aside className="w-[250px] max-[930px]:hidden h-[calc(100dvh-150px)] sticky top-0 bg-white rounded-2xl p-5 flex flex-col gap-1">
@@ -82,6 +84,7 @@ export default function InfoScreen() {
               });
               setSelectedSection("Experience");
             }}
+            data={userData.contactData ? userData.contactData : null}
           />
         )}
         {selectedSection === "Experience" && (
@@ -93,6 +96,7 @@ export default function InfoScreen() {
               });
               setSelectedSection("Education");
             }}
+            data={userData.experienceData ? userData.experienceData : null}
           />
         )}
         {selectedSection === "Education" && (
@@ -104,6 +108,7 @@ export default function InfoScreen() {
               });
               setSelectedSection("Certifications");
             }}
+            data={userData.educationData ? userData.educationData : null}
           />
         )}
         {selectedSection === "Certifications" && (
@@ -115,6 +120,56 @@ export default function InfoScreen() {
               });
               setSelectedSection("Skills");
             }}
+            data={
+              userData.certificationData ? userData.certificationData : null
+            }
+          />
+        )}
+        {selectedSection === "Skills" && (
+          <SkillsSection
+            back={() => setSelectedSection("Certifications")}
+            submit={(data) => {
+              setUserData((prev) => {
+                return { ...prev, skillsData: data };
+              });
+              setSelectedSection("Summary");
+            }}
+            data={userData.skillsData ? userData.skillsData : null}
+          />
+        )}
+        {selectedSection === "Summary" && (
+          <SummarySection
+            back={() => setSelectedSection("Skills")}
+            submit={(data) => {
+              setUserData((prev) => {
+                return { ...prev, summaryData: data };
+              });
+              setSelectedSection("References");
+            }}
+            data={userData.summaryData ? userData.summaryData : null}
+          />
+        )}
+        {selectedSection === "References" && (
+          <ReferencesSection
+            back={() => setSelectedSection("Summary")}
+            submit={(data) => {
+              setUserData((prev) => {
+                return { ...prev, referencesData: data };
+              });
+              setSelectedSection("Finalize");
+            }}
+            data={userData.referencesData ? userData.referencesData : null}
+          />
+        )}
+        {selectedSection === "Finalize" && (
+          <FinalizeSection
+            back={() => setSelectedSection("References")}
+            submit={(data) => {
+              setUserData((prev) => {
+                return { ...prev, finalizeData: data };
+              });
+            }}
+            data={userData.finalizeData ? userData.finalizeData : null}
           />
         )}
       </section>

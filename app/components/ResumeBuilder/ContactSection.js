@@ -3,61 +3,61 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 
-export default function ContactSection({ submit }) {
-  const [image, setImage] = useState(null);
+export default function ContactSection({ submit, data }) {
+  const [image, setImage] = useState(data ? data.image : null);
   const [formData, setFormData] = useState([
     {
       label: "First Name",
       required: true,
-      value: "",
+      value: data ? data["First Name"] : "",
       type: "text",
     },
     {
       label: "Last Name",
       required: false,
-      value: "",
+      value: data ? data["Last Name"] : "",
       type: "text",
     },
     {
       label: "Desired Job Title",
       required: false,
-      value: "",
+      value: data ? data["Desired Job Title"] : "",
       type: "text",
     },
     {
       label: "Phone",
       required: false,
-      value: "",
+      value: data ? data["Phone"] : "",
       type: "text",
     },
     {
       label: "Country",
       required: false,
-      value: "",
+      value: data ? data["Country"] : "",
       type: "text",
     },
     {
       label: "City",
       required: false,
-      value: "",
+      value: data ? data["City"] : "",
       type: "text",
     },
     {
       label: "State / Province",
       required: false,
-      value: "",
+      value: data ? data["State / Province"] : "",
       type: "text",
     },
     {
       label: "Zip Code",
       required: false,
-      value: "",
-      type: "number",
+      value: data ? data["Zip Code"] : "",
+      type: "text",
     },
     {
       label: "Email",
       required: false,
-      value: "",
+      value: data ? data["Email"] : "",
       type: "email",
     },
   ]);
@@ -86,6 +86,7 @@ export default function ContactSection({ submit }) {
     formData.forEach((item) => {
       data[item.label] = item.value;
     });
+    data.image = image;
     submit(data);
   };
 
@@ -146,7 +147,7 @@ export default function ContactSection({ submit }) {
             />
           );
         })}
-        <div className="pt-6">
+        <div className="pt-2">
           <button
             type="submit"
             className="px-12 bg-black/90 max-[613px]:w-full duration-300 hover:-translate-y-1 text-white font-semibold py-3.5 rounded-xl"
