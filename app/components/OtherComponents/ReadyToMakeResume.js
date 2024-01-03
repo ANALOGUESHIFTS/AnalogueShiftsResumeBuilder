@@ -8,9 +8,9 @@ export default function ReadyToMakeResume() {
           Ready to start making your resume?
         </p>
         <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-          Don&lsquo;t let your resume hold you back from getting the job you
-          want. Our builder software helps you create a resume that highlights
-          your qualifications and lands you more interviews.
+          Don&lsquo;t allow your resume to hinder your job prospects. Our
+          builder software assists you in creating a resume that accentuates
+          your qualifications and secures more interviews
         </p>
         <div className="w-full flex max-[500px]:flex-col justify-center pb-6">
           <Link

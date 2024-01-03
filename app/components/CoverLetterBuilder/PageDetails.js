@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import HeroBg from "@/public/cover-letter-builder-hero.webp";
+import HeroBg from "@/public/hero-image.png";
 import Image from "next/image";
 import SalesForceLogo from "@/public/salesforce-logo.svg";
 import NewYorkLogo from "@/public/new-york-post-logo.svg";
@@ -48,12 +48,13 @@ export default function CoverLetterBuilderPageDetails() {
           ONLINE COVER LETTER GENERATOR
         </p>
         <p className="py-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-          Make the perfect cover letter.
+          Craft the perfect cover letter.
         </p>
         <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-          Writing a good cover letter takes time and effort. Our AI-powered
-          cover letter generator makes it easy — helping you build a customized
-          cover letter that improves your chance of getting an interview.
+          Crafting a compelling cover letter requires time and effort. Our
+          AI-powered cover letter generator simplifies the process, enabling you
+          to build a customized cover letter that enhances your chances of
+          securing an interview.
         </p>
         <div className="w-full flex justify-center">
           <Link
@@ -64,12 +65,10 @@ export default function CoverLetterBuilderPageDetails() {
           </Link>
         </div>
       </main>
-      <Image
-        src={HeroBg}
-        alt="Hero Background"
-        className="absolute w-[90%] left-[5%] top-[480px] z-30 max-[600px]:w-full max-[600px]:left-0 max-[600px]:top-[520px]"
-      />
-      <main className="w-full bg-white box-border items-center h-[900px] max-[1150px]:pt-[280px] max-[986px]:pt-[180px] max-[800px]:pt-[100px] max-[600px]:pt-[260px] max-[450px]:pt-[200px] max-[1150px]:h-max relative pt-[380px] px-5 flex flex-col">
+      <div className="w-full absolute px-5 top-[480px] left-0 z-30 max-[600px]:top-[520px] flex justify-center">
+        <Image src={HeroBg} alt="Hero Background" className="" />
+      </div>
+      <main className="w-full bg-white box-border items-center h-[950px] max-[1150px]:pt-[280px] max-[986px]:pt-[180px] max-[800px]:pt-[100px] max-[600px]:pt-[260px] max-[450px]:pt-[200px] max-[1150px]:h-max relative pt-[380px] px-5 flex flex-col">
         <div className="w-full px-10 max-[600px]:px-0 h-auto flex flex-wrap gap-x-10 gap-y-10">
           {serviceData.map((data) => {
             return (
@@ -95,7 +94,7 @@ export default function CoverLetterBuilderPageDetails() {
       </main>
       <main className="w-full h-[1000px] pt-10 flex flex-col items-center bg-white relative">
         <p className="py-5 text-[2.6rem] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-          Proven cover letter templates
+          Time-tested cover letter templates.
         </p>
         <p className="text-black/60 w-[700px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
           Our wide range of professional, HR-approved templates have helped
@@ -169,9 +168,9 @@ export default function CoverLetterBuilderPageDetails() {
             Get job offers from top companies
           </p>
           <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-            The results of our cover letter generator speak for themselves. Our
-            users have landed jobs at some of the most competitive companies in
-            the world:
+            The outcomes of our cover letter generator speak volumes. Our users
+            have successfully secured positions at some of the most competitive
+            companies in the world:
           </p>
           <div
             onMouseOver={() => handleMouseOver("logo-box3")}

@@ -11,12 +11,12 @@ export default function LevelUpJobHunt() {
         LEVEL UP YOUR JOB HUNT
       </p>
       <p className="py-5 text-[2.6rem] w-[750px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-        Build an application that gets more job offers
+        Construct an application that garners more job offers
       </p>
       <p className="text-black/60 w-[700px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-        Landing more interviews and earning better job offers is only a few
-        steps away, and it all starts with your resume. Here&apos;s how to make
-        your application stand out today:
+        Unlocking more interviews and securing superior job offers is just a few
+        steps away, and it all begins with your resume. Here's how to make your
+        application stand out today:
       </p>
       <div className="w-full flex justify-between flex-wrap gap-y-5">
         {levelUpLinks.map((data) => {

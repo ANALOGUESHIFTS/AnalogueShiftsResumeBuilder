@@ -10,12 +10,7 @@ import SideBarImage from "@/public/sidebar-image.svg";
 import TipMan from "@/public/tip-man.svg";
 import Faqs from "../OtherComponents/Faqs";
 import ResumeSampleSearch from "../OtherComponents/ResumeSampleSearch";
-import {
-  categories,
-  differentResumeFormat,
-  resumeTemplates,
-  samplesData,
-} from "./data";
+import { categories, resumeTemplates, samplesData } from "./data";
 
 export default function ResumeSamplePageDetails() {
   const [searchModal, setSearchModal] = useState(false);
@@ -41,12 +36,12 @@ export default function ResumeSamplePageDetails() {
           </div>
           <div className="w-full flex flex-col items-center">
             <p className="pb-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-              Resume Examples for Any Job or Experience Level
+              Resume Examples for Every Job or Experience Level
             </p>
             <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-              If you’re looking for good resume examples, you’ve come to the
-              right place. Each sample resume on this page was approved by a
-              professional resume writer, is free to download, and comes with
+              If you're in search of excellent resume examples, you've found the
+              right place. Each sample resume on this page has been approved by
+              a professional resume writer, is free to download, and includes
               job-specific writing tips.
             </p>
             <div className="w-full flex max-[500px]:flex-col justify-center">
@@ -94,7 +89,7 @@ export default function ResumeSamplePageDetails() {
             Sample Resumes by Industry
           </p>
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-            Writing a resume for a specific job? We have one of the largest
+            Crafting a resume for a specific job? Explore one of the largest
             collections of industry-specific resume examples on the internet.
           </p>
           <div className="w-full px-10 max-[800px]:px-5 z-60 py-5 sticky top-0 left-0 bg-[#fafbfc]">
@@ -150,10 +145,9 @@ export default function ResumeSamplePageDetails() {
               <div className="w-full max-[974px]:hidden h-max sticky top-[130px] bg-white rounded-lg shadow-2xl p-5 gap-4 flex flex-col justify-center">
                 <Image src={SideBarImage} alt="Side Bar Image" />
                 <p className="text-center font-medium text-base text-black/60 leading-7">
-                  Make a job-winning resume in 12 minutes with our{" "}
-                  <b>AI-powered resume builder</b>. Simply pick a resume
-                  template, fill in your information, and let our software do
-                  the rest.
+                  Craft a winning resume in just 12 minutes with our resume
+                  builder. Choose a resume template, input your information, and
+                  let our software take care of the rest.
                 </p>
                 <Link
                   href="/resume-builder/app/how-to-start"
@@ -233,9 +227,9 @@ export default function ResumeSamplePageDetails() {
             No work experience or changing careers?
           </p>
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-            No matter where you’re at in life, we have resume examples and
-            writing guides to help you make a resume that shows employers why
-            you’d be a great hire.
+            Regardless of where you are in life, we offer resume examples and
+            writing guides to assist you in creating a resume that highlights
+            why you would be a valuable hire to employers.
           </p>
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal tracking-normal text-base text-center">
             Looking for more ideas beyond just resume samples? Our{" "}
@@ -245,9 +239,7 @@ export default function ResumeSamplePageDetails() {
             >
               Resume Help Blog
             </Link>{" "}
-            covers every aspect of resume writing, formatting, and detail
-            related to making a resume — many details you may not realize even
-            exist.
+            is here to help you out
           </p>
         </section>
         <section className="w-full bg-white flex justify-center px-10 max-[800px]:px-5">
@@ -262,57 +254,15 @@ export default function ResumeSamplePageDetails() {
                 EXPERT ADVICE TO GET STARTED
               </p>
               <p className="text-black/60   font-normal tracking-normal text-base">
-                After you’ve pulled ideas from our professional resume examples
-                and learned{" "}
-                <Link
-                  href="/blog/resume-help/how-to-write-a-resume"
-                  className="text-AnalogueShiftsTextColor/90 hover:underline"
-                >
-                  how to make a resume
-                </Link>
-                , download a{" "}
-                <Link
-                  href="/resume-templates"
-                  className="text-AnalogueShiftsTextColor/90 hover:underline"
-                >
-                  free resume template
-                </Link>{" "}
-                to save time on formatting.
+                Once you've gathered ideas from our professional resume examples
+                and acquired the skills to create a resume, download a free
+                resume template to streamline the formatting process and save
+                time.
               </p>
             </div>
           </div>
         </section>
-        <section className="w-full bg-white h-max py-[100px] flex flex-col items-center px-10 max-[800px]:px-5">
-          <p className="text-black/50 px-5 pb-1 text-center max-[1050px]:text-center font-bold tracking-wide text-[13px]">
-            ARTICLES & DOWNLOADABLE TEMPLATES
-          </p>
-          <p className="pb-6 text-[2.6rem] px-5 w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
-            Examples of Different Resume Formats
-          </p>
-          <div className="w-full flex justify-between flex-wrap gap-y-6">
-            {differentResumeFormat.map((data) => {
-              return (
-                <Link
-                  key={crypto.randomUUID()}
-                  href={data.path}
-                  className="w-[calc(25%-20px)] max-[1064px]:w-[calc(33.3%-20px)] max-[500px]:w-full max-[720px]:w-[calc(50%-20px)] h-max flex flex-col gap-3 hover:opacity-80 resume-format-link"
-                >
-                  <Image
-                    src={data.image}
-                    alt=""
-                    className="mb-1 w-full h-max rounded-xl shadow-xl"
-                  />
-                  <p className="text-black/70 font-bold text-xl resume-format-text">
-                    {data.name}
-                  </p>
-                  <p className="text-base font-medium text-black/50">
-                    {data.description}
-                  </p>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
+
         <Faqs />
         <div className="w-full h-[500px] px-10 max-[500px]:px-4 pb-[50px]">
           <div className="w-full h-[450px] rounded-3xl bg-white shadow-2xl p-7 flex justify-center flex-col items-center">
@@ -320,10 +270,11 @@ export default function ResumeSamplePageDetails() {
               Ready to start making your new resume?
             </p>
             <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-              Creating a resume takes time and energy, and even with a lot of
-              effort still might not get you the job you want. Our resume
-              builder software can help you quickly make a resume that best
-              highlights your qualifications and earns you more interviews.
+              Crafting a resume demands time and energy, and even with
+              substantial effort, it may not guarantee the desired job. Our
+              resume builder software is designed to assist you in swiftly
+              creating a resume that effectively highlights your qualifications,
+              increasing your chances of securing more interviews.
             </p>
             <div className="w-full flex max-[500px]:flex-col justify-center pb-6">
               <Link

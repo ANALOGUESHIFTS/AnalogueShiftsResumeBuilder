@@ -8,12 +8,12 @@ export default function GuidesAndAdvice({ blogData }) {
         EXPERT GUIDES & ADVICE
       </p>
       <p className="py-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-        Read guides to improve your resume
+        Explore guides to enhance your resume
       </p>
       <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-        Whether you’re new to job hunting, changing fields, or looking to land a
-        higher-paying gig, we’ll teach you how to build a resume that earns more
-        interviews.
+        Whether you're a newcomer to job hunting, transitioning fields, or
+        aiming for a higher-paying position, we'll guide you on crafting a
+        resume that attracts more interviews
       </p>
       <div className="w-full flex max-[500px]:flex-col justify-center pb-6">
         <Link

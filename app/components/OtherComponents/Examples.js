@@ -56,7 +56,7 @@ export default function Examples() {
             </button>
           </div>
           <p className=" w-full text-[2.6rem]  max-[900px]:w-[90%] max-[900px]:text-xl font-extrabold text-black/70">
-            Look at examples for inspiration
+            Explore examples for inspiration
           </p>
           <p className="text-black/60 w-full  font-normal tracking-normal text-base">
             There are 600+ resume & cover letter examples on Resume Genius. Each

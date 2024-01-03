@@ -1,3 +1,6 @@
+"use client";
+import { useState, useEffect } from "react";
+import LoadingComponent from "../LoadingComponent";
 import Image from "next/image";
 import HomeIcon from "@/public/house-icon.png";
 import RightBracket from "@/public/right-bracket.png";
@@ -6,104 +9,129 @@ import FreeResumeTemplates from "../OtherComponents/FreeResumeTemplates";
 import FileIcon from "@/public/upload-file.png";
 import Faqs from "../OtherComponents/Faqs";
 import ResumeTemplateTwo from "@/public/resume-template-one.webp";
+import MasonryGrid from "../blog/MansoryGrid";
 
-import { blogData, resumeTemplates } from "./data";
+import { resumeTemplates } from "./data";
+import { axiosBlog } from "@/app/lib/axios";
 
 export default function ResumeTemplatesPageDetails() {
+  const [loading, setLoading] = useState(false);
+  const [blogData, setBlogData] = useState([]);
+
+  useEffect(() => {
+    setLoading(true);
+    axiosBlog
+      .get("/posts")
+      .then((res) => {
+        const data = res.data;
+        setBlogData(data.slice(0, 3));
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
-    <main className="w-full h-auto">
-      <main className="w-full items-center h-max py-[100px] px-10 max-[800px]:px-5  bg-white">
-        <div className="flex w-full gap-4 items-center pb-8">
-          <Link href="/" className="flex gap-1.5 items-center">
-            <Image src={HomeIcon} alt="Home Icon" className="w-7 h-7" />
-            <p className="text-black/80 font-medium text-sm hover:underline">
-              Home
+    <>
+      {loading && <LoadingComponent />}
+      <main className="w-full h-auto">
+        <main className="w-full items-center h-max py-[100px] px-10 max-[800px]:px-5  bg-white">
+          <div className="flex w-full gap-4 items-center pb-8">
+            <Link href="/" className="flex gap-1.5 items-center">
+              <Image src={HomeIcon} alt="Home Icon" className="w-7 h-7" />
+              <p className="text-black/80 font-medium text-sm hover:underline">
+                Home
+              </p>
+            </Link>
+            <Image src={RightBracket} alt="Divider Icon" className="w-5 h-4" />
+            <p className="text-black/50 font-medium text-sm">
+              Resume Templates
             </p>
-          </Link>
-          <Image src={RightBracket} alt="Divider Icon" className="w-5 h-4" />
-          <p className="text-black/50 font-medium text-sm">Resume Templates</p>
-        </div>
-        <div className="w-full flex flex-col items-center">
-          <p className="pb-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-            Resume Templates
-          </p>
-          <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-            Need a job? Our huge range of free resume templates can help. Simply
-            choose your favorite, download directly to Word or open in Google
-            Docs, and fill it out. We also provide a copy-paste template, and
-            show you how to fill out your own resume template with an
-            instructional video.
-          </p>
-          <div className="w-full flex max-[500px]:flex-col justify-center">
+          </div>
+          <div className="w-full flex flex-col items-center">
+            <p className="pb-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
+              Resume Templates
+            </p>
+            <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
+              Looking for a job? Our extensive collection of free resume
+              templates can assist you. Just select your favorite, download
+              directly to Word or open in Google Docs, and fill it out. We also
+              offer a copy-paste template and provide guidance on how to
+              complete your own resume template with an instructional video.
+            </p>
+            <div className="w-full flex max-[500px]:flex-col justify-center">
+              <Link
+                className="w-max max-[500px]:w-full px-8  flex justify-center bg-AnalogueShiftsTextColor/80 items-center hover:-translate-y-1 text-black/80 duration-300 hover:scale-105 font-medium text-sm py-3 rounded-lg"
+                href="/resume-builder/app/how-to-start"
+              >
+                Build My Resume
+              </Link>
+            </div>
+          </div>
+        </main>
+        <div className="w-full px-10 max-[800px]:px-5">
+          <div className="w-full flex justify-center border-b ">
             <Link
-              className="w-max max-[500px]:w-full px-8  flex justify-center bg-AnalogueShiftsTextColor/80 items-center hover:-translate-y-1 text-black/80 duration-300 hover:scale-105 font-medium text-sm py-3 rounded-lg"
-              href="/resume-builder/app/how-to-start"
+              href="#"
+              className="w-[112px] flex justify-center pb-5 text-AnalogueShiftsTextColor/80 border-b border-AnalogueShiftsTextColor/80 text-base font-medium"
             >
-              Build My Resume
+              Resume
+            </Link>
+            <Link
+              href="/cover-letter-templates"
+              className="w-max px-14 pb-5 text-black/60  hover:text-black/80 text-base font-medium"
+            >
+              Cover Letter
             </Link>
           </div>
-        </div>
-      </main>
-      <div className="w-full px-10 max-[800px]:px-5">
-        <div className="w-full flex justify-center border-b ">
-          <Link
-            href="#"
-            className="w-[112px] flex justify-center pb-5 text-AnalogueShiftsTextColor/80 border-b border-AnalogueShiftsTextColor/80 text-base font-medium"
+          <section
+            style={{ backgroundImage: "url(/pop-bg.svg)" }}
+            className="mt-10 w-full h-max flex flex-col  bg-no-repeat"
           >
-            Resume
-          </Link>
-          <Link
-            href="/cover-letter-templates"
-            className="w-max px-14 pb-5 text-black/60  hover:text-black/80 text-base font-medium"
-          >
-            Cover Letter
-          </Link>
-        </div>
-        <section
-          style={{ backgroundImage: "url(/pop-bg.svg)" }}
-          className="mt-10 w-full h-max flex flex-col  bg-no-repeat"
-        >
-          <p className="pb-6 text-[2.6rem] w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
-            Use an AnalogueShifts Resume Template
-          </p>
-          <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
-            {resumeTemplates.map((data) => {
-              return (
-                <Link
-                  key={crypto.randomUUID()}
-                  href={data.path}
-                  className="h-max p-4 w-[calc(33.3%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
-                >
-                  <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
-                    <Image
-                      src={data.image}
-                      alt="Template Image"
-                      className="w-full h-full max-[900px]:h-max rounded-lg"
-                    />
-                    <button className="absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
-                      Use Template
-                    </button>
-                  </div>
-                  <div className="w-full pl-2 h-[120px]">
-                    <p className="pt-6 text-base text-black/90 font-medium pb-2">
-                      {data.name}
-                    </p>
-                    <p className="text-black/60 font-medium text-sm">
-                      {data.description}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
+            <p className="pb-6 text-[2.6rem] w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
+              Use an AnalogueShifts Resume Template
+            </p>
+            <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
+              {resumeTemplates.map((data) => {
+                return (
+                  <Link
+                    key={crypto.randomUUID()}
+                    href={data.path}
+                    className="h-max p-4 w-[calc(33.3%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
+                  >
+                    <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
+                      <Image
+                        src={data.image}
+                        alt="Template Image"
+                        className="w-full h-full max-[900px]:h-max rounded-lg"
+                      />
+                      <button className="absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
+                        Use Template
+                      </button>
+                    </div>
+                    <div className="w-full pl-2 h-[120px]">
+                      <p className="pt-6 text-base text-black/90 font-medium pb-2">
+                        {data.name}
+                      </p>
+                      <p className="text-black/60 font-medium text-sm">
+                        {data.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+          <div className="w-full  h-max py-[60px] flex justify-center">
+            <p className="pb-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
+              Free Resume Templates to Download
+            </p>
           </div>
-        </section>
-        <div className="w-full  h-max py-[60px] flex justify-center">
-          <p className="pb-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-            Free Resume Templates to Download
-          </p>
         </div>
-      </div>
-      <FreeResumeTemplates />
+        <FreeResumeTemplates />
+        {/*
       <div className="w-full h-max flex justify-center px-10 max-[800px]:px-5 pt-5">
         <div className="flex flex-col max-w-full w-[1000px] items-center">
           <p className="text-black/80 font-bold text-[2rem] pb-5">
@@ -253,116 +281,66 @@ export default function ResumeTemplatesPageDetails() {
           </div>
         </div>
       </div>
-      <div className="w-full h-max flex py-10 flex-col px-10 max-[800px]:px-5 items-center">
-        <p className="py-3 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-          Ready to Improve Your Existing Resume?
-        </p>
-        <p className="text-black/60 w-[800px] max-[900px]:w-[90%] font-normal pb-10 tracking-normal text-base text-center">
-          Having trouble getting attention from hiring managers and recruiters?
-          It may be due to your resume. Upload your current resume into our
-          software and we&lsquo;ll help you format it using one of our
-          professional templates.
-        </p>
-        <div className="w-full h-max p-8 rounded-xl bg-white shadow-xl flex justify-between max-[887px]:flex-col max-[887px]:gap-5">
-          <div className="w-[30%] max-[887px]:w-full rounded-lg shadow-xl p-1">
-            <Image
-              src={ResumeTemplateTwo}
-              alt="Resume Template Image"
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="w-[65%] max-[887px]:w-full max-[887px]:h-max max-[887px]:py-10 max-[887px]:px-3 flex flex-col justify-center items-center rounded-lg border border-dashed gap-3">
-            <Image src={FileIcon} alt="Upload" className="w-[80px] h-auto" />
-            <Link
-              href="/resume-builder/app/how-to-start"
-              className="px-8 py-3 rounded-lg border text-sm duration-300 hover:-translate-y-2 text-black/80 font-medium"
-            >
-              Upload a Resume
-            </Link>
-            <p className="text-black/50 font-medium text-sm">
-              DOC, DOCX, PDF, HTML, RTF or TXT files upto 5MB
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="w-full h-[500px] flex flex-col items-center bg-white justify-center p-5 max-[1200px]:h-max">
-        <p className="text-black/50 text-center max-[1050px]:text-center font-bold tracking-wide text-[13px]">
-          RESUME SAMPLE
-        </p>
-        <p className="py-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-          Resume Templates In Action
-        </p>
-        <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-          Want to see what our various resume templates look like filled out?
-          Check out our resume examples. Find samples in your industry to
-          determine what template styles best suit the job you&lsquo;ve got your
-          eye on.
-        </p>
-        <div className="w-full flex max-[500px]:flex-col justify-center pb-6">
-          <Link
-            className="w-max max-[500px]:w-full px-8  flex justify-center bg-AnalogueShiftsTextColor/80 items-center hover:-translate-y-1 text-black/80 duration-300 hover:scale-105 font-medium text-sm py-3 rounded-lg"
-            href="/resume-samples"
-          >
-            View Resume Examples
-          </Link>
-        </div>
-      </div>
-      <Faqs />
-      <div className="w-full h-max flex flex-col items-center bg-white justify-center p-5 ">
-        <p className=" pb-8 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-          Related Articles
-        </p>
-        <div className="w-full flex justify-between flex-wrap gap-y-5">
-          {blogData.map((data) => {
-            return (
+     */}
+        <div className="w-full h-max flex py-10 flex-col px-10 max-[800px]:px-5 items-center">
+          <p className="py-3 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
+            Ready to Build an amazing Resume?
+          </p>
+          <p className="text-black/60 w-[800px] max-[900px]:w-[90%] font-normal pb-10 tracking-normal text-base text-center">
+            Having trouble getting attention from hiring managers and
+            recruiters? It may be due to your resume. Upload your current resume
+            into our software and we&lsquo;ll help you format it using one of
+            our professional templates.
+          </p>
+          <div className="w-full h-max p-8 rounded-xl bg-white shadow-xl flex justify-between max-[887px]:flex-col max-[887px]:gap-5">
+            <div className="w-[30%] max-[887px]:w-full rounded-lg shadow-xl p-1">
+              <Image
+                src={ResumeTemplateTwo}
+                alt="Resume Template Image"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="w-[65%] max-[887px]:w-full max-[887px]:h-max max-[887px]:py-10 max-[887px]:px-3 flex flex-col justify-center items-center rounded-lg border border-dashed gap-3">
+              <Image src={FileIcon} alt="Upload" className="w-[80px] h-auto" />
               <Link
-                key={crypto.randomUUID()}
-                href={data.path}
-                className="w-[31%] h-[570px] max-[1000px]:w-[48%] max-[600px]:w-full overflow-hidden rounded-2xl shadow-xl flex flex-col blog-box"
+                href="/resume-builder/app/how-to-start"
+                className="px-8 py-3 rounded-lg border text-sm duration-300 hover:-translate-y-2 text-black/80 font-medium"
               >
-                <div className="w-full h-6/12 overflow-hidden">
-                  <Image
-                    src={data.image}
-                    alt="Image"
-                    className="duration-300 blog-img"
-                  />
-                </div>
-                <div className="w-full h-6/12  p-3.5">
-                  <div className="flex flex-col pb-5 max-[500px]:h-[220px] w-full justify-between h-[200px]">
-                    <p
-                      style={{ color: data.color }}
-                      className="text-sm font-medium"
-                    >
-                      RESMUE HELP
-                    </p>
-                    <p className="font-bold text-black/70 text-xl">
-                      {data.title}
-                    </p>
-                    <p className="text-black/60 text-sm tracking-wide">
-                      {data.description}
-                    </p>
-                  </div>
-                  <div className="flex w-full h-[50px] gap-4">
-                    <Image
-                      src={data.userImage}
-                      alt=""
-                      className="w-[50px] h-[50px] rounded-full"
-                    />
-                    <div className="h-full py-1 flex flex-col justify-between">
-                      <p className="text-sm text-black/80 font-medium">
-                        {data.userName}
-                      </p>
-                      <p className="text-xs text-black/60 font-medium">
-                        {data.date}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                Build a Resume
               </Link>
-            );
-          })}
+            </div>
+          </div>
         </div>
-      </div>
-    </main>
+        <div className="w-full h-[500px] flex flex-col items-center bg-white justify-center p-5 max-[1200px]:h-max">
+          <p className="text-black/50 text-center max-[1050px]:text-center font-bold tracking-wide text-[13px]">
+            RESUME SAMPLE
+          </p>
+          <p className="py-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
+            Resume Templates In Action
+          </p>
+          <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
+            Want to see what our various resume templates look like filled out?
+            Check out our resume examples. Find samples in your industry to
+            determine what template styles best suit the job you&lsquo;ve got
+            your eye on.
+          </p>
+          <div className="w-full flex max-[500px]:flex-col justify-center pb-6">
+            <Link
+              className="w-max max-[500px]:w-full px-8  flex justify-center bg-AnalogueShiftsTextColor/80 items-center hover:-translate-y-1 text-black/80 duration-300 hover:scale-105 font-medium text-sm py-3 rounded-lg"
+              href="/resume-samples"
+            >
+              View Resume Examples
+            </Link>
+          </div>
+        </div>
+        <Faqs />
+        <div className="w-full h-max flex flex-col items-center bg-white justify-center p-5 ">
+          <p className=" pb-8 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
+            Related Articles
+          </p>
+          {blogData[0] && <MasonryGrid posts={blogData} />}
+        </div>
+      </main>
+    </>
   );
 }

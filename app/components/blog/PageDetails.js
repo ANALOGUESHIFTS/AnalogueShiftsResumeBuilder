@@ -35,7 +35,7 @@ export default function BlogPageDetails() {
     <>
       {loading && <LoadingComponent />}
       <main className="w-full h-auto">
-        <main className="w-full items-center h-max py-[100px] px-10 max-[800px]:px-5  bg-white">
+        <main className="w-full items-center h-max pt-[100px] px-10 max-[800px]:px-5  bg-white">
           <div className="flex w-full gap-4 items-center pb-8">
             <Link href="/" className="flex gap-1.5 items-center">
               <Image src={HomeIcon} alt="Home Icon" className="w-7 h-7" />
@@ -45,21 +45,21 @@ export default function BlogPageDetails() {
             </Link>
             <Image src={RightBracket} alt="Divider Icon" className="w-5 h-4" />
             <p className="text-black/50 font-medium text-sm">
-              The Genius Career Blog
+              AnalogueShifts Career Blog
             </p>
           </div>
           <div className="w-full flex flex-col items-center">
             <p className="pb-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-              The Genius Career Blog
+              AnalogueShifts Career Blog
             </p>
             <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-              No matter where you’re at on your job hunt, we have guides and
-              downloadable resources to help. Learn how to make an application
-              that lands interviews and gets you the job.
+              Irrespective of where you are in your job hunt, we provide guides
+              and downloadable resources to assist you. Learn how to create an
+              application that secures interviews and lands you the job.
             </p>
           </div>
         </main>
-        <div className="w-full bg-[#2b3a45] flex flex-col items-center py-[60px] px-10 max-[800px]:px-5 ">
+        {/* <div className="w-full bg-[#2b3a45] flex flex-col items-center py-[60px] px-10 max-[800px]:px-5 ">
           <p className="pb-8 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-white">
             Our Library of Job Resources
           </p>
@@ -81,7 +81,7 @@ export default function BlogPageDetails() {
               );
             })}
           </div>
-        </div>
+          </div>*/}
         <div className="w-full px-10 max-[800px]:px-5 py-10">
           <div className="w-full overflow-x-auto"></div>
           <div className="w-full py-10">

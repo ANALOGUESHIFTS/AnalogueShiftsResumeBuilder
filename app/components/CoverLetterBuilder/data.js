@@ -15,71 +15,65 @@ export const serviceData = [
     title: "Save hours of time",
     subTitle: (
       <p className="text-black/60 max-[1050px]:text-center font-normal tracking-normal text-base pl-2">
-        Take the busy work out of writing your cover letter. Fill in some
-        information, choose a template, and download the letter from your
-        dashboard.
+        Eliminate the hassle of writing your cover letter. Simply input your
+        information, select a template, and download the letter directly from
+        your dashboard.
       </p>
     ),
     image: SaveOursOfTime,
   },
   {
-    title: "Make a cohesive application",
+    title: "Create a cohesive application.",
     subTitle: (
       <p className="text-black/60 max-[1050px]:text-center font-normal tracking-normal text-base pl-2">
-        Pair your cover letter template with a{" "}
-        <Link className="text-AnalogueShiftsTextColor" href="/resume-templates">
-          matching resume template
-        </Link>{" "}
-        to make your application stand out to hiring managers & employers.
+        Enhance your application by pairing your cover letter template with a
+        matching resume template, making it stand out to hiring managers and
+        employers.
       </p>
     ),
     image: MakeACohesiveApplication,
   },
   {
-    title: "Leverage AI technology",
+    title: "Harness the power of AI technology.",
     subTitle: (
       <p className="text-black/60 max-[1050px]:text-center font-normal tracking-normal text-base pl-2">
-        Our software pulls information from real job advertisements, then parses
-        & rewrites it to create compelling sentences for your personalized
-        letter.
+        Our software extracts information from authentic job advertisements,
+        then analyzes and rewrites it to generate compelling sentences for your
+        personalized letter.
       </p>
     ),
     image: LeverageThePowerOfAi,
   },
   {
-    title: "Try out different templates",
+    title: "Experiment with various templates.",
     subTitle: (
       <p className="text-black/60 max-[1050px]:text-center font-normal tracking-normal text-base pl-2">
-        From your dashboard, save your cover letter and save it using other
-        templates. The right{" "}
-        <Link
-          className="text-AnalogueShiftsTextColor"
-          href="/cover-letter-templates"
-        >
-          cover letter template
-        </Link>{" "}
-        can make all the difference in your application.
+        Save your cover letter from the dashboard and try it with different
+        templates. The appropriate cover letter template can significantly
+        impact your application.
       </p>
     ),
     image: TryOutDifferentTemplate,
   },
   {
-    title: "Get past applicant tracking software",
+    title: "Navigate past applicant tracking software.",
     subTitle: (
       <p className="text-black/60 max-[1050px]:text-center font-normal tracking-normal text-base pl-2">
-        Every part of our builder (from the templates to the content generator)
-        was developed to bypass software companies use to filter out candidates.
+        Every aspect of our builder, from the templates to the content
+        generator, was designed to circumvent the software that companies use to
+        filter out candidates.
       </p>
     ),
     image: GetPastApplicant,
   },
   {
-    title: "Ask for expert suggestions",
+    title: "Seek expert recommendations.",
     subTitle: (
       <p className="text-black/60 max-[1050px]:text-center font-normal tracking-normal text-base pl-2">
-        &quot;Ask the Experts&quot; feature provides advice from certified
-        career coaches on your completed letter. Learn how to perfect each
-        section to get more interviews.
+        The &quot;Ask the Experts&quot; feature offers insights from certified
+        career coaches on your completed letter. Gain valuable advice on
+        perfecting each section to increase your chances of securing more
+        interviews.
       </p>
     ),
     image: AskForExpertSuggestion,

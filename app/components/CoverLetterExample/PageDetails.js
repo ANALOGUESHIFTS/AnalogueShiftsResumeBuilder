@@ -10,12 +10,7 @@ import SideBarImage from "@/public/sidebar-image.svg";
 import TipMan from "@/public/tip-man.svg";
 import Faqs from "../OtherComponents/Faqs";
 import ResumeSampleSearch from "../OtherComponents/ResumeSampleSearch";
-import {
-  categories,
-  differentResumeFormat,
-  resumeTemplates,
-  samplesData,
-} from "./data";
+import { categories, resumeTemplates, samplesData } from "./data";
 
 export default function CoverLetterExamplePageDetails() {
   const [searchModal, setSearchModal] = useState(false);
@@ -46,9 +41,10 @@ export default function CoverLetterExamplePageDetails() {
               Cover Letter Examples for All Job Applications in 2023
             </p>
             <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-              Paired with your resume, a well-written cover letter will help you
-              land the job you want. We have nearly 200 cover letter examples by
-              type and industry to help you make your cover letter persuasive.
+              Complementing your resume, a well-written cover letter is crucial
+              for landing the job you want. We offer nearly 200 cover letter
+              examples categorized by type and industry to assist you in
+              crafting a persuasive cover letter.
             </p>
             <div className="w-full flex max-[500px]:flex-col justify-center">
               <Link
@@ -95,7 +91,7 @@ export default function CoverLetterExamplePageDetails() {
             Sample Cover Letter by Industry
           </p>
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-            Writing a cover letter for a specific job? We have one of the
+            Crafting a cover letter for a specific job? Explore one of the
             largest collections of industry-specific cover letter examples on
             the internet.
           </p>
@@ -152,10 +148,9 @@ export default function CoverLetterExamplePageDetails() {
               <div className="w-full max-[974px]:hidden h-max sticky top-[130px] bg-white rounded-lg shadow-2xl p-5 gap-4 flex flex-col justify-center">
                 <Image src={SideBarImage} alt="Side Bar Image" />
                 <p className="text-center font-medium text-base text-black/60 leading-7">
-                  Make a job-winning cover letter in 12 minutes with our{" "}
-                  <b>AI-powered cover letter builder</b>. Simply pick a cover
-                  letter template, fill in your information, and let our
-                  software do the rest.
+                  Craft a winning resume in just 12 minutes with our resume
+                  builder. Choose a resume template, input your information, and
+                  let our software take care of the rest.
                 </p>
                 <Link
                   href="/cover-letter-builder/app"
@@ -237,14 +232,7 @@ export default function CoverLetterExamplePageDetails() {
               </p>
               <p className="text-black/60   font-normal tracking-normal text-base">
                 After you’ve pulled ideas from our professional cover letter
-                examples and learned{" "}
-                <Link
-                  href="/blog/cover-letter-help"
-                  className="text-AnalogueShiftsTextColor/90 hover:underline"
-                >
-                  how to make a cover letter
-                </Link>
-                , download a{" "}
+                examples and learned how to make a cover letter , download a
                 <Link
                   href="/cover-letter-templates"
                   className="text-AnalogueShiftsTextColor/90 hover:underline"
@@ -256,37 +244,7 @@ export default function CoverLetterExamplePageDetails() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-white h-max py-[100px] flex flex-col items-center px-10 max-[800px]:px-5">
-          <p className="text-black/50 px-5 pb-1 text-center max-[1050px]:text-center font-bold tracking-wide text-[13px]">
-            ARTICLES & DOWNLOADABLE TEMPLATES
-          </p>
-          <p className="pb-6 text-[2.6rem] px-5 w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
-            Examples of Different Cover Letter Formats
-          </p>
-          <div className="w-full flex justify-between flex-wrap gap-y-6">
-            {differentResumeFormat.map((data) => {
-              return (
-                <Link
-                  key={crypto.randomUUID()}
-                  href={data.path}
-                  className="w-[calc(25%-20px)] max-[1064px]:w-[calc(33.3%-20px)] max-[500px]:w-full max-[720px]:w-[calc(50%-20px)] h-max flex flex-col gap-3 hover:opacity-80 resume-format-link"
-                >
-                  <Image
-                    src={data.image}
-                    alt=""
-                    className="mb-1 w-full h-max rounded-xl shadow-xl"
-                  />
-                  <p className="text-black/70 font-bold text-xl resume-format-text">
-                    {data.name}
-                  </p>
-                  <p className="text-base font-medium text-black/50">
-                    {data.description}
-                  </p>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
+
         <Faqs />
         <div className="w-full h-[500px] px-10 max-[500px]:px-4 pb-[50px]">
           <div className="w-full h-[450px] rounded-3xl bg-white shadow-2xl p-7 flex justify-center flex-col items-center">

@@ -8,39 +8,39 @@ import LaunchYourJobHunt from "@/public/launch-your-job-hunt.svg";
 
 export const serviceData = [
   {
-    title: "Leverage the power of AI",
+    title: "Harness the capabilities of AI",
     subTitle:
-      "Our AI resume builder lets you make a resume in minutes. Use technology to your advantage & apply for jobs faster.",
+      "Craft your resume swiftly with our AI-powered resume builder. Leverage technology to your advantage and expedite your job applications.",
     image: LeverageThePowerOfAi,
   },
   {
-    title: "Generate bullet points",
+    title: "Create bullet points",
     subTitle:
-      "Your resume’s experience section is what employers care about most. Autogenerate experience bullet points that prove your on-the-job skills.",
+      "The experience section of your resume is crucial to employers. Automatically generate impactful bullet points showcasing your on-the-job skills.",
     image: GenerateBulletPoint,
   },
   {
-    title: "Auto-format each section",
+    title: "Automatically format each section",
     subTitle:
-      "Formatting can be time-consuming. Don’t let margins & spacing slow you down – put in your details and the resume maker does the rest.",
+      "Save time on formatting. Input your details, and let the resume maker take care of margins and spacing, keeping you efficient and focused.",
     image: AutoFormatEachSection,
   },
   {
-    title: "Instantly download your resume",
+    title: "Download your resume instantly",
     subTitle:
-      "Easily download your resume as a PDF, for Word, or in text format. Use the dashboard to test different templates to see what works best for you.",
+      "Effortlessly download your resume in PDF, Word, or text format. Explore various templates on the dashboard to find the one that suits you best.",
     image: InstantlyDownloadYourResume,
   },
   {
-    title: "Get expert feedback",
+    title: "Receive expert feedback",
     subTitle:
-      "The job market is extremely competitive. Get an edge on other applicants with professional feedback after you’ve made your resume.",
+      "In a highly competitive job market, gain an advantage over other applicants by receiving professional feedback once you've crafted your resume.",
     image: GetExpertFeedback,
   },
   {
     title: "Launch your job hunt",
     subTitle:
-      "Equipped with your perfected resume, you’re ready to take on the job market. Get more job interviews & earn better job offers.",
+      "With your polished resume, you're prepared to tackle the job market. Secure more job interviews and attract superior job offers.",
     image: LaunchYourJobHunt,
   },
 ];

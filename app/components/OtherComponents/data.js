@@ -19,173 +19,27 @@ import AttachACoverLetter from "@/public/attach-cover-letter.svg";
 
 export const resumeLinks = [
   {
-    title: "Acting",
+    title: "Arts, Culture & Media",
     color: "#79b2f0",
-    path: "/resume-samples/acting-resume-examples",
+    path: "/resume-samples#arts-culture-media",
   },
   {
-    title: "Administrative Assistant",
+    title: "Banking & Finance",
     color: "#ee7856",
-    path: "/resume-samples/administrative-assistant-resume-examples",
-  },
-  {
-    title: "Architecture",
-    color: "#FAE315",
-    path: "/resume-samples/architecture-resume-examples",
-  },
-  {
-    title: "College Student",
-    color: "#79b2f0",
-    path: "/resume-samples/college-student-resume-examples",
-  },
-  {
-    title: "Customer Service",
-    color: "#ee7856",
-    path: "/resume-samples/customer-service-resume-examples",
-  },
-  {
-    title: "IT",
-    color: "#FAE315",
-    path: "/resume-samples/it-resume-examples",
-  },
-  {
-    title: "Graphic Design",
-    color: "#79b2f0",
-    path: "/resume-samples/graphic-design-resume-examples",
-  },
-  {
-    title: "Project Manager",
-    color: "#ee7856",
-    path: "/resume-samples/project-manager-resume-examples",
-  },
-  {
-    title: "Marketing",
-    color: "#FAE315",
-    path: "/resume-samples/marketing-resume-examples",
-  },
-  {
-    title: "Nursing",
-    color: "#79b2f0",
-    path: "/resume-samples/nursing-resume-examples",
-  },
-  {
-    title: "Teacher",
-    color: "#ee7856",
-    path: "/resume-samples/teacher-resume-examples",
-  },
-  {
-    title: "High School",
-    color: "#FAE315",
-    path: "/resume-samples/high-school-resume-examples",
-  },
-  {
-    title: "Medical Assistant",
-    color: "#79b2f0",
-    path: "/resume-samples/medical-assitant-resume-examples",
-  },
-  {
-    title: "Software Engineer",
-    color: "#ee7856",
-    path: "/resume-samples/software-engineer-resume-examples",
-  },
-  {
-    title: "Cashier",
-    color: "#FAE315",
-    path: "/resume-samples/cashier-resume-examples",
-  },
-  {
-    title: "Retail Sales Associate Examples",
-    color: "#79b2f0",
-    path: "/resume-samples/retail-sales-associate-resume-examples",
+    path: "/resume-samples#banking-finance",
   },
 ];
 
 export const coverLetterLinks = [
   {
-    title: "Administrative Assistant",
+    title: "General Cover Letter",
     color: "#79b2f0",
-    path: "/cover-letter-examples/administrative-assistant-cover-letter-example",
+    path: "/cover-letter-examples#general-cover-letter-example",
   },
   {
-    title: "Babysitter",
+    title: "Entry-level cover letter example",
     color: "#ee7856",
-    path: "/cover-letter-examples/babysitter-cover-letter-example",
-  },
-  {
-    title: "College Student",
-    color: "#FAE315",
-    path: "/cover-letter-examples/college-student-cover-letter-example",
-  },
-  {
-    title: "Customer Service",
-    color: "#79b2f0",
-    path: "/cover-letter-examples/customer-service-cover-letter-example",
-  },
-  {
-    title: "Graphic Designer",
-    color: "#ee7856",
-    path: "/cover-letter-examples/graphic-designer-cover-letter-example",
-  },
-  {
-    title: "IT",
-    color: "#FAE315",
-    path: "/cover-letter-examples/it-cover-letter-example",
-  },
-  {
-    title: "Librarian",
-    color: "#79b2f0",
-    path: "/cover-letter-examples/librarian-cover-letter-example",
-  },
-
-  {
-    title: "Marketing",
-    color: "#FAE315",
-    path: "/cover-letter-examples/marketing-cover-letter-example",
-  },
-  {
-    title: "Pharmacist",
-    color: "#ee7856",
-    path: "/cover-letter-examples/pharmacist-cover-letter-example",
-  },
-  {
-    title: "Nursing",
-    color: "#79b2f0",
-    path: "/cover-letter-examples/nursing-cover-letter-example",
-  },
-  {
-    title: "Teacher",
-    color: "#ee7856",
-    path: "/cover-letter-examples/teacher-cover-letter-example",
-  },
-  {
-    title: "High School",
-    color: "#FAE315",
-    path: "/cover-letter-examples/high-school-cover-letter-example",
-  },
-  {
-    title: "Medical Assistant",
-    color: "#79b2f0",
-    path: "/cover-letter-examples/medical-assitant-cover-letter-example",
-  },
-  {
-    title: "Software Engineer",
-    color: "#ee7856",
-    path: "/cover-letter-examples/software-engineer-cover-letter-example",
-  },
-  {
-    title: "Consulting",
-    color: "#FAE315",
-    path: "/cover-letter-examples/consulting-cover-letter-example",
-  },
-  {
-    title: "Academic",
-    color: "#79b2f0",
-    path: "/cover-letter-examples/academic-cover-letter-example",
-  },
-  {
-    title: "Project Manager",
-    color: "#ee7856",
-    path: "/cover-letter-examples/project-manager-cover-letter-example",
+    path: "/cover-letter-examples#entry-level-cover-letter-example",
   },
 ];
 
@@ -600,26 +454,6 @@ export const coverLetterNavLinks = [
     text: "Simple",
     color: "#f892bc",
     path: "/cover-letter-templates#simple",
-  },
-  {
-    text: "Google Docs",
-    color: "#FAE315",
-    path: "/cover-letter-templates#google-docs",
-  },
-  {
-    text: "Picture",
-    color: "#4b94ea",
-    path: "/cover-letter-templates#picture",
-  },
-  {
-    text: "CV",
-    color: "#ea723c",
-    path: "/cover-letter-templates#cv",
-  },
-  {
-    text: "Microsoft Word",
-    color: "#2ca482",
-    path: "/cover-letter-templates#microsoft-word",
   },
 ];
 
@@ -1036,26 +870,6 @@ export const resumeNavLinks = [
     color: "#f892bc",
     path: "/resume-templates#simple",
   },
-  {
-    text: "Google Docs",
-    color: "#FAE315",
-    path: "/resume-templates#google-docs",
-  },
-  {
-    text: "Picture",
-    color: "#4b94ea",
-    path: "/resume-templates#picture",
-  },
-  {
-    text: "CV",
-    color: "#ea723c",
-    path: "/resume-templates#cv",
-  },
-  {
-    text: "Microsoft Word",
-    color: "#2ca482",
-    path: "/resume-templates#microsoft-word",
-  },
 ];
 
 export const cvTemplates = [
@@ -1201,7 +1015,7 @@ export const levelUpLinks = [
     linkText: "Get a professional template",
   },
   {
-    path: "/blog/resume-help/how-to-write-a-resume",
+    path: "/blog",
     number: "02",
     color: "#ea723c",
     icon: CustomizeEachSection,
@@ -1211,7 +1025,7 @@ export const levelUpLinks = [
     linkText: "Learn how to write a resume",
   },
   {
-    path: "/blog/resume-help/skills-for-resume",
+    path: "/blog",
     number: "03",
     color: "#2ca482",
     icon: EmphasizeYourSkills,

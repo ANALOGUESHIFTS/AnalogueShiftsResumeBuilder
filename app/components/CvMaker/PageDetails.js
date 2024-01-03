@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import HeroBg from "@/public/cover-letter-builder-hero.webp";
+import HeroBg from "@/public/hero-image.png";
 import Image from "next/image";
 import SalesForceLogo from "@/public/salesforce-logo.svg";
 import NewYorkLogo from "@/public/new-york-post-logo.svg";
@@ -47,12 +47,12 @@ export default function CvMakerPageDetails() {
           ONLINE CV MAKER
         </p>
         <p className="py-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-          Make a job-winning CV in minutes.
+          Craft a winning CV in minutes.
         </p>
         <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-          You don’t need to spend hours writing the perfect CV. Create a custom
-          CV in 15 minutes or less and start getting more interviews after using
-          our free CV builder tool.
+          Save yourself from spending hours writing the perfect CV. Generate a
+          custom CV in 15 minutes or less and increase your interview prospects
+          with our free CV builder tool.
         </p>
         <div className="w-full flex justify-center">
           <Link
@@ -63,11 +63,9 @@ export default function CvMakerPageDetails() {
           </Link>
         </div>
       </main>
-      <Image
-        src={HeroBg}
-        alt="Hero Background"
-        className="absolute w-[90%] left-[5%] top-[480px] z-30 max-[600px]:w-full max-[600px]:left-0 max-[600px]:top-[520px]"
-      />
+      <div className="w-full absolute px-5 top-[480px] left-0 z-30 max-[600px]:top-[520px] flex justify-center">
+        <Image src={HeroBg} alt="Hero Background" className="" />
+      </div>
       <main className="w-full bg-white box-border items-center h-[900px] max-[1150px]:pt-[280px] max-[986px]:pt-[180px] max-[800px]:pt-[100px] max-[600px]:pt-[260px] max-[450px]:pt-[200px] max-[1150px]:h-max relative pt-[380px] px-5 flex flex-col">
         <div className="w-full px-10 max-[600px]:px-0 h-auto flex flex-wrap gap-x-10 gap-y-10">
           {serviceData.map((data) => {
@@ -97,8 +95,7 @@ export default function CvMakerPageDetails() {
           Our best CV templates
         </p>
         <p className="text-black/60 w-[700px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-          Choose from our range of HR-approved, professional CV templates that
-          have landed 100,000+ people across the world new jobs.
+          Select from our array of HR-approved, professional CV templates.
         </p>
 
         <Link

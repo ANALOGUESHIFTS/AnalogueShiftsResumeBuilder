@@ -23,72 +23,12 @@ export default function ResumeTemplateSection() {
       img: TemplateTwo,
       name: "Clean",
     },
-    {
-      id: "resume-02",
-      img: ResumeTemplateTwo,
-      name: "Clean",
-    },
-    {
-      id: "resume-03",
-      img: ResumeTemplateThree,
-      name: "Clean",
-    },
-    {
-      id: "resume-04",
-      img: TemplateTwo,
-      name: "Clean",
-    },
-    {
-      id: "resume-05",
-      img: ResumeTemplateTwo,
-      name: "Clean",
-    },
-    {
-      id: "resume-06",
-      img: ResumeTemplateThree,
-      name: "Clean",
-    },
-    {
-      id: "resume-07",
-      img: TemplateTwo,
-      name: "Clean",
-    },
   ];
 
   const coverLetterTemplates = [
     {
       id: "cover-letter-01",
       img: TemplateOne,
-      name: "Clean",
-    },
-    {
-      id: "cover-letter-02",
-      img: CoverLetterOne,
-      name: "Clean",
-    },
-    {
-      id: "cover-letter-03",
-      img: CoverLetterTwo,
-      name: "Clean",
-    },
-    {
-      id: "cover-letter-04",
-      img: CoverLetterThree,
-      name: "Clean",
-    },
-    {
-      id: "cover-letter-05",
-      img: TemplateOne,
-      name: "Clean",
-    },
-    {
-      id: "cover-letter-06",
-      img: CoverLetterOne,
-      name: "Clean",
-    },
-    {
-      id: "cover-letter-07",
-      img: CoverLetterThree,
       name: "Clean",
     },
   ];
@@ -162,7 +102,7 @@ export default function ResumeTemplateSection() {
       </p>
       <p className="text-black/60 w-[700px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
         {selected === "Resume"
-          ? "Regardless of your background, there’s a template in the Genius resume maker that’s perfect for highlighting your experience & skill set."
+          ? "Regardless of your background, the Genius resume maker offers a template perfectly suited for showcasing your experience and skill set."
           : "Let the Genius cover letter generator automatically format the content of your letter into a professional, HR-approved template."}
       </p>
       {selected === "Resume" ? (
