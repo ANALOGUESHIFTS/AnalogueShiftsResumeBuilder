@@ -21,13 +21,9 @@ import PhoneIcon from "@/public/phone-icon.png";
 //Datas
 import { buldersLink } from "./data";
 import { templateLinks } from "./data";
-import { resumeHelpLinks } from "./data";
 import { coverLetterTemplateLinks } from "./data";
-import { coverLetterHelpLinks } from "./data";
 import { cvTemplateLinks } from "./data";
-import { cvHelpLinks } from "./data";
 import { faqsData } from "./data";
-import { blogData } from "./data";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -264,10 +260,7 @@ export default function NavBar() {
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <Link
-                href="/blog/resume-help"
-                className="flex gap-3 items-center"
-              >
+              <Link href="/blog" className="flex gap-3 items-center">
                 <div className="w-7 h-7 rounded-lg bg-gray-200/70 flex justify-center items-center">
                   <Image
                     src={LeafImage}
@@ -277,19 +270,6 @@ export default function NavBar() {
                 </div>
                 <p className="text-black/80 font-medium text-sm">RESUME HELP</p>
               </Link>
-              <div className="w-full flex flex-col">
-                {resumeHelpLinks.map((data) => {
-                  return (
-                    <Link
-                      key={crypto.randomUUID()}
-                      href={data.path}
-                      className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
-                    >
-                      {data.name}
-                    </Link>
-                  );
-                })}
-              </div>
             </div>
             <div className="flex flex-col gap-3">
               <Link href="/resume-samples" className="flex gap-3 items-center">
@@ -340,10 +320,7 @@ export default function NavBar() {
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <Link
-                href="/blog/cover-letter-help"
-                className="flex gap-3 items-center"
-              >
+              <Link href="/blog" className="flex gap-3 items-center">
                 <div className="w-7 h-7 rounded-lg bg-gray-200/70 flex justify-center items-center">
                   <Image
                     src={LeafImage}
@@ -355,19 +332,6 @@ export default function NavBar() {
                   COVER LETTER HELP
                 </p>
               </Link>
-              <div className="w-full flex flex-col">
-                {coverLetterHelpLinks.map((data) => {
-                  return (
-                    <Link
-                      key={crypto.randomUUID()}
-                      href={data.path}
-                      className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
-                    >
-                      {data.name}
-                    </Link>
-                  );
-                })}
-              </div>
             </div>
             <div className="flex flex-col gap-3">
               <Link
@@ -418,7 +382,7 @@ export default function NavBar() {
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <Link href="/blog/cv-help" className="flex gap-3 items-center">
+              <Link href="/blog" className="flex gap-3 items-center">
                 <div className="w-7 h-7 rounded-lg bg-gray-200/70 flex justify-center items-center">
                   <Image
                     src={LeafImage}
@@ -428,19 +392,6 @@ export default function NavBar() {
                 </div>
                 <p className="text-black/80 font-medium text-sm">CV HELP</p>
               </Link>
-              <div className="w-full flex flex-col">
-                {cvHelpLinks.map((data) => {
-                  return (
-                    <Link
-                      key={crypto.randomUUID()}
-                      href={data.path}
-                      className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
-                    >
-                      {data.name}
-                    </Link>
-                  );
-                })}
-              </div>
             </div>
             <div className="flex flex-col gap-3">
               <Link href="/cv-examples" className="flex gap-3 items-center">
@@ -459,7 +410,7 @@ export default function NavBar() {
         {selectedMobileMenu === "Resources" && (
           <div className="w-full h-[300px] overflow-y-auto pt-2 flex flex-col gap-5">
             <div className="flex flex-col gap-3">
-              <Link href="/faqs" className="flex gap-3 items-center">
+              <Link href="/faq" className="flex gap-3 items-center">
                 <div className="w-7 h-7 rounded-lg bg-gray-200/70 flex justify-center items-center">
                   <Image
                     src={QuestionIcon}
@@ -494,19 +445,6 @@ export default function NavBar() {
                 </div>
                 <p className="text-black/80 font-medium text-sm">BLOG</p>
               </Link>
-              <div className="w-full flex flex-col">
-                {blogData.map((data) => {
-                  return (
-                    <Link
-                      key={crypto.randomUUID()}
-                      href={data.path}
-                      className="py-2 pr-2 pl-10 rounded-lg hover:bg-gray-200/70 text-black/70 font-medium text-sm"
-                    >
-                      {data.title}
-                    </Link>
-                  );
-                })}
-              </div>
             </div>
           </div>
         )}

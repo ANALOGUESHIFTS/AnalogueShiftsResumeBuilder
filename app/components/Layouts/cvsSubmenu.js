@@ -10,55 +10,11 @@ import RightArrowImage from "@/public/right-arrow-icon.png";
 import FileImage from "@/public/file-icon.png";
 import ResumeExample from "@/public/resume-example-nav.webp";
 import PhoneIcon from "@/public/phone-icon.png";
+import { cvTemplateLinks } from "./data";
+import ResumeFormat from "@/public/cover-letter-nav-image.webp";
 
 export default function CVSubMenu() {
   const [opacity, setOpacity] = useState(0);
-
-  const templateLinks = [
-    {
-      name: "Business",
-      path: "/cv-templates#business",
-      subTitle: "Professional CV templates for senior-level positions.",
-    },
-    {
-      name: "Graduate",
-      path: "/cv-templates#graduate",
-      subTitle: "Templates for academics and scholars.",
-    },
-    {
-      name: "Research",
-      path: "/cv-templates#research",
-      subTitle: "A format to showcase your research background.",
-    },
-    {
-      name: "Writer",
-      path: "/cv-templates#writer",
-      subTitle: "Perfect templates for published writers.",
-    },
-  ];
-
-  const cvHelpLinks = [
-    {
-      name: "What is a cv?",
-      path: "/blog/cv-help/what-is-a-cv",
-    },
-    {
-      name: "How to write a cv for a job",
-      path: "/blog/cv-help/how-to-write-a-cv",
-    },
-    {
-      name: "Cv vs Resume: what's the difference?",
-      path: "/blog/cv-help/cv-vs-resume",
-    },
-    {
-      name: "How to write an academic cv",
-      path: "/blog/cv-help/academic-cv",
-    },
-    {
-      name: "Cv examples for students",
-      path: "/blog/cv-help/cv-examples-for-students",
-    },
-  ];
 
   useEffect(() => setOpacity(1), []);
 
@@ -93,7 +49,7 @@ export default function CVSubMenu() {
             </div>
           </Link>
           <div className="w-full flex flex-wrap gap-5 gap-y-5">
-            {templateLinks.map((data) => {
+            {cvTemplateLinks.map((data) => {
               return (
                 <Link
                   href={data.path}
@@ -111,11 +67,11 @@ export default function CVSubMenu() {
             })}
           </div>
         </div>
-        <div className="w-[30%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box">
-          <Link
-            href="/blog/cv-help"
-            className="w-full flex justify-between pb-5"
-          >
+        <Link
+          href="/blog"
+          className="w-[30%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box"
+        >
+          <Link href="/blog" className="w-full flex justify-between pb-5">
             <div className="flex items-center gap-2">
               <Image
                 src={LeafImage}
@@ -135,20 +91,14 @@ export default function CVSubMenu() {
               />
             </div>
           </Link>
-          <div className="w-full flex flex-col">
-            {cvHelpLinks.map((data) => {
-              return (
-                <Link
-                  key={crypto.randomUUID()}
-                  href={data.path}
-                  className="p-2.5 w-full rounded-lg text-black/70 font-medium text-sm hover:bg-gray-200/80"
-                >
-                  {data.name}
-                </Link>
-              );
-            })}
+          <div className="w-full rounded-lg">
+            <Image
+              src={ResumeFormat}
+              alt="Image"
+              className="w-full rounded-lg"
+            />
           </div>
-        </div>
+        </Link>
         <Link
           href="/cv-examples"
           className="w-[25%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box"

@@ -8,58 +8,11 @@ import RightArrowImage from "@/public/right-arrow-icon.png";
 import FileImage from "@/public/file-icon.png";
 import PhoneIcon from "@/public/phone-icon.png";
 import QuestionIcon from "@/public/question-icon.png";
-import SettingsIcon from "@/public/settings-icon.svg";
-import ResumeFaqNavIcon from "@/public/resume-faqs-nav-icon.svg";
-import CoverLetterFaqNavIcon from "@/public/cover-letter-faqs-nav-icon.svg";
-import CvFaqNavIcon from "@/public/cv-faqs-nav-icon.svg";
-import JobHuntingImage from "@/public/job-hunting-nav.webp";
-import InterviewHelp from "@/public/interview-help-nav.webp";
-import CareerAdvice from "@/public/career-advice-nav.webp";
+import { faqsData } from "./data";
+import JobHuntImage from "@/public/resources-blog.jpg";
 
 export default function ResourcesSubMenu() {
   const [opacity, setOpacity] = useState(0);
-
-  const faqsData = [
-    {
-      image: SettingsIcon,
-      title: "Technical Assistance",
-      path: "/faq#technical-assistance",
-    },
-    {
-      image: CoverLetterFaqNavIcon,
-      title: "Payment Information",
-      path: "/faq#payment-information",
-    },
-    {
-      image: ResumeFaqNavIcon,
-      title: "Delete or request data",
-      path: "/faq#delete-or-request-data",
-    },
-  ];
-
-  const blogData = [
-    {
-      title: "Job Hunting",
-      path: "/blog/job-hunting",
-      description:
-        "Need help getting your job hunt started? Our job-hunting resources, guides, and expert advice are at your disposal.",
-      image: JobHuntingImage,
-    },
-    {
-      title: "Interview Help",
-      path: "/blog/interview",
-      description:
-        "You're one step away from getting the job. Win over hiring managers with our expert interview tips.",
-      image: InterviewHelp,
-    },
-    {
-      title: "Career Advice",
-      path: "/blog/career-advice",
-      description:
-        "Grow as a professional with career advice from certified experts and experienced HR pros.",
-      image: CareerAdvice,
-    },
-  ];
 
   useEffect(() => setOpacity(1), []);
 
@@ -69,7 +22,7 @@ export default function ResourcesSubMenu() {
       className="absolute duration-500 top-[70px] -left-6 w-screen h-[450px] bg-white"
     >
       <div className="w-full p-8 flex justify-between border-b">
-        <div className="w-[35%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box">
+        <div className="w-[45%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box">
           <Link href="/faq" className="w-full flex justify-between pb-5">
             <div className="flex items-center gap-2">
               <Image
@@ -113,7 +66,7 @@ export default function ResourcesSubMenu() {
             })}
           </div>
         </div>
-        <div className="w-[60%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box">
+        <div className="w-[45%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box">
           <Link href="/blog" className="w-full flex justify-between pb-5">
             <div className="flex items-center gap-2">
               <Image
@@ -134,31 +87,13 @@ export default function ResourcesSubMenu() {
               />
             </div>
           </Link>
-          <div className="w-full flex justify-between">
-            {blogData.map((data) => {
-              return (
-                <Link
-                  key={crypto.randomUUID()}
-                  href={data.path}
-                  className="flex flex-col w-[32%] resources-link"
-                >
-                  <div className="w-full h-[120px] overflow-hidden">
-                    <Image
-                      src={data.image}
-                      alt="Image"
-                      className="w-full duration-300 h-full rounded-lg img"
-                    />
-                  </div>
-                  <p className="pt-3 font-medium text-black/80 text-sm pb-1">
-                    {data.title}
-                  </p>
-                  <p className="text-black/60 text-[13px] font-normal">
-                    {data.description}
-                  </p>
-                </Link>
-              );
-            })}
-          </div>
+          <Link href="/blog" className="w-full ">
+            <Image
+              src={JobHuntImage}
+              alt="Job Hunt Image"
+              className="object-cover w-full h-[270px]"
+            />
+          </Link>
         </div>
       </div>
       <div className="py-2 w-full flex justify-center items-center gap-2">

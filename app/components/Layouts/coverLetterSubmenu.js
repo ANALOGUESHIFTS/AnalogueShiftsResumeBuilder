@@ -10,55 +10,11 @@ import RightArrowImage from "@/public/right-arrow-icon.png";
 import FileImage from "@/public/file-icon.png";
 import ResumeExample from "@/public/resume-example-nav.webp";
 import PhoneIcon from "@/public/phone-icon.png";
+import { coverLetterTemplateLinks } from "./data";
+import ResumeFormat from "@/public/cover-letter-nav-image.webp";
 
 export default function CoverLetterSubMenu() {
   const [opacity, setOpacity] = useState(0);
-
-  const templateLinks = [
-    {
-      name: "Professional",
-      path: "/cover-letter-templates#professional",
-      subTitle: "HR approved, organized, and stylish.",
-    },
-    {
-      name: "Modern",
-      path: "/cover-letter-templates#modern",
-      subTitle: "Contemporary templates perfect for your new job.",
-    },
-    {
-      name: "Creative",
-      path: "/cover-letter-templates#creative",
-      subTitle: "A little visual flair to highlight your creativity.",
-    },
-    {
-      name: "Simple",
-      path: "/cover-letter-templates#creative",
-      subTitle: "Basic templates that focus on your work experience.",
-    },
-  ];
-
-  const coverLetterHelpLinks = [
-    {
-      name: "What is a cover letter?",
-      path: "/blog/cover-letter-help/what-is-a-cover-letter",
-    },
-    {
-      name: "How to write a cover letter",
-      path: "/blog/cover-letter-help/how-to-write-a-cover-letter",
-    },
-    {
-      name: "How to start a cover letter",
-      path: "/blog/cover-letter-help/how-to-start-a-cover-letter",
-    },
-    {
-      name: "Best cover letters of 2023",
-      path: "/blog/cover-letter-help/best-cover-letters",
-    },
-    {
-      name: "Cover letter format for a job",
-      path: "/blog/cover-letter-help/cover-letter-format",
-    },
-  ];
 
   useEffect(() => setOpacity(1), []);
 
@@ -93,7 +49,7 @@ export default function CoverLetterSubMenu() {
             </div>
           </Link>
           <div className="w-full flex flex-wrap gap-5 gap-y-5">
-            {templateLinks.map((data) => {
+            {coverLetterTemplateLinks.map((data) => {
               return (
                 <Link
                   href={data.path}
@@ -111,11 +67,11 @@ export default function CoverLetterSubMenu() {
             })}
           </div>
         </div>
-        <div className="w-[30%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box">
-          <Link
-            href="/blog/cover-letter-help"
-            className="w-full flex justify-between pb-5"
-          >
+        <Link
+          href="/blog"
+          className="w-[30%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box"
+        >
+          <Link href="/blog" className="w-full flex justify-between pb-5">
             <div className="flex items-center gap-2">
               <Image
                 src={LeafImage}
@@ -135,20 +91,14 @@ export default function CoverLetterSubMenu() {
               />
             </div>
           </Link>
-          <div className="w-full flex flex-col">
-            {coverLetterHelpLinks.map((data) => {
-              return (
-                <Link
-                  key={crypto.randomUUID()}
-                  href={data.path}
-                  className="p-2.5 w-full rounded-lg text-black/70 font-medium text-sm hover:bg-gray-200/80"
-                >
-                  {data.name}
-                </Link>
-              );
-            })}
+          <div className="w-full rounded-lg">
+            <Image
+              src={ResumeFormat}
+              alt="Image"
+              className="w-full rounded-lg"
+            />
           </div>
-        </div>
+        </Link>
         <Link
           href="/cover-letter-examples"
           className="w-[25%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box"

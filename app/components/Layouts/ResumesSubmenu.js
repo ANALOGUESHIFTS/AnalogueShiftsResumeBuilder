@@ -9,50 +9,12 @@ import LeafImage from "@/public/leaf.png";
 import RightArrowImage from "@/public/right-arrow-icon.png";
 import FileImage from "@/public/file-icon.png";
 import ResumeExample from "@/public/resume-example-nav.webp";
+import ResumeFormat from "@/public/resume-format.webp";
 import PhoneIcon from "@/public/phone-icon.png";
+import { templateLinks } from "./data";
 
 export default function ResumesSubMenu() {
   const [opacity, setOpacity] = useState(0);
-
-  const templateLinks = [
-    {
-      name: "Professional",
-      path: "/resume-templates#professional",
-      subTitle: "HR approved, organized, and stylish.",
-    },
-    {
-      name: "Modern",
-      path: "/resume-templates#modern",
-      subTitle: "Contemporary templates perfect for your new job.",
-    },
-    {
-      name: "Creative",
-      path: "/resume-templates#creative",
-      subTitle: "A little visual flair to highlight your creativity.",
-    },
-    {
-      name: "Simple",
-      path: "/resume-templates#simple",
-      subTitle: "Basic templates that focus on your work experience.",
-    },
-  ];
-
-  const resumeHelpLinks = [
-    { name: "What is a resume?", path: "/blog/resume-help/what-is-a-resume" },
-    {
-      name: "How to make a resume",
-      path: "/blog/resume-help/how-to-write-a-resume",
-    },
-    { name: "The best resume format", path: "/blog/resume-help/resume-format" },
-    {
-      name: "Skills for your resume",
-      path: "/blog/resume-help/skills-for-resume",
-    },
-    {
-      name: "Resume summary examples",
-      path: "/blog/resume-help/resume-summary",
-    },
-  ];
 
   useEffect(() => setOpacity(1), []);
 
@@ -105,11 +67,11 @@ export default function ResumesSubMenu() {
             })}
           </div>
         </div>
-        <div className="w-[30%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box">
-          <Link
-            href="/blog/resume-help"
-            className="w-full flex justify-between pb-5"
-          >
+        <Link
+          href="/blog"
+          className="w-[30%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box"
+        >
+          <Link href="/blog" className="w-full flex justify-between pb-5">
             <div className="flex items-center gap-2">
               <Image
                 src={LeafImage}
@@ -129,20 +91,14 @@ export default function ResumesSubMenu() {
               />
             </div>
           </Link>
-          <div className="w-full flex flex-col">
-            {resumeHelpLinks.map((data) => {
-              return (
-                <Link
-                  key={crypto.randomUUID()}
-                  href={data.path}
-                  className="p-2.5 w-full rounded-lg text-black/70 font-medium text-sm hover:bg-gray-200/80"
-                >
-                  {data.name}
-                </Link>
-              );
-            })}
+          <div className="w-full h-[240px] rounded-lg">
+            <Image
+              src={ResumeFormat}
+              alt="Image"
+              className="w-full h-full rounded-lg"
+            />
           </div>
-        </div>
+        </Link>
         <Link
           href="/resume-samples"
           className="w-[25%] h-[350px] bg-white duration-500 hover:shadow-2xl rounded-xl p-5 builders-link-box"

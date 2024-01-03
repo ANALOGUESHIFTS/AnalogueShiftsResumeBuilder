@@ -1,3 +1,7 @@
+import SettingsIcon from "@/public/settings-icon.svg";
+import ResumeFaqNavIcon from "@/public/resume-faqs-nav-icon.svg";
+import CoverLetterFaqNavIcon from "@/public/cover-letter-faqs-nav-icon.svg";
+
 export const buldersLink = [
   {
     name: "RESUME BUILDER",
@@ -17,18 +21,22 @@ export const templateLinks = [
   {
     name: "Professional",
     path: "/resume-templates#professional",
+    subTitle: "HR approved, organized, and stylish.",
   },
   {
     name: "Modern",
     path: "/resume-templates#modern",
+    subTitle: "Contemporary templates perfect for your new job.",
   },
   {
     name: "Creative",
     path: "/resume-templates#creative",
+    subTitle: "A little visual flair to highlight your creativity.",
   },
   {
     name: "Simple",
     path: "/resume-templates#simple",
+    subTitle: "Basic templates that focus on your work experience.",
   },
 ];
 
@@ -53,18 +61,22 @@ export const coverLetterTemplateLinks = [
   {
     name: "Professional",
     path: "/cover-letter-templates#professional",
+    subTitle: "HR approved, organized, and stylish.",
   },
   {
     name: "Modern",
     path: "/cover-letter-templates#modern",
+    subTitle: "Contemporary templates perfect for your new job.",
   },
   {
     name: "Creative",
     path: "/cover-letter-templates#creative",
+    subTitle: "A little visual flair to highlight your creativity.",
   },
   {
     name: "Simple",
     path: "/cover-letter-templates#creative",
+    subTitle: "Basic templates that focus on your work experience.",
   },
 ];
 
@@ -95,18 +107,22 @@ export const cvTemplateLinks = [
   {
     name: "Business",
     path: "/cv-templates#business",
+    subTitle: "Professional CV templates for senior-level positions.",
   },
   {
     name: "Graduate",
     path: "/cv-templates#graduate",
+    subTitle: "Templates for academics and scholars.",
   },
   {
     name: "Research",
     path: "/cv-templates#research",
+    subTitle: "A format to showcase your research background.",
   },
   {
     name: "Writer",
     path: "/cv-templates#writer",
+    subTitle: "Perfect templates for published writers.",
   },
 ];
 
@@ -135,14 +151,17 @@ export const cvHelpLinks = [
 
 export const faqsData = [
   {
+    image: SettingsIcon,
     title: "Technical Assistance",
     path: "/faq#technical-assistance",
   },
   {
+    image: CoverLetterFaqNavIcon,
     title: "Payment Information",
     path: "/faq#payment-information",
   },
   {
+    image: ResumeFaqNavIcon,
     title: "Delete or request data",
     path: "/faq#delete-or-request-data",
   },

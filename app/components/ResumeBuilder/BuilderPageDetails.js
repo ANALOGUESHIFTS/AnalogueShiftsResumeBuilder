@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
-import Background from "@/public/resumes-background.png";
 import BasicQuestion from "./BasicQuestions";
 import InfoScreen from "./InfoScreen";
 
