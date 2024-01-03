@@ -224,7 +224,8 @@ export default function ResumeSamplePageDetails() {
             EXAMPLES FOR EVERY SITUATION
           </p>
           <p className="pb-6 text-[2.6rem] px-5 w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
-            No work experience or changing careers?
+            Exploring new career paths or entering the workforce without prior
+            experience?
           </p>
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
             Regardless of where you are in life, we offer resume examples and
@@ -234,10 +235,10 @@ export default function ResumeSamplePageDetails() {
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal tracking-normal text-base text-center">
             Looking for more ideas beyond just resume samples? Our{" "}
             <Link
-              href="/blog/resume-help"
+              href="/blog"
               className="text-AnalogueShiftsTextColor/90 hover:underline"
             >
-              Resume Help Blog
+              Blog
             </Link>{" "}
             is here to help you out
           </p>

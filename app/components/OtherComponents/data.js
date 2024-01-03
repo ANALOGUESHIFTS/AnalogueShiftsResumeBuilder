@@ -982,26 +982,6 @@ export const cvNavLinks = [
     text: "Emory",
     path: "/cv-templates#emory",
   },
-  {
-    text: "European",
-    path: "/cv-templates#european",
-  },
-  {
-    text: "Graduate",
-    path: "/cv-templates#graduate",
-  },
-  {
-    text: "Harvard",
-    path: "/cv-templates#harvard",
-  },
-  {
-    text: "Research",
-    path: "/cv-templates#research",
-  },
-  {
-    text: "Writer",
-    path: "/cv-templates#writer",
-  },
 ];
 export const levelUpLinks = [
   {

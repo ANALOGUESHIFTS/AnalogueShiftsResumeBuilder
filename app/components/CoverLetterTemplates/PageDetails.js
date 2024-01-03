@@ -5,7 +5,7 @@ import Image from "next/image";
 import HomeIcon from "@/public/house-icon.png";
 import RightBracket from "@/public/right-bracket.png";
 import Link from "next/link";
-import { resumeTemplates, blogData } from "./data";
+import { resumeTemplates } from "./data";
 import Faqs from "../OtherComponents/Faqs";
 import FreeCoverLetterTemplates from "../OtherComponents/FreeCoverLetter";
 import MasonryGrid from "../blog/MansoryGrid";

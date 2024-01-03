@@ -199,7 +199,8 @@ export default function CoverLetterExamplePageDetails() {
             EXAMPLES FOR EVERY SITUATION
           </p>
           <p className="pb-6 text-[2.6rem] px-5 w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
-            No work experience or changing careers?
+            Exploring new career paths or entering the workforce without prior
+            experience?
           </p>
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
             No matter where you’re at in life, we have cover letter examples and
@@ -209,14 +210,12 @@ export default function CoverLetterExamplePageDetails() {
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal tracking-normal text-base text-center">
             Looking for more ideas beyond just cover letter samples? Our{" "}
             <Link
-              href="/blog/cover-letter-help"
+              href="/blog"
               className="text-AnalogueShiftsTextColor/90 hover:underline"
             >
-              Cover Letter Help Blog
+              Blog
             </Link>{" "}
-            covers every aspect of cover letter writing, formatting, and detail
-            related to making a cover letter — many details you may not realize
-            even exist.
+            is here to help you out.
           </p>
         </section>
         <section className="w-full bg-white flex justify-center px-10 max-[800px]:px-5">
@@ -232,7 +231,7 @@ export default function CoverLetterExamplePageDetails() {
               </p>
               <p className="text-black/60   font-normal tracking-normal text-base">
                 After you’ve pulled ideas from our professional cover letter
-                examples and learned how to make a cover letter , download a
+                examples and learned how to make a cover letter , download a{" "}
                 <Link
                   href="/cover-letter-templates"
                   className="text-AnalogueShiftsTextColor/90 hover:underline"

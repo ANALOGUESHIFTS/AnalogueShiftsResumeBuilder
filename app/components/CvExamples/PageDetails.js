@@ -44,8 +44,8 @@ export default function CvExamplePageDetails() {
               CV Examples
             </p>
             <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-              A CV is a comprehensive document that provides an overview of your
-              academic and professional experience.
+              A CV is an extensive document that offers a comprehensive overview
+              of your academic and professional experience.
             </p>
             <div className="w-full flex max-[500px]:flex-col justify-center">
               <Link
@@ -59,7 +59,7 @@ export default function CvExamplePageDetails() {
         </main>
         <section className="mt-10 w-full px-10 max-[800px]:px-5 h-max flex flex-col  bg-no-repeat">
           <p className="pb-6 text-[2.6rem] w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
-            Our Most Used Cv Samples
+            Our Most Utilized CV Samples
           </p>
           <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
             {resumeTemplates.map((data) => {
@@ -86,14 +86,14 @@ export default function CvExamplePageDetails() {
         </section>
         <section className="py-[100px] bg-[#fafbfc] h-max w-full  flex flex-col items-center">
           <p className="text-black/50 px-5 pb-1 text-center max-[1050px]:text-center font-bold tracking-wide text-[13px]">
-            JOB-SPECIFIC CV
+            Industry-Tailored CV
           </p>
           <p className="pb-6 text-[2.6rem] px-5 w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
-            Sample CV by Industry
+            Industry-Specific CV Samples
           </p>
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-            Writing a cv for a specific job? We have one of the largest
-            collections of industry-specific cv examples on the internet.
+            Crafting a CV for a specific job? Explore one of the largest
+            collections of industry-specific CV examples on the internet.
           </p>
           <div className="w-full px-10 max-[800px]:px-5 z-60 py-5 sticky top-0 left-0 bg-[#fafbfc]">
             <div
@@ -148,9 +148,9 @@ export default function CvExamplePageDetails() {
               <div className="w-full max-[974px]:hidden h-max sticky top-[130px] bg-white rounded-lg shadow-2xl p-5 gap-4 flex flex-col justify-center">
                 <Image src={SideBarImage} alt="Side Bar Image" />
                 <p className="text-center font-medium text-base text-black/60 leading-7">
-                  Make a job-winning cv in 12 minutes with our{" "}
-                  <b>AI-powered cv builder</b>. Simply pick a cv template, fill
-                  in your information, and let our software do the rest.
+                  Craft a winning resume in just 12 minutes with our resume
+                  builder. Choose a resume template, input your information, and
+                  let our software take care of the rest.
                 </p>
                 <Link
                   href="/cover-letter-builder/app"
@@ -190,26 +190,25 @@ export default function CvExamplePageDetails() {
         </section>
         <section className="w-full bg-white h-max py-[100px] flex flex-col items-center px-10 max-[800px]:px-5">
           <p className="text-black/50 px-5 pb-1 text-center max-[1050px]:text-center font-bold tracking-wide text-[13px]">
-            EXAMPLES FOR EVERY SITUATION
+            Illustrations for Every Scenario
           </p>
           <p className="pb-6 text-[2.6rem] px-5 w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
-            No work experience or changing careers?
+            Transitioning Careers or Starting Fresh with No Work Experience?
           </p>
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-            No matter where you’re at in life, we have cv examples and writing
-            guides to help you make a cv that shows employers why you’d be a
-            great hire.
+            Regardless of your life stage, we offer CV examples and writing
+            guides to assist you in creating a CV that demonstrates to employers
+            why you would be an excellent hire.
           </p>
           <p className="text-black/60 px-5 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal tracking-normal text-base text-center">
             Looking for more ideas beyond just cover letter samples? Our{" "}
             <Link
-              href="/blog/cv-help"
+              href="/blog"
               className="text-AnalogueShiftsTextColor/90 hover:underline"
             >
-              Cv Help Blog
+              Blog
             </Link>{" "}
-            covers every aspect of cv writing, formatting, and detail related to
-            making a cv — many details you may not realize even exist.
+            is here to help you out.
           </p>
         </section>
         <section className="w-full bg-white flex justify-center px-10 max-[800px]:px-5">
@@ -221,30 +220,24 @@ export default function CvExamplePageDetails() {
             />
             <div className="flex max-[775px]:w-full flex-col">
               <p className="text-black/70 pb-3  font-semibold tracking-wide text-sm">
-                EXPERT ADVICE TO GET STARTED
+                Professional Guidance to Begin
               </p>
               <p className="text-black/60   font-normal tracking-normal text-base">
                 After you’ve pulled ideas from our professional cv examples and
-                learned{" "}
-                <Link
-                  href="/blog/cover-letter-help"
-                  className="text-AnalogueShiftsTextColor/90 hover:underline"
-                >
-                  how to make a cv
-                </Link>
-                , download a{" "}
+                learned how to make a cv , download a{" "}
                 <Link
                   href="/cover-letter-templates"
                   className="text-AnalogueShiftsTextColor/90 hover:underline"
                 >
-                  free cv template
+                  cv template
                 </Link>{" "}
                 to save time on formatting.
               </p>
             </div>
           </div>
         </section>
-        <section className="w-full bg-white h-max py-[100px] flex flex-col items-center px-10 max-[800px]:px-5">
+        {/*
+          <section className="w-full bg-white h-max py-[100px] flex flex-col items-center px-10 max-[800px]:px-5">
           <p className="text-black/50 px-5 pb-1 text-center max-[1050px]:text-center font-bold tracking-wide text-[13px]">
             ARTICLES & DOWNLOADABLE TEMPLATES
           </p>
@@ -275,17 +268,20 @@ export default function CvExamplePageDetails() {
             })}
           </div>
         </section>
+      
+      */}
         <Faqs />
         <div className="w-full h-[500px] px-10 max-[500px]:px-4 pb-[50px]">
           <div className="w-full h-[450px] rounded-3xl bg-white shadow-2xl p-7 flex justify-center flex-col items-center">
             <p className="py-3 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-              Ready to start making your new Cv?
+              Ready to begin crafting your new CV?
             </p>
             <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-              Creating a cv takes time and energy, and even with a lot of effort
-              still might not get you the job you want. Our cv builder software
-              can help you quickly make a cv that best highlights your
-              qualifications and earns you more interviews.
+              Crafting a CV demands time and energy, and even with substantial
+              effort, it might not guarantee the desired job. Our CV builder
+              software is designed to assist you in swiftly creating a CV that
+              effectively highlights your qualifications, increasing your
+              chances of securing more interviews.
             </p>
             <div className="w-full flex max-[500px]:flex-col justify-center pb-6">
               <Link

@@ -37,7 +37,7 @@ export const samplesData = [
     name: "Arts, Culture & Media",
     id: "arts-culture-media",
     description:
-      "As a creative, your resume may be secondary to your portfolio and artistic accomplishments, but it’s still important for showcasing your experience and professional skills. Learn from our sample resumes to best create your own.",
+      "For creative professionals, while your portfolio and artistic accomplishments take precedence, your resume remains vital for showcasing experience and professional skills. Gain insights from our sample resumes to effectively create your own.",
     color: "#4b94ea",
     background: "#e4f0fe",
     samples: [
@@ -57,7 +57,7 @@ export const samplesData = [
     name: "Banking & Finance",
     id: "banking-finance",
     description:
-      "Jobs in finance are competitive because they pay well and have great benefits. Learn how to make a resume that gets you one of those jobs by showcasing your finance-related skills and experience.",
+      "Finance jobs are competitive due to attractive pay and benefits. Learn how to create a resume that positions you for success in these roles by highlighting your finance-related skills and experience.",
     color: "#ea723c",
     background: "#fdf1eb",
     samples: [

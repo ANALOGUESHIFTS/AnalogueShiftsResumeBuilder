@@ -105,24 +105,20 @@ export const coverLetterHelpLinks = [
 
 export const cvTemplateLinks = [
   {
+    name: "Pro",
+    path: "/cv-templates#pro",
+    subTitle: "The ideal CV design for anyone writing",
+  },
+  {
     name: "Business",
     path: "/cv-templates#business",
     subTitle: "Professional CV templates for senior-level positions.",
   },
+
   {
-    name: "Graduate",
-    path: "/cv-templates#graduate",
-    subTitle: "Templates for academics and scholars.",
-  },
-  {
-    name: "Research",
-    path: "/cv-templates#research",
-    subTitle: "A format to showcase your research background.",
-  },
-  {
-    name: "Writer",
-    path: "/cv-templates#writer",
-    subTitle: "Perfect templates for published writers.",
+    name: "Emory",
+    path: "/cv-templates#emory",
+    subTitle: "A versatile option and a great choice for students.",
   },
 ];
 
