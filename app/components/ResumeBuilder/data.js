@@ -44,3 +44,38 @@ export const serviceData = [
     image: LaunchYourJobHunt,
   },
 ];
+
+export const navSections = [
+  {
+    section: "Contact",
+    icon: "fa-solid fa-address-book text-xs",
+  },
+  {
+    section: "Experience",
+    icon: "fa-solid fa-hammer text-xs",
+  },
+  {
+    section: "Education",
+    icon: "fa-solid fa-book text-xs",
+  },
+  {
+    section: "Certifications",
+    icon: "fa-solid fa-award text-xs",
+  },
+  {
+    section: "Skills",
+    icon: "fa-solid fa-kitchen-set text-xs",
+  },
+  {
+    section: "Summary",
+    icon: "fa-regular fa-flag text-xs",
+  },
+  {
+    section: "References",
+    icon: "fa-solid fa-link text-xs",
+  },
+  {
+    section: "Finalize",
+    icon: "fa-regular fa-flag text-xs",
+  },
+];

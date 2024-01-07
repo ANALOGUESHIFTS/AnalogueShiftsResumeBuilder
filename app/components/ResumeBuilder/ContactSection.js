@@ -11,54 +11,53 @@ export default function ContactSection({ submit, data }) {
       required: true,
       value: data ? data["First Name"] : "",
       type: "text",
+      isRequired: true,
     },
     {
       label: "Last Name",
-      required: false,
       value: data ? data["Last Name"] : "",
       type: "text",
+      isRequired: false,
     },
     {
       label: "Desired Job Title",
-      required: false,
       value: data ? data["Desired Job Title"] : "",
       type: "text",
+      isRequired: true,
     },
     {
       label: "Phone",
-      required: false,
       value: data ? data["Phone"] : "",
       type: "text",
+      isRequired: false,
     },
     {
       label: "Country",
-      required: false,
       value: data ? data["Country"] : "",
       type: "text",
+      isRequired: true,
     },
     {
       label: "City",
-      required: false,
       value: data ? data["City"] : "",
       type: "text",
+      isRequired: false,
     },
     {
       label: "State / Province",
-      required: false,
       value: data ? data["State / Province"] : "",
       type: "text",
     },
     {
-      label: "Zip Code",
-      required: false,
-      value: data ? data["Zip Code"] : "",
+      label: "LinkedIn Url",
+      value: data ? data["LinkedIn Url"] : "",
       type: "text",
     },
     {
       label: "Email",
-      required: false,
       value: data ? data["Email"] : "",
       type: "email",
+      isRequired: true,
     },
   ]);
   const imageRef = useRef();
@@ -144,6 +143,7 @@ export default function ContactSection({ submit, data }) {
               className="px-4 py-3.5 max-[613px]:w-full rounded-xl border outline-AnalogueShiftsTextColor text-base text-black/70"
               value={data.value}
               placeholder={data.label}
+              required={data.isRequired}
             />
           );
         })}

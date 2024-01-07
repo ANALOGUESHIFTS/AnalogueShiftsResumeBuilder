@@ -9,44 +9,18 @@ import SkillsSection from "./SkillsSection";
 import SummarySection from "./SummarySection";
 import ReferencesSection from "./ReferencesSection";
 import FinalizeSection from "./FinalizeSection";
+import { navSections } from "./data";
 
-export default function InfoScreen() {
+export default function InfoScreen({ done }) {
   const [selectedSection, setSelectedSection] = useState("Contact");
+  const [isdone, setIsDone] = useState(false);
   const [userData, setUserData] = useState({});
-  const navSections = [
-    {
-      section: "Contact",
-      icon: "fa-solid fa-address-book text-xs",
-    },
-    {
-      section: "Experience",
-      icon: "fa-solid fa-hammer text-xs",
-    },
-    {
-      section: "Education",
-      icon: "fa-solid fa-book text-xs",
-    },
-    {
-      section: "Certifications",
-      icon: "fa-solid fa-award text-xs",
-    },
-    {
-      section: "Skills",
-      icon: "fa-solid fa-kitchen-set text-xs",
-    },
-    {
-      section: "Summary",
-      icon: "fa-regular fa-flag text-xs",
-    },
-    {
-      section: "References",
-      icon: "fa-solid fa-link text-xs",
-    },
-    {
-      section: "Finalize",
-      icon: "fa-regular fa-flag text-xs",
-    },
-  ];
+
+  useEffect(() => {
+    if (isdone) {
+      done(userData);
+    }
+  }, [isdone]);
 
   return (
     <section className="w-full flex h-max min-h-screen bg-[#f3f8ff] px-6 pb-8">
@@ -168,6 +142,7 @@ export default function InfoScreen() {
               setUserData((prev) => {
                 return { ...prev, finalizeData: data };
               });
+              setIsDone(true);
             }}
             data={userData.finalizeData ? userData.finalizeData : null}
           />

@@ -2,7 +2,6 @@
 import { useState } from "react";
 
 export default function FinalizeSection({ submit, back, data }) {
-  const [finalize, setFinalize] = useState(data ? data : {});
   const [awards, setAwards] = useState(data ? data.awards : []);
   const [customDatas, setCustomDatas] = useState(data ? data.customDatas : []);
   const [publications, setPublications] = useState(
@@ -54,6 +53,15 @@ export default function FinalizeSection({ submit, back, data }) {
         }
       })
     );
+  };
+
+  const handleSubmit = () => {
+    let data = {};
+    data.awards = awards;
+    data.publications = publications;
+    data.customDatas = customDatas;
+
+    submit(data);
   };
 
   return (
@@ -226,11 +234,11 @@ export default function FinalizeSection({ submit, back, data }) {
           Go Back
         </button>
         <button
-          onClick={() => submit(finalize)}
+          onClick={handleSubmit}
           type="button"
           className="px-12 max-[613px]:px-3 bg-black/90 max-[613px]:w-full duration-300 hover:-translate-y-1 text-white font-semibold py-3.5 rounded-xl"
         >
-          Continue
+          View Resume
         </button>
       </div>
     </div>
