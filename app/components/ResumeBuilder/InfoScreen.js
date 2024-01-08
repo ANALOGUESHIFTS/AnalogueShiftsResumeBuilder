@@ -52,14 +52,25 @@ export default function InfoScreen({ done, template }) {
         {selectedSection === "Contact" && (
           <ContactSection
             submit={(data) => {
-              Cookies.set(
-                "userData",
-                JSON.stringify({
-                  ...JSON.parse(Cookies.get("userData")),
-                  contactData: data,
-                }),
-                { expires: 7 }
-              );
+              let storedData = Cookies.get("userData");
+              if (storedData) {
+                Cookies.set(
+                  "userData",
+                  JSON.stringify({
+                    ...JSON.parse(storedData),
+                    contactData: data,
+                  }),
+                  { expires: 7 }
+                );
+              } else {
+                Cookies.set(
+                  "userData",
+                  JSON.stringify({
+                    contactData: data,
+                  }),
+                  { expires: 7 }
+                );
+              }
 
               setSelectedSection("Experience");
             }}
