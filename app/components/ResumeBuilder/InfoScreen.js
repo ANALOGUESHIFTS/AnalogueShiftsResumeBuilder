@@ -1,5 +1,5 @@
 "use client";
-
+import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import ContactSection from "./ContactSection";
 import ExperienceSection from "./ExperienceSection";
@@ -11,14 +11,13 @@ import ReferencesSection from "./ReferencesSection";
 import FinalizeSection from "./FinalizeSection";
 import { navSections } from "./data";
 
-export default function InfoScreen({ done }) {
+export default function InfoScreen({ done, template }) {
   const [selectedSection, setSelectedSection] = useState("Contact");
   const [isdone, setIsDone] = useState(false);
-  const [userData, setUserData] = useState({});
 
   useEffect(() => {
     if (isdone) {
-      done(userData);
+      done();
     }
   }, [isdone]);
 
@@ -53,98 +52,130 @@ export default function InfoScreen({ done }) {
         {selectedSection === "Contact" && (
           <ContactSection
             submit={(data) => {
-              setUserData((prev) => {
-                return { ...prev, contactData: data };
-              });
+              Cookies.set(
+                "userData",
+                JSON.stringify({
+                  ...JSON.parse(Cookies.get("userData")),
+                  contactData: data,
+                }),
+                { expires: 7 }
+              );
+
               setSelectedSection("Experience");
             }}
-            data={userData.contactData ? userData.contactData : null}
           />
         )}
         {selectedSection === "Experience" && (
           <ExperienceSection
             back={() => setSelectedSection("Contact")}
             submit={(data) => {
-              setUserData((prev) => {
-                return { ...prev, experienceData: data };
-              });
+              Cookies.set(
+                "userData",
+                JSON.stringify({
+                  ...JSON.parse(Cookies.get("userData")),
+                  experienceData: data,
+                }),
+                { expires: 7 }
+              );
               setSelectedSection("Education");
             }}
-            data={userData.experienceData ? userData.experienceData : null}
           />
         )}
         {selectedSection === "Education" && (
           <EducationSection
             back={() => setSelectedSection("Experience")}
             submit={(data) => {
-              setUserData((prev) => {
-                return { ...prev, educationData: data };
-              });
+              Cookies.set(
+                "userData",
+                JSON.stringify({
+                  ...JSON.parse(Cookies.get("userData")),
+                  educationData: data,
+                }),
+                { expires: 7 }
+              );
               setSelectedSection("Certifications");
             }}
-            data={userData.educationData ? userData.educationData : null}
           />
         )}
         {selectedSection === "Certifications" && (
           <CertificationSection
             back={() => setSelectedSection("Education")}
             submit={(data) => {
-              setUserData((prev) => {
-                return { ...prev, certificationData: data };
-              });
+              Cookies.set(
+                "userData",
+                JSON.stringify({
+                  ...JSON.parse(Cookies.get("userData")),
+                  certificationData: data,
+                }),
+                { expires: 7 }
+              );
               setSelectedSection("Skills");
             }}
-            data={
-              userData.certificationData ? userData.certificationData : null
-            }
           />
         )}
         {selectedSection === "Skills" && (
           <SkillsSection
             back={() => setSelectedSection("Certifications")}
             submit={(data) => {
-              setUserData((prev) => {
-                return { ...prev, skillsData: data };
-              });
+              Cookies.set(
+                "userData",
+                JSON.stringify({
+                  ...JSON.parse(Cookies.get("userData")),
+                  skillsData: data,
+                }),
+                { expires: 7 }
+              );
               setSelectedSection("Summary");
             }}
-            data={userData.skillsData ? userData.skillsData : null}
           />
         )}
         {selectedSection === "Summary" && (
           <SummarySection
             back={() => setSelectedSection("Skills")}
             submit={(data) => {
-              setUserData((prev) => {
-                return { ...prev, summaryData: data };
-              });
+              Cookies.set(
+                "userData",
+                JSON.stringify({
+                  ...JSON.parse(Cookies.get("userData")),
+                  summaryData: data,
+                }),
+                { expires: 7 }
+              );
               setSelectedSection("References");
             }}
-            data={userData.summaryData ? userData.summaryData : null}
           />
         )}
         {selectedSection === "References" && (
           <ReferencesSection
             back={() => setSelectedSection("Summary")}
             submit={(data) => {
-              setUserData((prev) => {
-                return { ...prev, referencesData: data };
-              });
+              Cookies.set(
+                "userData",
+                JSON.stringify({
+                  ...JSON.parse(Cookies.get("userData")),
+                  referencesData: data,
+                }),
+                { expires: 7 }
+              );
               setSelectedSection("Finalize");
             }}
-            data={userData.referencesData ? userData.referencesData : null}
           />
         )}
         {selectedSection === "Finalize" && (
           <FinalizeSection
             back={() => setSelectedSection("References")}
             submit={(data) => {
-              setUserData((prev) => {
-                return { ...prev, finalizeData: data };
-              });
+              Cookies.set(
+                "userData",
+                JSON.stringify({
+                  ...JSON.parse(Cookies.get("userData")),
+                  finalizeData: data,
+                  template: template,
+                }),
+                { expires: 7 }
+              );
               setIsDone(true);
             }}
-            data={userData.finalizeData ? userData.finalizeData : null}
           />
         )}
       </section>

@@ -5,7 +5,29 @@
 .menu-link:hover div {
   opacity: 1;
 }
-
+.fancy-border-radius {
+  border-radius: 0px 200px 0px 0px;
+  -webkit-border-radius: 0px 200px 0px 0px;
+  -moz-border-radius: 0px 200px 0px 0px;
+}
+#resume-box::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+#resume-box::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+#resume-box::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+#resume-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+#resume-box::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.9);
+}
 .builders-link-box:hover .custom-line {
   width: 100%;
 }

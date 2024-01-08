@@ -1,12 +1,11 @@
 "use client";
-import { useState } from "react";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
 
-export default function FinalizeSection({ submit, back, data }) {
-  const [awards, setAwards] = useState(data ? data.awards : []);
-  const [customDatas, setCustomDatas] = useState(data ? data.customDatas : []);
-  const [publications, setPublications] = useState(
-    data ? data.publications : []
-  );
+export default function FinalizeSection({ submit, back }) {
+  const [awards, setAwards] = useState([]);
+  const [customDatas, setCustomDatas] = useState([]);
+  const [publications, setPublications] = useState([]);
 
   const updateAward = (id, newValue) => {
     setAwards((previous) =>
@@ -63,6 +62,15 @@ export default function FinalizeSection({ submit, back, data }) {
 
     submit(data);
   };
+
+  useEffect(() => {
+    const storedData = JSON.parse(Cookies.get("userData"));
+    if (storedData && storedData.finalizeData) {
+      setAwards(storedData.finalizeData.awards);
+      setCustomDatas(storedData.finalizeData.customDatas);
+      setPublications(storedData.finalizeData.publications);
+    }
+  }, []);
 
   return (
     <div className="w-full flex flex-col">

@@ -1,10 +1,11 @@
 "use client";
-import { useState } from "react";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
 
-export default function SkillsSection({ submit, back, data }) {
-  const [skills, setSkills] = useState(
-    data ? data : [{ id: `skill-${crypto.randomUUID()}`, skill: "" }]
-  );
+export default function SkillsSection({ submit, back }) {
+  const [skills, setSkills] = useState([
+    { id: `skill-${crypto.randomUUID()}`, skill: "" },
+  ]);
 
   const updateSkill = (id, newValue) => {
     setSkills((previous) =>
@@ -17,6 +18,13 @@ export default function SkillsSection({ submit, back, data }) {
       })
     );
   };
+
+  useEffect(() => {
+    const storedData = JSON.parse(Cookies.get("userData"));
+    if (storedData && storedData.skillsData) {
+      setSkills(storedData.skillsData);
+    }
+  }, []);
 
   return (
     <div className="w-full flex flex-col">

@@ -1,9 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tiptap from "../Tiptap";
+import Cookies from "js-cookie";
 
-export default function SummarySection({ submit, back, data }) {
+export default function SummarySection({ submit, back }) {
   const [summary, setSummary] = useState("");
+  const [initialData, setInitialData] = useState(null);
+
+  useEffect(() => {
+    const storedData = JSON.parse(Cookies.get("userData"));
+
+    if (storedData && storedData.summaryData) {
+      setInitialData(storedData.summaryData);
+    } else {
+      setInitialData("");
+    }
+  }, []);
 
   return (
     <div className="w-full flex flex-col">
@@ -15,9 +27,14 @@ export default function SummarySection({ submit, back, data }) {
         manager in a few short sentences.
       </p>
 
-      <div className="w-full bg-white rounded-xl border pb-3 h-[340px] overflow-y-auto relative">
-        <Tiptap changed={(data) => setSummary(data)} initialData={data} />
-      </div>
+      {initialData && (
+        <div className="w-full bg-white rounded-xl border pb-3 h-[340px] overflow-y-auto relative">
+          <Tiptap
+            changed={(data) => setSummary(data)}
+            initialData={initialData}
+          />
+        </div>
+      )}
 
       <div className="pt-7 flex gap-5 justify-between">
         <button

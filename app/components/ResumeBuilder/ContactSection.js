@@ -1,61 +1,61 @@
 "use client";
-
-import { useState, useRef } from "react";
+import Cookies from "js-cookie";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
-export default function ContactSection({ submit, data }) {
-  const [image, setImage] = useState(data ? data.image : null);
+export default function ContactSection({ submit }) {
+  const [image, setImage] = useState(null);
   const [formData, setFormData] = useState([
     {
       label: "First Name",
       required: true,
-      value: data ? data["First Name"] : "",
+      value: "",
       type: "text",
       isRequired: true,
     },
     {
       label: "Last Name",
-      value: data ? data["Last Name"] : "",
+      value: "",
       type: "text",
       isRequired: false,
     },
     {
       label: "Desired Job Title",
-      value: data ? data["Desired Job Title"] : "",
+      value: "",
       type: "text",
       isRequired: true,
     },
     {
       label: "Phone",
-      value: data ? data["Phone"] : "",
+      value: "",
       type: "text",
       isRequired: false,
     },
     {
       label: "Country",
-      value: data ? data["Country"] : "",
+      value: "",
       type: "text",
       isRequired: true,
     },
     {
       label: "City",
-      value: data ? data["City"] : "",
+      value: "",
       type: "text",
       isRequired: false,
     },
     {
       label: "State / Province",
-      value: data ? data["State / Province"] : "",
+      value: "",
       type: "text",
     },
     {
       label: "LinkedIn Url",
-      value: data ? data["LinkedIn Url"] : "",
+      value: "",
       type: "text",
     },
     {
       label: "Email",
-      value: data ? data["Email"] : "",
+      value: "",
       type: "email",
       isRequired: true,
     },
@@ -63,7 +63,7 @@ export default function ContactSection({ submit, data }) {
   const imageRef = useRef();
 
   const handleImageChange = async (event) => {
-    const selectedFile = event.target.files[0];
+    const selectedFile = event.target.files;
     setImage(selectedFile);
   };
 
@@ -85,9 +85,20 @@ export default function ContactSection({ submit, data }) {
     formData.forEach((item) => {
       data[item.label] = item.value;
     });
-    data.image = image;
+    //data.image = image;
     submit(data);
   };
+
+  useEffect(() => {
+    const storedData = JSON.parse(Cookies.get("userData"));
+    if (storedData && storedData.contactData) {
+      setFormData((previous) =>
+        previous.map((form) => {
+          return { ...form, value: storedData.contactData[form.label] };
+        })
+      );
+    }
+  }, []);
 
   return (
     <div className="w-full flex flex-col">
@@ -103,14 +114,14 @@ export default function ContactSection({ submit, data }) {
         Let's start with the basics. To ensure employers can reach you, input at
         least your name, email, and phone number.
       </p>
-      <div className="w-full flex items-center gap-4 mb-6">
+      {/*   <div className="w-full flex items-center gap-4 mb-6">
         <div className="w-24 h-24 rounded-lg bg-white border-gray-200 border-dashed border-2 flex justify-center items-center">
           {image === null && (
             <i className="fa-solid fa-circle-user text-3xl text-black/80"></i>
           )}
           {image && (
             <Image
-              src={URL.createObjectURL(image)}
+              src={URL.createObjectURL(image[0])}
               alt="profile"
               className="rounded-lg"
               width={96}
@@ -129,7 +140,7 @@ export default function ContactSection({ submit, data }) {
             Add Photo
           </button>
         </div>
-      </div>
+      </div> */}
       <form
         onSubmit={handleFormSubmit}
         method="post"

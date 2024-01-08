@@ -1,13 +1,14 @@
 "use client";
-import { useState } from "react";
+import Cookies from "js-cookie";
+import { useState, useEffect } from "react";
 
 let years = [
-  1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962,
-  1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975,
-  1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988,
-  1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001,
-  2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014,
-  2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024,
+  2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012,
+  2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999,
+  1998, 1997, 1996, 1995, 1994, 1993, 1992, 1991, 1990, 1989, 1988, 1987, 1986,
+  1985, 1984, 1983, 1982, 1981, 1980, 1979, 1978, 1977, 1976, 1975, 1974, 1973,
+  1972, 1971, 1970, 1969, 1968, 1967, 1966, 1965, 1964, 1963, 1962, 1961, 1960,
+  1959, 1958, 1957, 1956, 1955, 1954, 1953, 1952, 1951, 1950,
 ];
 let months = [
   "January",
@@ -24,7 +25,7 @@ let months = [
   "December",
 ];
 
-export default function ExperienceSection({ submit, back, data }) {
+export default function ExperienceSection({ submit, back }) {
   const [jobTitle, setJobTitle] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [country, setCountry] = useState("");
@@ -36,7 +37,7 @@ export default function ExperienceSection({ submit, back, data }) {
   const [endMonth, setEndMonth] = useState("");
   const [endYear, setEndYear] = useState("");
   const [currentlyWorkHere, setCurrentlyWorkHere] = useState(false);
-  const [experience, setExperience] = useState(data ? data : []);
+  const [experience, setExperience] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,6 +67,13 @@ export default function ExperienceSection({ submit, back, data }) {
     setDescription("");
     setCurrentlyWorkHere(false);
   };
+
+  useEffect(() => {
+    const storedData = JSON.parse(Cookies.get("userData"));
+    if (storedData && storedData.experienceData) {
+      setExperience(storedData.experienceData);
+    }
+  }, []);
 
   return (
     <div className="w-full flex flex-col">
@@ -138,7 +146,7 @@ export default function ExperienceSection({ submit, back, data }) {
           required
         >
           <option value="">Start Year</option>
-          {years.reverse().map((year) => (
+          {years.map((year) => (
             <option value={year} key={crypto.randomUUID()}>
               {year}
             </option>
@@ -166,7 +174,7 @@ export default function ExperienceSection({ submit, back, data }) {
               required
             >
               <option value="">End Year</option>
-              {years.reverse().map((year) => (
+              {years.map((year) => (
                 <option value={year} key={crypto.randomUUID()}>
                   {year}
                 </option>

@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
 
-export default function ReferencesSection({ submit, back, data }) {
+export default function ReferencesSection({ submit, back }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [positionTitle, setPositionTitle] = useState("");
@@ -9,7 +10,7 @@ export default function ReferencesSection({ submit, back, data }) {
   const [phone, setPhone] = useState("");
   const [relationshipToYou, setRelationshipToYou] = useState("");
   const [companyName, setCompanyName] = useState("");
-  const [references, setReferences] = useState(data ? data : []);
+  const [references, setReferences] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,6 +33,14 @@ export default function ReferencesSection({ submit, back, data }) {
     setPhone("");
     setRelationshipToYou("");
   };
+
+  useEffect(() => {
+    const storedData = JSON.parse(Cookies.get("userData"));
+    console.log(storedData);
+    if (storedData && storedData.referencesData) {
+      setReferences(storedData.referencesData);
+    }
+  }, []);
 
   return (
     <div className="w-full flex flex-col">

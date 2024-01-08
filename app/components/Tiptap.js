@@ -12,7 +12,7 @@ const MenuBar = ({ valueChanged }) => {
   editor.setOptions({
     editorProps: {
       attributes: {
-        class: "outline-none px-3 z-40 h-auto min-h-[250px]",
+        class: "outline-none px-3 z-30 h-auto min-h-[250px]",
       },
     },
   });
@@ -26,7 +26,7 @@ const MenuBar = ({ valueChanged }) => {
   }
 
   return (
-    <div className="flex flex-wrap gap-x-3 gap-y-3 px-3 py-3 border-b mb-3 sticky top-0 z-50 bg-white">
+    <div className="flex flex-wrap gap-x-3 gap-y-3 px-3 py-3 border-b mb-3 sticky top-0 z-40 bg-white">
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
@@ -103,7 +103,7 @@ const extensions = [
 ];
 
 const Tiptap = ({ changed, initialData }) => {
-  const content = initialData ? initialData : ``;
+  const content = initialData;
   return (
     <EditorProvider
       slotBefore={<MenuBar valueChanged={(data) => changed(data)} />}

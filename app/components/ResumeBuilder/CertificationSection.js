@@ -1,12 +1,11 @@
 "use client";
-import { useState } from "react";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
 
-export default function CertificationSection({ submit, back, data }) {
-  const [certification, setCertification] = useState(
-    data
-      ? data
-      : [{ id: `certification-${crypto.randomUUID()}`, certification: "" }]
-  );
+export default function CertificationSection({ submit, back }) {
+  const [certification, setCertification] = useState([
+    { id: `certification-${crypto.randomUUID()}`, certification: "" },
+  ]);
 
   const updateCertification = (id, newValue) => {
     setCertification((previous) =>
@@ -19,6 +18,13 @@ export default function CertificationSection({ submit, back, data }) {
       })
     );
   };
+
+  useEffect(() => {
+    const storedData = JSON.parse(Cookies.get("userData"));
+    if (storedData && storedData.certificationData) {
+      setCertification(storedData.certificationData);
+    }
+  }, []);
 
   return (
     <div className="w-full flex flex-col">
