@@ -90,13 +90,18 @@ export default function ContactSection({ submit }) {
   };
 
   useEffect(() => {
-    const storedData = JSON.parse(Cookies.get("userData"));
-    if (storedData && storedData.contactData) {
-      setFormData((previous) =>
-        previous.map((form) => {
-          return { ...form, value: storedData.contactData[form.label] };
-        })
-      );
+    const storedData = Cookies.get("userData");
+    if (storedData) {
+      if (JSON.parse(storedData).contactData) {
+        setFormData((previous) =>
+          previous.map((form) => {
+            return {
+              ...form,
+              value: JSON.parse(storedData).contactData[form.label],
+            };
+          })
+        );
+      }
     }
   }, []);
 
