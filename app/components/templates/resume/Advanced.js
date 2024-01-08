@@ -7,39 +7,44 @@ export default function AdvancedResumeTemplate({ data }) {
   useEffect(() => console.log(data), []);
 
   return (
-    <main className="main">
-      <div class="box">
-        <div class="header">
-          <div class="full-name">
-            <span class="first-name">{data.contactData["First Name"]}</span>
-            <span class="last-name">{data.contactData["Last Name"]}</span>
+    <main className="main min-h-full font-normal text-[#222] text-sm leading-[26px] pb-[50px] m-0 p-0 box-border h-full">
+      <div
+        style={{ margin: "0px auto 0px" }}
+        class="max-w-[700px] bg-white rounded-[3px] p-10"
+      >
+        <div class="mb-[30px]">
+          <div class="text-[30px] flex gap-1 flex-wrap uppercase mb-[5px]">
+            <span class="font-bold">{data.contactData["First Name"]}</span>
+            <span class="font-light">{data.contactData["Last Name"]}</span>
           </div>
-          <div class="contact-info">
-            <span class="email">Email: </span>
+          <div class="mb-5">
+            <span class="text-[#999] font-light">Email: </span>
             <span class="email-val">{data.contactData["Email"]}</span>
-            <span class="separator"></span>
+            <span class="h-2.5 inline-block underline mx-2.5 border-l-2 border-solid border-[#999]"></span>
             {data.contactData["Phone"] && (
               <>
-                <span class="phone">Phone: </span>
+                <span class="text-[#999] font-light">Phone: </span>
                 <span class="phone-val">{data.contactData["Phone"]}</span>
+                <span class="h-2.5 inline-block underline mx-2.5 border-l-2 border-solid border-[#999]"></span>
               </>
             )}
-            <span class="separator"></span>
+
             {data.contactData["LinkedIn Url"] && (
               <>
-                <span class="phone">LinkedIn: </span>
+                <span class="text-[#999] font-light">LinkedIn: </span>
                 <Link
                   className="underline"
                   href={data.contactData["LinkedIn Url"]}
                 >
                   {" "}
                   <span class="phone-val">Click Here</span>
+                  <span class="h-2.5 inline-block underline mx-2.5 border-l-2 border-solid border-[#999]"></span>
                 </Link>
               </>
             )}
-            <span class="separator"></span>
+
             <>
-              <span class="phone">Location: </span>
+              <span class="text-[#999] font-light">Location: </span>
               <span class="email-val">
                 {data.contactData["City"] && data.contactData["City"] + ", "}
                 {data.contactData["State / Province"] &&
@@ -50,7 +55,7 @@ export default function AdvancedResumeTemplate({ data }) {
           </div>
 
           <div class="about">
-            <span class="position">
+            <span class="font-bold inline-block mr-2.5 underline">
               {data.contactData["Desired Job Title"]}{" "}
             </span>
             <span
@@ -59,10 +64,12 @@ export default function AdvancedResumeTemplate({ data }) {
             ></span>
           </div>
         </div>
-        <div class="details">
+        <div class="leading-5">
           {data.experienceData[0] && (
-            <div class="section w-full h-auto">
-              <div class="section__title">Experience</div>
+            <div class="mb-10 last-of-type:mb-0 w-full h-auto">
+              <div class="font-bold text-[#54afe4] tracking-[2px] uppercase mb-2.5">
+                Experience
+              </div>
               <div class="w-full flex flex-col gap-6">
                 {data.experienceData.map((experience) => {
                   return (
@@ -71,7 +78,7 @@ export default function AdvancedResumeTemplate({ data }) {
                       class="w-full flex justify-between"
                     >
                       <div class="w-[50%] flex flex-col">
-                        <div class="name">{experience.companyName}</div>
+                        <div class="font-bold">{experience.companyName}</div>
                         <div class="addr">
                           {experience.country}
                           {experience.state.trim().length > 0 &&
@@ -87,7 +94,7 @@ export default function AdvancedResumeTemplate({ data }) {
                         </div>
                       </div>
                       <div class="w-[45%]">
-                        <div class="name">{experience.jobTitle}</div>
+                        <div class="font-bold">{experience.jobTitle}</div>
                         <div class=" h-max">{experience.description}</div>
                       </div>
                     </div>
@@ -97,8 +104,10 @@ export default function AdvancedResumeTemplate({ data }) {
             </div>
           )}
           {data.educationData[0] && (
-            <div class="section">
-              <div class="section__title">Education</div>
+            <div class="mb-10 last-of-type:mb-0">
+              <div class="font-bold text-[#54afe4] tracking-[2px] uppercase mb-2.5">
+                Education
+              </div>
               <div class="w-full flex flex-col gap-6">
                 {data.educationData.map((education) => {
                   return (
@@ -107,14 +116,14 @@ export default function AdvancedResumeTemplate({ data }) {
                       class="w-full flex justify-between"
                     >
                       <div class="w-[50%] flex flex-col">
-                        <div class="name">{education.schoolName}</div>
+                        <div class="font-bold">{education.schoolName}</div>
                         <div class="addr">{education.schoolLocation}</div>
                         <div class="duration">
                           {education.graduationMonth} {education.graduationYear}
                         </div>
                       </div>
                       <div class="w-[45%]">
-                        <div class="name">
+                        <div class="font-bold">
                           {education.degreeOfProgram} - {education.fieldOfStudy}
                         </div>
                         <div class=" h-max">{education.additionalInfo}</div>
@@ -126,8 +135,10 @@ export default function AdvancedResumeTemplate({ data }) {
             </div>
           )}
           {data.referencesData[0] && (
-            <div class="section">
-              <div class="section__title">References</div>
+            <div class="mb-10 last-of-type:mb-0">
+              <div class="font-bold text-[#54afe4] tracking-[2px] uppercase mb-2.5">
+                References
+              </div>
               <div class="w-full flex flex-col gap-6">
                 {data.referencesData.map((reference) => {
                   return (
@@ -136,14 +147,14 @@ export default function AdvancedResumeTemplate({ data }) {
                       class="w-full flex justify-between"
                     >
                       <div class="w-[50%] flex flex-col">
-                        <div class="name">
+                        <div class="font-bold">
                           {reference.firstName} {reference.lastName}
                         </div>
                         <div class="addr">{reference.email}</div>
                         <div class="duration">{reference.phone}</div>
                       </div>
                       <div class="w-[45%]">
-                        <div class="name">
+                        <div class="font-bold">
                           {reference.positionTitle} - {reference.companyName}
                         </div>
                         <div class=" h-max">{reference.relationshipToYou}</div>
@@ -155,12 +166,14 @@ export default function AdvancedResumeTemplate({ data }) {
             </div>
           )}
           {data.skillsData[0] && (
-            <div class="section">
-              <div class="section__title">Skills</div>
+            <div class="mb-10 last-of-type:mb-0">
+              <div class="font-bold text-[#54afe4] tracking-[2px] uppercase mb-2.5">
+                Skills
+              </div>
               <div class="flex flex-wrap gap-x-2.5 gap-y-3.5">
                 {data.skillsData.map((skill) => {
                   return (
-                    <div key={skill.id} class="name">
+                    <div key={skill.id} class="font-bold">
                       * {skill.skill}
                     </div>
                   );
@@ -169,12 +182,14 @@ export default function AdvancedResumeTemplate({ data }) {
             </div>
           )}
           {data.finalizeData.awards[0] && (
-            <div class="section">
-              <div class="section__title">Awards</div>
+            <div class="mb-10 last-of-type:mb-0">
+              <div class="font-bold text-[#54afe4] tracking-[2px] uppercase mb-2.5">
+                Awards
+              </div>
               <div class="flex flex-wrap gap-x-2.5 gap-y-3.5">
                 {data.finalizeData.awards.map((award) => {
                   return (
-                    <div key={award.id} class="name">
+                    <div key={award.id} class="font-bold">
                       * {award.award}
                     </div>
                   );
@@ -183,12 +198,14 @@ export default function AdvancedResumeTemplate({ data }) {
             </div>
           )}
           {data.finalizeData.publications[0] && (
-            <div class="section">
-              <div class="section__title">Publications</div>
+            <div class="mb-10 last-of-type:mb-0">
+              <div class="font-bold text-[#54afe4] tracking-[2px] uppercase mb-2.5">
+                Publications
+              </div>
               <div class="flex flex-wrap gap-x-2.5 gap-y-3.5">
                 {data.finalizeData.publications.map((publication) => {
                   return (
-                    <div key={publication.id} class="name">
+                    <div key={publication.id} class="font-bold">
                       * {publication.publication}
                     </div>
                   );
@@ -197,12 +214,14 @@ export default function AdvancedResumeTemplate({ data }) {
             </div>
           )}
           {data.certificationData[0] && (
-            <div class="section">
-              <div class="section__title">Certifications</div>
+            <div class="mb-10 last-of-type:mb-0">
+              <div class="font-bold text-[#54afe4] tracking-[2px] uppercase mb-2.5">
+                Certifications
+              </div>
               <div class="flex flex-col gap-y-3.5">
                 {data.certificationData.map((certification) => {
                   return (
-                    <div key={certification.id} class="name">
+                    <div key={certification.id} class="font-bold">
                       * {certification.certification}
                     </div>
                   );
@@ -213,8 +232,10 @@ export default function AdvancedResumeTemplate({ data }) {
           {data.finalizeData.customDatas[0] &&
             data.finalizeData.customDatas.map((custom) => {
               return (
-                <div class="section">
-                  <div class="section__title">{custom.name}</div>
+                <div class="mb-10 last-of-type:mb-0">
+                  <div class="font-bold text-[#54afe4] tracking-[2px] uppercase mb-2.5">
+                    {custom.name}
+                  </div>
                   <div class="text">{custom.description}</div>
                 </div>
               );

@@ -17,9 +17,9 @@ export default function FinishYourResume() {
   ];
 
   useEffect(() => {
-    const storedData = JSON.parse(Cookies.get("userData"));
+    const storedData = Cookies.get("userData");
     if (storedData) {
-      setData(storedData);
+      setData(JSON.parse(storedData));
     }
   }, []);
   return (

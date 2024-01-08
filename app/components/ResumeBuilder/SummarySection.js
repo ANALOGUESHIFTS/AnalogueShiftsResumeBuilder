@@ -5,15 +5,15 @@ import Cookies from "js-cookie";
 
 export default function SummarySection({ submit, back }) {
   const [summary, setSummary] = useState("");
-  const [initialData, setInitialData] = useState(null);
+  const [initialData, setInitialData] = useState("");
 
   useEffect(() => {
     const storedData = JSON.parse(Cookies.get("userData"));
 
-    if (storedData && storedData.summaryData) {
+    if (storedData.summaryData) {
       setInitialData(storedData.summaryData);
     } else {
-      setInitialData("");
+      setInitialData("<p></p>");
     }
   }, []);
 
@@ -27,7 +27,7 @@ export default function SummarySection({ submit, back }) {
         manager in a few short sentences.
       </p>
 
-      {initialData && (
+      {initialData.length > 0 && (
         <div className="w-full bg-white rounded-xl border pb-3 h-[340px] overflow-y-auto relative">
           <Tiptap
             changed={(data) => setSummary(data)}
