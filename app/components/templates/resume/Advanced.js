@@ -1,11 +1,7 @@
-"use client";
-import { useEffect } from "react";
 import "../resume/Advanced.css";
 import Link from "next/link";
 
 export default function AdvancedResumeTemplate({ data }) {
-  useEffect(() => console.log(data), []);
-
   return (
     <main className="main min-h-full font-normal text-[#222] text-sm leading-[26px] pb-[50px] m-0 p-0 box-border h-full">
       <div
@@ -13,7 +9,7 @@ export default function AdvancedResumeTemplate({ data }) {
         class="max-w-[700px] bg-white rounded-[3px] p-10"
       >
         <div class="mb-[30px]">
-          <div class="text-[30px] flex gap-1 flex-wrap uppercase mb-[5px]">
+          <div class="text-[25px] flex gap-2 flex-wrap uppercase mb-[5px]">
             <span class="font-bold">{data.contactData["First Name"]}</span>
             <span class="font-light">{data.contactData["Last Name"]}</span>
           </div>

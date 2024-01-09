@@ -5,7 +5,7 @@ import Image from "next/image";
 import HomeIcon from "@/public/house-icon.png";
 import RightBracket from "@/public/right-bracket.png";
 import Link from "next/link";
-import { resumeTemplates } from "./data";
+import { coverLetterTemplates } from "./data";
 import Faqs from "../OtherComponents/Faqs";
 import FreeCoverLetterTemplates from "../OtherComponents/FreeCoverLetter";
 import MasonryGrid from "../blog/MansoryGrid";
@@ -85,23 +85,23 @@ export default function CoverLetterTemplatesPageDetails() {
             style={{ backgroundImage: "url(/pop-bg.svg)" }}
             className="mt-10 w-full h-max flex flex-col  bg-no-repeat"
           >
-            <p className="pb-6 text-[2.6rem] w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
-              Use an AnalogueShifts Cover Letter Template
-            </p>
+            {coverLetterTemplates[0] && (
+              <p className="pb-6 text-[2.6rem] w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
+                Use an AnalogueShifts Cover Letter Template
+              </p>
+            )}
             <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
-              {resumeTemplates.map((data) => {
+              {coverLetterTemplates.map((data) => {
                 return (
                   <Link
                     key={crypto.randomUUID()}
                     href={data.path}
-                    className="h-max p-4 w-[calc(33.3%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
+                    className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
                   >
                     <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
-                      <Image
-                        src={data.image}
-                        alt="Template Image"
-                        className="w-full h-full max-[900px]:h-max rounded-lg"
-                      />
+                      <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
+                        {data.template}
+                      </div>
                       <button className="absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
                         Use Template
                       </button>
@@ -117,15 +117,24 @@ export default function CoverLetterTemplatesPageDetails() {
                   </Link>
                 );
               })}
+              {!coverLetterTemplates[0] && (
+                <div className="w-full flex justify-center py-5">
+                  <p className="text-lg font-semibold text-black/70">
+                    No Template Available At The Moment
+                  </p>
+                </div>
+              )}
             </div>
           </section>
-          <div className="w-full  h-max py-[60px] flex justify-center">
-            <p className="pb-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
-              How to Use a Cover Letter Template
-            </p>
-          </div>
+          {coverLetterTemplates[0] && (
+            <div className="w-full  h-max py-[60px] flex justify-center">
+              <p className="pb-5 text-[2.6rem] w-[700px] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
+                How to Use a Cover Letter Template
+              </p>
+            </div>
+          )}
         </div>
-        <FreeCoverLetterTemplates />
+        {coverLetterTemplates[0] && <FreeCoverLetterTemplates />}
         {/*
         <div className="w-full h-max flex justify-center px-10 max-[800px]:px-5 pt-5">
           <div className="flex flex-col max-w-full w-[1000px] items-center">

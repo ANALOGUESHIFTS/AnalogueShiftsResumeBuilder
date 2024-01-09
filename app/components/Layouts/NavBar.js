@@ -451,7 +451,7 @@ export default function NavBar() {
         <div className="w-full flex flex-col gap-4 pt-8">
           <Link
             className="bg-AnalogueShiftsTextColor w-full flex justify-center items-center duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2.5 rounded-lg"
-            href="#"
+            href="/resume-builder/app/how-to-start"
           >
             Build My Resume
           </Link>

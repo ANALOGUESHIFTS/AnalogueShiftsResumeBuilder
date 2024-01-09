@@ -12,8 +12,8 @@ export default function Examples() {
   const [selected, setSelected] = useState("Resume");
 
   return (
-    <div className="w-full h-[300px]  flex justify-center bg-white max-[1000px]:h-max max-[1000px]:pb-10">
-      <div className="w-[90%] h-[500px] max-[1000px]:h-max rounded-3xl bg-white shadow-2xl translate-y-[-250px] max-[1000px]:translate-y-[-100px] z-30 max-[1000px]:p-5 max-[1000px]:flex max-[1000px]:flex-col max-[1000px]:gap-4 p-[45px] grid grid-cols-6 gap-5">
+    <div className="w-full h-[550px] pt-8  flex justify-center bg-white max-[1000px]:h-max max-[1000px]:pb-10">
+      <div className="w-[90%] h-[500px] max-[1000px]:h-max rounded-3xl bg-white shadow-2xl z-30 max-[1000px]:p-5 max-[1000px]:flex max-[1000px]:flex-col max-[1000px]:gap-4 p-[45px] grid grid-cols-6 gap-5">
         <div className="col-span-3 max-[1000px]:h-max max-[1000px]:w-full max-[1000px]:items-center max-[1000px]:p-3 h-full flex flex-col gap-7 pr-14">
           <div className="z-10 relative bg-gray-200/30 w-[250px] rounded-full h-[40px] p-1">
             <div

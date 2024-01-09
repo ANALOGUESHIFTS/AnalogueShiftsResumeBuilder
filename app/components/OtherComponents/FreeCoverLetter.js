@@ -7,8 +7,7 @@ import Image from "next/image";
 import ViewTemplateModal from "./ViewTemplateModal";
 
 //Data
-import { coverLetterTemplates } from "./data";
-import { coverLetterNavLinks } from "./data";
+import { coverLetterTemplates, coverLetterNavLinks } from "./data";
 
 export default function FreeCoverLetterTemplates() {
   const [dataToView, setDataToView] = useState(null);
@@ -91,15 +90,16 @@ export default function FreeCoverLetterTemplates() {
                         className="h-max w-[calc(33.3%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full rounded-lg resume-template-link resume-template-link2"
                       >
                         <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
-                          <Image
-                            src={template.image}
-                            alt="Template Image"
-                            className="w-full h-full max-[900px]:h-max rounded-lg"
-                          />
+                          <div className="w-full overflow-y-scroll scroll-hidden h-full max-[900px]:h-max rounded-lg">
+                            {template.template}
+                          </div>
                           <div className="absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] flex flex-col gap-3 button-row">
-                            <button className="w-full py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
-                              Build My Resume
-                            </button>
+                            <Link
+                              href={template.path}
+                              className="w-full py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80"
+                            >
+                              Build My Cover Letter
+                            </Link>
                             <button
                               onClick={() => setDataToView(template)}
                               style={{ borderColor: data.color }}

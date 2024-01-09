@@ -7,29 +7,7 @@ import CvVsResume from "@/public/resume-vs-cv.webp";
 import UserOne from "@/public/corissa-peterson.jpg";
 import UserTwo from "@/public/conrad-benz.jpg";
 
-export const resumeTemplates = [
-  {
-    image: CoverLetterOne,
-    name: "Advanced",
-    description:
-      "Color helps highlights your contact information and skills sections on the “Advanced” resume template.",
-    path: "/cover-letter-builder/app",
-  },
-  {
-    image: CoverLetterTwo,
-    name: "Clean",
-    description:
-      'The "Clean" resume template features a color bar on the left that still leaves room for your experience to take center stage.',
-    path: "/cover-letter-builder/app",
-  },
-  {
-    image: CoverLetterThree,
-    name: "Corporate",
-    description:
-      "With its simple, bold design, the “Corporate” resume template is ideal for confident business professionals.",
-    path: "/cover-letter-builder/app",
-  },
-];
+export const coverLetterTemplates = [];
 
 export const blogData = [
   {

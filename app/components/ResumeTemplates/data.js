@@ -1,34 +1,18 @@
-import ResumeTemplateOne from "@/public/template-two.webp";
-import ResumeTemplateTwo from "@/public/resume-template-one.webp";
-import ResumeTemplateThree from "@/public/resume-template-two.webp";
-
 import ResumeFormat from "@/public/resume-format.webp";
 import ResumeSummary from "@/public/resume-summary-hero.webp";
 import CvVsResume from "@/public/resume-vs-cv.webp";
 import UserOne from "@/public/corissa-peterson.jpg";
 import UserTwo from "@/public/conrad-benz.jpg";
+import AdvancedResumeTemplate from "../templates/resume/Advanced";
+import { dummyUserData } from "../OtherComponents/data";
 
 export const resumeTemplates = [
   {
-    image: ResumeTemplateOne,
-    name: "Advanced",
+    template: <AdvancedResumeTemplate data={dummyUserData} />,
+    name: "Advanced Template",
     description:
       "Color helps highlights your contact information and skills sections on the “Advanced” resume template.",
-    path: "/resume-builder/app/how-to-start/resume-01",
-  },
-  {
-    image: ResumeTemplateTwo,
-    name: "Clean",
-    description:
-      'The "Clean" resume template features a color bar on the left that still leaves room for your experience to take center stage.',
-    path: "/resume-builder/app/how-to-start/resume-02",
-  },
-  {
-    image: ResumeTemplateThree,
-    name: "Corporate",
-    description:
-      "With its simple, bold design, the “Corporate” resume template is ideal for confident business professionals.",
-    path: "/resume-builder/app/how-to-start/resume-03",
+    path: "/resume-builder/app/how-to-start/advanced-resume",
   },
 ];
 

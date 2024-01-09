@@ -19,24 +19,9 @@ export const buldersLink = [
 
 export const templateLinks = [
   {
-    name: "Professional",
-    path: "/resume-templates#professional",
+    name: "Advanced",
+    path: "/resume-templates#advanced",
     subTitle: "HR approved, organized, and stylish.",
-  },
-  {
-    name: "Modern",
-    path: "/resume-templates#modern",
-    subTitle: "Contemporary templates perfect for your new job.",
-  },
-  {
-    name: "Creative",
-    path: "/resume-templates#creative",
-    subTitle: "A little visual flair to highlight your creativity.",
-  },
-  {
-    name: "Simple",
-    path: "/resume-templates#simple",
-    subTitle: "Basic templates that focus on your work experience.",
   },
 ];
 
@@ -57,28 +42,7 @@ export const resumeHelpLinks = [
   },
 ];
 
-export const coverLetterTemplateLinks = [
-  {
-    name: "Professional",
-    path: "/cover-letter-templates#professional",
-    subTitle: "HR approved, organized, and stylish.",
-  },
-  {
-    name: "Modern",
-    path: "/cover-letter-templates#modern",
-    subTitle: "Contemporary templates perfect for your new job.",
-  },
-  {
-    name: "Creative",
-    path: "/cover-letter-templates#creative",
-    subTitle: "A little visual flair to highlight your creativity.",
-  },
-  {
-    name: "Simple",
-    path: "/cover-letter-templates#creative",
-    subTitle: "Basic templates that focus on your work experience.",
-  },
-];
+export const coverLetterTemplateLinks = [];
 
 export const coverLetterHelpLinks = [
   {

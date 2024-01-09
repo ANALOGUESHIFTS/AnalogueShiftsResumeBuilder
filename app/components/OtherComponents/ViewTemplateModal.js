@@ -13,8 +13,8 @@ export default function ViewTemplateModal({ data, closeModal, builder }) {
       </button>
       <div className="w-full h-max min-h-screen max-[552px]:rounded-none bg-white rounded-2xl p-8 max-[552px]:p-5">
         <div className="w-full h-max min-h-screen flex justify-between max-[691px]:flex-col max-[691px]:gap-5">
-          <div className="w-6/12 max-[691px]:w-full h-full overflow-hidden rounded-xl shadow-xl p-2.5">
-            <Image src={data.image} alt="Resume" />
+          <div className="w-6/12 max-[691px]:w-full max-h-screen overflow-y-scroll scroll-hidden rounded-xl shadow-xl">
+            {data.template}
           </div>
           <div className="w-6/12 max-[691px]:w-full h-screen overflow-y-auto pl-8 max-[552px]:pl-0 remove-scrollbar">
             <Link
@@ -41,51 +41,7 @@ export default function ViewTemplateModal({ data, closeModal, builder }) {
             <p className="text-sm font-medium text-black/60 pb-4">
               {data.whyShouldYouUseIt}
             </p>
-            <p className="text-black/80 font-medium text-base pb-2.5">
-              Format and styling details
-            </p>
-            <p className="text-base font-medium text-black/70 pb-2.5 pl-2.5">
-              Major Features
-            </p>
-            <ul className="w-full flex flex-col list-inside list-disc gap-2 pb-4">
-              {data.formatAndStylingDetails.majorFeatures.map((l) => {
-                return (
-                  <li
-                    key={crypto.randomUUID()}
-                    className="text-black/60 font-medium text-sm"
-                  >
-                    {l}
-                  </li>
-                );
-              })}
-            </ul>
-            <p className="text-base font-medium text-black/70 pb-2.5 pl-2.5">
-              Text Details
-            </p>
-            <ul className="w-full flex flex-col list-inside list-disc gap-2 ">
-              {data.formatAndStylingDetails.textDetails.map((l) => {
-                return (
-                  <li
-                    key={crypto.randomUUID()}
-                    className="text-black/60 font-medium text-sm"
-                  >
-                    {l}
-                  </li>
-                );
-              })}
-            </ul>
             <div className="w-full pt-6">
-              <div className="w-full rounded-lg border p-3">
-                <p className="text-black/60 font-medium text-base pb-2 border-b mb-2">
-                  How to access this template
-                </p>
-                <Link
-                  href={data.linkToDocs}
-                  className=" hover:underline text-black/60 font-medium text-sm"
-                >
-                  Google Docs
-                </Link>
-              </div>
               <div className="mt-4 bg-[#f8f9fb] p-3 w-full h-max flex flex-col gap-3 rounded-lg">
                 <p className="text-black/60 font-medium text-base pb-2 mb-2">
                   {builder} Builder

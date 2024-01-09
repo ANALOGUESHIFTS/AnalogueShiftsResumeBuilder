@@ -8,11 +8,12 @@ import Link from "next/link";
 import FreeResumeTemplates from "../OtherComponents/FreeResumeTemplates";
 import FileIcon from "@/public/upload-file.png";
 import Faqs from "../OtherComponents/Faqs";
-import ResumeTemplateTwo from "@/public/resume-template-one.webp";
 import MasonryGrid from "../blog/MansoryGrid";
 
 import { resumeTemplates } from "./data";
 import { axiosBlog } from "@/app/lib/axios";
+import AdvancedResumeTemplate from "../templates/resume/Advanced";
+import { dummyUserData } from "../OtherComponents/data";
 
 export default function ResumeTemplatesPageDetails() {
   const [loading, setLoading] = useState(false);
@@ -74,7 +75,7 @@ export default function ResumeTemplatesPageDetails() {
         <div className="w-full px-10 max-[800px]:px-5">
           <div className="w-full flex justify-center border-b ">
             <Link
-              href="#"
+              href="/resume-templates"
               className="w-[112px] flex justify-center pb-5 text-AnalogueShiftsTextColor/80 border-b border-AnalogueShiftsTextColor/80 text-base font-medium"
             >
               Resume
@@ -99,14 +100,12 @@ export default function ResumeTemplatesPageDetails() {
                   <Link
                     key={crypto.randomUUID()}
                     href={data.path}
-                    className="h-max p-4 w-[calc(33.3%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
+                    className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
                   >
                     <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
-                      <Image
-                        src={data.image}
-                        alt="Template Image"
-                        className="w-full h-full max-[900px]:h-max rounded-lg"
-                      />
+                      <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
+                        {data.template}
+                      </div>
                       <button className="absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
                         Use Template
                       </button>
@@ -293,12 +292,8 @@ export default function ResumeTemplatesPageDetails() {
             our professional templates.
           </p>
           <div className="w-full h-max p-8 rounded-xl bg-white shadow-xl flex justify-between max-[887px]:flex-col max-[887px]:gap-5">
-            <div className="w-[30%] max-[887px]:w-full rounded-lg shadow-xl p-1">
-              <Image
-                src={ResumeTemplateTwo}
-                alt="Resume Template Image"
-                className="w-full h-auto"
-              />
+            <div className="w-[30%] h-[450px] max-[887px]:w-full rounded-lg overflow-y-scroll scroll-hidden p-1">
+              <AdvancedResumeTemplate data={dummyUserData} />
             </div>
             <div className="w-[65%] max-[887px]:w-full max-[887px]:h-max max-[887px]:py-10 max-[887px]:px-3 flex flex-col justify-center items-center rounded-lg border border-dashed gap-3">
               <Image src={FileIcon} alt="Upload" className="w-[80px] h-auto" />

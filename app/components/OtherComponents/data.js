@@ -16,6 +16,117 @@ import PickAResumeTemplate from "@/public/pick-a-resume-template.svg";
 import CustomizeEachSection from "@/public/generate-bullet-point.svg";
 import EmphasizeYourSkills from "@/public/emphasize-your-skill.svg";
 import AttachACoverLetter from "@/public/attach-cover-letter.svg";
+import AdvancedResumeTemplate from "../templates/resume/Advanced";
+
+export const dummyUserData = {
+  contactData: {
+    "First Name": "Promise",
+    "Last Name": "Onuoha",
+    "Desired Job Title": "Frontend Developer",
+    Phone: "+2349075868706",
+    Country: "Nigeria",
+    City: "Aba",
+    "State / Province": "Abia",
+    "LinkedIn Url": "https://www.linkedin.com/in/promise-onuoha",
+    Email: "pebuka351@gmail.com",
+  },
+  experienceData: [
+    {
+      title: "Experience 2",
+      jobTitle: "Frontend Engineer",
+      companyName: "AnalogueShifts",
+      country: "Nigeria",
+      state: "",
+      city: "",
+      description: "Currently working as a frontend engineer",
+      startMonth: "October",
+      endMonth: "",
+      startYear: "2023",
+      endYear: "",
+      currentlyWorkHere: true,
+    },
+  ],
+  educationData: [
+    {
+      title: "Education 1",
+      schoolName: "St micheal's comprehensive college",
+      schoolLocation: "Mcc, Aba, Abia, Nigeria",
+      degreeOfProgram: "High school",
+      fieldOfStudy: "Art",
+      graduationMonth: "August",
+      graduationYear: "2023",
+      additionalInfo:
+        "I acquired my academic foundation at this esteemed institution, contributing to my professional growth and expertise.",
+    },
+  ],
+  certificationData: [
+    {
+      id: "certification-24af741c-5e04-4982-8f53-932cbc580851",
+      certification: "Javascript Algorithmns and data structures",
+    },
+    {
+      id: "certification-32a2bc17-eee5-4cbb-bff0-e3d9b11bea8e",
+      certification: "Advanced CSS Animations",
+    },
+  ],
+  skillsData: [
+    {
+      id: "skill-de71adbd-596e-440c-b3cd-a73b0486af1f",
+      skill: "Javascript",
+    },
+    {
+      id: "skill-aac37ca9-dc81-4adc-9ae3-39d22f886a5c",
+      certification: "",
+      skill: "Typescript",
+    },
+    {
+      id: "skill-b9bba46b-4ee6-4b6a-a9b3-7700bbe1389f",
+      certification: "",
+      skill: "React",
+    },
+    {
+      id: "skill-de647520-e6ad-4676-8542-7a40489cd445",
+      certification: "",
+      skill: "Next",
+    },
+  ],
+  summaryData:
+    "<p>I am a Frontend Developer currently expanding my skillset by delving into backend development, with a focus on MERN Stack</p>",
+  referencesData: [
+    {
+      title: "Reference 1",
+      firstName: "Kenneth",
+      lastName: "Malaka",
+      positionTitle: "CEO",
+      email: "hello@analogueshifts.com",
+      phone: "09075868706",
+      relationshipToYou: "Employer",
+      companyName: "AnalogueShifts",
+    },
+  ],
+  finalizeData: {
+    awards: [
+      {
+        id: "award-c6a4ccf4-298f-40ca-929b-e4cd85d3b2c8",
+        award: "None",
+      },
+    ],
+    publications: [
+      {
+        id: "publication-f8df2022-7cf1-4a59-bd7c-bbb29b703535",
+        publication: "None",
+      },
+    ],
+    customDatas: [
+      {
+        id: "customData-7fc66f74-bbb1-4de7-9013-454f1978e98b",
+        name: "My Custom Data",
+        description: "My custom data details",
+      },
+    ],
+  },
+  template: "resume-01",
+};
 
 export const resumeLinks = [
   {
@@ -43,807 +154,35 @@ export const coverLetterLinks = [
   },
 ];
 
-export const coverLetterTemplates = [
-  {
-    theMatchingResumeLink: "/resume-templates#professional-templates",
-    linkToTemplate: "/cover-letter-templates#professional-templates",
-    id: "professional",
-    color: "#4b94ea",
-    background: "#e4f0fe",
-    icon: BriefCaseIcon,
-    name: "Professional Templates",
-    description:
-      "A professional cover letter template suits experienced candidates applying to large companies. If you’re an executive or seeking a senior position, use one of these templates to write a confident and authoritative cover letter.",
-    templates: [
-      {
-        color: "#4b94ea",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterOne,
-        name: "Minimalist",
-        linkToThisTemplate: "#",
-        description:
-          "As the name suggests, the Minimalist cover letter features a simple design aesthetic that doesn’t distract from its content. At the same time, a bit of color is added to allow you to express your individuality—do you suit an ambitious red or an industrious blue?",
-        linkToDocs:
-          "https://docs.google.com/document/d/1p8NshhrOebOnIpC4_rXPPOxa78hgUV5P/copy",
-        whyIsItCalled:
-          "True to its name, the Minimalist has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
-        whyShouldYouUseIt:
-          "The Minimalist's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Colored name header, contact icons, and skill meters",
-            "Left-hand column with sections for contact info, education, skills, and awards",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#4b94ea",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterTwo,
-        name: "Cosmopolitan",
-        linkToThisTemplate: "#",
-        description:
-          "The “Cosmopolitan” resume template features a sophisticated header with pastel color options. Stylish and clean.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1mnRTY_Z3TiN-SjqpBWB12WRss61K_FZ6/copy",
-        whyIsItCalled:
-          "The Cosmopolitan's stately design has a simple but refined layout. Instead of overwhelming readers, its subdued coloring makes the template easy to read and pleasant to look at. It also draws subtle attention to the candidate's name -- the only completely uppercase header in the resume.",
-        whyShouldYouUseIt:
-          "Professional and sleek, this template can be adapted to suit positions in all kinds of industries, from art to education to sales.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Two-column layout",
-            "White space balanced between neat color blocks",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#4b94ea",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterThree,
-        name: "Executive",
-        linkToThisTemplate: "#",
-        description:
-          "Perfect for managers, the “Executive” template’s timeline graphic highlights your experience section above all.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1mgx5SWHDO_Bv-hhsBLSOx2Np8_U6EjYR/copy",
-        whyIsItCalled:
-          "The Executive template is the Bentley of the professional resumes. No other resume comes close to the refined and stylish format of the executive. Other templates can’t stand up to the exclusive feel that the Executive template gives off. The sophistication of the alignments and the use of vertical and horizontal line breaks have no equal in the resume world.",
-        whyShouldYouUseIt:
-          "The Executive is for anyone who wants to impress their potential employers with a crisp and well-laid out format. This is a favorite of veteran professionals who are looking to upgrade their resume. The Executive works best with applicants who are looking for the ultimate consolidation of their extensive experience.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Contact details imprinted in white into a black bar",
-            "Headings featured on the left side of the resume with a vertical double bar for separation",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-    ],
-  },
-  {
-    theMatchingResumeLink: "/resume-templates#modern-templates",
-    linkToTemplate: "/cover-letter-templates#modern-templates",
-    id: "modern",
-    color: "#ea723c",
-    background: "#fdf1eb",
-    icon: Cube,
-    name: "Modern Templates",
-    description:
-      "Pair a modern cover letter template with your resume to show some personality in your job application. This style of cover letter template is ideal for job seekers applying to work in tech, at startups, or in industries like marketing and design.",
-    templates: [
-      {
-        color: "#ea723c",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterOne,
-        name: "Minimalist",
-        linkToThisTemplate: "#",
-        description:
-          "As the name suggests, the Minimalist cover letter features a simple design aesthetic that doesn’t distract from its content. At the same time, a bit of color is added to allow you to express your individuality—do you suit an ambitious red or an industrious blue?",
-        linkToDocs:
-          "https://docs.google.com/document/d/1p8NshhrOebOnIpC4_rXPPOxa78hgUV5P/copy",
-        whyIsItCalled:
-          "True to its name, the Minimalist has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
-        whyShouldYouUseIt:
-          "The Minimalist's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Colored name header, contact icons, and skill meters",
-            "Left-hand column with sections for contact info, education, skills, and awards",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#ea723c",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterTwo,
-        name: "Cosmopolitan",
-        linkToThisTemplate: "#",
-        description:
-          "The “Cosmopolitan” resume template features a sophisticated header with pastel color options. Stylish and clean.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1mnRTY_Z3TiN-SjqpBWB12WRss61K_FZ6/copy",
-        whyIsItCalled:
-          "The Cosmopolitan's stately design has a simple but refined layout. Instead of overwhelming readers, its subdued coloring makes the template easy to read and pleasant to look at. It also draws subtle attention to the candidate's name -- the only completely uppercase header in the resume.",
-        whyShouldYouUseIt:
-          "Professional and sleek, this template can be adapted to suit positions in all kinds of industries, from art to education to sales.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Two-column layout",
-            "White space balanced between neat color blocks",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#ea723c",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterThree,
-        name: "Executive",
-        linkToThisTemplate: "#",
-        description:
-          "Perfect for managers, the “Executive” template’s timeline graphic highlights your experience section above all.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1mgx5SWHDO_Bv-hhsBLSOx2Np8_U6EjYR/copy",
-        whyIsItCalled:
-          "The Executive template is the Bentley of the professional resumes. No other resume comes close to the refined and stylish format of the executive. Other templates can’t stand up to the exclusive feel that the Executive template gives off. The sophistication of the alignments and the use of vertical and horizontal line breaks have no equal in the resume world.",
-        whyShouldYouUseIt:
-          "The Executive is for anyone who wants to impress their potential employers with a crisp and well-laid out format. This is a favorite of veteran professionals who are looking to upgrade their resume. The Executive works best with applicants who are looking for the ultimate consolidation of their extensive experience.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Contact details imprinted in white into a black bar",
-            "Headings featured on the left side of the resume with a vertical double bar for separation",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-    ],
-  },
-  {
-    theMatchingResumeLink: "/resume-templates#creative-templates",
-    linkToTemplate: "/cover-letter-templates#creative-templates",
-    id: "creative",
-    color: "#2ca482",
-    background: "#f0faf5",
-    icon: Bulb,
-    name: "Creative Templates",
-    description:
-      "Our creative cover letters perfectly balance professionalism and personality. Use one of these unique cover letter templates if you’re applying for work in a contemporary field like design or marketing.",
-    templates: [
-      {
-        color: "#2ca482",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterOne,
-        name: "Minimalist",
-        linkToThisTemplate: "#",
-        description:
-          "As the name suggests, the Minimalist cover letter features a simple design aesthetic that doesn’t distract from its content. At the same time, a bit of color is added to allow you to express your individuality—do you suit an ambitious red or an industrious blue?",
-        linkToDocs:
-          "https://docs.google.com/document/d/1p8NshhrOebOnIpC4_rXPPOxa78hgUV5P/copy",
-        whyIsItCalled:
-          "True to its name, the Minimalist has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
-        whyShouldYouUseIt:
-          "The Minimalist's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Colored name header, contact icons, and skill meters",
-            "Left-hand column with sections for contact info, education, skills, and awards",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#2ca482",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterTwo,
-        name: "Cosmopolitan",
-        linkToThisTemplate: "#",
-        description:
-          "The “Cosmopolitan” resume template features a sophisticated header with pastel color options. Stylish and clean.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1mnRTY_Z3TiN-SjqpBWB12WRss61K_FZ6/copy",
-        whyIsItCalled:
-          "The Cosmopolitan's stately design has a simple but refined layout. Instead of overwhelming readers, its subdued coloring makes the template easy to read and pleasant to look at. It also draws subtle attention to the candidate's name -- the only completely uppercase header in the resume.",
-        whyShouldYouUseIt:
-          "Professional and sleek, this template can be adapted to suit positions in all kinds of industries, from art to education to sales.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Two-column layout",
-            "White space balanced between neat color blocks",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#2ca482",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterThree,
-        name: "Executive",
-        linkToThisTemplate: "#",
-        description:
-          "Perfect for managers, the “Executive” template’s timeline graphic highlights your experience section above all.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1mgx5SWHDO_Bv-hhsBLSOx2Np8_U6EjYR/copy",
-        whyIsItCalled:
-          "The Executive template is the Bentley of the professional resumes. No other resume comes close to the refined and stylish format of the executive. Other templates can’t stand up to the exclusive feel that the Executive template gives off. The sophistication of the alignments and the use of vertical and horizontal line breaks have no equal in the resume world.",
-        whyShouldYouUseIt:
-          "The Executive is for anyone who wants to impress their potential employers with a crisp and well-laid out format. This is a favorite of veteran professionals who are looking to upgrade their resume. The Executive works best with applicants who are looking for the ultimate consolidation of their extensive experience.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Contact details imprinted in white into a black bar",
-            "Headings featured on the left side of the resume with a vertical double bar for separation",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-    ],
-  },
-  {
-    theMatchingResumeLink: "/resume-templates#simple-templates",
-    linkToTemplate: "/cover-letter-templates#simple-templates",
-    id: "simple",
-    color: "#f892bc",
-    background: "#fdedf5",
-    icon: Smile,
-    name: "Simple Templates",
-    description:
-      "Write a clear and organized cover letter using a simple cover letter template. Each basic template is free to download (compatible with Microsoft Word and Google Docs), and will help you create the perfect cover letter for whatever job you apply for.",
-    templates: [
-      {
-        color: "#f892bc",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterOne,
-        name: "Minimalist",
-        linkToThisTemplate: "#",
-        description:
-          "As the name suggests, the Minimalist cover letter features a simple design aesthetic that doesn’t distract from its content. At the same time, a bit of color is added to allow you to express your individuality—do you suit an ambitious red or an industrious blue?",
-        linkToDocs:
-          "https://docs.google.com/document/d/1p8NshhrOebOnIpC4_rXPPOxa78hgUV5P/copy",
-        whyIsItCalled:
-          "True to its name, the Minimalist has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
-        whyShouldYouUseIt:
-          "The Minimalist's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Colored name header, contact icons, and skill meters",
-            "Left-hand column with sections for contact info, education, skills, and awards",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#f892bc",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterTwo,
-        name: "Cosmopolitan",
-        linkToThisTemplate: "#",
-        description:
-          "The “Cosmopolitan” resume template features a sophisticated header with pastel color options. Stylish and clean.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1mnRTY_Z3TiN-SjqpBWB12WRss61K_FZ6/copy",
-        whyIsItCalled:
-          "The Cosmopolitan's stately design has a simple but refined layout. Instead of overwhelming readers, its subdued coloring makes the template easy to read and pleasant to look at. It also draws subtle attention to the candidate's name -- the only completely uppercase header in the resume.",
-        whyShouldYouUseIt:
-          "Professional and sleek, this template can be adapted to suit positions in all kinds of industries, from art to education to sales.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Two-column layout",
-            "White space balanced between neat color blocks",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#f892bc",
-        path: "/cover-letter-builder/app/",
-        image: CoverLetterThree,
-        name: "Executive",
-        linkToThisTemplate: "#",
-        description:
-          "Perfect for managers, the “Executive” template’s timeline graphic highlights your experience section above all.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1mgx5SWHDO_Bv-hhsBLSOx2Np8_U6EjYR/copy",
-        whyIsItCalled:
-          "The Executive template is the Bentley of the professional resumes. No other resume comes close to the refined and stylish format of the executive. Other templates can’t stand up to the exclusive feel that the Executive template gives off. The sophistication of the alignments and the use of vertical and horizontal line breaks have no equal in the resume world.",
-        whyShouldYouUseIt:
-          "The Executive is for anyone who wants to impress their potential employers with a crisp and well-laid out format. This is a favorite of veteran professionals who are looking to upgrade their resume. The Executive works best with applicants who are looking for the ultimate consolidation of their extensive experience.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Contact details imprinted in white into a black bar",
-            "Headings featured on the left side of the resume with a vertical double bar for separation",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-    ],
-  },
-];
+export const coverLetterTemplates = [];
 
-export const coverLetterNavLinks = [
-  {
-    text: "Professional",
-    color: "#4b94ea",
-    path: "/cover-letter-templates#professional",
-  },
-  {
-    text: "Modern",
-    color: "#ea723c",
-    path: "/cover-letter-templates#modern",
-  },
-  {
-    text: "Creative",
-    color: "#2ca482",
-    path: "/cover-letter-templates#creative",
-  },
-  {
-    text: "Simple",
-    color: "#f892bc",
-    path: "/cover-letter-templates#simple",
-  },
-];
+export const coverLetterNavLinks = [];
 
 export const ResumeTemplates = [
   {
-    theMatchingCoverLetterLink:
-      "/cover-letter-templates#professional-templates",
-    linkToTemplate: "/resume-templates#professional-templates",
-    id: "professional",
+    theMatchingCoverLetterLink: "/cover-letter-templates#advanced-templates",
+    linkToTemplate: "/resume-templates#advanced-templates",
+    id: "advanced",
     color: "#4b94ea",
     background: "#e4f0fe",
     icon: BriefCaseIcon,
-    name: "Professional Templates",
+    name: "Advanced Template",
     description:
-      "Our professional resume templates are perfect for any job seeker. They’re easy to read, organized neatly, and have just enough color to capture the attention of busy hiring managers.",
+      "Our advanced resume templates are perfect for any job seeker. They’re easy to read, organized neatly, and have just enough color to capture the attention of busy hiring managers.",
     templates: [
       {
         color: "#4b94ea",
-        path: "/resume-builder/app/how-to-start/resume-01",
-        image: ResumeTemplateOne,
-        name: "Minimalist",
+        path: "/resume-builder/app/how-to-start/advanced-resume",
+        template: <AdvancedResumeTemplate data={dummyUserData} />,
+        name: "Advanced",
         linkToThisTemplate: "#",
         description:
-          "Our “Minimalist” resume template is easy for readers to digest with its clean font and subtle color accents.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1Z-69p-Awwqk7f3LG8yEzCqHUVKFdKdP5/copy",
+          "Our “Advanced” resume template is easy for readers to digest with its clean font and subtle color accents.",
+
         whyIsItCalled:
-          "True to its name, the Minimalist has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
+          "True to its name, the Advanced has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
         whyShouldYouUseIt:
-          "The Minimalist's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Colored name header, contact icons, and skill meters",
-            "Left-hand column with sections for contact info, education, skills, and awards",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#4b94ea",
-        path: "/resume-builder/app/how-to-start/resume-02",
-        image: ResumeTemplateTwo,
-        name: "Cosmopolitan",
-        linkToThisTemplate: "#",
-        description:
-          "The “Cosmopolitan” resume template features a sophisticated header with pastel color options. Stylish and clean.",
-        linkToDocs:
-          "https://docs.google.com/document/d/18zVdyg0VImIdneFw2GFekxLHY0bO4YVF/copy",
-        whyIsItCalled:
-          "The Cosmopolitan's stately design has a simple but refined layout. Instead of overwhelming readers, its subdued coloring makes the template easy to read and pleasant to look at. It also draws subtle attention to the candidate's name -- the only completely uppercase header in the resume.",
-        whyShouldYouUseIt:
-          "Professional and sleek, this template can be adapted to suit positions in all kinds of industries, from art to education to sales.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Two-column layout",
-            "White space balanced between neat color blocks",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#4b94ea",
-        path: "/resume-builder/app/how-to-start/resume-03",
-        image: ResumeTemplateThree,
-        name: "Executive",
-        linkToThisTemplate: "#",
-        description:
-          "Perfect for managers, the “Executive” template’s timeline graphic highlights your experience section above all.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1PjUVkj-uGQKSr_oU5uU-rmflaQGIlHs3/copy",
-        whyIsItCalled:
-          "The Executive template is the Bentley of the professional resumes. No other resume comes close to the refined and stylish format of the executive. Other templates can’t stand up to the exclusive feel that the Executive template gives off. The sophistication of the alignments and the use of vertical and horizontal line breaks have no equal in the resume world.",
-        whyShouldYouUseIt:
-          "The Executive is for anyone who wants to impress their potential employers with a crisp and well-laid out format. This is a favorite of veteran professionals who are looking to upgrade their resume. The Executive works best with applicants who are looking for the ultimate consolidation of their extensive experience.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Contact details imprinted in white into a black bar",
-            "Headings featured on the left side of the resume with a vertical double bar for separation",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-    ],
-  },
-  {
-    theMatchingCoverLetterLink: "/cover-letter-templates#modern-templates",
-    linkToTemplate: "/resume-templates#modern-templates",
-    id: "modern",
-    color: "#ea723c",
-    background: "#fdf1eb",
-    icon: Cube,
-    name: "Modern Templates",
-    description:
-      "Our modern resume template collection embraces the new while paying tribute to the traditional. If you’re looking for a fresh resume design that organizes your qualifications to help you stand out, use one of our modern templates in your job search.",
-    templates: [
-      {
-        color: "#ea723c",
-        path: "/resume-builder/app/how-to-start/resume-01",
-        image: ResumeTemplateOne,
-        name: "Minimalist",
-        linkToThisTemplate: "#",
-        description:
-          "Our “Minimalist” resume template is easy for readers to digest with its clean font and subtle color accents.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1Z-69p-Awwqk7f3LG8yEzCqHUVKFdKdP5/copy",
-        whyIsItCalled:
-          "True to its name, the Minimalist has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
-        whyShouldYouUseIt:
-          "The Minimalist's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Colored name header, contact icons, and skill meters",
-            "Left-hand column with sections for contact info, education, skills, and awards",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#ea723c",
-        path: "/resume-builder/app/how-to-start/resume-02",
-        image: ResumeTemplateTwo,
-        name: "Cosmopolitan",
-        linkToThisTemplate: "#",
-        description:
-          "The “Cosmopolitan” resume template features a sophisticated header with pastel color options. Stylish and clean.",
-        linkToDocs:
-          "https://docs.google.com/document/d/18zVdyg0VImIdneFw2GFekxLHY0bO4YVF/copy",
-        whyIsItCalled:
-          "The Cosmopolitan's stately design has a simple but refined layout. Instead of overwhelming readers, its subdued coloring makes the template easy to read and pleasant to look at. It also draws subtle attention to the candidate's name -- the only completely uppercase header in the resume.",
-        whyShouldYouUseIt:
-          "Professional and sleek, this template can be adapted to suit positions in all kinds of industries, from art to education to sales.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Two-column layout",
-            "White space balanced between neat color blocks",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#ea723c",
-        path: "/resume-builder/app/how-to-start/resume-03",
-        image: ResumeTemplateThree,
-        name: "Executive",
-        linkToThisTemplate: "#",
-        description:
-          "Perfect for managers, the “Executive” template’s timeline graphic highlights your experience section above all.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1PjUVkj-uGQKSr_oU5uU-rmflaQGIlHs3/copy",
-        whyIsItCalled:
-          "The Executive template is the Bentley of the professional resumes. No other resume comes close to the refined and stylish format of the executive. Other templates can’t stand up to the exclusive feel that the Executive template gives off. The sophistication of the alignments and the use of vertical and horizontal line breaks have no equal in the resume world.",
-        whyShouldYouUseIt:
-          "The Executive is for anyone who wants to impress their potential employers with a crisp and well-laid out format. This is a favorite of veteran professionals who are looking to upgrade their resume. The Executive works best with applicants who are looking for the ultimate consolidation of their extensive experience.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Contact details imprinted in white into a black bar",
-            "Headings featured on the left side of the resume with a vertical double bar for separation",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-    ],
-  },
-  {
-    theMatchingCoverLetterLink: "/cover-letter-templates#creative-templates",
-    linkToTemplate: "/resume-templates#creative-templates",
-    id: "creative",
-    color: "#2ca482",
-    background: "#f0faf5",
-    icon: Bulb,
-    name: "Creative Templates",
-    description:
-      "Looking for work in a visual field like design, fashion, or advertising? Apply for your next job with your favorite of our creative resume templates. Simply download the resume template zip file — which includes six different color variations for Microsoft Word — and fill it out with your own information.",
-    templates: [
-      {
-        color: "#2ca482",
-        path: "/resume-builder/app/how-to-start/resume-01",
-        image: ResumeTemplateOne,
-        name: "Minimalist",
-        linkToThisTemplate: "#",
-        description:
-          "Our “Minimalist” resume template is easy for readers to digest with its clean font and subtle color accents.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1Z-69p-Awwqk7f3LG8yEzCqHUVKFdKdP5/copy",
-        whyIsItCalled:
-          "True to its name, the Minimalist has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
-        whyShouldYouUseIt:
-          "The Minimalist's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Colored name header, contact icons, and skill meters",
-            "Left-hand column with sections for contact info, education, skills, and awards",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#2ca482",
-        path: "/resume-builder/app/how-to-start/resume-02",
-        image: ResumeTemplateTwo,
-        name: "Cosmopolitan",
-        linkToThisTemplate: "#",
-        description:
-          "The “Cosmopolitan” resume template features a sophisticated header with pastel color options. Stylish and clean.",
-        linkToDocs:
-          "https://docs.google.com/document/d/18zVdyg0VImIdneFw2GFekxLHY0bO4YVF/copy",
-        whyIsItCalled:
-          "The Cosmopolitan's stately design has a simple but refined layout. Instead of overwhelming readers, its subdued coloring makes the template easy to read and pleasant to look at. It also draws subtle attention to the candidate's name -- the only completely uppercase header in the resume.",
-        whyShouldYouUseIt:
-          "Professional and sleek, this template can be adapted to suit positions in all kinds of industries, from art to education to sales.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Two-column layout",
-            "White space balanced between neat color blocks",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#2ca482",
-        path: "/resume-builder/app/how-to-start/resume-03",
-        image: ResumeTemplateThree,
-        name: "Executive",
-        linkToThisTemplate: "#",
-        description:
-          "Perfect for managers, the “Executive” template’s timeline graphic highlights your experience section above all.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1PjUVkj-uGQKSr_oU5uU-rmflaQGIlHs3/copy",
-        whyIsItCalled:
-          "The Executive template is the Bentley of the professional resumes. No other resume comes close to the refined and stylish format of the executive. Other templates can’t stand up to the exclusive feel that the Executive template gives off. The sophistication of the alignments and the use of vertical and horizontal line breaks have no equal in the resume world.",
-        whyShouldYouUseIt:
-          "The Executive is for anyone who wants to impress their potential employers with a crisp and well-laid out format. This is a favorite of veteran professionals who are looking to upgrade their resume. The Executive works best with applicants who are looking for the ultimate consolidation of their extensive experience.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Contact details imprinted in white into a black bar",
-            "Headings featured on the left side of the resume with a vertical double bar for separation",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-    ],
-  },
-  {
-    theMatchingCoverLetterLink: "/cover-letter-templates#simple-templates",
-    linkToTemplate: "/resume-templates#simple-templates",
-    id: "simple",
-    color: "#f892bc",
-    background: "#fdedf5",
-    icon: Smile,
-    name: "Simple Templates",
-    description:
-      "Love the clean, no-frills look of a traditional resume? Our simple and basic resume templates are easy to modify and compatible with any Word processor.",
-    templates: [
-      {
-        color: "#f892bc",
-        path: "/resume-builder/app/how-to-start/resume-01",
-        image: ResumeTemplateOne,
-        name: "Minimalist",
-        linkToThisTemplate: "#",
-        description:
-          "Our “Minimalist” resume template is easy for readers to digest with its clean font and subtle color accents.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1Z-69p-Awwqk7f3LG8yEzCqHUVKFdKdP5/copy",
-        whyIsItCalled:
-          "True to its name, the Minimalist has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
-        whyShouldYouUseIt:
-          "The Minimalist's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Colored name header, contact icons, and skill meters",
-            "Left-hand column with sections for contact info, education, skills, and awards",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#f892bc",
-        path: "/resume-builder/app/how-to-start/resume-02",
-        image: ResumeTemplateTwo,
-        name: "Cosmopolitan",
-        linkToThisTemplate: "#",
-        description:
-          "The “Cosmopolitan” resume template features a sophisticated header with pastel color options. Stylish and clean.",
-        linkToDocs:
-          "https://docs.google.com/document/d/18zVdyg0VImIdneFw2GFekxLHY0bO4YVF/copy",
-        whyIsItCalled:
-          "The Cosmopolitan's stately design has a simple but refined layout. Instead of overwhelming readers, its subdued coloring makes the template easy to read and pleasant to look at. It also draws subtle attention to the candidate's name -- the only completely uppercase header in the resume.",
-        whyShouldYouUseIt:
-          "Professional and sleek, this template can be adapted to suit positions in all kinds of industries, from art to education to sales.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Two-column layout",
-            "White space balanced between neat color blocks",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
-      },
-      {
-        color: "#f892bc",
-        path: "/resume-builder/app/how-to-start/resume-03",
-        image: ResumeTemplateThree,
-        name: "Executive",
-        linkToThisTemplate: "#",
-        description:
-          "Perfect for managers, the “Executive” template’s timeline graphic highlights your experience section above all.",
-        linkToDocs:
-          "https://docs.google.com/document/d/1PjUVkj-uGQKSr_oU5uU-rmflaQGIlHs3/copy",
-        whyIsItCalled:
-          "The Executive template is the Bentley of the professional resumes. No other resume comes close to the refined and stylish format of the executive. Other templates can’t stand up to the exclusive feel that the Executive template gives off. The sophistication of the alignments and the use of vertical and horizontal line breaks have no equal in the resume world.",
-        whyShouldYouUseIt:
-          "The Executive is for anyone who wants to impress their potential employers with a crisp and well-laid out format. This is a favorite of veteran professionals who are looking to upgrade their resume. The Executive works best with applicants who are looking for the ultimate consolidation of their extensive experience.",
-        formatAndStylingDetails: {
-          majorFeatures: [
-            "Contact details imprinted in white into a black bar",
-            "Headings featured on the left side of the resume with a vertical double bar for separation",
-          ],
-          textDetails: [
-            "Name/Header Font: Raleway",
-            "Content Font:&nbsp;Calibri",
-            "Name Font Size: 35pt",
-            "Header Font Size: 12pt",
-            "Job Description Font Size: 11pt",
-          ],
-        },
+          "The Advanced's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
       },
     ],
   },
@@ -851,24 +190,9 @@ export const ResumeTemplates = [
 
 export const resumeNavLinks = [
   {
-    text: "Professional",
+    text: "Advanced",
     color: "#4b94ea",
-    path: "/resume-templates#professional",
-  },
-  {
-    text: "Modern",
-    color: "#ea723c",
-    path: "/resume-templates#modern",
-  },
-  {
-    text: "Creative",
-    color: "#2ca482",
-    path: "/resume-templates#creative",
-  },
-  {
-    text: "Simple",
-    color: "#f892bc",
-    path: "/resume-templates#simple",
+    path: "/resume-templates#advanced",
   },
 ];
 
