@@ -1,5 +1,3 @@
-import ResumeTemplateFour from "@/public/resume-template-three.webp";
-
 import SampleOne from "@/public/sample-one.svg";
 import SampleTwo from "@/public/sample-two.svg";
 import SampleThree from "@/public/sample-three.svg";
@@ -11,24 +9,16 @@ import SampleEight from "@/public/sample-eight.svg";
 
 import CoverLetterOne from "@/public/academic-cv.webp";
 import CoverLetterTwo from "@/public/nurse-cv.webp";
-import CoverLetterThree from "@/public/cover-letter-three.webp";
+import AdvancedResumeTemplate from "../templates/resume/Advanced";
+import { dummyUserData } from "../OtherComponents/data";
 
 export const resumeTemplates = [
   {
-    image: CoverLetterOne,
-    path: "/cover-letter-builder/app",
-  },
-  {
-    image: CoverLetterTwo,
-    path: "/cover-letter-builder/app",
-  },
-  {
-    image: CoverLetterThree,
-    path: "/cover-letter-builder/app",
-  },
-  {
-    image: ResumeTemplateFour,
-    path: "/cover-letter-builder/app",
+    template: <AdvancedResumeTemplate data={dummyUserData} />,
+    name: "Advanced Template",
+    description:
+      "Color helps highlights your contact information and skills sections on the “Advanced” resume template.",
+    path: "/resume-builder/app/how-to-start/advanced-resume",
   },
 ];
 export const categories = [
@@ -44,7 +34,7 @@ export const categories = [
 
 export const samplesData = [
   {
-    image: CoverLetterOne,
+    template: <AdvancedResumeTemplate data={dummyUserData} />,
     name: "Academic CV",
     id: "academic-cv",
     description:
@@ -53,7 +43,7 @@ export const samplesData = [
     background: "#e4f0fe",
   },
   {
-    image: CoverLetterTwo,
+    template: <AdvancedResumeTemplate data={dummyUserData} />,
     name: "Nurse CV",
     id: "nurse-cv",
     description:

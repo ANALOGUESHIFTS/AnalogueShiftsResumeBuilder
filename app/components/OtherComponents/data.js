@@ -160,8 +160,8 @@ export const coverLetterNavLinks = [];
 
 export const ResumeTemplates = [
   {
-    theMatchingCoverLetterLink: "/cover-letter-templates#advanced-templates",
-    linkToTemplate: "/resume-templates#advanced-templates",
+    theMatchingCoverLetterLink: "/cover-letter-templates#advanced",
+    linkToTemplate: "/resume-templates#advanced",
     id: "advanced",
     color: "#4b94ea",
     background: "#e4f0fe",
@@ -198,118 +198,28 @@ export const resumeNavLinks = [
 
 export const cvTemplates = [
   {
-    id: "pro",
-    image: TemplateOne,
-    name: "Pro",
+    id: "advanced",
+    template: <AdvancedResumeTemplate data={dummyUserData} />,
+    name: "Advanced",
     whyShouldYouUseThisTemplate: (
       <p className="text-sm font-medium text-black/60">
-        The Pro CV template is simple yet formal, making it the ideal CV design
-        for anyone writing academic CVs, like an{" "}
-        <Link
-          href="/resume-samples/adjunct-professor-resume"
-          className="text-AnalogueShiftsTextColor/80 hover:underline"
-        >
-          adjunct professor CV
-        </Link>
-        , or a{" "}
-        <Link
-          href="/resume-samples/college-professor-resume"
-          className="text-AnalogueShiftsTextColor/80 hover:underline"
-        >
-          college professor CV
-        </Link>
-        .
+        The Advanced CV template is simple yet formal, making it the ideal CV
+        design for anyone writing academic CVs, like an adjunct professor CV ,
+        or a college professor CV .
       </p>
     ),
-    linkToDocs:
-      "https://docs.google.com/document/d/12g0F4ESCnkDvVUQ0anq7BOk1lqIHYyZY/copy",
-    theMatchingCoverLetter:
-      "/cover-letter-templates/cv-cover-letter-template#pro",
-  },
-  {
-    id: "business",
-    image: TemplateTwo,
-    name: "Business",
-    whyShouldYouUseThisTemplate: (
-      <p className="text-sm font-medium text-black/60">
-        The Business CV template was designed for leadership roles because of
-        its skillful blend of traditional formality and modern aesthetics. Try
-        this template if you’re writing a{" "}
-        <Link
-          href="/resume-samples/principal-resume"
-          className="text-AnalogueShiftsTextColor/80 hover:underline"
-        >
-          principal CV
-        </Link>
-        ,{" "}
-        <Link
-          href="/blog/resume-help/federal-resume-example"
-          className="text-AnalogueShiftsTextColor/80 hover:underline"
-        >
-          federal CV
-        </Link>
-        , or{" "}
-        <Link
-          href="/resume-samples/lawyer-resume-example"
-          className="text-AnalogueShiftsTextColor/80 hover:underline"
-        >
-          lawyer CV
-        </Link>
-      </p>
-    ),
-    linkToDocs:
-      "https://docs.google.com/document/d/1RvND5IuFwweYFulG3hOdEVwi3IqhfITN/copy",
-    theMatchingCoverLetter:
-      "/cover-letter-templates/cv-cover-letter-template#business",
-  },
-  {
-    id: "emory",
-    image: TemplateThree,
-    name: "Emory",
-    whyShouldYouUseThisTemplate: (
-      <p className="text-sm font-medium text-black/60">
-        This classic CV design makes it a versatile option and a great choice
-        for students, academics, scientists, or medical professionals. Use this
-        CV template if you’re writing a{" "}
-        <Link
-          href="/resume-samples/teacher-resume-examples"
-          className="text-AnalogueShiftsTextColor/80 hover:underline"
-        >
-          teacher CV
-        </Link>
-        , or{" "}
-        <Link
-          href="/cv-examples#nurse"
-          className="text-AnalogueShiftsTextColor/80 hover:underline"
-        >
-          nurse CV
-        </Link>
-      </p>
-    ),
-    linkToDocs:
-      "https://docs.google.com/document/d/12scwbgacOQSNIdwy-wlLzeQXllPZ7GYA/copy",
-    theMatchingCoverLetter:
-      "/cover-letter-templates/cv-cover-letter-template#emory",
   },
 ];
 
 export const cvNavLinks = [
   {
-    text: "Pro",
-    path: "/cv-templates#pro",
-  },
-  {
-    text: "Business",
-    path: "/cv-templates#business",
-  },
-  {
-    text: "Emory",
-    path: "/cv-templates#emory",
+    text: "Advanced",
+    path: "/cv-templates#advanced",
   },
 ];
 export const levelUpLinks = [
   {
-    path: "/resume-templates/professional-templates",
+    path: "/resume-templates#advanced",
     number: "01",
     color: "#4b94ea",
     icon: PickAResumeTemplate,
@@ -339,7 +249,7 @@ export const levelUpLinks = [
     linkText: "Pick skills for your resume",
   },
   {
-    path: "/blog/cover-letter-help/how-to-write-a-cover-letter",
+    path: "/blog",
     number: "04",
     color: "#f892bc",
     icon: AttachACoverLetter,

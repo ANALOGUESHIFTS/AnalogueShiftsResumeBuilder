@@ -30,12 +30,10 @@ export default function FreeCvTemplates() {
               className="w-full border-b pb-[80px] flex justify-between h-max max-[929px]:flex-col max-[929px]:gap-5"
               id={data.id}
             >
-              <div className="w-6/12 max-[929px]:w-full rounded-lg shadow-xl cursor-pointer duration-300 hover:translate-x-1 hover:translate-y-1 cv-template-box">
-                <Image
-                  src={data.image}
-                  alt="Image"
-                  className="w-full rounded-lg shadow-xl -translate-x-2 -translate-y-2 duration-300 cv-template-img"
-                />
+              <div className="w-6/12  h-[500px] max-[929px]:w-full rounded-lg shadow-xl cursor-pointer duration-300 hover:translate-x-1 hover:translate-y-1 cv-template-box">
+                <div className="w-full overflow-y-scroll scroll-hidden h-full rounded-lg shadow-xl -translate-x-2 -translate-y-2 duration-300 cv-template-img">
+                  {data.template}
+                </div>
               </div>
               <div className="w-6/12 pl-6 max-[929px]:w-full max-[929px]:pl-0 flex flex-col">
                 <p className="text-[2rem] text-black/80 font-bold pb-5">
@@ -46,24 +44,6 @@ export default function FreeCvTemplates() {
                 </p>
                 {data.whyShouldYouUseThisTemplate}
                 <div className="w-full pt-6">
-                  <div className="w-full rounded-lg border p-3 mb-5">
-                    <p className="text-black/60 font-medium text-base pb-2 border-b mb-2">
-                      How to access this template
-                    </p>
-                    <Link
-                      href={data.linkToDocs}
-                      className=" hover:underline  pb-3 text-black/60 font-medium text-sm"
-                    >
-                      Google Docs
-                    </Link>
-                    <br />
-                    <Link
-                      href={data.theMatchingCoverLetter}
-                      className=" hover:underline  text-black/60 font-medium text-sm"
-                    >
-                      Get The Matching Cover Letter
-                    </Link>
-                  </div>
                   <div className="mt-4 bg-[#f8f9fb] p-3 w-full h-max flex flex-col gap-3 rounded-lg">
                     <p className="text-black/60 font-medium text-base pb-2 mb-2">
                       CV Builder
@@ -76,7 +56,7 @@ export default function FreeCvTemplates() {
                       href="/resume-builder/app/how-to-start"
                       className="w-full bg-AnalogueShiftsTextColor/80 flex justify-center text-white font-semibold rounded-lg py-3"
                     >
-                      Build MyCV
+                      Build My CV
                     </Link>
                   </div>
                 </div>

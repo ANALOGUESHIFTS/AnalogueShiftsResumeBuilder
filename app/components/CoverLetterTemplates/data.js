@@ -1,6 +1,3 @@
-import CoverLetterOne from "@/public/cover-letter-one.webp";
-import CoverLetterTwo from "@/public/cover-letter-two.webp";
-import CoverLetterThree from "@/public/cover-letter-three.webp";
 import ResumeFormat from "@/public/resume-format.webp";
 import ResumeSummary from "@/public/resume-summary-hero.webp";
 import CvVsResume from "@/public/resume-vs-cv.webp";

@@ -1,36 +1,4 @@
-import ResumeTemplateFour from "@/public/resume-template-three.webp";
-
-import SampleOne from "@/public/sample-one.svg";
-import SampleTwo from "@/public/sample-two.svg";
-import SampleThree from "@/public/sample-three.svg";
-import SampleFour from "@/public/sample-four.svg";
-import SampleFive from "@/public/sample-five.svg";
-import SampleSix from "@/public/sample-six.svg";
-import SampleSeven from "@/public/sample-seven.svg";
-import SampleEight from "@/public/sample-eight.svg";
-
-import CoverLetterOne from "@/public/general-cover-letter-example.webp";
-import CoverLetterTwo from "@/public/entry-level-cover-letter-example.webp";
-import CoverLetterThree from "@/public/cover-letter-three.webp";
-
-export const resumeTemplates = [
-  {
-    image: CoverLetterOne,
-    path: "/cover-letter-builder/app",
-  },
-  {
-    image: CoverLetterTwo,
-    path: "/cover-letter-builder/app",
-  },
-  {
-    image: CoverLetterThree,
-    path: "/cover-letter-builder/app",
-  },
-  {
-    image: ResumeTemplateFour,
-    path: "/cover-letter-builder/app",
-  },
-];
+export const coverLetterTemplates = [];
 export const categories = [
   {
     name: "General Cover Letter",
@@ -44,7 +12,6 @@ export const categories = [
 
 export const samplesData = [
   {
-    image: CoverLetterOne,
     name: "General cover letter example",
     id: "general-cover-letter-example",
     description:
@@ -55,7 +22,6 @@ export const samplesData = [
       " In the cover letter example below, the candidate is concise and direct. She conveys much of what a cover letter should say in the opening paragraph, like her amount and type of experience, plus where she found the job. Then the candidate lists specific responsibilities from the job description, and mentions her experience handling similar work. She even gives an example of how her efforts have benefited her current employer. At this point, the candidate’s cover letter has already helped the hiring manager better understand her value as a hire. But she’s not done yet. Finally, the candidate signs off by mentioning how she’ll reach out if she doesn’t hear back from the hiring manager. This call to action is a key part of a general cover letter, because it highlights the writer’s interest in the job, and willingness to go further than other candidates for the opportunity.",
   },
   {
-    image: CoverLetterTwo,
     name: "Entry-level cover letter example",
     id: "entry-level-cover-letter-example",
     description:

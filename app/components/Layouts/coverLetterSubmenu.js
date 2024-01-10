@@ -65,6 +65,16 @@ export default function CoverLetterSubMenu() {
                 </Link>
               );
             })}
+            {!coverLetterTemplateLinks[0] && (
+              <div className="w-full pt-10 flex justify-center items-center">
+                <p
+                  style={{ fontFamily: "cursive" }}
+                  className="font-bold text-xl text-black/80"
+                >
+                  Coming Soon...
+                </p>
+              </div>
+            )}
           </div>
         </div>
         <Link

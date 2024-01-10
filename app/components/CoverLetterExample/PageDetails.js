@@ -10,7 +10,7 @@ import SideBarImage from "@/public/sidebar-image.svg";
 import TipMan from "@/public/tip-man.svg";
 import Faqs from "../OtherComponents/Faqs";
 import ResumeSampleSearch from "../OtherComponents/ResumeSampleSearch";
-import { categories, resumeTemplates, samplesData } from "./data";
+import { categories, coverLetterTemplates, samplesData } from "./data";
 
 export default function CoverLetterExamplePageDetails() {
   const [searchModal, setSearchModal] = useState(false);
@@ -56,33 +56,44 @@ export default function CoverLetterExamplePageDetails() {
             </div>
           </div>
         </main>
-        <section className="mt-10 w-full px-10 max-[800px]:px-5 h-max flex flex-col  bg-no-repeat">
-          <p className="pb-6 text-[2.6rem] w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
-            Our Most Used Cover Letter Samples
-          </p>
-          <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
-            {resumeTemplates.map((data) => {
-              return (
-                <Link
-                  key={crypto.randomUUID()}
-                  href={data.path}
-                  className="h-max w-[calc(25%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full resume-template-link"
-                >
-                  <div className="w-full h-max  relative template-img-box">
-                    <Image
-                      src={data.image}
-                      alt="Template Image"
-                      className="w-full h-max shadow-2xl rounded-lg hover:shadow-inner"
-                    />
-                    <button className="absolute  opacity-0 translate-y-10 duration-300 bottom-20 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
-                      Use This Template
-                    </button>
+        {coverLetterTemplates[0] && (
+          <section className="mt-10 w-full px-10 max-[800px]:px-5 h-max flex flex-col  bg-no-repeat">
+            <p className="pb-6 text-[2.6rem] w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
+              Our Most Used Cover Letter Samples
+            </p>
+            <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
+              {coverLetterTemplates.map((data) => {
+                return (
+                  <div
+                    key={crypto.randomUUID()}
+                    href={data.path}
+                    className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
+                  >
+                    <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
+                      <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
+                        {data.template}
+                      </div>
+                      <Link
+                        href={data.path}
+                        className="link-button absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80"
+                      >
+                        Use Template
+                      </Link>
+                    </div>
+                    <div className="w-full pl-2 h-[120px]">
+                      <p className="pt-6 text-base text-black/90 font-medium pb-2">
+                        {data.name}
+                      </p>
+                      <p className="text-black/60 font-medium text-sm">
+                        {data.description}
+                      </p>
+                    </div>
                   </div>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
+                );
+              })}
+            </div>
+          </section>
+        )}
         <section className="py-[100px] bg-[#fafbfc] h-max w-full  flex flex-col items-center">
           <p className="text-black/50 px-5 pb-1 text-center max-[1050px]:text-center font-bold tracking-wide text-[13px]">
             JOB-SPECIFIC COVER LETTER
@@ -185,9 +196,11 @@ export default function CoverLetterExamplePageDetails() {
                         {data.whyIsThisAGoodExample}
                       </p>
                     </div>
-                    <div className="w-full py-6 px-3 bg-white">
-                      <Image src={data.image} alt="Cover Letter Image" />
-                    </div>
+                    {data.template && (
+                      <div className="w-full h-[500px] overflow-y-scroll scroll-hidden py-6 px-3 bg-white">
+                        {data.template}
+                      </div>
+                    )}
                   </div>
                 );
               })}

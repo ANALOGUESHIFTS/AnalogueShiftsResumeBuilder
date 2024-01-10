@@ -1,24 +1,15 @@
 import ResumeTemplateOne from "@/public/template-two.webp";
 import ResumeTemplateTwo from "@/public/resume-template-one.webp";
-import ResumeTemplateThree from "@/public/resume-template-two.webp";
-import ResumeTemplateFour from "@/public/resume-template-three.webp";
+import AdvancedResumeTemplate from "../templates/resume/Advanced";
+import { dummyUserData } from "../OtherComponents/data";
 
 export const resumeTemplates = [
   {
-    image: ResumeTemplateOne,
-    path: "/resume-builder/app/how-to-start/resume-01",
-  },
-  {
-    image: ResumeTemplateTwo,
-    path: "/resume-builder/app/how-to-start/resume-02",
-  },
-  {
-    image: ResumeTemplateThree,
-    path: "/resume-builder/app/how-to-start/resume-03",
-  },
-  {
-    image: ResumeTemplateFour,
-    path: "/resume-builder/app/how-to-start/resume-04",
+    template: <AdvancedResumeTemplate data={dummyUserData} />,
+    name: "Advanced Template",
+    description:
+      "Color helps highlights your contact information and skills sections on the “Advanced” resume template.",
+    path: "/resume-builder/app/how-to-start/advanced-resume",
   },
 ];
 export const categories = [
@@ -43,12 +34,7 @@ export const samplesData = [
     samples: [
       {
         name: "Fine Arts & Aesthetics",
-        image: ResumeTemplateOne,
-        relatedLinks: [],
-      },
-      {
-        name: "Production & Management",
-        image: ResumeTemplateTwo,
+        template: <AdvancedResumeTemplate data={dummyUserData} />,
         relatedLinks: [],
       },
     ],
@@ -63,12 +49,7 @@ export const samplesData = [
     samples: [
       {
         name: "Accounting",
-        image: ResumeTemplateOne,
-        relatedLinks: [],
-      },
-      {
-        name: "Finance",
-        image: ResumeTemplateTwo,
+        template: <AdvancedResumeTemplate data={dummyUserData} />,
         relatedLinks: [],
       },
     ],

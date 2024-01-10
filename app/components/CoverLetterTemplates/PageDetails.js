@@ -93,7 +93,7 @@ export default function CoverLetterTemplatesPageDetails() {
             <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
               {coverLetterTemplates.map((data) => {
                 return (
-                  <Link
+                  <div
                     key={crypto.randomUUID()}
                     href={data.path}
                     className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
@@ -102,9 +102,12 @@ export default function CoverLetterTemplatesPageDetails() {
                       <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
                         {data.template}
                       </div>
-                      <button className="absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
+                      <Link
+                        href={data.path}
+                        className="link-button absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80"
+                      >
                         Use Template
-                      </button>
+                      </Link>
                     </div>
                     <div className="w-full pl-2 h-[120px]">
                       <p className="pt-6 text-base text-black/90 font-medium pb-2">
@@ -114,7 +117,7 @@ export default function CoverLetterTemplatesPageDetails() {
                         {data.description}
                       </p>
                     </div>
-                  </Link>
+                  </div>
                 );
               })}
               {!coverLetterTemplates[0] && (

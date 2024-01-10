@@ -43,6 +43,7 @@ export default function ResumeSampleSearch({ cancel, searchData }) {
         {initialData.map((data) => {
           return (
             <Link
+              onClick={cancel}
               key={crypto.randomUUID()}
               href={data.path}
               className="w-full py-3 border-b text-base font-medium text-black/60 hover:text-AnalogueShiftsTextColor/70"

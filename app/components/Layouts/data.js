@@ -69,20 +69,9 @@ export const coverLetterHelpLinks = [
 
 export const cvTemplateLinks = [
   {
-    name: "Pro",
-    path: "/cv-templates#pro",
+    name: "Advanced",
+    path: "/cv-templates#advanced",
     subTitle: "The ideal CV design for anyone writing",
-  },
-  {
-    name: "Business",
-    path: "/cv-templates#business",
-    subTitle: "Professional CV templates for senior-level positions.",
-  },
-
-  {
-    name: "Emory",
-    path: "/cv-templates#emory",
-    subTitle: "A versatile option and a great choice for students.",
   },
 ];
 

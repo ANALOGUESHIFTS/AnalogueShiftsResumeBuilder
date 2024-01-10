@@ -97,7 +97,7 @@
   display: none;
 }
 
-.resume-template-link:hover button {
+.resume-template-link:hover .link-button {
   opacity: 1;
   transform: translateY(0px);
 }

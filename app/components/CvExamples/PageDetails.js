@@ -67,17 +67,23 @@ export default function CvExamplePageDetails() {
                 <Link
                   key={crypto.randomUUID()}
                   href={data.path}
-                  className="h-max w-[calc(25%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full resume-template-link"
+                  className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
                 >
-                  <div className="w-full h-max  relative template-img-box">
-                    <Image
-                      src={data.image}
-                      alt="Template Image"
-                      className="w-full h-max shadow-2xl rounded-lg hover:shadow-inner"
-                    />
-                    <button className="absolute  opacity-0 translate-y-10 duration-300 bottom-20 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
-                      Use This Template
+                  <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
+                    <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
+                      {data.template}
+                    </div>
+                    <button className="absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
+                      Use Template
                     </button>
+                  </div>
+                  <div className="w-full pl-2 h-[120px]">
+                    <p className="pt-6 text-base text-black/90 font-medium pb-2">
+                      {data.name}
+                    </p>
+                    <p className="text-black/60 font-medium text-sm">
+                      {data.description}
+                    </p>
                   </div>
                 </Link>
               );
@@ -179,8 +185,8 @@ export default function CvExamplePageDetails() {
                         {data.description}
                       </p>
                     </div>
-                    <div className="w-full py-6 px-3 bg-white">
-                      <Image src={data.image} alt="Cover Letter Image" />
+                    <div className="w-full overflow-y-scroll scroll-hidden h-[500px] py-6 px-3 bg-white">
+                      {data.template}
                     </div>
                   </div>
                 );
