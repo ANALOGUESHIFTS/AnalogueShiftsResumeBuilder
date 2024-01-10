@@ -175,11 +175,9 @@ export default function FinishYourResume() {
                 </select>
               </div>
               <p className="text-xs text-black/60">
-                By clicking "Get My Resume" you agree to be charged $2.95 now
-                and accept our Terms of Use and Privacy Policy. You will be
-                billed $23.95 after your 14 days and every 4 weeks after that
-                until your subscription ends, which you can cancel at any time.
-                Foreign exchange fees may apply depending on your location.
+                By clicking "Get My Resume" you agree to be charged $
+                {selectedPaymentMenu === "Monthly" ? 7 : 2} now and accept our
+                Terms of Use and Privacy Policy.
               </p>
               <button
                 href="#checkout"
