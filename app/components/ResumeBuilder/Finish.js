@@ -1,12 +1,21 @@
 "use client";
 import { useEffect, useState } from "react";
 import AdvancedResumeTemplate from "../templates/resume/Advanced";
-import { plans } from "./data";
+import { plans, years, months } from "./data";
 import Cookies from "js-cookie";
+import Link from "next/link";
+import Image from "next/image";
+
+//Card Logos
+import MasterCard from "@/public/master-card.svg";
+import VisaCard from "@/public/visa-card.svg";
+import AmericanExpress from "@/public/american-express.svg";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);
   const [selectedPaymentMenu, setSelectedPaymentMenu] = useState("14-day");
+
+  const cardLogos = [VisaCard, MasterCard, AmericanExpress];
 
   useEffect(() => {
     const storedData = Cookies.get("userData");
@@ -14,8 +23,9 @@ export default function FinishYourResume() {
       setData(JSON.parse(storedData));
     }
   }, []);
+
   return (
-    <main className="pt-[100px] w-full flex flex-col items-center">
+    <main className="pt-[100px] bg-[#f9fbfa] w-full flex flex-col items-center">
       <p className=" text-[2.2rem] max-w-[90%] w-[900px] px-5 text-center max-[900px]:text-xl font-extrabold text-black/80">
         Hey <span className="text-AnalogueShiftsTextColor">Promise</span>,
         upgrade now for Unlimited Access to all pro features!
@@ -80,9 +90,105 @@ export default function FinishYourResume() {
               </div>
             );
           })}
-          <button className="lg:w-[65%] max-w-[90%] md:max-w-full w-[600px] py-2.5 hover:bg-AnalogueShiftsTextColor/70 rounded-full bg-AnalogueShiftsTextColor text-white text-base font-bold">
+
+          <Link
+            href="#checkout"
+            className="lg:w-[65%] flex justify-center max-w-[90%] md:max-w-full w-[600px] py-2.5 hover:bg-AnalogueShiftsTextColor/70 rounded-full bg-AnalogueShiftsTextColor text-white text-base font-bold"
+          >
             Continue
-          </button>
+          </Link>
+        </div>
+      </div>
+      <p className="pb-8 mt-8 text-[2.2rem] max-w-[90%] w-[900px] px-5 text-center max-[900px]:text-xl font-extrabold text-black/80">
+        Secure your dream job with AnalogueShifts
+      </p>
+      <div
+        id="checkout"
+        className="w-full px-5 md:px-10 lg:px-[10%] pb-8 lg:mt-3 flex flex-col gap-y-5 lg:flex-row justify-between h-max"
+      >
+        <div className=" w-full lg:w-[35%] flex flex-col">
+          <p className="font-bold text-xl text-black/80">
+            Money Back Guarantee
+          </p>
+          <p className="pt-2.5 text-base text-black/80">
+            If you are not fully satisfied within the 14 day trial period,
+            simply let us know and we will happily process a full refund.
+          </p>
+        </div>
+        <div className=" lg:w-[calc(65%-40px)] w-full">
+          <div className="w-full h-max rounded bg-white border-2 border-solid border-black/80">
+            <div className="w-full border-b py-3.5 px-5 lg:px-5 flex justify-between">
+              <p className="font-bold text-xl text-black/80">
+                Total Due: ${selectedPaymentMenu === "Monthly" ? 7 : 2}
+              </p>
+              <div className="flex gap-2">
+                {cardLogos.map((logo) => (
+                  <Image src={logo} alt="Card Logo" />
+                ))}
+              </div>
+            </div>
+            <form className="p-3 lg:p-5 flex flex-col gap-3 lg:gap-4">
+              <div className="w-full flex justify-between">
+                <input
+                  placeholder="Card Number"
+                  maxLength={19}
+                  type="text"
+                  className="outline-1 w-[calc(70%-12px)] border text-base text-black/80 outline-AnalogueShiftsTextColor rounded px-3 py-3"
+                  required
+                />
+                <input
+                  placeholder="CVV"
+                  maxLength={4}
+                  type="text"
+                  className="outline-1 w-[30%] border text-base text-black/80 outline-AnalogueShiftsTextColor rounded px-3 py-3"
+                  required
+                />
+              </div>
+              <input
+                placeholder="Name On Card"
+                type="text"
+                className="outline-1 w-full border text-base text-black/80 outline-AnalogueShiftsTextColor rounded px-3 py-3"
+                required
+              />
+              <div className="w-full flex justify-between">
+                <select
+                  className="outline-1 w-[calc(50%-6px)] border text-base text-black/80 outline-AnalogueShiftsTextColor rounded px-3 py-3"
+                  required
+                >
+                  <option value="">Month</option>
+                  {months.map((month) => (
+                    <option key={crypto.randomUUID()} value={month}>
+                      {month}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  className="outline-1 w-[calc(50%-6px)] border text-base text-black/80 outline-AnalogueShiftsTextColor rounded px-3 py-3"
+                  required
+                >
+                  <option value="">Year</option>
+                  {years.map((year) => (
+                    <option key={crypto.randomUUID()} value={year}>
+                      {year}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <p className="text-xs text-black/60">
+                By clicking "Get My Resume" you agree to be charged $2.95 now
+                and accept our Terms of Use and Privacy Policy. You will be
+                billed $23.95 after your 14 days and every 4 weeks after that
+                until your subscription ends, which you can cancel at any time.
+                Foreign exchange fees may apply depending on your location.
+              </p>
+              <button
+                href="#checkout"
+                className="w-full mt-4 mb-6 flex justify-center md:max-w-full py-2.5 hover:bg-AnalogueShiftsTextColor/70 rounded-full bg-AnalogueShiftsTextColor text-white text-base font-bold"
+              >
+                Get My Resume
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </main>
