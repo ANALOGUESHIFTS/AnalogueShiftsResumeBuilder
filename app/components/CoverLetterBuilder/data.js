@@ -80,40 +80,4 @@ export const serviceData = [
   },
 ];
 
-export const coverLetterTemplates = [
-  {
-    id: "cover-letter-01",
-    img: TemplateOne,
-    name: "Clean",
-  },
-  {
-    id: "cover-letter-02",
-    img: CoverLetterOne,
-    name: "Clean",
-  },
-  {
-    id: "cover-letter-03",
-    img: CoverLetterTwo,
-    name: "Clean",
-  },
-  {
-    id: "cover-letter-04",
-    img: CoverLetterThree,
-    name: "Clean",
-  },
-  {
-    id: "cover-letter-05",
-    img: TemplateOne,
-    name: "Clean",
-  },
-  {
-    id: "cover-letter-06",
-    img: CoverLetterOne,
-    name: "Clean",
-  },
-  {
-    id: "cover-letter-07",
-    img: CoverLetterThree,
-    name: "Clean",
-  },
-];
+export const coverLetterTemplates = [];

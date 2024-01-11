@@ -3,125 +3,35 @@ import BlogIcon from "@/public/generate-bullet-point.svg";
 import Image from "next/image";
 
 export default function CvSamples() {
-  const coverLetterLinksOne = [
+  const cvLinks = [
     {
-      title: "Academic",
+      title: "Academic CV",
       color: "#79b2f0",
-      path: "/blog/cv-help/academic-cv",
-    },
-
-    {
-      title: "Artist",
-      color: "#FAE315",
-      path: "/cv-examples/artist-cv",
+      path: "/blog/cv-help#academic-cv",
     },
     {
-      title: "Medical Assistant",
-      color: "#ee7856",
-      path: "/resume-samples/medical-assistant-resume-examples",
-    },
-    {
-      title: "Artist",
-      color: "#FAE315",
-      path: "/cv-examples/artist-cv",
-    },
-    {
-      title: "Academic",
+      title: "Nurse CV",
       color: "#79b2f0",
-      path: "/blog/cv-help/academic-cv",
-    },
-
-    {
-      title: "Medical Assistant",
-      color: "#ee7856",
-      path: "/resume-samples/medical-assistant-resume-examples",
-    },
-  ];
-
-  const coverLetterLinksTwo = [
-    {
-      title: "Nurse Practitional",
-      color: "#79b2f0",
-      path: "/resume-samples/nurse-practitioner-resume",
-    },
-    {
-      title: "Pharmacist",
-      color: "#ee7856",
-      path: "/resume-samples/pharmacist-resume-example",
-    },
-    {
-      title: "Physician Assistant",
-      color: "#FAE315",
-      path: "/resume-samples/physician-assistant-resume",
-    },
-    {
-      title: "Pharmacist",
-      color: "#ee7856",
-      path: "/resume-samples/pharmacist-resume-example",
-    },
-    {
-      title: "Nurse Practitional",
-      color: "#79b2f0",
-      path: "/resume-samples/nurse-practitioner-resume",
-    },
-
-    {
-      title: "Physician Assistant",
-      color: "#FAE315",
-      path: "/resume-samples/physician-assistant-resume",
-    },
-  ];
-
-  const coverLetterLinksThree = [
-    {
-      title: "Student",
-      color: "#FAE315",
-      path: "/blog/cv-help/cv-examples-for-students",
-    },
-    {
-      title: "Research Assistant",
-      color: "#79b2f0",
-      path: "/cv-examples/research-assistant-cv",
-    },
-    {
-      title: "Science",
-      color: "#ee7856",
-      path: "/cv-examples/science-cv",
-    },
-    {
-      title: "Research Assistant",
-      color: "#79b2f0",
-      path: "/cv-examples/research-assistant-cv",
-    },
-    {
-      title: "Student",
-      color: "#FAE315",
-      path: "/blog/cv-help/cv-examples-for-students",
-    },
-
-    {
-      title: "Science",
-      color: "#ee7856",
-      path: "/cv-examples/science-cv",
+      path: "/cv-examples#nurse-cv",
     },
   ];
 
   const blogData = [
     {
       title: "What Is a CV and What Do You Include?",
-      path: "/blog/cv-help/what-is-a-cv",
+      path: "/blog",
     },
     {
       title: "CV vs Resume: What's the difference?",
-      path: "/blog/resume-help/cv-vs-resume",
+      path: "/blog",
     },
     {
       title: "CV vs Cover Letter: What are the differences?",
-      path: "/blog/cv-help/cv-vs-cover-letter",
+      path: "/blog",
     },
     {
       title: "Curriculum Vitae (CV) Format: CV Templates & Formatting Tips",
-      path: "/blog/cv-help/cv-format",
+      path: "/blog",
     },
   ];
 
@@ -142,10 +52,7 @@ export default function CvSamples() {
         </p>
         <p className="text-black/60 max-[992px]:text-center w-[80%] max-[900px]:w-[90%]  font-normal pb-10 tracking-normal text-base">
           Not sure{" "}
-          <Link
-            className="text-AnalogueShiftsTextColor"
-            href="/blog/cv-help/how-to-write-a-cv"
-          >
+          <Link className="text-AnalogueShiftsTextColor" href="/blog">
             {" "}
             how to write a CV{" "}
           </Link>{" "}
@@ -168,25 +75,18 @@ export default function CvSamples() {
       <div className="w-6/12 h-full absolute right-0 top-0 max-[992px]:w-full max-[992px]:static">
         <div
           id="cv-examples"
-          className="w-full h-[550px] mt-8 rounded-3xl bg-[#f8f9fb] p-7 flex flex-col mb-10"
+          className="w-full h-max mt-8 rounded-3xl bg-[#f8f9fb] p-7 flex flex-col mb-10"
         >
           <p className="py-5 text-[2rem]  max-[900px]:text-xl font-bold text-black/80">
             CV examples
           </p>
           <p className="text-black/70 font-normal pb-10 tracking-normal text-base">
-            Whether you’re writing an{" "}
-            <Link
-              className="text-AnalogueShiftsTextColor"
-              href="/blog/cv-help/academic-cv"
-            >
-              {" "}
-              academic CV{" "}
-            </Link>{" "}
-            or a CV for a job, we have examples to provide you with ideas. Each
-            CV sample on AnalogueShifts was carefully researched and designed,
-            and then reviewed by certified CV-writing experts.
+            Whether you’re writing an academic CV or a CV for a job, we have
+            examples to provide you with ideas. Each CV sample on AnalogueShifts
+            was carefully researched and designed, and then reviewed by
+            certified CV-writing experts.
           </p>
-          <div className="w-full h-[250px] flex flex-col gap-3">
+          <div className="w-full h-max flex flex-col gap-3">
             <div
               onMouseOver={() => handleMouseOver("cv-links-one")}
               onMouseOut={() => handleMouseOut("cv-links-one")}
@@ -196,53 +96,7 @@ export default function CvSamples() {
                 id="cv-links-one"
                 className="moveFromRightToLeft w-max flex gap-4 "
               >
-                {coverLetterLinksOne.map((data) => {
-                  return (
-                    <Link
-                      key={crypto.randomUUID()}
-                      style={{ borderColor: data.color }}
-                      href={data.path}
-                      className={`py-2 px-6 text-black/75 duration-300 hover:scale-105 font-semibold text-sm rounded-full border`}
-                    >
-                      {data.title}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-            <div
-              onMouseOver={() => handleMouseOver("cv-links-two")}
-              onMouseOut={() => handleMouseOut("cv-links-two")}
-              className="w-full overflow-x-hidden h-[60px] pt-3"
-            >
-              <div
-                id="cv-links-two"
-                className="moveFromLeftToRight w-max flex gap-4 "
-              >
-                {coverLetterLinksTwo.map((data) => {
-                  return (
-                    <Link
-                      key={crypto.randomUUID()}
-                      style={{ borderColor: data.color }}
-                      href={data.path}
-                      className={`py-2 px-6 text-black/75 duration-300 hover:scale-105 font-semibold text-sm rounded-full border`}
-                    >
-                      {data.title}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-            <div
-              onMouseOver={() => handleMouseOver("cv-links-three")}
-              onMouseOut={() => handleMouseOut("cv-links-three")}
-              className="w-full overflow-x-hidden h-[60px] pt-2"
-            >
-              <div
-                id="cv-links-three"
-                className="moveFromRightToLeft w-max flex gap-4 "
-              >
-                {coverLetterLinksThree.map((data) => {
+                {cvLinks.map((data) => {
                   return (
                     <Link
                       key={crypto.randomUUID()}

@@ -22,7 +22,7 @@ export default function InfoScreen({ done, template }) {
   }, [isdone]);
 
   return (
-    <section className="w-full flex h-max min-h-screen bg-[#f3f8ff] px-6 pb-8">
+    <section className="max-w-full w-full flex h-max min-h-screen bg-[#f3f8ff] px-6 pb-8">
       <aside className="w-[250px] max-[930px]:hidden h-[calc(100dvh-150px)] sticky top-0 bg-white rounded-2xl p-5 flex flex-col gap-1">
         {navSections.map((section) => {
           return (

@@ -5,115 +5,33 @@ import Image from "next/image";
 export default function CoverLetterSamples() {
   const coverLetterLinksOne = [
     {
-      title: "Administrative Assistant",
+      title: "General cover letter example",
       color: "#79b2f0",
-      path: "/cover-letter-examples/administrative-assistant-cover-letter-example",
+      path: "/cover-letter-examples#general-cover-letter-example",
     },
     {
-      title: "Babysitter",
-      color: "#ee7856",
-      path: "/cover-letter-examples/babysitter-cover-letter-example",
-    },
-    {
-      title: "College Student",
-      color: "#FAE315",
-      path: "/cover-letter-examples/college-student-cover-letter-example",
-    },
-    {
-      title: "Customer Service",
+      title: "Entry-level cover letter example",
       color: "#79b2f0",
-      path: "/cover-letter-examples/customer-service-cover-letter-example",
-    },
-    {
-      title: "Graphic Designer",
-      color: "#ee7856",
-      path: "/cover-letter-examples/graphic-designer-cover-letter-example",
-    },
-    {
-      title: "IT",
-      color: "#FAE315",
-      path: "/cover-letter-examples/it-cover-letter-example",
-    },
-  ];
-
-  const coverLetterLinksTwo = [
-    {
-      title: "Librarian",
-      color: "#79b2f0",
-      path: "/cover-letter-examples/librarian-cover-letter-example",
-    },
-
-    {
-      title: "Marketing",
-      color: "#FAE315",
-      path: "/cover-letter-examples/marketing-cover-letter-example",
-    },
-    {
-      title: "Pharmacist",
-      color: "#ee7856",
-      path: "/cover-letter-examples/pharmacist-cover-letter-example",
-    },
-    {
-      title: "Nursing",
-      color: "#79b2f0",
-      path: "/cover-letter-examples/nursing-cover-letter-example",
-    },
-    {
-      title: "Teacher",
-      color: "#ee7856",
-      path: "/cover-letter-examples/teacher-cover-letter-example",
-    },
-  ];
-
-  const coverLetterLinksThree = [
-    {
-      title: "High School",
-      color: "#FAE315",
-      path: "/cover-letter-examples/high-school-cover-letter-example",
-    },
-    {
-      title: "Medical Assistant",
-      color: "#79b2f0",
-      path: "/cover-letter-examples/medical-assitant-cover-letter-example",
-    },
-    {
-      title: "Software Engineer",
-      color: "#ee7856",
-      path: "/cover-letter-examples/software-engineer-cover-letter-example",
-    },
-    {
-      title: "Consulting",
-      color: "#FAE315",
-      path: "/cover-letter-examples/consulting-cover-letter-example",
-    },
-    {
-      title: "Academic",
-      color: "#79b2f0",
-      path: "/cover-letter-examples/academic-cover-letter-example",
-    },
-    {
-      title: "Project Manager",
-      color: "#ee7856",
-      path: "/cover-letter-examples/project-manager-cover-letter-example",
+      path: "/cover-letter-examples#entry-level-cover-letter-example",
     },
   ];
 
   const blogData = [
     {
       title: "Are Cover Letters Necsessary in 2023?",
-      path: "/blog/cover-letter-help/are-cover-letters-necessary",
+      path: "/blog",
     },
     {
       title: "5 short Cover Letter Examples (+How to write)",
-      path: "/blog/cover-letter-help/short-cover-letter-examples",
+      path: "/blog",
     },
     {
       title: "How to start a Cover Letter: Introduction, Examples & Tips",
-      path: "/blog/cover-letter-help/how-to-start-a-cover-letter",
+      path: "/blog",
     },
     {
       title: "The 10 best Cover Letters of 2023",
-      path: "/blog/cover-letter-help/best-cover-letters",
+      path: "/blog",
     },
   ];
 
@@ -161,7 +79,7 @@ export default function CoverLetterSamples() {
       <div className="w-6/12 h-full absolute right-0 top-0 max-[992px]:w-full max-[992px]:static">
         <div
           id="cover-letter-samples"
-          className="w-full h-[550px] mt-8 rounded-3xl bg-[#f8f9fb] p-7 flex flex-col mb-10"
+          className="w-full h-max mt-8 rounded-3xl bg-[#f8f9fb] p-7 flex flex-col mb-10"
         >
           <p className="py-5 text-[2rem]  max-[900px]:text-xl font-bold text-black/80">
             Cover letter samples
@@ -172,7 +90,7 @@ export default function CoverLetterSamples() {
             their field, and then reviewed by our in-house team of
             CPRW-certified career experts.
           </p>
-          <div className="w-full h-[250px] flex flex-col gap-3">
+          <div className="w-full h-max flex flex-col gap-3">
             <div
               onMouseOver={() => handleMouseOver("cover-links-one")}
               onMouseOut={() => handleMouseOut("cover-links-one")}
@@ -183,52 +101,6 @@ export default function CoverLetterSamples() {
                 className="moveFromRightToLeft w-max flex gap-4 "
               >
                 {coverLetterLinksOne.map((data) => {
-                  return (
-                    <Link
-                      key={crypto.randomUUID()}
-                      style={{ borderColor: data.color }}
-                      href={data.path}
-                      className={`py-2 px-6 text-black/75 duration-300 hover:scale-105 font-semibold text-sm rounded-full border`}
-                    >
-                      {data.title}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-            <div
-              onMouseOver={() => handleMouseOver("cover-links-two")}
-              onMouseOut={() => handleMouseOut("cover-links-two")}
-              className="w-full overflow-x-hidden h-[60px] pt-3"
-            >
-              <div
-                id="cover-links-two"
-                className="moveFromLeftToRight w-max flex gap-4 "
-              >
-                {coverLetterLinksTwo.map((data) => {
-                  return (
-                    <Link
-                      key={crypto.randomUUID()}
-                      style={{ borderColor: data.color }}
-                      href={data.path}
-                      className={`py-2 px-6 text-black/75 duration-300 hover:scale-105 font-semibold text-sm rounded-full border`}
-                    >
-                      {data.title}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-            <div
-              onMouseOver={() => handleMouseOver("cover-links-three")}
-              onMouseOut={() => handleMouseOut("cover-links-three")}
-              className="w-full overflow-x-hidden h-[60px] pt-2"
-            >
-              <div
-                id="cover-links-three"
-                className="moveFromRightToLeft w-max flex gap-4 "
-              >
-                {coverLetterLinksThree.map((data) => {
                   return (
                     <Link
                       key={crypto.randomUUID()}
@@ -290,7 +162,7 @@ export default function CoverLetterSamples() {
 
           <div className="pt-3 flex justify-center">
             <Link
-              href="/blog/cover-letter-help"
+              href="/blog"
               className="text-lg font-medium text-AnalogueShiftsTextColor underline"
             >
               Visit our blog

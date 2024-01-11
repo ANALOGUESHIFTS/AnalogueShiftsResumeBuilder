@@ -105,58 +105,30 @@ export default function CvMakerPageDetails() {
           Build My CV Now
         </Link>
 
-        <div className="w-full h-max relative z-30 overflow-hidden max-[500px]:pl-3">
-          <button
-            onClick={resumeTransformDecrement}
-            className="absolute z-40 top-[45%] left-6 bg-white/90 shadow-2xl flex justify-center items-center rounded-full h-10 w-10"
-          >
-            <Image
-              src={RightButton}
-              alt="Left Icon"
-              className="w-6/12 h-6/12 rotate-[-180deg]"
-            />
-          </button>
-          <button
-            onClick={resumeTransformIncrement}
-            className="absolute z-40 top-[45%] right-6 bg-white/90 shadow-2xl flex justify-center items-center rounded-full h-10 w-10"
-          >
-            <Image
-              src={RightButton}
-              alt="Right Icon"
-              className="w-6/12 h-6/12"
-            />
-          </button>
-
-          <div
-            style={{ transform: `translateX(${resumeTransform}px)` }}
-            className="w-max duration-300 flex gap-5"
-          >
-            {resumeTemplates.map((data) => {
-              return (
-                <div
-                  key={crypto.randomUUID()}
-                  className="relative template-box w-[350px] max-w-[90%]"
-                >
-                  <div className="w-full h-max pb-[60px]">
-                    <Image
-                      className="w-full h-max  duration-300 shadow-xl rounded-xl"
-                      src={data.img}
-                      alt="Template Image"
-                    />
-                    <p className="text-center py-4 text-black/80 text-sm font-medium">
-                      {data.name}
-                    </p>
+        <div className="w-full flex gap-5 px-7 overflow-x-auto h-[600px]">
+          {resumeTemplates.map((data) => {
+            return (
+              <div
+                key={crypto.randomUUID()}
+                className="relative h-max template-box w-[450px] max-w-full pb-2 rounded-lg bg-white shadow-xl"
+              >
+                <div className="w-full ">
+                  <div className="w-full h-[500px] overflow-y-scroll scroll-hidden  duration-300 rounded-xl">
+                    {data.template}
                   </div>
-                  <Link
-                    className="template-link w-max absolute opacity-0  bottom-[20%] left-[25%] px-8 flex hover:scale-105 justify-center bg-AnalogueShiftsTextColor/80 items-center duration-300 text-black/80 font-medium text-sm py-3 rounded-lg"
-                    href={`/resume-builder/app/how-to-start/${data.id}`}
-                  >
-                    Use This Template
-                  </Link>
+                  <p className="text-center mt-3 py-2 border-t text-black/80 text-sm font-medium">
+                    {data.name}
+                  </p>
                 </div>
-              );
-            })}
-          </div>
+                <Link
+                  className="template-link w-max absolute opacity-0  bottom-[20%] left-[25%] px-8 flex hover:scale-105 justify-center bg-AnalogueShiftsTextColor/80 items-center duration-300 text-black/80 font-medium text-sm py-3 rounded-lg"
+                  href={`/resume-builder/app/how-to-start/${data.id}`}
+                >
+                  Use This Template
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </main>
       <div className="w-full h-max py-8 px-10 max-[500px]:px-4">

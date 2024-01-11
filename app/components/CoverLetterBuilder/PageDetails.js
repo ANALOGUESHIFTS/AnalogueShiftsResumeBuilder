@@ -12,26 +12,11 @@ import UseOurBuilder from "../OtherComponents/UseOurBuilder";
 import HowOurCoverLetterBuilderWorks from "../OtherComponents/HowOurCoverLetterBuilderWorks";
 import CoverLetterSamples from "../OtherComponents/CoverLetterSamples";
 import Faqs from "../OtherComponents/Faqs";
-import RightButton from "@/public/right-arrow-icon.png";
-import { useState } from "react";
 import { serviceData, coverLetterTemplates } from "./data";
 
 const logos = [SalesForceLogo, NewYorkLogo, MSNBC, FOX, Entrepreneur, Zendesk];
 
 export default function CoverLetterBuilderPageDetails() {
-  const [coverLetterTransform, setCoverLetterTransform] = useState(0);
-  const coverLetterTransformIncrement = () => {
-    let max = 350 * coverLetterTemplates.length;
-    if (coverLetterTransform > -max) {
-      setCoverLetterTransform((prev) => prev - 350);
-    }
-  };
-  const coverLetterTransformDecrement = () => {
-    if (coverLetterTransform < 0) {
-      setCoverLetterTransform((prev) => prev + 350);
-    }
-  };
-
   const handleMouseOver = (id) => {
     let elem = document.getElementById(id);
     elem.classList.add("pauseAnimation");
@@ -59,7 +44,7 @@ export default function CoverLetterBuilderPageDetails() {
         <div className="w-full flex justify-center">
           <Link
             className="w-max px-8  flex justify-center bg-AnalogueShiftsTextColor/80 items-center hover:-translate-y-1 text-black/80 duration-300 hover:scale-105 font-medium text-sm py-3 rounded-lg"
-            href="/cover-letter-builder/app"
+            href=""
           >
             Build My Cover Letter
           </Link>
@@ -92,7 +77,9 @@ export default function CoverLetterBuilderPageDetails() {
           })}
         </div>
       </main>
-      <main className="w-full h-[1000px] pt-10 flex flex-col items-center bg-white relative">
+      <main
+        className={`w-full h-max pt-10 flex flex-col items-center bg-white relative`}
+      >
         <p className="py-5 text-[2.6rem] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
           Time-tested cover letter templates.
         </p>
@@ -103,56 +90,30 @@ export default function CoverLetterBuilderPageDetails() {
 
         <Link
           className="w-max px-8 mb-10 flex justify-center border-black/40 border hover:border-black/70 items-center duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-3 rounded-lg"
-          href="/cover-letter-builder/app"
+          href=""
         >
           Make My Cover Letter Now
         </Link>
 
-        <div className="w-full h-max relative z-30 overflow-hidden max-[500px]:pl-3">
-          <button
-            onClick={coverLetterTransformDecrement}
-            className="absolute z-40 top-[45%] left-6 bg-white/90 shadow-2xl flex justify-center items-center rounded-full h-10 w-10"
-          >
-            <Image
-              src={RightButton}
-              alt="Left Icon"
-              className="w-6/12 h-6/12 rotate-[-180deg]"
-            />
-          </button>
-          <button
-            onClick={coverLetterTransformIncrement}
-            className="absolute z-40 top-[45%] right-6 bg-white/90 shadow-2xl flex justify-center items-center rounded-full h-10 w-10"
-          >
-            <Image
-              src={RightButton}
-              alt="Right Icon"
-              className="w-6/12 h-6/12"
-            />
-          </button>
-
-          <div
-            style={{ transform: `translateX(${coverLetterTransform}px)` }}
-            className="w-max duration-300 flex gap-5"
-          >
+        {coverLetterTemplates[0] && (
+          <div className="w-full h-[600px] flex gap-5 px-7 overflow-x-auto ">
             {coverLetterTemplates.map((data) => {
               return (
                 <div
                   key={crypto.randomUUID()}
-                  className="relative template-box w-[350px] max-w-[90%]"
+                  className="relative h-max template-box w-[450px] max-w-full pb-2 rounded-lg bg-white shadow-xl"
                 >
-                  <div className="w-full h-max pb-[60px]">
-                    <Image
-                      className="w-full h-max  duration-300 shadow-xl rounded-xl"
-                      src={data.img}
-                      alt="Template Image"
-                    />
-                    <p className="text-center py-4 text-black/80 text-sm font-medium">
+                  <div className="w-full ">
+                    <div className="w-full h-[500px] overflow-y-scroll scroll-hidden  duration-300 rounded-xl">
+                      {data.template}
+                    </div>
+                    <p className="text-center mt-3 py-2 border-t text-black/80 text-sm font-medium">
                       {data.name}
                     </p>
                   </div>
                   <Link
                     className="template-link w-max absolute opacity-0  bottom-[20%] left-[25%] px-8 flex hover:scale-105 justify-center bg-AnalogueShiftsTextColor/80 items-center duration-300 text-black/80 font-medium text-sm py-3 rounded-lg"
-                    href={`/cover-letter-builder/app/how-to-start/`}
+                    href={`/resume-builder/app/how-to-start/${data.id}`}
                   >
                     Use This Template
                   </Link>
@@ -160,7 +121,7 @@ export default function CoverLetterBuilderPageDetails() {
               );
             })}
           </div>
-        </div>
+        )}
       </main>
       <div className="w-full h-max py-8 px-10 max-[500px]:px-4">
         <div className="w-full h-max rounded-2xl bg-[#f8f9fb] p-7 flex flex-col items-center">
@@ -239,7 +200,7 @@ export default function CoverLetterBuilderPageDetails() {
           <div className="w-full flex max-[500px]:flex-col justify-center pb-6">
             <Link
               className="w-max max-[500px]:w-full px-8  flex justify-center bg-AnalogueShiftsTextColor/80 items-center hover:-translate-y-1 text-black/80 duration-300 hover:scale-105 font-medium text-sm py-3 rounded-lg"
-              href="/cover-letter-builder/app"
+              href=""
             >
               Build My Cover Letter
             </Link>

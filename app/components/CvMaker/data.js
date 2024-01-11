@@ -8,6 +8,8 @@ import TemplateTwo from "@/public/template-two.webp";
 
 import ResumeTemplateTwo from "@/public/resume-template-one.webp";
 import ResumeTemplateThree from "@/public/resume-template-two.webp";
+import AdvancedResumeTemplate from "../templates/resume/Advanced";
+import { dummyUserData } from "../OtherComponents/data";
 
 export const serviceData = [
   {
@@ -73,38 +75,8 @@ export const serviceData = [
 ];
 export const resumeTemplates = [
   {
-    id: "resume-01",
-    img: TemplateTwo,
-    name: "Clean",
-  },
-  {
-    id: "resume-02",
-    img: ResumeTemplateTwo,
-    name: "Clean",
-  },
-  {
-    id: "resume-03",
-    img: ResumeTemplateThree,
-    name: "Clean",
-  },
-  {
-    id: "resume-04",
-    img: TemplateTwo,
-    name: "Clean",
-  },
-  {
-    id: "resume-05",
-    img: ResumeTemplateTwo,
-    name: "Clean",
-  },
-  {
-    id: "resume-06",
-    img: ResumeTemplateThree,
-    name: "Clean",
-  },
-  {
-    id: "resume-07",
-    img: TemplateTwo,
-    name: "Clean",
+    id: "advanced-resume",
+    template: <AdvancedResumeTemplate data={dummyUserData} />,
+    name: "Advanced Template",
   },
 ];
