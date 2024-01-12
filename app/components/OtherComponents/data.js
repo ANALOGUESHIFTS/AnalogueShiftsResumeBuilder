@@ -1,28 +1,16 @@
-import CoverLetterOne from "@/public/cover-letter-one.webp";
-import CoverLetterTwo from "@/public/cover-letter-two.webp";
-import CoverLetterThree from "@/public/cover-letter-three.webp";
 import BriefCaseIcon from "@/public/briefcase-icon.svg";
-import Cube from "@/public/cube.svg";
-import ResumeTemplateOne from "@/public/template-two.webp";
-import ResumeTemplateTwo from "@/public/resume-template-one.webp";
-import ResumeTemplateThree from "@/public/resume-template-two.webp";
-import Bulb from "@/public/bulb.svg";
-import Smile from "@/public/smile.svg";
-import Link from "next/link";
-import TemplateOne from "@/public/cv-template-one.jpg";
-import TemplateTwo from "@/public/cv-template-two.webp";
-import TemplateThree from "@/public/cv-template-three.jpg";
 import PickAResumeTemplate from "@/public/pick-a-resume-template.svg";
 import CustomizeEachSection from "@/public/generate-bullet-point.svg";
 import EmphasizeYourSkills from "@/public/emphasize-your-skill.svg";
 import AttachACoverLetter from "@/public/attach-cover-letter.svg";
 import AdvancedResumeTemplate from "../templates/resume/Advanced";
+import ProfessionalResumeTemplate from "../templates/resume/Professional";
 
 export const dummyUserData = {
   contactData: {
     "First Name": "Promise",
     "Last Name": "Onuoha",
-    "Desired Job Title": "Frontend Developer",
+    "Desired Job Title": "Frontend Engineer",
     Phone: "+2349075868706",
     Country: "Nigeria",
     City: "Aba",
@@ -38,7 +26,8 @@ export const dummyUserData = {
       country: "Nigeria",
       state: "",
       city: "",
-      description: "Currently working as a frontend engineer",
+      description:
+        "Highly skilled and motivated Frontend Engineer with a proven track record at Analogueshifts, adept at translating design concepts into seamless and responsive user interfaces. Proficient in a range of modern web technologies, including HTML, CSS, and JavaScript frameworks such as React. Demonstrated expertise in optimizing website performance and user experience. Strong collaborative and communication skills, with a keen eye for detail and a passion for staying abreast of emerging frontend development trends. Committed to delivering high-quality code and innovative solutions to enhance Analogueshifts' digital presence and user engagement.",
       startMonth: "October",
       endMonth: "",
       startYear: "2023",
@@ -50,7 +39,7 @@ export const dummyUserData = {
     {
       title: "Education 1",
       schoolName: "St micheal's comprehensive college",
-      schoolLocation: "Mcc, Aba, Abia, Nigeria",
+      schoolLocation: "Aba, Abia, Nigeria",
       degreeOfProgram: "High school",
       fieldOfStudy: "Art",
       graduationMonth: "August",
@@ -99,7 +88,7 @@ export const dummyUserData = {
       lastName: "Malaka",
       positionTitle: "CEO",
       email: "hello@analogueshifts.com",
-      phone: "09075868706",
+      phone: "+2349075868706",
       relationshipToYou: "Employer",
       companyName: "AnalogueShifts",
     },
@@ -108,24 +97,24 @@ export const dummyUserData = {
     awards: [
       {
         id: "award-c6a4ccf4-298f-40ca-929b-e4cd85d3b2c8",
-        award: "None",
+        award: "Innovative Frontend Solution Award",
       },
     ],
     publications: [
       {
         id: "publication-f8df2022-7cf1-4a59-bd7c-bbb29b703535",
-        publication: "None",
+        publication: "CSS-Tricks",
       },
     ],
     customDatas: [
       {
         id: "customData-7fc66f74-bbb1-4de7-9013-454f1978e98b",
-        name: "My Custom Data",
-        description: "My custom data details",
+        name: "Frontend Developer at AnalogueShifts",
+        description:
+          "As a skilled Frontend Developer contributing to the dynamic team at AnalogueShifts, I bring a passion for crafting engaging user interfaces. With a solid foundation in HTML, CSS, and JavaScript, I specialize in leveraging React.js to create responsive and visually appealing web applications. Committed to staying updated on the latest frontend trends, I actively contribute to the seamless user experience of AnalogueShifts' digital platforms. Collaborative by nature, I thrive in a team environment and am dedicated to delivering high-quality frontend solutions that elevate the company's online presence.",
       },
     ],
   },
-  template: "resume-01",
 };
 
 export const resumeLinks = [
@@ -186,6 +175,33 @@ export const ResumeTemplates = [
       },
     ],
   },
+  {
+    theMatchingCoverLetterLink: "/cover-letter-templates#professional",
+    linkToTemplate: "/resume-templates#professional",
+    id: "professional",
+    color: "#4b94ea",
+    background: "#e4f0fe",
+    icon: BriefCaseIcon,
+    name: "Professional Template",
+    description:
+      "Our professional resume templates are perfect for any job seeker. They’re easy to read, organized neatly, and have just enough color to capture the attention of busy hiring managers.",
+    templates: [
+      {
+        color: "#4b94ea",
+        path: "/resume-builder/app/how-to-start/professional-resume",
+        template: <ProfessionalResumeTemplate data={dummyUserData} />,
+        name: "Professional",
+        linkToThisTemplate: "#",
+        description:
+          "Our “Professional” resume template is easy for readers to digest with its clean font and subtle color accents.",
+
+        whyIsItCalled:
+          "True to its name, the Professional has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
+        whyShouldYouUseIt:
+          "The Professional's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
+      },
+    ],
+  },
 ];
 
 export const resumeNavLinks = [
@@ -193,6 +209,11 @@ export const resumeNavLinks = [
     text: "Advanced",
     color: "#4b94ea",
     path: "/resume-templates#advanced",
+  },
+  {
+    text: "Professional",
+    color: "#4b94ea",
+    path: "/resume-templates#professional",
   },
 ];
 
@@ -209,12 +230,28 @@ export const cvTemplates = [
       </p>
     ),
   },
+  {
+    id: "professional",
+    template: <ProfessionalResumeTemplate data={dummyUserData} />,
+    name: "Professional",
+    whyShouldYouUseThisTemplate: (
+      <p className="text-sm font-medium text-black/60">
+        The Professional CV template is simple yet formal, making it the ideal
+        CV design for anyone writing academic CVs, like an adjunct professor CV
+        , or a college professor CV .
+      </p>
+    ),
+  },
 ];
 
 export const cvNavLinks = [
   {
     text: "Advanced",
     path: "/cv-templates#advanced",
+  },
+  {
+    text: "Professional",
+    path: "/cv-templates#professional",
   },
 ];
 export const levelUpLinks = [

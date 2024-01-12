@@ -3,6 +3,7 @@ import Image from "next/image";
 import Background from "@/public/resumes-background.png";
 import AdvancedResumeTemplate from "../templates/resume/Advanced";
 import { dummyUserData } from "../OtherComponents/data";
+import ProfessionalResumeTemplate from "../templates/resume/Professional";
 
 export default function HowToStartPageDetails() {
   const resumeTemplates = [
@@ -10,6 +11,11 @@ export default function HowToStartPageDetails() {
       id: "advanced-resume",
       template: <AdvancedResumeTemplate data={dummyUserData} />,
       name: "Advanced Templatee",
+    },
+    {
+      id: "professional-resume",
+      template: <ProfessionalResumeTemplate data={dummyUserData} />,
+      name: "Professional Template",
     },
   ];
 

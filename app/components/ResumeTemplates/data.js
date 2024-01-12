@@ -5,6 +5,7 @@ import UserOne from "@/public/corissa-peterson.jpg";
 import UserTwo from "@/public/conrad-benz.jpg";
 import AdvancedResumeTemplate from "../templates/resume/Advanced";
 import { dummyUserData } from "../OtherComponents/data";
+import ProfessionalResumeTemplate from "../templates/resume/Professional";
 
 export const resumeTemplates = [
   {
@@ -14,11 +15,18 @@ export const resumeTemplates = [
       "Color helps highlights your contact information and skills sections on the “Advanced” resume template.",
     path: "/resume-builder/app/how-to-start/advanced-resume",
   },
+  {
+    template: <ProfessionalResumeTemplate data={dummyUserData} />,
+    name: "Professional Template",
+    description:
+      "Color helps highlights your contact information and skills sections on the “Professional” resume template.",
+    path: "/resume-builder/app/how-to-start/professional-resume",
+  },
 ];
 
 export const blogData = [
   {
-    path: "/blog/resume-help/resume-format",
+    path: "/blog",
     image: ResumeFormat,
     title: "The Best Resume Format for 2023",
     description:
@@ -29,7 +37,7 @@ export const blogData = [
     color: "#4b94ea",
   },
   {
-    path: "/blog/resume-help/resume-summary",
+    path: "/blog",
     image: ResumeSummary,
     title: "Professional Resume Summary Examples",
     description:
@@ -40,7 +48,7 @@ export const blogData = [
     color: "#ea723c",
   },
   {
-    path: "/blog/resume-help/cv-vs-resume",
+    path: "/blog",
     image: CvVsResume,
     title: "CV vs Resume: What’s the Difference?",
     description:

@@ -10,6 +10,7 @@ import ResumeTemplateTwo from "@/public/resume-template-one.webp";
 import ResumeTemplateThree from "@/public/resume-template-two.webp";
 import AdvancedResumeTemplate from "../templates/resume/Advanced";
 import { dummyUserData } from "../OtherComponents/data";
+import ProfessionalResumeTemplate from "../templates/resume/Professional";
 
 export const serviceData = [
   {
@@ -78,5 +79,10 @@ export const resumeTemplates = [
     id: "advanced-resume",
     template: <AdvancedResumeTemplate data={dummyUserData} />,
     name: "Advanced Template",
+  },
+  {
+    id: "professional-resume",
+    template: <ProfessionalResumeTemplate data={dummyUserData} />,
+    name: "Professional Template",
   },
 ];

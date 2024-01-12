@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AdvancedResumeTemplate from "../templates/resume/Advanced";
 import { dummyUserData } from "./data";
+import ProfessionalResumeTemplate from "../templates/resume/Professional";
 
 export default function ResumeTemplateSection() {
   const [selected, setSelected] = useState("Resume");
@@ -14,6 +15,11 @@ export default function ResumeTemplateSection() {
       id: "advanced-resume",
       template: <AdvancedResumeTemplate data={dummyUserData} />,
       name: "Advanced Template",
+    },
+    {
+      id: "professional-resume",
+      template: <ProfessionalResumeTemplate data={dummyUserData} />,
+      name: "Professional Template",
     },
   ];
 

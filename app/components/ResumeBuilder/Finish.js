@@ -10,12 +10,19 @@ import Image from "next/image";
 import MasterCard from "@/public/master-card.svg";
 import VisaCard from "@/public/visa-card.svg";
 import AmericanExpress from "@/public/american-express.svg";
+import ProfessionalResumeTemplate from "../templates/resume/Professional";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);
   const [selectedPaymentMenu, setSelectedPaymentMenu] = useState("14-day");
 
   const cardLogos = [VisaCard, MasterCard, AmericanExpress];
+  const templates = {
+    "advanced-resume": <AdvancedResumeTemplate data={data ? data : {}} />,
+    "professional-resume": (
+      <ProfessionalResumeTemplate data={data ? data : {}} />
+    ),
+  };
 
   useEffect(() => {
     const storedData = Cookies.get("userData");
@@ -34,7 +41,7 @@ export default function FinishYourResume() {
         <div className="relative w-full lg:w-[calc(50%-15px)]  h-[600px] ">
           <div className="lg:w-[65%] w-[90%] h-[600px] bg-AnalogueShiftsTextColor fancy-border-radius"></div>
           <div className="resume-box h-[calc(100%-90px)] left-[20px] lg:left-[28%] absolute top-[45px] overflow-y-auto shadow-lg">
-            {data && <AdvancedResumeTemplate data={data} />}
+            {data && templates[data.template]}
           </div>
         </div>
         <div className=" lg:w-[calc(50%-15px)] w-full flex flex-col items-center lg:items-start gap-6 pt-12 pr-[20px]">

@@ -10,12 +10,7 @@ import SideBarImage from "@/public/sidebar-image.svg";
 import TipMan from "@/public/tip-man.svg";
 import Faqs from "../OtherComponents/Faqs";
 import ResumeSampleSearch from "../OtherComponents/ResumeSampleSearch";
-import {
-  categories,
-  differentResumeFormat,
-  resumeTemplates,
-  samplesData,
-} from "./data";
+import { categories, resumeTemplates, samplesData } from "./data";
 
 export default function CvExamplePageDetails() {
   const [searchModal, setSearchModal] = useState(false);
@@ -57,7 +52,7 @@ export default function CvExamplePageDetails() {
             </div>
           </div>
         </main>
-        <section className="mt-10 w-full px-10 max-[800px]:px-5 h-max flex flex-col  bg-no-repeat">
+        <section className="mt-10 pb-8 w-full px-10 max-[800px]:px-5 h-max flex flex-col  bg-no-repeat">
           <p className="pb-6 text-[2.6rem] w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
             Our Most Utilized CV Samples
           </p>
@@ -73,7 +68,7 @@ export default function CvExamplePageDetails() {
                     <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
                       {data.template}
                     </div>
-                    <button className="absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
+                    <button className="absolute button-row  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
                       Use Template
                     </button>
                   </div>

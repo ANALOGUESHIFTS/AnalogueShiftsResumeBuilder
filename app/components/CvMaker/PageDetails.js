@@ -13,13 +13,11 @@ import Faqs from "../OtherComponents/Faqs";
 import UseOurCVBuilder from "../OtherComponents/UseOurCVBuilder";
 import HowOurCvBuilderWorks from "../OtherComponents/HowOurCvBuilderWorks";
 import CvSamples from "../OtherComponents/CvSamples";
-import RightButton from "@/public/right-arrow-icon.png";
 import { serviceData, resumeTemplates } from "./data";
 
 const logos = [SalesForceLogo, NewYorkLogo, MSNBC, FOX, Entrepreneur, Zendesk];
 
 export default function CvMakerPageDetails() {
-  const [resumeTransform, setResumeTransform] = useState(0);
   const handleMouseOver = (id) => {
     let elem = document.getElementById(id);
     elem.classList.add("pauseAnimation");
@@ -29,17 +27,6 @@ export default function CvMakerPageDetails() {
     elem.classList.remove("pauseAnimation");
   };
 
-  const resumeTransformIncrement = () => {
-    let max = 350 * resumeTemplates.length;
-    if (resumeTransform > -max) {
-      setResumeTransform((prev) => prev - 350);
-    }
-  };
-  const resumeTransformDecrement = () => {
-    if (resumeTransform < 0) {
-      setResumeTransform((prev) => prev + 350);
-    }
-  };
   return (
     <main className="w-full h-auto">
       <main className="w-full curvy-box box-border items-center h-[800px] max-[600px]:h-[620px] relative pt-[150px] px-5 flex flex-col">

@@ -23,6 +23,11 @@ export const templateLinks = [
     path: "/resume-templates#advanced",
     subTitle: "HR approved, organized, and stylish.",
   },
+  {
+    name: "Professional",
+    path: "/resume-templates#professional",
+    subTitle: "HR approved, organized, and stylish.",
+  },
 ];
 
 export const resumeHelpLinks = [
@@ -71,6 +76,11 @@ export const cvTemplateLinks = [
   {
     name: "Advanced",
     path: "/cv-templates#advanced",
+    subTitle: "The ideal CV design for anyone writing",
+  },
+  {
+    name: "Professional",
+    path: "/cv-templates#professional",
     subTitle: "The ideal CV design for anyone writing",
   },
 ];

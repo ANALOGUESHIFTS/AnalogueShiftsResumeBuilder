@@ -105,7 +105,7 @@
   opacity: 1;
 }
 
-.resume-template-link2:hover .button-row {
+.resume-template-link:hover .button-row {
   opacity: 1;
   transform: translateY(0px);
 }

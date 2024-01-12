@@ -24,7 +24,7 @@ export default function HowToCreateAResume() {
         </Link>
         <Link
           className="w-max px-8 max-[500px]:w-full  flex justify-center border border-black/70 items-center hover:-translate-y-1 text-black/80 duration-300 hover:scale-105 font-medium text-sm py-3 rounded-lg"
-          href="/cover-letter-builder/app"
+          href=""
         >
           Create a Cover Letter
         </Link>

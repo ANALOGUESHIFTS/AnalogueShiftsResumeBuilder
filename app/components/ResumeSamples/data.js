@@ -1,7 +1,6 @@
-import ResumeTemplateOne from "@/public/template-two.webp";
-import ResumeTemplateTwo from "@/public/resume-template-one.webp";
 import AdvancedResumeTemplate from "../templates/resume/Advanced";
 import { dummyUserData } from "../OtherComponents/data";
+import ProfessionalResumeTemplate from "../templates/resume/Professional";
 
 export const resumeTemplates = [
   {
@@ -10,6 +9,13 @@ export const resumeTemplates = [
     description:
       "Color helps highlights your contact information and skills sections on the “Advanced” resume template.",
     path: "/resume-builder/app/how-to-start/advanced-resume",
+  },
+  {
+    template: <ProfessionalResumeTemplate data={dummyUserData} />,
+    name: "Professional Template",
+    description:
+      "Color helps highlights your contact information and skills sections on the “Professional” resume template.",
+    path: "/resume-builder/app/how-to-start/professional-resume",
   },
 ];
 export const categories = [
