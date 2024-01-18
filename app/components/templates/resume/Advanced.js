@@ -1,9 +1,9 @@
 import "../resume/Advanced.css";
-import Link from "next/link";
 
 export default function AdvancedResumeTemplate({ data }) {
   return (
     <main className="main min-h-full font-normal text-[#222] text-sm leading-[26px] pb-[50px] m-0 p-0 box-border h-full">
+      {/* Contact Section */}
       <div
         style={{ margin: "0px auto 0px" }}
         className="max-w-[700px] bg-white rounded-[3px] p-10"
@@ -28,14 +28,14 @@ export default function AdvancedResumeTemplate({ data }) {
             {data.contactData["LinkedIn Url"] && (
               <>
                 <span className="text-[#999] font-light">LinkedIn: </span>
-                <Link
+                <a
                   className="underline"
                   href={data.contactData["LinkedIn Url"]}
                 >
                   {" "}
                   <span className="phone-val">Click Here</span>
                   <span className="h-2.5 inline-block underline mx-2.5 border-l-2 border-solid border-[#999]"></span>
-                </Link>
+                </a>
               </>
             )}
 
@@ -49,6 +49,9 @@ export default function AdvancedResumeTemplate({ data }) {
               </span>
             </>
           </div>
+
+          {/* Summary Section */}
+
           {data.summaryData.split(">")[1][0] !== "<" && (
             <div className="about">
               <span className="font-bold inline-block mr-2.5 underline">
@@ -61,6 +64,9 @@ export default function AdvancedResumeTemplate({ data }) {
             </div>
           )}
         </div>
+
+        {/* Experience Section */}
+
         <div className="leading-5">
           {data.experienceData[0] && (
             <div className="mb-10 last-of-type:mb-0 w-full h-auto">
@@ -101,6 +107,9 @@ export default function AdvancedResumeTemplate({ data }) {
               </div>
             </div>
           )}
+
+          {/* Education Section */}
+
           {data.educationData[0] && (
             <div className="mb-10 last-of-type:mb-0">
               <div className="font-bold text-[#54afe4] tracking-wide uppercase mb-2.5">
@@ -132,6 +141,9 @@ export default function AdvancedResumeTemplate({ data }) {
               </div>
             </div>
           )}
+
+          {/* Reference Section */}
+
           {data.referencesData[0] && (
             <div className="mb-10 last-of-type:mb-0">
               <div className="font-bold text-[#54afe4] tracking-wide uppercase mb-2.5">
@@ -165,6 +177,9 @@ export default function AdvancedResumeTemplate({ data }) {
               </div>
             </div>
           )}
+
+          {/* Skills Section */}
+
           {data.skillsData[0] && (
             <div className="mb-10 last-of-type:mb-0">
               <div className="font-bold text-[#54afe4] tracking-wide uppercase mb-2.5">
@@ -181,6 +196,9 @@ export default function AdvancedResumeTemplate({ data }) {
               </div>
             </div>
           )}
+
+          {/* Awards Section */}
+
           {data.finalizeData.awards[0] && (
             <div className="mb-10 last-of-type:mb-0">
               <div className="font-bold text-[#54afe4] tracking-wide uppercase mb-2.5">
@@ -197,6 +215,9 @@ export default function AdvancedResumeTemplate({ data }) {
               </div>
             </div>
           )}
+
+          {/* Publication Section */}
+
           {data.finalizeData.publications[0] && (
             <div className="mb-10 last-of-type:mb-0">
               <div className="font-bold text-[#54afe4] tracking-wide uppercase mb-2.5">
@@ -213,6 +234,9 @@ export default function AdvancedResumeTemplate({ data }) {
               </div>
             </div>
           )}
+
+          {/* Certification Section */}
+
           {data.certificationData[0] && (
             <div className="mb-10 last-of-type:mb-0">
               <div className="font-bold text-[#54afe4] tracking-wide uppercase mb-2.5">
@@ -229,6 +253,9 @@ export default function AdvancedResumeTemplate({ data }) {
               </div>
             </div>
           )}
+
+          {/* Custom Info Section */}
+
           {data.finalizeData.customDatas[0] &&
             data.finalizeData.customDatas.map((custom) => {
               return (
