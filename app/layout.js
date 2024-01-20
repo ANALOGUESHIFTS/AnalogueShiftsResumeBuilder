@@ -4,6 +4,10 @@ import NavBar from "./components/Layouts/NavBar";
 import Footer from "./components/Layouts/Footer";
 import Script from "next/script";
 
+//Toastify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,6 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ToastContainer position="top-center" />
         <NavBar />
         {children}
         <Footer />
@@ -26,3 +31,8 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+// toast.error(err.message, {
+//   position: "top-right",
+//   autoClose: 3000,
+// });

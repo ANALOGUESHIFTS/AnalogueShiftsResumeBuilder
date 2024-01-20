@@ -3,13 +3,12 @@ import ApplicationLogo from "../Layouts/ApplicationLogo";
 import GoogleImage from "@/public/GoogleIcon.png";
 import Image from "next/image";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function LoginPageDetails() {
+export default function RegisterPageDetails() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const router = useRouter();
+  const [confirm_password, setConfirmPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,10 +19,10 @@ export default function LoginPageDetails() {
       <ApplicationLogo />
       <div className="max-w-[90%] w-[500px] rounded-xl h-max p-8 bg-white shadow-xl flex flex-col max-[500px]:p-4">
         <p className="text-black/70 text-2xl text-center font-extrabold pb-3">
-          Login
+          Sign Up
         </p>
         <p className="text-gray-500/90 text-base text-center pb-5">
-          We're happy to see you back!
+          Join us today by creating an account!
         </p>
         <div className="w-full flex justify-center gap-y-3">
           <button className="w-[48%] max-[500px]:w-full h-9 border border-[#4285f4] rounded overflow-hidden flex">
@@ -63,14 +62,22 @@ export default function LoginPageDetails() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
-            placeholder="Enter Password"
+            placeholder="Create a Password"
+            className="w-full mb-4 border rounded-md px-4 py-3.5 outline-none text-sm font-medium text-gray-500"
+            required
+          />
+          <input
+            value={confirm_password}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            type="password"
+            placeholder="Confirm Password"
             className="w-full border rounded-md px-4 py-3.5 outline-none text-sm font-medium text-gray-500"
             required
           />
           <div className="w-full flex justify-end gap-1 pt-2 pr-2">
-            <p className="text-xs text-gray-400">Don't have an account?</p>
-            <Link href="/register" className="text-xs underline text-gray-400">
-              Sign Up
+            <p className="text-xs text-gray-400">Already have an account?</p>
+            <Link href="/login" className="text-xs underline text-gray-400">
+              Login
             </Link>
           </div>
           <input

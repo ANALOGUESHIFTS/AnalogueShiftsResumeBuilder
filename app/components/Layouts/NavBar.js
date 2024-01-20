@@ -24,6 +24,8 @@ import { templateLinks } from "./data";
 import { coverLetterTemplateLinks } from "./data";
 import { cvTemplateLinks } from "./data";
 import { faqsData } from "./data";
+import ProfileDropDown from "./ProfileDropdown";
+import MobileProfileDropdown from "./MobileProfileDropdown";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -35,6 +37,7 @@ export default function NavBar() {
   const [selectedMenu, setSelectedMenu] = useState("");
   const [selectedMobileMenu, setSelectedMobileMenu] = useState("");
   const [subMenuComponent, setSubMenuComponent] = useState("");
+  const [user, setUser] = useState({});
 
   const toggleMenu = () => {
     if (position !== 0) {
@@ -136,12 +139,16 @@ export default function NavBar() {
               </button>
             );
           })}
-          <Link
-            className="border-black/70 border duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2 px-12 rounded-lg"
-            href="/login"
-          >
-            Login
-          </Link>
+          {!user ? (
+            <Link
+              className="border-black/70 border duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2 px-12 rounded-lg"
+              href="/login"
+            >
+              Login
+            </Link>
+          ) : (
+            <ProfileDropDown user={user} />
+          )}
         </div>
         <div
           style={{ transform: `rotate(${bodyRotate}deg)` }}
@@ -455,12 +462,16 @@ export default function NavBar() {
           >
             Build My Resume
           </Link>
-          <Link
-            className="border-black/70 w-full flex justify-center items-center border duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2.5 rounded-lg"
-            href="/login"
-          >
-            Login
-          </Link>
+          {!user ? (
+            <Link
+              className="border-black/70 w-full flex justify-center items-center border duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2.5 rounded-lg"
+              href="/login"
+            >
+              Login
+            </Link>
+          ) : (
+            <MobileProfileDropdown user={user} />
+          )}
         </div>
         <div className="py-2 border-t absolute bottom-0 w-full flex justify-center items-center gap-2">
           <Image
