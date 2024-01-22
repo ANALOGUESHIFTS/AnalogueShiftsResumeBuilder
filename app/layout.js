@@ -1,3 +1,4 @@
+"use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/Layouts/NavBar";
@@ -8,21 +9,21 @@ import Script from "next/script";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const inter = Inter({ subsets: ["latin"] });
+//Auth Provider
+import { AuthProvider } from "./components/contexts/AuthContext";
 
-export const metadata = {
-  title: "AnalogueShifts Resume Builder",
-  description: "The best Resume Builder",
-};
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ToastContainer position="top-center" />
-        <NavBar />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <ToastContainer position="top-center" />
+          <NavBar />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
       <Script
         src="https://kit.fontawesome.com/39a80cd06c.js"

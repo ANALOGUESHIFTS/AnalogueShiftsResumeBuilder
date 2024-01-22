@@ -27,6 +27,9 @@ import { faqsData } from "./data";
 import ProfileDropDown from "./ProfileDropdown";
 import MobileProfileDropdown from "./MobileProfileDropdown";
 
+//Use Auth
+import { useAuth } from "../contexts/AuthContext";
+
 export default function NavBar() {
   const pathname = usePathname();
   const [opacity, setOpacity] = useState(1);
@@ -37,7 +40,7 @@ export default function NavBar() {
   const [selectedMenu, setSelectedMenu] = useState("");
   const [selectedMobileMenu, setSelectedMobileMenu] = useState("");
   const [subMenuComponent, setSubMenuComponent] = useState("");
-  const [user, setUser] = useState({});
+  const { user, login, logout } = useAuth();
 
   const toggleMenu = () => {
     if (position !== 0) {
@@ -61,6 +64,10 @@ export default function NavBar() {
     } else {
       setSelectedMenu(value);
     }
+  };
+
+  const handleLogout = () => {
+    toggleMenu();
   };
 
   const navLinks = ["Builders", "Resumes", "Cover Letters", "CVs", "Resources"];
@@ -456,12 +463,6 @@ export default function NavBar() {
           </div>
         )}
         <div className="w-full flex flex-col gap-4 pt-8">
-          <Link
-            className="bg-AnalogueShiftsTextColor w-full flex justify-center items-center duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2.5 rounded-lg"
-            href="/resume-builder/app/how-to-start"
-          >
-            Build My Resume
-          </Link>
           {!user ? (
             <Link
               className="border-black/70 w-full flex justify-center items-center border duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2.5 rounded-lg"
@@ -470,8 +471,14 @@ export default function NavBar() {
               Login
             </Link>
           ) : (
-            <MobileProfileDropdown user={user} />
+            <MobileProfileDropdown user={user} logout={handleLogout} />
           )}
+          <Link
+            className="bg-AnalogueShiftsTextColor w-full flex justify-center items-center duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2.5 rounded-lg"
+            href="/resume-builder/app/how-to-start"
+          >
+            Build My Resume
+          </Link>
         </div>
         <div className="py-2 border-t absolute bottom-0 w-full flex justify-center items-center gap-2">
           <Image
