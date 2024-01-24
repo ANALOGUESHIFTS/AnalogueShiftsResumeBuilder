@@ -18,53 +18,44 @@ export default function LoginPageDetails() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/login";
-    var myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json");
-    myHeaders.append("Authorization", "Bearer 2");
-
-    var raw = JSON.stringify({ email, password });
-
-    var requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-      headers: {
-        "X-Requested-With": "XMLHttpRequest",
-      },
-      withCredentials: true,
-      withXSRFToken: true,
-    };
 
     //Start Loading
     setLoading(true);
+    
+    const url = process.env.NEXT_PUBLIC_BACKEND_URL + '/login';
+    const axios = require('axios');
 
-    try {
-      const response = await fetch(url, requestOptions);
+    let data = JSON.stringify({ email, password });
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: url,
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      data: data,
+    };
 
-      if (response.ok) {
+    axios
+      .request(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+        setLoading(false);
+        toast.success('Login Successful', {
+          position: 'top-right',
+          autoClose: 3000,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
         console.log(response);
-        setLoading(false);
-        toast.success("Login Successful", {
-          position: "top-right",
-          autoClose: 3000,
-        });
-      } else {
-        toast.error("Error! Please check your credentials", {
-          position: "top-right",
+        toast.error('Error! Please check your credentials', {
+          position: 'top-right',
           autoClose: 3000,
         });
         setLoading(false);
-      }
-    } catch (error) {
-      setLoading(false);
-      console.error("Error during login:", error);
-      toast.error(error.message, {
-        position: "top-right",
-        autoClose: 3000,
       });
-    }
   };
 
   return (
