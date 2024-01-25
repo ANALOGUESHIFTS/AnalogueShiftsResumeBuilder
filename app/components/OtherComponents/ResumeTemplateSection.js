@@ -3,10 +3,7 @@ import { useState, useEffect } from "react";
 import FileImage from "@/public/file-icon.png";
 import Image from "next/image";
 import Link from "next/link";
-import AdvancedResumeTemplate from "../templates/resume/Advanced";
 import { dummyUserData } from "./data";
-import ProfessionalResumeTemplate from "../templates/resume/Professional";
-import SimpleTemplate from "../templates/resume/Simple";
 
 // Contexts
 import { useResumeTemplates } from "../contexts/ResumeTemplatesContext";
@@ -15,14 +12,6 @@ import TemplateComponent from "../templates/TemplateComponent";
 export default function ResumeTemplateSection() {
   const [selected, setSelected] = useState("Resume");
   const { resumeTemplates, updateResumeTemplates } = useResumeTemplates();
-
-  // const resumeTemplates = [
-  //   {
-  //     id: "advanced-resume",
-  //     template: <AdvancedResumeTemplate data={dummyUserData} />,
-  //     name: "Advanced Template",
-  //   },
-  // ];
 
   const coverLetterTemplates = [];
 
