@@ -75,34 +75,37 @@ export default function NavBar() {
     toggleMenu();
     const token = Cookies.get("userToken");
     if (token) {
-      var myHeaders = new Headers();
-      myHeaders.append("Accept", "application/json");
-      myHeaders.append("Authorization", "Bearer 2" + token);
-
-      var raw = "";
-
-      var requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow",
+      const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/logout";
+      const axios = require("axios");
+      let config = {
+        method: "post",
+        maxBodyLength: Infinity,
+        url: url,
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: "Bearer 2" + token,
+        },
       };
 
-      setLoading(true);
-
-      fetch(process.env.NEXT_PUBLIC_BACKEND_URL + "/logout", requestOptions)
-        .then((response) => response.text())
-        .then((result) => {
-          console.log(result);
+      axios
+        .request(config)
+        .then(() => {
+          logout();
           setLoading(false);
-          router.push("/");
-        })
-        .catch((error) => {
-          setLoading(false);
-          toast.error("Failed To Log out", {
+          toast.success("Logged out Successfully!", {
             position: "top-right",
             autoClose: 3000,
           });
+          router.push("/");
+        })
+        .catch((error) => {
+          console.log(error);
+          toast.error("Failed To Log Out", {
+            position: "top-right",
+            autoClose: 3000,
+          });
+          setLoading(false);
         });
     }
   };
