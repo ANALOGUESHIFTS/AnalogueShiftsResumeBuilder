@@ -49,14 +49,16 @@ export default function RegisterPageDetails() {
     axios
       .request(config)
       .then((response) => {
-        login(response.data[0].user);
-        Cookies.set("userToken", response.data[0].token);
-        setLoading(false);
-        toast.success("Account Created Successful", {
-          position: "top-right",
-          autoClose: 3000,
-        });
-        router.push("/dashboard/account");
+        if (response[0].status === "Success✅") {
+          login(response.data[0].user);
+          Cookies.set("userToken", response.data[0].token);
+          setLoading(false);
+          toast.success("Account Created Successful", {
+            position: "top-right",
+            autoClose: 3000,
+          });
+          router.push("/dashboard/account");
+        }
       })
       .catch((error) => {
         console.log(error);

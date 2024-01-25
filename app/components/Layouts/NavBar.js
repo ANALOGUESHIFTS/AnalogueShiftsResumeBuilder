@@ -31,6 +31,7 @@ import MobileProfileDropdown from "./MobileProfileDropdown";
 import { useAuth } from "../contexts/AuthContext";
 import Cookies from "js-cookie";
 import LoadingComponent from "../LoadingComponent";
+import { toast } from "react-toastify";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -72,36 +73,38 @@ export default function NavBar() {
 
   const handleLogout = () => {
     toggleMenu();
-    var myHeaders = new Headers();
     const token = Cookies.get("userToken");
-    myHeaders.append("Accept", "application/json");
-    myHeaders.append("Authorization", "Bearer 2" + token);
+    if (token) {
+      var myHeaders = new Headers();
+      myHeaders.append("Accept", "application/json");
+      myHeaders.append("Authorization", "Bearer 2" + token);
 
-    var raw = "";
+      var raw = "";
 
-    var requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-    };
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
 
-    setLoading(true);
+      setLoading(true);
 
-    fetch(process.env.NEXT_PUBLIC_BACKEND_URL + "/logout", requestOptions)
-      .then((response) => response.text())
-      .then((result) => {
-        console.log(result);
-        setLoading(false);
-        router.push("/");
-      })
-      .catch((error) => {
-        setLoading(false);
-        toast.error("Failed To Log out", {
-          position: "top-right",
-          autoClose: 3000,
+      fetch(process.env.NEXT_PUBLIC_BACKEND_URL + "/logout", requestOptions)
+        .then((response) => response.text())
+        .then((result) => {
+          console.log(result);
+          setLoading(false);
+          router.push("/");
+        })
+        .catch((error) => {
+          setLoading(false);
+          toast.error("Failed To Log out", {
+            position: "top-right",
+            autoClose: 3000,
+          });
         });
-      });
+    }
   };
 
   const navLinks = ["Builders", "Resumes", "Cover Letters", "CVs", "Resources"];
