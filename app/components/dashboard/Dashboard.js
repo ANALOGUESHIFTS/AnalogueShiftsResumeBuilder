@@ -18,7 +18,7 @@ export default function Dashboard() {
     <main className="w-full">
       <main className="mb-[100px] mt-[80px] py-10 bg-[rgb(43,58,69)] px-10 max-[800px]:px-5">
         <p className="pb-5 text-base font-semibold text-white">
-          Welcome Back, {user.name}!
+          Welcome Back, {user?.name}!
         </p>
         <p className="pb-10 font-bold text-white text-xl">
           Edit and Download Professional resumes to get your dream Job!

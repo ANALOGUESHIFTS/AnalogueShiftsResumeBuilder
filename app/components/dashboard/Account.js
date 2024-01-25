@@ -18,7 +18,7 @@ export default function Account() {
     <main className="w-full">
       <main className=" mt-[80px] py-10 bg-[rgb(43,58,69)] px-10 max-[800px]:px-5">
         <p className="pb-5 text-base font-semibold text-white">
-          Welcome Back, {user.name}!
+          Welcome Back, {user?.name}!
         </p>
         <p className="pb-10 font-bold text-white text-xl">
           Edit and Download Professional resumes to get your dream Job!
@@ -52,14 +52,14 @@ export default function Account() {
           <div className="w-full flex flex-col gap-1.5">
             <p className="text-sm font-medium text-black/90">Your ID</p>
             <div className="p-2.5 flex justify-center w-full border bg-white rounded-lg">
-              <p className="text-sm font-semibold text-black/90 ">{user.id}</p>
+              <p className="text-sm font-semibold text-black/90 ">{user?.id}</p>
             </div>
           </div>
           <div className="w-full flex flex-col gap-1.5">
             <p className="text-sm font-medium text-black/90">Email</p>
             <div className="p-2.5 flex justify-center w-full border bg-white rounded-lg">
               <p className="text-sm font-semibold text-black/90 ">
-                {user.email}
+                {user?.email}
               </p>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function Account() {
             <p className="text-sm font-medium text-black/90">Name</p>
             <div className="p-2.5 flex justify-center w-full border bg-white rounded-lg">
               <p className="text-sm font-semibold text-black/90 ">
-                {user.name}
+                {user?.name}
               </p>
             </div>
           </div>

@@ -43,7 +43,7 @@ export default function NavBar() {
   const [selectedMenu, setSelectedMenu] = useState("");
   const [selectedMobileMenu, setSelectedMobileMenu] = useState("");
   const [subMenuComponent, setSubMenuComponent] = useState("");
-  const { user, logout } = useAuth();
+  const { user, login, logout } = useAuth();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -73,38 +73,38 @@ export default function NavBar() {
 
   const handleLogout = () => {
     toggleMenu();
-    // const token = Cookies.get("userToken");
-    // if (token) {
-    //   var myHeaders = new Headers();
-    //   myHeaders.append("Accept", "application/json");
-    //   myHeaders.append("Authorization", "Bearer 2" + token);
+    const token = Cookies.get("userToken");
+    if (token) {
+      var myHeaders = new Headers();
+      myHeaders.append("Accept", "application/json");
+      myHeaders.append("Authorization", "Bearer 2" + token);
 
-    //   var raw = "";
+      var raw = "";
 
-    //   var requestOptions = {
-    //     method: "POST",
-    //     headers: myHeaders,
-    //     body: raw,
-    //     redirect: "follow",
-    //   };
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
 
-    //   setLoading(true);
+      setLoading(true);
 
-    //   fetch(process.env.NEXT_PUBLIC_BACKEND_URL + "/logout", requestOptions)
-    //     .then((response) => response.text())
-    //     .then((result) => {
-    //       console.log(result);
-    //       setLoading(false);
-    //       router.push("/");
-    //     })
-    //     .catch((error) => {
-    //       setLoading(false);
-    //       toast.error("Failed To Log out", {
-    //         position: "top-right",
-    //         autoClose: 3000,
-    //       });
-    //     });
-    // }
+      fetch(process.env.NEXT_PUBLIC_BACKEND_URL + "/logout", requestOptions)
+        .then((response) => response.text())
+        .then((result) => {
+          console.log(result);
+          setLoading(false);
+          router.push("/");
+        })
+        .catch((error) => {
+          setLoading(false);
+          toast.error("Failed To Log out", {
+            position: "top-right",
+            autoClose: 3000,
+          });
+        });
+    }
   };
 
   const navLinks = ["Builders", "Resumes", "Cover Letters", "CVs", "Resources"];
