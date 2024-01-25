@@ -49,7 +49,7 @@ export default function RegisterPageDetails() {
     axios
       .request(config)
       .then((response) => {
-        if (response[0].status === "Success✅") {
+        if (response[0].status.startsWith("Success")) {
           login(response.data[0].user);
           Cookies.set("userToken", response.data[0].token);
           setLoading(false);
