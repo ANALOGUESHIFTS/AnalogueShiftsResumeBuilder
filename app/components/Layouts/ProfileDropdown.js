@@ -1,13 +1,18 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RightSidebar from "./RightSidebar";
+import { usePathname } from "next/navigation";
 
-export default function ProfileDropDown({ user }) {
+export default function ProfileDropDown({ user, logout }) {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleLogout = () => {
     setIsOpen(false);
+    logout();
   };
+
+  useEffect(() => setIsOpen(false), [pathname]);
 
   return (
     <div className="relative w-10 h-10 rounded-full cursor-pointer">

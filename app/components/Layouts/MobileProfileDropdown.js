@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function MobileProfileDropdown({ user, logout }) {
@@ -27,6 +28,24 @@ export default function MobileProfileDropdown({ user, logout }) {
       </div>
       {isOpen && (
         <div className="pt-3 flex flex-col">
+          <Link
+            href="/dashboard"
+            className="w-full py-1.5 rounded-lg px-3 hover:bg-black/10 text-[13px] font-medium text-black/70 text-start"
+          >
+            Dashboard
+          </Link>
+          <Link
+            href="/dashboard/account"
+            className="w-full py-1.5 rounded-lg px-3 hover:bg-black/10 text-[13px] font-medium text-black/70 text-start"
+          >
+            My Account
+          </Link>
+          <Link
+            href="/dashboard/resume"
+            className="w-full py-1.5 rounded-lg px-3 hover:bg-black/10 text-[13px] font-medium text-black/70 text-start"
+          >
+            My Resumes
+          </Link>
           <button
             onClick={logout}
             className="w-full py-1.5 rounded-lg px-3 hover:bg-black/10 text-[13px] font-medium text-black/70 text-start"

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function RightSidebar({ user, close, logout }) {
@@ -33,10 +34,30 @@ export default function RightSidebar({ user, close, logout }) {
           <p className="text-xs font-medium text-black/70">{user.email}</p>
         </div>
 
-        <div className="pt-3 flex flex-col">
+        <div className="pt-3 h-full flex flex-col justify-between">
+          <div className="flex flex-col">
+            <Link
+              href="/dashboard"
+              className="w-full py-1.5 rounded-lg px-3 hover:bg-black/10 text-[13px] font-medium text-black/70 text-start"
+            >
+              Dashboard
+            </Link>
+            <Link
+              href="/dashboard/account"
+              className="w-full py-1.5 rounded-lg px-3 hover:bg-black/10 text-[13px] font-medium text-black/70 text-start"
+            >
+              My Account
+            </Link>
+            <Link
+              href="/dashboard/resume"
+              className="w-full py-1.5 rounded-lg px-3 hover:bg-black/10 text-[13px] font-medium text-black/70 text-start"
+            >
+              My Resumes
+            </Link>
+          </div>
           <button
             onClick={logout}
-            className="w-full py-1.5 rounded-lg px-3 hover:bg-black/10 text-[13px] font-medium text-black/70 text-start"
+            className="w-full py-1.5 rounded-lg px-3 hover:bg-black/10 text-[13px] font-medium text-red-600 text-start"
           >
             Sign Out
           </button>

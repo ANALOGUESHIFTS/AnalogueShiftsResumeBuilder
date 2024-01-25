@@ -8,6 +8,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
 import LoadingComponent from "../LoadingComponent";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 export default function RegisterPageDetails() {
   const [email, setEmail] = useState("");
@@ -15,6 +16,7 @@ export default function RegisterPageDetails() {
   const [confirm_password, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const { user, login, logout } = useAuth();
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,6 +56,7 @@ export default function RegisterPageDetails() {
           position: "top-right",
           autoClose: 3000,
         });
+        router.push("/dashboard/account");
       })
       .catch((error) => {
         console.log(error);

@@ -8,13 +8,14 @@ import Link from "next/link";
 import { useAuth } from "../contexts/AuthContext";
 import LoadingComponent from "../LoadingComponent";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export default function LoginPageDetails() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const { user, login, logout } = useAuth();
-  // const router = useRouter();
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,6 +48,7 @@ export default function LoginPageDetails() {
           position: "top-right",
           autoClose: 3000,
         });
+        router.push("/dashboard/account");
       })
       .catch((error) => {
         console.log(error);
