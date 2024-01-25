@@ -40,7 +40,7 @@ export default function LoginPageDetails() {
     axios
       .request(config)
       .then((response) => {
-        login(response.data);
+        console.log(response.data);
         setLoading(false);
         toast.success("Login Successful", {
           position: "top-right",
