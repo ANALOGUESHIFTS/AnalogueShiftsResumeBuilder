@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useAuth } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
 import LoadingComponent from "../LoadingComponent";
+import Cookies from "js-cookie";
 
 export default function RegisterPageDetails() {
   const [email, setEmail] = useState("");
@@ -46,7 +47,8 @@ export default function RegisterPageDetails() {
     axios
       .request(config)
       .then((response) => {
-        console.log(JSON.stringify(response.data));
+        login(response.data[0].user);
+        Cookies.set("userToken", response.data[0].token);
         setLoading(false);
         toast.success("Account Created Successful", {
           position: "top-right",

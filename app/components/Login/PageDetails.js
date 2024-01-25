@@ -3,7 +3,7 @@ import ApplicationLogo from "../Layouts/ApplicationLogo";
 import GoogleImage from "@/public/GoogleIcon.png";
 import Image from "next/image";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 import Link from "next/link";
 import { useAuth } from "../contexts/AuthContext";
 import LoadingComponent from "../LoadingComponent";
@@ -40,7 +40,8 @@ export default function LoginPageDetails() {
     axios
       .request(config)
       .then((response) => {
-        console.log(response.data);
+        login(response.data[0].user);
+        Cookies.set("userToken", response.data[0].token);
         setLoading(false);
         toast.success("Login Successful", {
           position: "top-right",
