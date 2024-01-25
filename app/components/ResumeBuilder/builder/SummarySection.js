@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Tiptap from "../Tiptap";
+import Tiptap from "../../Tiptap";
 import Cookies from "js-cookie";
 
 export default function SummarySection({ submit, back }) {

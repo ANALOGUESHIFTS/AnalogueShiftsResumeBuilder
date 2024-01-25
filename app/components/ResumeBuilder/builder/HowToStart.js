@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import Background from "@/public/resumes-background.png";
-import AdvancedResumeTemplate from "../templates/resume/Advanced";
-import { dummyUserData } from "../OtherComponents/data";
-import ProfessionalResumeTemplate from "../templates/resume/Professional";
+import AdvancedResumeTemplate from "../../templates/resume/Advanced";
+import { dummyUserData } from "../../OtherComponents/data";
+import ProfessionalResumeTemplate from "../../templates/resume/Professional";
 
 export default function HowToStartPageDetails() {
   const resumeTemplates = [

@@ -1,4 +1,4 @@
-import HowToStartPageDetails from "@/app/components/ResumeBuilder/HowToStart";
+import HowToStartPageDetails from "@/app/components/ResumeBuilder/builder/HowToStart";
 
 export const metadata = {
   title: "Resume Builder",

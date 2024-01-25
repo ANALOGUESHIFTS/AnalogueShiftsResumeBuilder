@@ -15,3 +15,9 @@ const axiosBlog = Axios.create({
 });
 
 export { axiosBlog };
+
+const axiosResume = Axios.create({
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
+});
+
+export { axiosResume };

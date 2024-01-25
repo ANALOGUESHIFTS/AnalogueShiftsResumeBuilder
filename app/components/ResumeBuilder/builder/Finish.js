@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import AdvancedResumeTemplate from "../templates/resume/Advanced";
+import AdvancedResumeTemplate from "../../templates/resume/Advanced";
 import { plans, years, months } from "./data";
 import Cookies from "js-cookie";
 import Link from "next/link";
@@ -10,7 +10,7 @@ import Image from "next/image";
 import MasterCard from "@/public/master-card.svg";
 import VisaCard from "@/public/visa-card.svg";
 import AmericanExpress from "@/public/american-express.svg";
-import ProfessionalResumeTemplate from "../templates/resume/Professional";
+import ProfessionalResumeTemplate from "../../templates/resume/Professional";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);

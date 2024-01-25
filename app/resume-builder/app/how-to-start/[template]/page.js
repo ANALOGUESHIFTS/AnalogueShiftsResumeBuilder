@@ -1,4 +1,4 @@
-import BuilderPageDetails from "@/app/components/ResumeBuilder/BuilderPageDetails";
+import BuilderPageDetails from "@/app/components/ResumeBuilder/builder/BuilderPageDetails";
 
 export const metadata = {
   title: "AnalogueShifts Resume Builder",

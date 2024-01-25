@@ -24,54 +24,43 @@ export default function RegisterPageDetails() {
       });
       return;
     }
-    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/register";
-    var myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json");
-    myHeaders.append("Authorization", "Bearer 2");
-
-    var raw = JSON.stringify({ email, password, confirm_password });
-
-    var requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-      headers: {
-        "X-Requested-With": "XMLHttpRequest",
-      },
-      withCredentials: true,
-      withXSRFToken: true,
-    };
 
     //Start Loading
     setLoading(true);
 
-    try {
-      const response = await fetch(url, requestOptions);
+    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/register";
+    const axios = require("axios");
 
-      if (response.ok) {
-        console.log(response);
+    let data = JSON.stringify({ email, password, confirm_password });
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: url,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
         setLoading(false);
-        toast.success("Account Created Successfully", {
+        toast.success("Account Created Successful", {
           position: "top-right",
           autoClose: 3000,
         });
-      } else {
-        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
         toast.error("Error! Please check your credentials", {
           position: "top-right",
           autoClose: 3000,
         });
         setLoading(false);
-      }
-    } catch (error) {
-      setLoading(false);
-      console.error("Error during Register:", error);
-      toast.error(error.message, {
-        position: "top-right",
-        autoClose: 3000,
       });
-    }
   };
 
   return (

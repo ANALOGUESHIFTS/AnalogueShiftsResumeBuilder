@@ -21,18 +21,18 @@ export default function LoginPageDetails() {
 
     //Start Loading
     setLoading(true);
-    
-    const url = process.env.NEXT_PUBLIC_BACKEND_URL + '/login';
-    const axios = require('axios');
+
+    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/login";
+    const axios = require("axios");
 
     let data = JSON.stringify({ email, password });
     let config = {
-      method: 'post',
+      method: "post",
       maxBodyLength: Infinity,
       url: url,
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       data: data,
     };
@@ -42,16 +42,15 @@ export default function LoginPageDetails() {
       .then((response) => {
         console.log(JSON.stringify(response.data));
         setLoading(false);
-        toast.success('Login Successful', {
-          position: 'top-right',
+        toast.success("Login Successful", {
+          position: "top-right",
           autoClose: 3000,
         });
       })
       .catch((error) => {
         console.log(error);
-        console.log(response);
-        toast.error('Error! Please check your credentials', {
-          position: 'top-right',
+        toast.error("Error! Please check your credentials", {
+          position: "top-right",
           autoClose: 3000,
         });
         setLoading(false);
