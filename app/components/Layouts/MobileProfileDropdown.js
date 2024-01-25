@@ -3,9 +3,6 @@ import { useState } from "react";
 
 export default function MobileProfileDropdown({ user, logout }) {
   const [isOpen, setIsOpen] = useState(false);
-  const dummyUser = {
-    email: "pebuka351@gmail.com",
-  };
 
   return (
     <div className="w-full">
@@ -16,10 +13,10 @@ export default function MobileProfileDropdown({ user, logout }) {
         <div className="w-[95%] flex items-center gap-2 pb-3 border-b">
           <div className="w-9 h-9 rounded-full bg-gray-200 flex justify-center items-center">
             <p className="text-base font-semibold text-black/60">
-              {dummyUser.email[0].toUpperCase()}
+              {user.email[0].toUpperCase()}
             </p>
           </div>
-          <p className="text-xs font-medium text-black/70">{dummyUser.email}</p>
+          <p className="text-xs font-medium text-black/70">{user.email}</p>
         </div>
 
         <i

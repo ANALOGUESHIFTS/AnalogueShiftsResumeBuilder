@@ -6,10 +6,6 @@ export default function RightSidebar({ user, close, logout }) {
   const [pos, setPos] = useState(500);
   const [opacity, setOpacity] = useState(0);
 
-  const dummyUser = {
-    email: "pebuka351@gmail.com",
-  };
-
   useEffect(() => {
     setPos(0);
     setOpacity(1);
@@ -31,10 +27,10 @@ export default function RightSidebar({ user, close, logout }) {
         <div className="w-full flex items-center gap-2 pb-3 border-b">
           <div className="w-9 h-9 rounded-full bg-gray-200 flex justify-center items-center">
             <p className="text-base font-semibold text-black/60">
-              {dummyUser.email[0].toUpperCase()}
+              {user.email[0].toUpperCase()}
             </p>
           </div>
-          <p className="text-xs font-medium text-black/70">{dummyUser.email}</p>
+          <p className="text-xs font-medium text-black/70">{user.email}</p>
         </div>
 
         <div className="pt-3 flex flex-col">

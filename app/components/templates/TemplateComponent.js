@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 
 export default function TemplateComponent({ resume, data }) {
-  useEffect(() => console.log(typeof template), []);
+  const content = <div dangerouslySetInnerHTML={{ __html: resume.template }} />;
 
-  return <div dangerouslySetInnerHTML={{ __html: resume.template }} />;
+  return <>{content}</>;
 }

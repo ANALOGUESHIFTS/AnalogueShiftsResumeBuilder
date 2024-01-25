@@ -22,6 +22,7 @@ export default function BlogPageDetails() {
       .get("/posts")
       .then((res) => {
         const data = res.data;
+        console.log(data[0]);
         setBlogData(data);
         setLoading(false);
       })
