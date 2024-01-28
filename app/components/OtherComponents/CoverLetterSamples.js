@@ -1,21 +1,9 @@
 import Link from "next/link";
 import BlogIcon from "@/public/generate-bullet-point.svg";
 import Image from "next/image";
+import { coverLetterSampleLinks } from "../resources/cover-letter/data";
 
 export default function CoverLetterSamples() {
-  const coverLetterLinksOne = [
-    {
-      title: "General cover letter example",
-      color: "#79b2f0",
-      path: "/cover-letter-examples#general-cover-letter-example",
-    },
-    {
-      title: "Entry-level cover letter example",
-      color: "#79b2f0",
-      path: "/cover-letter-examples#entry-level-cover-letter-example",
-    },
-  ];
-
   const blogData = [
     {
       title: "Are Cover Letters Necsessary in 2023?",
@@ -100,7 +88,7 @@ export default function CoverLetterSamples() {
                 id="cover-links-one"
                 className="moveFromRightToLeft w-max flex gap-4 "
               >
-                {coverLetterLinksOne.map((data) => {
+                {coverLetterSampleLinks.map((data) => {
                   return (
                     <Link
                       key={crypto.randomUUID()}

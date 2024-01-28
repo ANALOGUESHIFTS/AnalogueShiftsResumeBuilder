@@ -1,24 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import Background from "@/public/resumes-background.png";
-import AdvancedResumeTemplate from "../../templates/resume/Advanced";
-import { dummyUserData } from "../../OtherComponents/data";
-import ProfessionalResumeTemplate from "../../templates/resume/Professional";
+import { resumeTemplates } from "../../resources/resume/data";
 
 export default function HowToStartPageDetails() {
-  const resumeTemplates = [
-    {
-      id: "advanced-resume",
-      template: <AdvancedResumeTemplate data={dummyUserData} />,
-      name: "Advanced Templatee",
-    },
-    {
-      id: "professional-resume",
-      template: <ProfessionalResumeTemplate data={dummyUserData} />,
-      name: "Professional Template",
-    },
-  ];
-
   return (
     <div className="w-full h-max pt-[120px] bg-[#f3f8ff]">
       <p className="text-center px-5 text-black/80 font-extrabold text-3xl tracking-wide max-[600px]:text-2xl pb-6">
@@ -33,7 +18,7 @@ export default function HowToStartPageDetails() {
             >
               <div className="w-full ">
                 <div className="w-full h-[500px] overflow-y-scroll scroll-hidden  duration-300 rounded-xl">
-                  {data.template}
+                  {data.templates[0].template}
                 </div>
                 <p className="text-center mt-3 py-2 border-t text-black/80 text-sm font-medium">
                   {data.name}

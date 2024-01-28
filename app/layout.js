@@ -19,12 +19,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <AuthProvider>
-          <ResumeTemplatesProvider>
-            <ToastContainer position="top-center" />
-            <NavBar />
-            {children}
-            <Footer />
-          </ResumeTemplatesProvider>
+          <ToastContainer position="top-center" />
+          <NavBar />
+          {children}
+          <Footer />
         </AuthProvider>
       </body>
       <Script

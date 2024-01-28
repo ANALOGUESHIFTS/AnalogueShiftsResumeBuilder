@@ -11,7 +11,7 @@ import FileImage from "@/public/file-icon.png";
 import ResumeExample from "@/public/resume-example-nav.webp";
 import ResumeFormat from "@/public/resume-format.webp";
 import PhoneIcon from "@/public/phone-icon.png";
-import { templateLinks } from "./data";
+import { resumeNavLinks } from "../resources/resume/data";
 
 export default function ResumesSubMenu() {
   const [opacity, setOpacity] = useState(0);
@@ -49,7 +49,7 @@ export default function ResumesSubMenu() {
             </div>
           </Link>
           <div className="w-full flex flex-wrap gap-5 gap-y-5">
-            {templateLinks.map((data) => {
+            {resumeNavLinks.map((data) => {
               return (
                 <Link
                   href={data.path}

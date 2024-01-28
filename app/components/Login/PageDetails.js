@@ -3,30 +3,25 @@ import ApplicationLogo from "../Layouts/ApplicationLogo";
 import GoogleImage from "@/public/GoogleIcon.png";
 import Image from "next/image";
 import { useState } from "react";
-import Cookies from "js-cookie";
 import Link from "next/link";
-import { useAuth } from "../contexts/AuthContext";
 import LoadingComponent from "../LoadingComponent";
 import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
 
 export default function LoginPageDetails() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const { user, login, logout } = useAuth();
-  const router = useRouter();
+  const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/login";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //Start Loading
-    setLoading(true);
-
-    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/login";
     const axios = require("axios");
+    let data = JSON.stringify({
+      email: email,
+      password: password,
+    });
 
-    let data = JSON.stringify({ email, password });
     let config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -37,26 +32,27 @@ export default function LoginPageDetails() {
       },
       data: data,
     };
+    setLoading(true);
 
     axios
       .request(config)
-      .then((response) => {
-        login(response.data[0].user);
-        Cookies.set("userToken", response.data[0].token);
+      .then(async (response) => {
+        const userData = JSON.stringify(response.data);
+        localStorage.setItem("analogueshifts", userData);
         setLoading(false);
         toast.success("Login Successful", {
           position: "top-right",
           autoClose: 3000,
         });
-        router.push("/dashboard/account");
+        window.location.href = "/dashboard";
       })
       .catch((error) => {
-        console.log(error);
-        toast.error("Error! Please check your credentials", {
+        setLoading(false);
+        toast.error("Invalid email or password", {
           position: "top-right",
           autoClose: 3000,
         });
-        setLoading(false);
+        console.log(error);
       });
   };
 

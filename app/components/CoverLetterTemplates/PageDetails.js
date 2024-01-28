@@ -5,7 +5,7 @@ import Image from "next/image";
 import HomeIcon from "@/public/house-icon.png";
 import RightBracket from "@/public/right-bracket.png";
 import Link from "next/link";
-import { coverLetterTemplates } from "./data";
+import { coverLetterTemplates } from "../resources/cover-letter/data";
 import Faqs from "../OtherComponents/Faqs";
 import FreeCoverLetterTemplates from "../OtherComponents/FreeCoverLetter";
 import MasonryGrid from "../blog/MansoryGrid";
@@ -100,7 +100,7 @@ export default function CoverLetterTemplatesPageDetails() {
                   >
                     <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
                       <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
-                        {data.template}
+                        {data.templates[0].template}
                       </div>
                       <Link
                         href={data.path}

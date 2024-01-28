@@ -1,14 +1,9 @@
-import Link from "next/link";
 import LeverageThePowerOfAi from "@/public/leverage-the-power-of-ai.svg";
 import SaveOursOfTime from "@/public/save-hours-of-time.svg";
 import MakeACohesiveApplication from "@/public/make-a-cohesive-application.svg";
 import TryOutDifferentTemplate from "@/public/try-out-different-template.svg";
 import GetPastApplicant from "@/public/get-past-applicant.svg";
 import AskForExpertSuggestion from "@/public/ask-for-expert-suggestion.svg";
-import TemplateOne from "@/public/template-one.webp";
-import CoverLetterOne from "@/public/cover-letter-one.webp";
-import CoverLetterTwo from "@/public/cover-letter-two.webp";
-import CoverLetterThree from "@/public/cover-letter-three.webp";
 
 export const serviceData = [
   {
@@ -79,5 +74,3 @@ export const serviceData = [
     image: AskForExpertSuggestion,
   },
 ];
-
-export const coverLetterTemplates = [];

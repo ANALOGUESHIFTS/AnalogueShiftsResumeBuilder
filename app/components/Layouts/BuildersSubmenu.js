@@ -1,41 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
-
-import ResumeBuilder from "@/public/resume-builder-nav-image-one.webp";
-import CoverLetterImage from "@/public/cover-letter-nav-image.webp";
-import CVMakerImage from "@/public/cv-maker-image.webp";
 import FileImage from "@/public/file-icon.png";
 import RightArrowImage from "@/public/right-arrow-icon.png";
 import PhoneIcon from "@/public/phone-icon.png";
+
+//Data
+import { buildersLink } from "../resources/data";
 
 import Link from "next/link";
 import Image from "next/image";
 
 export default function BuildersSubMenu() {
   const [opacity, setOpacity] = useState(0);
-  const buldersLink = [
-    {
-      name: "RESUME BUILDER",
-      path: "/",
-      image: ResumeBuilder,
-      subTitle:
-        "Making a resume is easy with the right tool. Our professional builder will do the hard work for you.",
-    },
-    {
-      name: "COVER LETTER GENERATOR",
-      path: "/cover-letter-builder",
-      image: CoverLetterImage,
-      subTitle:
-        "Short on time or simply don't like writing? Try our cover letter generator and make a cover letter fast.",
-    },
-    {
-      name: "CV MAKER",
-      path: "/cv-maker",
-      image: CVMakerImage,
-      subTitle:
-        "CVs are often longer than resumes. But with our CV maker, you can create a CV in the same amount of time.",
-    },
-  ];
 
   useEffect(() => setOpacity(1), []);
 
@@ -45,7 +21,7 @@ export default function BuildersSubMenu() {
       className=" absolute duration-500 top-[70px] -left-6 w-screen h-[450px] bg-white"
     >
       <div className="w-full p-8 flex justify-between border-b">
-        {buldersLink.map((link) => {
+        {buildersLink.map((link) => {
           return (
             <Link
               key={crypto.randomUUID()}

@@ -7,7 +7,7 @@ import Image from "next/image";
 import ViewTemplateModal from "./ViewTemplateModal";
 
 //Data
-import { resumeNavLinks, ResumeTemplates } from "./data";
+import { resumeNavLinks, resumeTemplates } from "../resources/resume/data";
 
 export default function FreeResumeTemplates() {
   const [dataToView, setDataToView] = useState(null);
@@ -42,14 +42,14 @@ export default function FreeResumeTemplates() {
                   href={data.path}
                   className="py-2.5 hover:scale-105 duration-300 w-max px-5 rounded-full text-sm font-semibold text-black/80"
                 >
-                  {data.text}
+                  {data.name}
                 </Link>
               );
             })}
           </div>
         </nav>
         <div className="w-full pt-6 flex flex-col pb-[100px] gap-[100px]">
-          {ResumeTemplates.map((data) => {
+          {resumeTemplates.map((data) => {
             return (
               <section
                 key={crypto.randomUUID()}

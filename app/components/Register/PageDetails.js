@@ -11,30 +11,25 @@ import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 
 export default function RegisterPageDetails() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const { user, login, logout } = useAuth();
   const router = useRouter();
+  const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/register";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password !== confirm_password) {
-      toast.error("Error! Passwords doesn't match", {
-        position: "top-right",
-        autoClose: 3000,
-      });
-      return;
-    }
-
-    //Start Loading
-    setLoading(true);
-
-    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/register";
     const axios = require("axios");
+    let data = JSON.stringify({
+      name: name,
+      email: email,
+      password: password,
+      password_confirmation: confirm_password,
+    });
 
-    let data = JSON.stringify({ email, password, confirm_password });
     let config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -46,25 +41,26 @@ export default function RegisterPageDetails() {
       data: data,
     };
 
+    setLoading(true);
     axios
       .request(config)
-      .then((response) => {
-        login(response.data[0].user);
-        Cookies.set("userToken", response.data[0].token);
+      .then(async (response) => {
+        const userData = JSON.stringify(response.data);
+        localStorage.setItem("analogueshifts", userData);
         setLoading(false);
-        toast.success("Account Created Successful", {
+        toast.success("Account Created Successfully", {
           position: "top-right",
           autoClose: 3000,
         });
-        router.push("/dashboard/account");
+        window.location.href = "/dashboard";
       })
       .catch((error) => {
         console.log(error);
-        toast.error("Error! Please check your credentials", {
+        setLoading(false);
+        toast.error("Invalid email or password", {
           position: "top-right",
           autoClose: 3000,
         });
-        setLoading(false);
       });
   };
 
@@ -106,6 +102,14 @@ export default function RegisterPageDetails() {
             method="POST"
             className="w-full pt-5 flex flex-col"
           >
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="Full Name"
+              className="w-full border mb-4 rounded-md px-4 py-3.5 outline-none text-sm font-medium text-gray-500"
+              required
+            />
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}

@@ -1,16 +1,40 @@
-export const coverLetterTemplates = [];
-export const categories = [
+export const coverLetterSampleLinks = [
   {
-    name: "General Cover Letter",
+    title: "General Cover Letter",
+    color: "#79b2f0",
     path: "/cover-letter-examples#general-cover-letter-example",
   },
   {
-    name: "Entry-level cover letter example",
+    title: "Entry-level cover letter example",
+    color: "#ee7856",
     path: "/cover-letter-examples#entry-level-cover-letter-example",
   },
 ];
 
-export const samplesData = [
+export const coverLetterHelpLinks = [
+  {
+    name: "What is a cover letter?",
+    path: "/blog",
+  },
+  {
+    name: "How to write a cover letter",
+    path: "/blog",
+  },
+  {
+    name: "How to start a cover letter",
+    path: "/blog",
+  },
+  {
+    name: "Best cover letters of 2023",
+    path: "/blog",
+  },
+  {
+    name: "Cover letter format for a job",
+    path: "/blog",
+  },
+];
+
+export const coverLetterSampleData = [
   {
     name: "General cover letter example",
     id: "general-cover-letter-example",
@@ -32,3 +56,7 @@ export const samplesData = [
       "This killer cover letter sample stands out because the applicant emphasizes her enthusiasm about the opportunity from the very first sentence. Beyond her enthusiasm, the candidate also shows she’s qualified. She quickly (and convincingly) markets her professional strengths, including relevant hard skills (Linux, backend coding) and soft skills (precision, attention to detail).",
   },
 ];
+
+export const coverLetterTemplates = [];
+
+export const coverLetterNavLinks = [];

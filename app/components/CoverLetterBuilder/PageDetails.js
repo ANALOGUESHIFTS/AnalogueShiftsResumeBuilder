@@ -12,7 +12,8 @@ import UseOurBuilder from "../OtherComponents/UseOurBuilder";
 import HowOurCoverLetterBuilderWorks from "../OtherComponents/HowOurCoverLetterBuilderWorks";
 import CoverLetterSamples from "../OtherComponents/CoverLetterSamples";
 import Faqs from "../OtherComponents/Faqs";
-import { serviceData, coverLetterTemplates } from "./data";
+import { serviceData } from "./data";
+import { coverLetterTemplates } from "../resources/cover-letter/data";
 
 const logos = [SalesForceLogo, NewYorkLogo, MSNBC, FOX, Entrepreneur, Zendesk];
 

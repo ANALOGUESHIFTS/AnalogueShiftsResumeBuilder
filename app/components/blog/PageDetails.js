@@ -1,12 +1,10 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
 import HomeIcon from "@/public/house-icon.png";
 import RightBracket from "@/public/right-bracket.png";
 import SearchIcon from "@/public/search-icon.png";
-import { icoLinks } from "./data";
 import { axiosBlog } from "@/app/lib/axios";
 import MasonryGrid from "./MansoryGrid";
 import LoadingComponent from "../LoadingComponent";
@@ -14,7 +12,6 @@ export default function BlogPageDetails() {
   const [blogData, setBlogData] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [loading, setLoading] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     setLoading(true);

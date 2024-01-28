@@ -10,7 +10,11 @@ import SideBarImage from "@/public/sidebar-image.svg";
 import TipMan from "@/public/tip-man.svg";
 import Faqs from "../OtherComponents/Faqs";
 import ResumeSampleSearch from "../OtherComponents/ResumeSampleSearch";
-import { categories, resumeTemplates, samplesData } from "./data";
+import {
+  resumeSampleLinks,
+  resumeTemplates,
+  resumeSampleData,
+} from "../resources/resume/data";
 
 export default function ResumeSamplePageDetails() {
   const [searchModal, setSearchModal] = useState(false);
@@ -19,7 +23,7 @@ export default function ResumeSamplePageDetails() {
       {searchModal && (
         <ResumeSampleSearch
           cancel={() => setSearchModal(false)}
-          searchData={categories}
+          searchData={resumeSampleLinks}
         />
       )}
       <main className="w-full h-auto">
@@ -61,18 +65,20 @@ export default function ResumeSamplePageDetails() {
           <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
             {resumeTemplates.map((data) => {
               return (
-                <Link
+                <div
                   key={crypto.randomUUID()}
-                  href={data.path}
                   className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
                 >
                   <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
                     <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
-                      {data.template}
+                      {data.templates[0].template}
                     </div>
-                    <button className="absolute button-row  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80">
+                    <Link
+                      href={`/resume-builder/app/how-to-start/${data.id}`}
+                      className="absolute button-row  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80"
+                    >
                       Use Template
-                    </button>
+                    </Link>
                   </div>
                   <div className="w-full pl-2 h-[120px]">
                     <p className="pt-6 text-base text-black/90 font-medium pb-2">
@@ -82,7 +88,7 @@ export default function ResumeSamplePageDetails() {
                       {data.description}
                     </p>
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>
@@ -124,14 +130,14 @@ export default function ResumeSamplePageDetails() {
                   Categories
                 </p>
                 <div className="w-full max-[974px]:flex-row max-[540px]:flex-col max-[974px]:flex-wrap max-[974px]:gap-y-1.5 max-[974px]:gap-x-0 flex flex-col gap-1.5">
-                  {categories.map((data) => {
+                  {resumeSampleLinks.map((data) => {
                     return (
                       <Link
                         key={crypto.randomUUID()}
                         href={data.path}
                         className="w-full max-[974px]:w-6/12 max-[540px]:w-full px-3 py-2 text-base font-medium text-black/60 hover:bg-black/10 rounded-lg"
                       >
-                        {data.name}
+                        {data.title}
                       </Link>
                     );
                   })}
@@ -164,7 +170,7 @@ export default function ResumeSamplePageDetails() {
               </div>
             </div>
             <div className="w-[65%] max-[974px]:w-full h-max flex flex-col gap-8">
-              {samplesData.map((data) => {
+              {resumeSampleData.map((data) => {
                 return (
                   <div
                     key={crypto.randomUUID()}

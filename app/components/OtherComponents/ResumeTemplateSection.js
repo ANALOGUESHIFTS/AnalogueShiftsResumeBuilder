@@ -3,17 +3,13 @@ import { useState, useEffect } from "react";
 import FileImage from "@/public/file-icon.png";
 import Image from "next/image";
 import Link from "next/link";
-import { dummyUserData } from "./data";
 
-// Contexts
-import { useResumeTemplates } from "../contexts/ResumeTemplatesContext";
-import TemplateComponent from "../templates/TemplateComponent";
+// Templates
+import { resumeTemplates } from "../resources/resume/data";
+import { coverLetterTemplates } from "../resources/cover-letter/data";
 
 export default function ResumeTemplateSection() {
   const [selected, setSelected] = useState("Resume");
-  const { resumeTemplates, updateResumeTemplates } = useResumeTemplates();
-
-  const coverLetterTemplates = [];
 
   return (
     <main className="w-full pt-7  h-[1000px] flex flex-col items-center bg-white relative curvy-box">
@@ -80,7 +76,7 @@ export default function ResumeTemplateSection() {
       )}
 
       {selected === "Resume" && (
-        <div className="w-full flex gap-5 px-7 overflow-x-auto h-[600px]">
+        <div className="w-full flex gap-5 px-7 resume-box overflow-x-auto h-[600px]">
           {resumeTemplates &&
             resumeTemplates.map((data) => {
               return (
@@ -90,7 +86,7 @@ export default function ResumeTemplateSection() {
                 >
                   <div className="w-full ">
                     <div className="w-full h-[500px] overflow-y-scroll scroll-hidden  duration-300 rounded-xl">
-                      {/* <TemplateComponent resume={data} data={dummyUserData} /> */}
+                      {data.templates[0].template}
                     </div>
                     <p className="text-center mt-3 py-2 border-t text-black/80 text-sm font-medium">
                       {data.name}
@@ -108,7 +104,7 @@ export default function ResumeTemplateSection() {
         </div>
       )}
       {selected !== "Resume" && (
-        <div className="w-full h-[600px] flex gap-5 px-7 overflow-x-auto ">
+        <div className="w-full h-[600px] resume-box flex gap-5 px-7 overflow-x-auto ">
           {coverLetterTemplates.map((data) => {
             return (
               <div

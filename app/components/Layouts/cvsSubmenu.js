@@ -10,7 +10,7 @@ import RightArrowImage from "@/public/right-arrow-icon.png";
 import FileImage from "@/public/file-icon.png";
 import ResumeExample from "@/public/resume-example-nav.webp";
 import PhoneIcon from "@/public/phone-icon.png";
-import { cvTemplateLinks } from "./data";
+import { cvNavLinks } from "../resources/cv/data";
 import ResumeFormat from "@/public/cover-letter-nav-image.webp";
 
 export default function CVSubMenu() {
@@ -49,7 +49,7 @@ export default function CVSubMenu() {
             </div>
           </Link>
           <div className="w-full flex flex-wrap gap-5 gap-y-5">
-            {cvTemplateLinks.map((data) => {
+            {cvNavLinks.map((data) => {
               return (
                 <Link
                   href={data.path}

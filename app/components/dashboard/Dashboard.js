@@ -9,8 +9,9 @@ export default function Dashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!user) {
-      router.push("/");
+    let storedData = JSON.parse(localStorage.getItem("analogueshifts"));
+    if (!storedData) {
+      router.push("/login");
     }
   }, []);
 

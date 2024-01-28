@@ -7,7 +7,10 @@ import Image from "next/image";
 import ViewTemplateModal from "./ViewTemplateModal";
 
 //Data
-import { coverLetterTemplates, coverLetterNavLinks } from "./data";
+import {
+  coverLetterTemplates,
+  coverLetterNavLinks,
+} from "../resources/cover-letter/data";
 
 export default function FreeCoverLetterTemplates() {
   const [dataToView, setDataToView] = useState(null);
@@ -42,7 +45,7 @@ export default function FreeCoverLetterTemplates() {
                   href={data.path}
                   className="py-2.5 hover:scale-105 duration-300 w-max px-5 rounded-full text-sm font-semibold text-black/80"
                 >
-                  {data.text}
+                  {data.name}
                 </Link>
               );
             })}

@@ -10,7 +10,7 @@ import RightArrowImage from "@/public/right-arrow-icon.png";
 import FileImage from "@/public/file-icon.png";
 import ResumeExample from "@/public/resume-example-nav.webp";
 import PhoneIcon from "@/public/phone-icon.png";
-import { coverLetterTemplateLinks } from "./data";
+import { coverLetterNavLinks } from "../resources/cover-letter/data";
 import ResumeFormat from "@/public/cover-letter-nav-image.webp";
 
 export default function CoverLetterSubMenu() {
@@ -49,7 +49,7 @@ export default function CoverLetterSubMenu() {
             </div>
           </Link>
           <div className="w-full flex flex-wrap gap-5 gap-y-5">
-            {coverLetterTemplateLinks.map((data) => {
+            {coverLetterNavLinks.map((data) => {
               return (
                 <Link
                   href={data.path}
@@ -65,7 +65,7 @@ export default function CoverLetterSubMenu() {
                 </Link>
               );
             })}
-            {!coverLetterTemplateLinks[0] && (
+            {!coverLetterNavLinks[0] && (
               <div className="w-full pt-10 flex justify-center items-center">
                 <p
                   style={{ fontFamily: "cursive" }}

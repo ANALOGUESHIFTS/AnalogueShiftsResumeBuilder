@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 import HeroBg from "@/public/hero-image.png";
 import Image from "next/image";
@@ -13,7 +12,8 @@ import Faqs from "../OtherComponents/Faqs";
 import UseOurCVBuilder from "../OtherComponents/UseOurCVBuilder";
 import HowOurCvBuilderWorks from "../OtherComponents/HowOurCvBuilderWorks";
 import CvSamples from "../OtherComponents/CvSamples";
-import { serviceData, resumeTemplates } from "./data";
+import { serviceData } from "./data";
+import { resumeTemplates } from "../resources/resume/data";
 
 const logos = [SalesForceLogo, NewYorkLogo, MSNBC, FOX, Entrepreneur, Zendesk];
 
@@ -101,7 +101,7 @@ export default function CvMakerPageDetails() {
               >
                 <div className="w-full ">
                   <div className="w-full h-[500px] overflow-y-scroll scroll-hidden  duration-300 rounded-xl">
-                    {data.template}
+                    {data.templates[0].template}
                   </div>
                   <p className="text-center mt-3 py-2 border-t text-black/80 text-sm font-medium">
                     {data.name}

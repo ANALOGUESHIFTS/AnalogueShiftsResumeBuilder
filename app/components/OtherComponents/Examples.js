@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 //Data
-import { resumeLinks } from "./data";
-import { coverLetterLinks } from "./data";
+import { resumeSampleLinks } from "../resources/resume/data";
+import { coverLetterSampleLinks } from "../resources/cover-letter/data";
 
 export default function Examples() {
   const [selected, setSelected] = useState("Resume");
@@ -84,7 +84,7 @@ export default function Examples() {
         </div>
         <div className="col-span-3 max-[1000px]:h-max max-[1000px]:w-full max-[1000px]:p-3 duration-300 px-3 h-full flex flex-wrap justify-center items-center gap-x-5 gap-y-5">
           {selected === "Resume"
-            ? resumeLinks.map((data) => {
+            ? resumeSampleLinks.map((data) => {
                 return (
                   <Link
                     key={crypto.randomUUID()}
@@ -96,7 +96,7 @@ export default function Examples() {
                   </Link>
                 );
               })
-            : coverLetterLinks.map((data) => {
+            : coverLetterSampleLinks.map((data) => {
                 return (
                   <Link
                     key={crypto.randomUUID()}

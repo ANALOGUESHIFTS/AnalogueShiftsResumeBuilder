@@ -8,7 +8,7 @@ import RightArrowImage from "@/public/right-arrow-icon.png";
 import FileImage from "@/public/file-icon.png";
 import PhoneIcon from "@/public/phone-icon.png";
 import QuestionIcon from "@/public/question-icon.png";
-import { faqsData } from "./data";
+import { faqsData } from "../resources/data";
 import JobHuntImage from "@/public/resources-blog.jpg";
 
 export default function ResourcesSubMenu() {

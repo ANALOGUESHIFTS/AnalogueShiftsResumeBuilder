@@ -9,11 +9,10 @@ import FreeResumeTemplates from "../OtherComponents/FreeResumeTemplates";
 import FileIcon from "@/public/upload-file.png";
 import Faqs from "../OtherComponents/Faqs";
 import MasonryGrid from "../blog/MansoryGrid";
-
-import { resumeTemplates } from "./data";
+import { resumeTemplates } from "../resources/resume/data";
 import { axiosBlog } from "@/app/lib/axios";
 import AdvancedResumeTemplate from "../templates/resume/Advanced";
-import { dummyUserData } from "../OtherComponents/data";
+import { dummyUserData } from "../resources/data";
 
 export default function ResumeTemplatesPageDetails() {
   const [loading, setLoading] = useState(false);
@@ -99,15 +98,14 @@ export default function ResumeTemplatesPageDetails() {
                 return (
                   <div
                     key={crypto.randomUUID()}
-                    href={data.path}
                     className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
                   >
                     <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
                       <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
-                        {data.template}
+                        {data.templates[0].template}
                       </div>
                       <Link
-                        href={data.path}
+                        href={`/resume-builder/app/how-to-start/${data.id}`}
                         className="link-button absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80"
                       >
                         Use Template

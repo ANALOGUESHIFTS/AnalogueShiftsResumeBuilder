@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import RightArrow from "@/public/right-arrow-icon.png";
-import { levelUpLinks } from "./data";
+import { levelUpLinks } from "../resources/data";
 
 export default function LevelUpJobHunt() {
   return (

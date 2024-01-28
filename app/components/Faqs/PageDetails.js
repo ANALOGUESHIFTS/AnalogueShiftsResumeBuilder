@@ -3,7 +3,7 @@ import Image from "next/image";
 import HomeIcon from "@/public/house-icon.png";
 import RightBracket from "@/public/right-bracket.png";
 import Link from "next/link";
-import { faqAndAnswers, faqNavLinks } from "./data";
+import { faqAndAnswers, faqNavLinks } from "../resources/data";
 import { useState } from "react";
 
 export default function FaqPageDetails() {

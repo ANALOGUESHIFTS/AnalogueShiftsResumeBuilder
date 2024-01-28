@@ -9,11 +9,11 @@ export default function Resumes() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!user) {
-      router.push("/");
+    let storedData = JSON.parse(localStorage.getItem("analogueshifts"));
+    if (!storedData) {
+      router.push("/login");
     }
   }, []);
-
   return (
     <main className="w-full">
       <main className=" mt-[80px] py-10 bg-[rgb(43,58,69)] px-10 max-[800px]:px-5">

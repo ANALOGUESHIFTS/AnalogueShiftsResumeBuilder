@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 //Data
-import { cvTemplates, cvNavLinks } from "./data";
+import { cvNavLinks, cvTemplates } from "../resources/cv/data";
 
 export default function FreeCvTemplates() {
   return (
@@ -16,7 +16,7 @@ export default function FreeCvTemplates() {
                 href={data.path}
                 className="py-2.5 bg-gray-200/80 hover:bg-black hover:text-white duration-300 w-max px-5 rounded-full text-sm font-semibold text-black/80"
               >
-                {data.text}
+                {data.name}
               </Link>
             );
           })}

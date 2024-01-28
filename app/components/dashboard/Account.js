@@ -9,8 +9,9 @@ export default function Account() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!user) {
-      router.push("/");
+    let storedData = JSON.parse(localStorage.getItem("analogueshifts"));
+    if (!storedData) {
+      router.push("/login");
     }
   }, []);
 
@@ -44,11 +45,19 @@ export default function Account() {
           </Link>
         </div>
       </main>
-      <main className="mb-[100px] py-10 bg-[rgb(240,240,240)] px-10 max-[800px]:px-5 flex flex-col items-center gap-5">
+      <main className="mb-[50px] py-10 bg-[rgb(240,240,240)] px-10 max-[800px]:px-5 flex flex-col items-center lg:items-start gap-5">
         <p className="pb-5 text-xl font-bold text-black/80">
           Account Information
         </p>
         <section className="max-w-[90%] w-[500px] h-max bg-white shadow-2xl rounded-xl py-6 px-8 flex flex-col gap-4">
+          <div className="w-full flex flex-col gap-1.5">
+            <p className="text-sm font-medium text-black/90">Name</p>
+            <div className="p-2.5 flex justify-center w-full border bg-white rounded-lg">
+              <p className="text-sm font-semibold text-black/90 ">
+                {user?.name}
+              </p>
+            </div>
+          </div>
           <div className="w-full flex flex-col gap-1.5">
             <p className="text-sm font-medium text-black/90">Your ID</p>
             <div className="p-2.5 flex justify-center w-full border bg-white rounded-lg">
@@ -63,17 +72,10 @@ export default function Account() {
               </p>
             </div>
           </div>
-          <div className="w-full flex flex-col gap-1.5">
-            <p className="text-sm font-medium text-black/90">Name</p>
-            <div className="p-2.5 flex justify-center w-full border bg-white rounded-lg">
-              <p className="text-sm font-semibold text-black/90 ">
-                {user?.name}
-              </p>
-            </div>
-          </div>
-          <p className="pt-3 text-2xl text-black/80 font-bold text-center">
+
+          {/* <p className="pt-3 text-2xl text-black/80 font-bold text-center">
             Plan Info
-          </p>
+          </p> */}
         </section>
       </main>
     </main>

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import AdvancedResumeTemplate from "../../templates/resume/Advanced";
 import { plans, years, months } from "./data";
+import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,24 +13,32 @@ import VisaCard from "@/public/visa-card.svg";
 import AmericanExpress from "@/public/american-express.svg";
 import ProfessionalResumeTemplate from "../../templates/resume/Professional";
 
+import { useAuth } from "../../contexts/AuthContext";
+
 export default function FinishYourResume() {
   const [data, setData] = useState(null);
   const [selectedPaymentMenu, setSelectedPaymentMenu] = useState("14-day");
-
+  const { user } = useAuth();
+  const router = useRouter();
   const cardLogos = [VisaCard, MasterCard, AmericanExpress];
   const templates = {
-    "advanced-resume": <AdvancedResumeTemplate data={data ? data : {}} />,
-    "professional-resume": (
-      <ProfessionalResumeTemplate data={data ? data : {}} />
-    ),
+    advanced: <AdvancedResumeTemplate data={data ? data : {}} />,
+    professional: <ProfessionalResumeTemplate data={data ? data : {}} />,
   };
 
   useEffect(() => {
     const storedData = Cookies.get("userData");
+
     if (storedData) {
       setData(JSON.parse(storedData));
     }
   }, []);
+
+  const handleContinueForFree = () => {
+    if (!user) {
+      router.push("/login");
+    }
+  };
 
   return (
     <main className="pt-[100px] bg-[#f9fbfa] w-full flex flex-col items-center">
@@ -104,6 +113,12 @@ export default function FinishYourResume() {
           >
             Continue
           </Link>
+          <button
+            onClick={handleContinueForFree}
+            className="lg:w-[65%] flex justify-center max-w-[90%] md:max-w-full w-[600px] py-2.5  rounded-full border border-black/20 text-black/80 text-base font-bold"
+          >
+            Continue For Free
+          </button>
         </div>
       </div>
       <p className="pb-8 mt-8 text-[2.2rem] max-w-[90%] w-[900px] px-5 text-center max-[900px]:text-xl font-extrabold text-black/80">
