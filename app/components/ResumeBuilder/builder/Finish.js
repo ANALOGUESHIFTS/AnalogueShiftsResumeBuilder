@@ -37,6 +37,10 @@ export default function FinishYourResume() {
   const handleContinueForFree = () => {
     if (!user) {
       router.push("/login");
+    } else {
+      router.push(
+        `/resume-builder/app/how-to-start/${data.template}/finish/download`
+      );
     }
   };
 
@@ -113,12 +117,14 @@ export default function FinishYourResume() {
           >
             Continue
           </Link>
-          <button
-            onClick={handleContinueForFree}
-            className="lg:w-[65%] flex justify-center max-w-[90%] md:max-w-full w-[600px] py-2.5  rounded-full border border-black/20 text-black/80 text-base font-bold"
-          >
-            Continue For Free
-          </button>
+          {data && (
+            <button
+              onClick={handleContinueForFree}
+              className="lg:w-[65%] flex justify-center max-w-[90%] md:max-w-full w-[600px] py-2.5  rounded-full border border-black/20 text-black/80 text-base font-bold"
+            >
+              Download For Free
+            </button>
+          )}
         </div>
       </div>
       <p className="pb-8 mt-8 text-[2.2rem] max-w-[90%] w-[900px] px-5 text-center max-[900px]:text-xl font-extrabold text-black/80">

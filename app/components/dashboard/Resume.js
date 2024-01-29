@@ -1,17 +1,30 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import AdvancedResumeTemplate from "../templates/resume/Advanced";
+import ProfessionalResumeTemplate from "../templates/resume/Professional";
+import Cookies from "js-cookie";
 
 export default function Resumes() {
+  const [data, setData] = useState(null);
   const { user } = useAuth();
   const router = useRouter();
+  const templates = {
+    advanced: <AdvancedResumeTemplate data={data ? data : {}} />,
+    professional: <ProfessionalResumeTemplate data={data ? data : {}} />,
+  };
 
   useEffect(() => {
     let storedData = JSON.parse(localStorage.getItem("analogueshifts"));
     if (!storedData) {
       router.push("/login");
+    } else {
+      const resumeData = Cookies.get("userData");
+      if (resumeData) {
+        setData(JSON.parse(resumeData));
+      }
     }
   }, []);
   return (
@@ -48,6 +61,23 @@ export default function Resumes() {
         <p className="pb-5 w-full text-sm font-bold text-black/70">
           Your Resumes
         </p>
+        <div className="w-full flex flex-wrap gap-x-5 gap-y-5">
+          {data && (
+            <div className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link">
+              <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
+                <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
+                  {data && templates[data.template]}
+                </div>
+                <Link
+                  href={`/resume-builder/app/how-to-start/${data.template}/finish`}
+                  className="link-button absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80"
+                >
+                  View Resume
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
       </main>
     </main>
   );

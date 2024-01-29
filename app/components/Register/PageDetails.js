@@ -1,13 +1,12 @@
 "use client";
+import { useEffect } from "react";
 import ApplicationLogo from "../Layouts/ApplicationLogo";
 import GoogleImage from "@/public/GoogleIcon.png";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
-import { useAuth } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
 import LoadingComponent from "../LoadingComponent";
-import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 
 export default function RegisterPageDetails() {
@@ -16,9 +15,15 @@ export default function RegisterPageDetails() {
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const { user, login, logout } = useAuth();
   const router = useRouter();
   const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/register";
+
+  useEffect(() => {
+    let storedData = JSON.parse(localStorage.getItem("analogueshifts"));
+    if (storedData) {
+      router.push("/dashboard");
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -1,4 +1,6 @@
 "use client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import ApplicationLogo from "../Layouts/ApplicationLogo";
 import GoogleImage from "@/public/GoogleIcon.png";
 import Image from "next/image";
@@ -11,7 +13,15 @@ export default function LoginPageDetails() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
   const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/login";
+
+  useEffect(() => {
+    let storedData = JSON.parse(localStorage.getItem("analogueshifts"));
+    if (storedData) {
+      router.push("/dashboard");
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
