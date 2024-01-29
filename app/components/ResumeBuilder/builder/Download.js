@@ -1,11 +1,13 @@
 "use client";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import AdvancedResumeTemplate from "../../templates/resume/Advanced";
 import ProfessionalResumeTemplate from "../../templates/resume/Professional";
 
 export default function DownloadResume() {
   const [data, setData] = useState(null);
+  const router = useRouter();
   const templates = {
     advanced: <AdvancedResumeTemplate data={data ? data : {}} />,
     professional: <ProfessionalResumeTemplate data={data ? data : {}} />,
