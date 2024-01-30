@@ -32,8 +32,12 @@ export default function DownloadResume() {
   }, [data]);
 
   return (
-    <div className="w-full h-max p-5 flex justify-center items-center ">
-      {data && templates[data.template]}
-    </div>
+    <>
+      {data && (
+        <div className="w-full h-max p-5 flex justify-center items-center bg-gray-300">
+          {templates[data.template]}
+        </div>
+      )}
+    </>
   );
 }

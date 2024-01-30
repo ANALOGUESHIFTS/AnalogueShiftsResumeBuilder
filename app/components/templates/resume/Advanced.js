@@ -2,11 +2,11 @@ import "../resume/Advanced.css";
 
 export default function AdvancedResumeTemplate({ data }) {
   return (
-    <main className="main min-h-full font-normal text-[#222] text-sm leading-[26px] pb-[50px] m-0 p-0 box-border h-full">
+    <main className="main w-full min-h-full font-normal text-[#222] text-sm leading-[26px] pb-[50px] m-0 p-0 box-border h-full">
       {/* Contact Section */}
       <div
         style={{ margin: "0px auto 0px" }}
-        className="max-w-[700px] bg-white rounded-[3px] p-10"
+        className="max-w-[800px] bg-white rounded-[3px] p-10"
       >
         <div className="mb-[30px]">
           <div className="text-[18px] lg:text-[20px] flex gap-2 flex-wrap uppercase mb-[5px]">

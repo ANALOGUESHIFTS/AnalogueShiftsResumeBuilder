@@ -1,7 +1,7 @@
 export default function ProfessionalResumeTemplate({ data }) {
   return (
-    <main className="font-jost hyphens-manual">
-      <section className="p-3 mx-auto max-w-3xl sm:p-9 bg-white md:p-10 print:border-0 page print:max-w-letter print:max-h-letter print:mx-0 print:my-o xsm:p-8 print:bg-white md:max-w-letter md:h-letter lg:h-letter">
+    <main className="font-jost w-full hyphens-manual">
+      <section className="p-3 mx-auto max-w-3xl border sm:p-9 bg-white md:p-10 print:border-0 page print:max-w-letter print:max-h-letter print:mx-0 print:my-o xsm:p-8 print:bg-white md:max-w-letter md:h-letter lg:h-letter">
         <header className="inline-flex justify-between items-baseline mb-2 w-full align-top border-b-4 border-gray-300">
           <section className="block">
             <h1 className="mb-0 pb-2 pr-2 lg:pb-4 text-[20px] lg:text-[25px] font-bold text-gray-700">
