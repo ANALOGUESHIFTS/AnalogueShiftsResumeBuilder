@@ -15,15 +15,15 @@ export default function RightSidebar({ user, close, logout }) {
   return (
     <div
       style={{ opacity: opacity }}
-      className="z-50 duration-300 w-screen h-screen fixed -top-1.5 -left-1.5 bg-black/10 flex justify-end"
+      className="z-90 duration-300 w-screen h-screen fixed -top-1.5 -left-1.5 bg-black/10 flex justify-end"
     >
       <div
         onClick={close}
-        className="absolute z-50 w-full h-full top-0 left-0"
+        className="absolute z-80 w-full h-full top-0 left-0"
       ></div>
       <div
         style={{ transform: `translateX(${pos}px)` }}
-        className="bg-white duration-300 h-full w-72 rounded-l-2xl z-60 p-5 flex flex-col"
+        className="bg-white duration-300 h-full w-72 rounded-l-2xl z-90 p-5 flex flex-col"
       >
         <div className="w-full flex items-center gap-2 pb-3 border-b">
           <div className="w-9 h-9 rounded-full bg-gray-200 flex justify-center items-center">

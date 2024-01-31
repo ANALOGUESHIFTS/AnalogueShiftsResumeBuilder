@@ -47,7 +47,7 @@ export default function FinishYourResume() {
   return (
     <main className="pt-[100px] bg-[#f9fbfa] w-full flex flex-col items-center">
       <p className=" text-[2.2rem] max-w-[90%] w-[900px] px-5 text-center max-[900px]:text-xl font-extrabold text-black/80">
-        Hey <span className="text-AnalogueShiftsTextColor">Promise</span>,
+        Hey <span className="text-AnalogueShiftsTextColor">{user?.name}</span>,
         upgrade now for Unlimited Access to all pro features!
       </p>
       <div className="w-full mt-8 lg:mt-3  flex flex-col lg:flex-row justify-between h-max min-h-[650px] ">

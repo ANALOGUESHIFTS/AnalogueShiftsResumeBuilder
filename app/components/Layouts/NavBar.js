@@ -205,7 +205,7 @@ export default function NavBar() {
       <nav className="w-full z-70">
         <div
           style={{ boxShadow: "1px 1px 50px rgba(0,0,0,0.1)" }}
-          className="w-[calc(100%-12px)] h-16 backdrop-filter backdrop-blur-sm top-1.5 left-1.5 fixed z-50 rounded-full px-7 flex justify-between items-center"
+          className="w-[calc(100%-12px)] z-80 h-16 backdrop-filter backdrop-blur-sm top-1.5 left-1.5 fixed rounded-full px-7 flex justify-between items-center"
         >
           <div className="flex items-center">
             {/* Logo */}
@@ -272,7 +272,7 @@ export default function NavBar() {
             ></div>
           </div>
         </div>
-        <div className="z-90 w-[calc(100%-12px)] fixed left-1.5 top-1.5">
+        <div className="z-70 w-[calc(100%-12px)] fixed left-1.5 top-1.5">
           {subMenuComponent}
         </div>
         <div
