@@ -59,9 +59,11 @@ export default function Account() {
             </div>
           </div>
           <div className="w-full flex flex-col gap-1.5">
-            <p className="text-sm font-medium text-black/90">Your ID</p>
+            <p className="text-sm font-medium text-black/90">Your UserName</p>
             <div className="p-2.5 flex justify-center w-full border bg-white rounded-lg">
-              <p className="text-sm font-semibold text-black/90 ">{user?.id}</p>
+              <p className="text-sm font-semibold text-black/90 ">
+                {user?.username}
+              </p>
             </div>
           </div>
           <div className="w-full flex flex-col gap-1.5">
