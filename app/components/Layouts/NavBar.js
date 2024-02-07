@@ -277,7 +277,7 @@ export default function NavBar() {
         </div>
         <div
           style={{ left: `${position}px` }}
-          className="w-[80%] h-screen static hidden duration-300 max-[850px]:fixed z-50 bg-white py-6 px-3.5 max-[850px]:flex flex-col gap-5"
+          className="w-[80%] z-90 h-screen static hidden duration-300 max-[850px]:fixed bg-white py-6 px-3.5 max-[850px]:flex flex-col gap-5"
         >
           {navLinks.map((data) => {
             if (selectedMobileMenu === "" || selectedMobileMenu === data) {
