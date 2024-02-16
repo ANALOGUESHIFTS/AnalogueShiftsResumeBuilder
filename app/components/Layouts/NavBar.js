@@ -114,7 +114,7 @@ export default function NavBar() {
   useEffect(() => {
     let storedData = JSON.parse(localStorage.getItem("analogueshifts"));
     if (storedData) {
-      login(storedData[0].user);
+      login(storedData);
     }
   }, []);
 
