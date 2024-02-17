@@ -1,4 +1,4 @@
-import ResumeBuilderPageDetails from "./components/ResumeBuilder/PageDetails";
+import ResumeBuilderPage from "./homeComponents";
 
 export const metadata = {
   title: "AnalogueShifts Resume Builder",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <ResumeBuilderPageDetails />;
+  return <ResumeBuilderPage />;
 }

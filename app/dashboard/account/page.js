@@ -1,4 +1,4 @@
-import Account from "@/app/components/dashboard/Account";
+import Account from "@/app/dashboard/components/Account";
 
 export const metadata = {
   title: "Account | AnalogueShifts Resume Builder",

@@ -1,4 +1,4 @@
-import BlogPageDetails from "../components/blog/PageDetails";
+import BlogPageDetails from "./components";
 
 export const metadata = {
   title: "Blog | AnalogueShifts Resume Builder",

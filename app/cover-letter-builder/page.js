@@ -1,4 +1,4 @@
-import CoverLetterBuilderPageDetails from "../components/CoverLetterBuilder/PageDetails";
+import CoverLetterBuilderPage from "./components";
 
 export const metadata = {
   title: "AnalogueShifts Cover Letter Builder",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <CoverLetterBuilderPageDetails />;
+  return <CoverLetterBuilderPage />;
 }

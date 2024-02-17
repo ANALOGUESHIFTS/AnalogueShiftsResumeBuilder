@@ -1,4 +1,4 @@
-import ViewBlog from "@/app/components/blog/ViewBlog";
+import ViewBlog from "../components/ViewBlog";
 import { axiosBlog } from "@/app/lib/axios";
 
 export async function generateMetadata({ params }) {

@@ -1,4 +1,4 @@
-import CoverLetterTemplatesPageDetails from "../components/CoverLetterTemplates/PageDetails";
+import CoverLetterTemplatesPage from "./components";
 
 export const metadata = {
   title: "AnalogueShifts | Cover Letter Templates",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <CoverLetterTemplatesPageDetails />;
+  return <CoverLetterTemplatesPage />;
 }

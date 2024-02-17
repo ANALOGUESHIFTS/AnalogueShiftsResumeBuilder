@@ -1,4 +1,4 @@
-import FaqPageDetails from "../components/Faqs/PageDetails";
+import FaqPage from "./components";
 
 export const metadata = {
   title: "Frequently Asked Questions | AnalogueShifts Resume Builder",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <FaqPageDetails />;
+  return <FaqPage />;
 }

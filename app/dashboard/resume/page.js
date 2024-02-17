@@ -1,4 +1,4 @@
-import Resumes from "@/app/components/dashboard/Resume";
+import Resumes from "@/app/dashboard/components/Resume";
 
 export const metadata = {
   title: "My Resumes | AnalogueShifts Resume Builder",

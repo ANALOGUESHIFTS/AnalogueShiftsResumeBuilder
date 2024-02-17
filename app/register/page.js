@@ -1,4 +1,4 @@
-import RegisterPageDetails from "../components/Register/PageDetails";
+import RegisterPage from "./components";
 
 export const metadata = {
   title: "Sign Up | AnalogueShifts Resume Builder",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <RegisterPageDetails />;
+  return <RegisterPage />;
 }

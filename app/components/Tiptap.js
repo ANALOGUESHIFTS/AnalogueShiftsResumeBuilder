@@ -12,7 +12,7 @@ const MenuBar = ({ valueChanged }) => {
   editor.setOptions({
     editorProps: {
       attributes: {
-        class: "outline-none px-3 z-30 h-auto min-h-[250px]",
+        class: "outline-none px-3 z-30 h-auto min-h-[250px] pt-3",
       },
     },
   });
@@ -26,7 +26,7 @@ const MenuBar = ({ valueChanged }) => {
   }
 
   return (
-    <div className="flex flex-wrap gap-x-3 gap-y-3 px-3 py-3 border-b mb-3 sticky top-0 z-40 bg-white">
+    <div className="flex w-full border-b overflow-x-auto gap-x-3 gap-y-3 px-3 py-3 sticky top-0 z-40 bg-white">
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
@@ -34,7 +34,7 @@ const MenuBar = ({ valueChanged }) => {
           editor.isActive("bold") ? "border-black/80" : "border-white"
         } px-3 py-1 rounded-lg border`}
       >
-        Bold
+        <i className="fas fa-bold"></i>
       </button>
       <button
         onClick={() => editor.chain().focus().toggleItalic().run()}
@@ -43,7 +43,7 @@ const MenuBar = ({ valueChanged }) => {
           editor.isActive("italic") ? "border-black/80" : "border-white"
         } px-3 py-1 rounded-lg border`}
       >
-        Italic
+        <i className="fas fa-italic"></i>
       </button>
       <button
         onClick={() => editor.chain().focus().setParagraph().run()}
@@ -51,7 +51,7 @@ const MenuBar = ({ valueChanged }) => {
           editor.isActive("paragraph") ? "border-black/80" : "border-white"
         } px-3 py-1 rounded-lg border`}
       >
-        Paragraph
+        <i className="fas fa-p"></i>
       </button>
 
       <button
@@ -60,7 +60,7 @@ const MenuBar = ({ valueChanged }) => {
           editor.isActive("bulletList") ? "border-black/80" : "border-white"
         } px-3 py-1 rounded-lg border`}
       >
-        Bullet List
+        <i className="fas fa-list-ul"></i>
       </button>
       <button
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
@@ -68,20 +68,20 @@ const MenuBar = ({ valueChanged }) => {
           editor.isActive("orderedList") ? "border-black/80" : "border-white"
         } px-3 py-1 rounded-lg border`}
       >
-        Ordered List
+        <i className="fas fa-list-ol"></i>
       </button>
 
       <button
         onClick={() => editor.chain().focus().undo().run()}
         disabled={!editor.can().chain().focus().undo().run()}
       >
-        Undo
+        <i className="fas fa-undo"></i>
       </button>
       <button
         onClick={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}
       >
-        Redo
+        <i className="fas fa-redo"></i>
       </button>
     </div>
   );

@@ -19,6 +19,7 @@
     "axios": "^1.6.3",
     "js-cookie": "^3.0.5",
     "next": "14.0.2",
+    "openai": "^4.28.0",
     "react": "^18",
     "react-dom": "^18",
     "react-masonry-css": "^1.0.16",

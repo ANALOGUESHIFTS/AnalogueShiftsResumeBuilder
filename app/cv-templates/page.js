@@ -1,4 +1,4 @@
-import CvTemplatesPageDetails from "../components/CvTemplates/PageDetails";
+import CvTemplatesPage from "./components";
 
 export const metadata = {
   title: "AnalogueShifts Cv Templates",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <CvTemplatesPageDetails />;
+  return <CvTemplatesPage />;
 }

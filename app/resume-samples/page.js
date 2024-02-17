@@ -1,4 +1,4 @@
-import ResumeSamplePageDetails from "../components/ResumeSamples/PageDetails";
+import ResumeSamplePage from "./components";
 
 export const metadata = {
   title: "AnalogueShifts Resume Samples",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <ResumeSamplePageDetails />;
+  return <ResumeSamplePage />;
 }

@@ -1,4 +1,4 @@
-import CvExamplePageDetails from "../components/CvExamples/PageDetails";
+import CvExamplePage from "./components";
 
 export const metadata = {
   title: "AnalogueShifts CV Examples",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <CvExamplePageDetails />;
+  return <CvExamplePage />;
 }
