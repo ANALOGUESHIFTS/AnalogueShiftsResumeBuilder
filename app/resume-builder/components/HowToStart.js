@@ -44,7 +44,7 @@ export default function HowToStartPage() {
           {resumeTemplates.map((data) => {
             return (
               <SplideSlide
-                className="w-full   flex justify-center pb-14"
+                className="w-full  items-center flex justify-center pb-14"
                 key={crypto.randomUUID()}
               >
                 <div className="relative mx-3 h-max template-box  max-w-full pb-2 rounded-lg bg-white">

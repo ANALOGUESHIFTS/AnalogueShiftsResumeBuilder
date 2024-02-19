@@ -15,7 +15,7 @@ export default function RightSidebar({ user, close, logout }) {
   return (
     <div
       style={{ opacity: opacity }}
-      className="z-90 duration-300 w-screen h-screen fixed -top-1.5 -left-1.5 bg-black/10 flex justify-end"
+      className="z-90 duration-300 w-screen h-[100dvh] fixed -top-1.5 -left-1.5 bg-black/10 flex justify-end"
     >
       <div
         onClick={close}

@@ -45,7 +45,7 @@ export default function Services() {
           Build My CV Now
         </Link>
 
-        <div className="w-full flex gap-5 px-7 overflow-x-auto h-max">
+        <div className="w-full items-center flex gap-5 px-7 overflow-x-auto h-max">
           {resumeTemplates.slice(0, 2).map((data) => {
             return (
               <div

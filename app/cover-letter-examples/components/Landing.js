@@ -45,7 +45,7 @@ export default function Landing() {
           <p className="pb-6 text-[2.6rem] w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
             Our Most Used Cover Letter Samples
           </p>
-          <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
+          <div className="w-full flex flex-wrap items-center gap-x-4 gap-y-4">
             {coverLetterTemplates.slice(0, 2).map((data) => {
               return (
                 <div
