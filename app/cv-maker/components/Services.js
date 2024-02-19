@@ -45,18 +45,22 @@ export default function Services() {
           Build My CV Now
         </Link>
 
-        <div className="w-full flex gap-5 px-7 overflow-x-auto h-[600px]">
-          {resumeTemplates.map((data) => {
+        <div className="w-full flex gap-5 px-7 overflow-x-auto h-max">
+          {resumeTemplates.slice(0, 2).map((data) => {
             return (
               <div
                 key={crypto.randomUUID()}
-                className="relative h-max template-box w-[450px] max-w-full pb-2 rounded-lg bg-white shadow-xl"
+                className="relative h-max template-box w-[450px] max-w-full pb-2 rounded-lg bg-white"
               >
                 <div className="w-full ">
-                  <div className="w-full h-[500px] overflow-y-scroll scroll-hidden  duration-300 rounded-xl">
-                    {data.templates[0].template}
+                  <div className="w-full h-max scroll-hidden  duration-300 rounded-xl">
+                    <Image
+                      className="w-max mx-auto"
+                      src={data.templates[0].templateImage}
+                      alt="Resume Image"
+                    />
                   </div>
-                  <p className="text-center mt-3 py-2 border-t text-black/80 text-sm font-medium">
+                  <p className="text-center py-2 border-t text-black/80 text-sm font-medium">
                     {data.name}
                   </p>
                 </div>

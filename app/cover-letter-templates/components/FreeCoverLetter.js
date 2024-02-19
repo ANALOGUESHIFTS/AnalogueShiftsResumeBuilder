@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 import Link from "next/link";
-import RightArrow from "@/public/right-arrow-icon.png";
+import BriefCaseIcon from "@/public/briefcase-icon.svg";
 import Image from "next/image";
 import ViewTemplateModal from "@/app/components/ViewTemplateModal";
 
@@ -60,11 +60,11 @@ export default function FreeCoverLetterTemplates() {
                 id={data.id}
               >
                 <div
-                  style={{ backgroundColor: data.background }}
+                  style={{ backgroundColor: "#e4f0fe" }}
                   className="w-full h-max px-10 pt-10 pb-[120px] flex flex-col"
                 >
                   <p
-                    style={{ color: data.color }}
+                    style={{ color: "#4b94ea" }}
                     className="text-sm font-medium"
                   >
                     COVER LETTER TEMPLATE
@@ -72,7 +72,7 @@ export default function FreeCoverLetterTemplates() {
                   <div className="flex py-3.5 gap-3.5 items-center">
                     <div className="w-14 h-14 rounded-lg bg-white shadow-xl flex justify-center items-center">
                       <Image
-                        src={data.icon}
+                        src={BriefCaseIcon}
                         alt="Icon"
                         className="w-[50%] h-[50%]"
                       />
@@ -92,9 +92,12 @@ export default function FreeCoverLetterTemplates() {
                         key={crypto.randomUUID()}
                         className="h-max w-[calc(33.3%-16px)] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full rounded-lg resume-template-link resume-template-link2"
                       >
-                        <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
-                          <div className="w-full overflow-y-scroll scroll-hidden h-full max-[900px]:h-max rounded-lg">
-                            {template.template}
+                        <div className="w-full h-max max-[900px]:h-max relative template-img-box">
+                          <div className="w-full scroll-hidden h-max max-[900px]:h-max rounded-lg">
+                            <Image
+                              src={template.templateImage}
+                              alt="Cover Letter Image"
+                            />
                           </div>
                           <div className="absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] flex flex-col gap-3 button-row">
                             <Link
@@ -105,7 +108,7 @@ export default function FreeCoverLetterTemplates() {
                             </Link>
                             <button
                               onClick={() => setDataToView(template)}
-                              style={{ borderColor: data.color }}
+                              style={{ borderColor: "#4b94ea" }}
                               className="w-full border hover:bg-white/80 py-3 flex justify-center rounded-lg bg-white text-sm font-medium text-black/80"
                             >
                               View Template
@@ -125,20 +128,9 @@ export default function FreeCoverLetterTemplates() {
                   })}
                 </div>
                 <div className="px-10 max-[800px]:px-5 w-full pt-2">
-                  <div className="w-full flex justify-between items-center p-3.5 rounded-lg border flex-wrap gap-x-5 gap-y-5">
+                  <div className="w-full flex justify-end items-center p-3.5 rounded-lg border flex-wrap gap-x-5 gap-y-5">
                     <Link
-                      className="text-black/70 font-semibold text-sm flex items-center gap-2"
-                      href={data.theMatchingResumeLink}
-                    >
-                      Get The Matching Resume
-                      <Image
-                        src={RightArrow}
-                        alt="Icon"
-                        className="w-4 h-4 opacity-70"
-                      />
-                    </Link>
-                    <Link
-                      style={{ backgroundColor: data.color }}
+                      style={{ backgroundColor: "#4b94ea" }}
                       className="text-white font-semibold text-sm px-6 py-2.5 rounded-lg"
                       href={data.linkToTemplate}
                     >

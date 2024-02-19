@@ -8,11 +8,42 @@ import Link from "next/link";
 import { resumeTemplates } from "../components/resources/resume/data";
 import { coverLetterTemplates } from "../components/resources/cover-letter/data";
 
+// Splide JS
+import "@splidejs/react-splide/css";
+import { SplideSlide, Splide } from "@splidejs/react-splide";
+
 export default function ResumeTemplateSection() {
   const [selected, setSelected] = useState("Resume");
+  const [templates, setTemplates] = useState(resumeTemplates);
+  const [perPage, setPerPage] = useState(1);
+
+  // Handle OnResize
+  const handleResize = () => {
+    if (window.innerWidth <= 500) {
+      setPerPage(1);
+    } else if (window.innerWidth > 500 && window.innerWidth < 1000) {
+      setPerPage(2);
+    } else {
+      setPerPage(3);
+    }
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (selected === "Resume") {
+      setTemplates(resumeTemplates);
+    } else {
+      setTemplates(coverLetterTemplates);
+    }
+  }, [selected]);
 
   return (
-    <main className="w-full pt-7  h-[1000px] flex flex-col items-center bg-white relative curvy-box">
+    <main className="w-full pt-7  h-max flex flex-col items-center bg-white relative curvy-box">
+      {/* Switch */}
       <div className=" relative bg-gray-200/30 w-[250px] rounded-full h-[40px] p-1">
         <div
           style={{
@@ -51,6 +82,8 @@ export default function ResumeTemplateSection() {
           Cover Letter
         </button>
       </div>
+      {/* Switch */}
+
       <p className="py-5 text-[2.6rem] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
         Choose your favorite template
       </p>
@@ -75,61 +108,50 @@ export default function ResumeTemplateSection() {
         </Link>
       )}
 
-      {selected === "Resume" && (
-        <div className="w-full flex gap-5 px-7 resume-box overflow-x-auto h-[600px]">
-          {resumeTemplates &&
-            resumeTemplates.map((data) => {
-              return (
-                <div
-                  key={crypto.randomUUID()}
-                  className="relative h-max template-box w-[450px] max-w-full pb-2 rounded-lg bg-white shadow-xl"
-                >
-                  <div className="w-full ">
-                    <div className="w-full h-[500px] overflow-y-scroll scroll-hidden  duration-300 rounded-xl">
-                      {data.templates[0].template}
+      {/* Templates */}
+
+      <Splide
+        aria-label="Templates"
+        className="w-full h-max px-10"
+        options={{
+          perPage: perPage,
+        }}
+      >
+        {templates[0] &&
+          templates.map((data) => {
+            return (
+              <SplideSlide
+                className="w-full   flex justify-center pb-14"
+                key={crypto.randomUUID()}
+              >
+                <div className="relative mx-3 h-max template-box  max-w-full pb-2 rounded-lg bg-white">
+                  <div className="w-full">
+                    <div className="w-full h-max scroll-hidden rounded-t-xl  duration-300">
+                      <Image
+                        src={data.templates[0].templateImage}
+                        alt="Template Image"
+                        className="rounded-t-xl mx-auto w-max"
+                      />
                     </div>
-                    <p className="text-center mt-3 py-2 border-t text-black/80 text-sm font-medium">
+                    <p className="text-center py-2 border-t text-black/80 text-sm font-medium">
                       {data.name}
                     </p>
                   </div>
                   <Link
                     className="template-link w-max absolute opacity-0  bottom-[20%] left-[25%] px-8 flex hover:scale-105 justify-center bg-AnalogueShiftsTextColor/80 items-center duration-300 text-black/80 font-medium text-sm py-3 rounded-lg"
-                    href={`/resume-builder/app/how-to-start/${data.id}`}
+                    href={`/${
+                      selected === "Resume"
+                        ? "resume-builder"
+                        : "cover-letter-builder"
+                    }/app/how-to-start/${data.id}`}
                   >
                     Use This Template
                   </Link>
                 </div>
-              );
-            })}
-        </div>
-      )}
-      {selected !== "Resume" && (
-        <div className="w-full h-[600px] resume-box flex gap-5 px-7 overflow-x-auto ">
-          {coverLetterTemplates.map((data) => {
-            return (
-              <div
-                key={crypto.randomUUID()}
-                className="relative h-max template-box w-[450px] max-w-full pb-2 rounded-lg bg-white shadow-xl"
-              >
-                <div className="w-full ">
-                  <div className="w-full h-[500px] overflow-y-scroll scroll-hidden  duration-300 rounded-xl">
-                    {data.template}
-                  </div>
-                  <p className="text-center mt-3 py-2 border-t text-black/80 text-sm font-medium">
-                    {data.name}
-                  </p>
-                </div>
-                <Link
-                  className="template-link w-max absolute opacity-0  bottom-[20%] left-[25%] px-8 flex hover:scale-105 justify-center bg-AnalogueShiftsTextColor/80 items-center duration-300 text-black/80 font-medium text-sm py-3 rounded-lg"
-                  href={`/resume-builder/app/how-to-start/${data.id}`}
-                >
-                  Use This Template
-                </Link>
-              </div>
+              </SplideSlide>
             );
           })}
-        </div>
-      )}
+      </Splide>
     </main>
   );
 }

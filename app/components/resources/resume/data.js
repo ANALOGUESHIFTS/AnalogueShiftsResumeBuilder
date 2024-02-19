@@ -1,7 +1,11 @@
-import BriefCaseIcon from "@/public/briefcase-icon.svg";
+// Template Components
 import AdvancedResumeTemplate from "../../templates/resume/Advanced";
+import SimpleTemplate from "../../templates/resume/Simple";
 import ProfessionalResumeTemplate from "../../templates/resume/Professional";
-import { dummyUserData } from "../data";
+
+// Template Images
+import SimpleResumeTemplateImage from "@/public/resume-images/simple-resume.jpg";
+import AdvanceResumeTemplateImage from "@/public/resume-images/advanced-resume.png";
 
 export const resumeSampleLinks = [
   {
@@ -18,56 +22,39 @@ export const resumeSampleLinks = [
 
 export const resumeTemplates = [
   {
-    theMatchingCoverLetterLink: "/cover-letter-templates#advanced",
+    linkToTemplate: "/resume-templates#simple",
+    id: "simple",
+    name: "Simple Template",
+    description:
+      "Elevate your job application with the Professional Elegance Resume Template, a sleek and modern design crafted to showcase your qualifications in a clear and professional manner. This template combines simplicity with a touch of sophistication, ensuring that your resume stands out while maintaining a professional look.",
+    templates: [
+      {
+        templateImage: SimpleResumeTemplateImage,
+        path: "/resume-builder/app/how-to-start/simple",
+        component: (data) => <SimpleTemplate data={data} />,
+        name: "Simple",
+        linkToThisTemplate: "#",
+        description:
+          "Elevate your job application with the Professional Elegance Resume Template, a sleek and modern design crafted to showcase your qualifications in a clear and professional manner. This template combines simplicity with a touch of sophistication, ensuring that your resume stands out while maintaining a professional look.",
+      },
+    ],
+  },
+
+  {
     linkToTemplate: "/resume-templates#advanced",
     id: "advanced",
-    color: "#4b94ea",
-    background: "#e4f0fe",
-    icon: BriefCaseIcon,
     name: "Advanced Template",
     description:
       "Our advanced resume templates are perfect for any job seeker. They’re easy to read, organized neatly, and have just enough color to capture the attention of busy hiring managers.",
     templates: [
       {
-        color: "#4b94ea",
-        path: "/resume-builder/app/how-to-start/advanced-resume",
-        template: <AdvancedResumeTemplate data={dummyUserData} />,
+        templateImage: AdvanceResumeTemplateImage,
+        path: "/resume-builder/app/how-to-start/advanced",
+        component: (data) => <AdvancedResumeTemplate data={data} />,
         name: "Advanced",
         linkToThisTemplate: "#",
         description:
           "Our “Advanced” resume template is easy for readers to digest with its clean font and subtle color accents.",
-
-        whyIsItCalled:
-          "True to its name, the Advanced has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
-        whyShouldYouUseIt:
-          "The Advanced's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
-      },
-    ],
-  },
-  {
-    theMatchingCoverLetterLink: "/cover-letter-templates#professional",
-    linkToTemplate: "/resume-templates#professional",
-    id: "professional",
-    color: "#4b94ea",
-    background: "#e4f0fe",
-    icon: BriefCaseIcon,
-    name: "Professional Template",
-    description:
-      "Our professional resume templates are perfect for any job seeker. They’re easy to read, organized neatly, and have just enough color to capture the attention of busy hiring managers.",
-    templates: [
-      {
-        color: "#4b94ea",
-        path: "/resume-builder/app/how-to-start/professional-resume",
-        template: <ProfessionalResumeTemplate data={dummyUserData} />,
-        name: "Professional",
-        linkToThisTemplate: "#",
-        description:
-          "Our “Professional” resume template is easy for readers to digest with its clean font and subtle color accents.",
-
-        whyIsItCalled:
-          "True to its name, the Professional has a no-nonsense and straightforward design. Its subtle color accent gives it a slight pop of personality but avoids detracting from the meat of the resume — the resume objective and professional experience section.",
-        whyShouldYouUseIt:
-          "The Professional's simple layout and design make it suitable for a wide range of positions. Moreover, its lack of visual complexity makes it easy to format. Use this design if you don't have the time or desire to customize and rearrange your resume's sections.",
       },
     ],
   },
@@ -75,16 +62,16 @@ export const resumeTemplates = [
 
 export const resumeNavLinks = [
   {
+    name: "Simple",
+    subTitle: "AnalogueShifts Simple Resume Template",
+    color: "#4b94ea",
+    path: "/resume-templates#simple",
+  },
+  {
     name: "Advanced",
     subTitle: "AnalogueShifts Advanced Resume Template",
     color: "#4b94ea",
     path: "/resume-templates#advanced",
-  },
-  {
-    name: "Professional",
-    subTitle: "AnalogueShifts Professional Resume Template",
-    color: "#4b94ea",
-    path: "/resume-templates#professional",
   },
 ];
 
@@ -99,7 +86,7 @@ export const resumeSampleData = [
     samples: [
       {
         name: "Fine Arts & Aesthetics",
-        template: <AdvancedResumeTemplate data={dummyUserData} />,
+        template: SimpleResumeTemplateImage,
         relatedLinks: [],
       },
     ],
@@ -114,7 +101,7 @@ export const resumeSampleData = [
     samples: [
       {
         name: "Accounting",
-        template: <AdvancedResumeTemplate data={dummyUserData} />,
+        template: SimpleResumeTemplateImage,
         relatedLinks: [],
       },
     ],

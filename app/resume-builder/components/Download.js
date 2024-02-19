@@ -2,16 +2,11 @@
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import AdvancedResumeTemplate from "../../components/templates/resume/Advanced";
-import ProfessionalResumeTemplate from "../../components/templates/resume/Professional";
+import { resumeTemplates } from "@/app/components/resources/resume/data";
 
 export default function DownloadResume() {
   const [data, setData] = useState(null);
   const router = useRouter();
-  const templates = {
-    advanced: <AdvancedResumeTemplate data={data ? data : {}} />,
-    professional: <ProfessionalResumeTemplate data={data ? data : {}} />,
-  };
 
   useEffect(() => {
     let storedData = JSON.parse(localStorage.getItem("analogueshifts"));
@@ -34,8 +29,11 @@ export default function DownloadResume() {
   return (
     <>
       {data && (
-        <div className="w-full h-max p-5 flex justify-center items-center bg-gray-300">
-          {templates[data.template]}
+        <div className="w-full max-w-full overflow-x-hidden p-5 h-max flex lg:justify-center items-center bg-gray-300">
+          {data &&
+            resumeTemplates
+              .filter((item) => item.id === data.template)[0]
+              .templates[0].component(data)}
         </div>
       )}
     </>

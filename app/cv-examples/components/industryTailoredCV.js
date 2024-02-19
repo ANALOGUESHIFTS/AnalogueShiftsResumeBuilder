@@ -92,8 +92,8 @@ export default function IndustryTailoredCV() {
                       {data.description}
                     </p>
                   </div>
-                  <div className="w-full overflow-y-scroll scroll-hidden h-[500px] py-6 px-3 bg-white">
-                    {data.template}
+                  <div className="w-full h-max py-6 px-3 bg-white">
+                    <Image src={data.template} alt="Cv template" />
                   </div>
                 </div>
               );

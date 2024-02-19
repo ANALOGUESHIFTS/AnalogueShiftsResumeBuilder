@@ -1,5 +1,4 @@
-import AdvancedResumeTemplate from "../../components/templates/resume/Advanced";
-import { dummyUserData } from "../../components/resources/data";
+import SimpleResumeTemplateImage from "@/public/resume-images/simple-resume.jpg";
 import FileIcon from "@/public/upload-file.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,8 +17,8 @@ export default function ReadyToBuildResume() {
           professional templates.
         </p>
         <div className="w-full h-max p-8 rounded-xl bg-white shadow-xl flex justify-between max-[887px]:flex-col max-[887px]:gap-5">
-          <div className="w-[30%] h-[450px] max-[887px]:w-full rounded-lg overflow-y-scroll scroll-hidden p-1">
-            <AdvancedResumeTemplate data={dummyUserData} />
+          <div className="w-[30%] h-max max-[887px]:w-full rounded-lg overflow-y-scroll scroll-hidden p-1">
+            <Image src={SimpleResumeTemplateImage} alt="Resume Template" />
           </div>
           <div className="w-[65%] max-[887px]:w-full max-[887px]:h-max max-[887px]:py-10 max-[887px]:px-3 flex flex-col justify-center items-center rounded-lg border border-dashed gap-3">
             <Image src={FileIcon} alt="Upload" className="w-[80px] h-auto" />

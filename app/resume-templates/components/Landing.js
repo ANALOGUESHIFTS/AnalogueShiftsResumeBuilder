@@ -63,15 +63,19 @@ export default function Landing() {
             Use an AnalogueShifts Resume Template
           </p>
           <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
-            {resumeTemplates.map((data) => {
+            {resumeTemplates.slice(0, 2).map((data) => {
               return (
                 <div
                   key={crypto.randomUUID()}
                   className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
                 >
-                  <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
+                  <div className="w-full h-max max-[900px]:h-max relative template-img-box">
                     <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
-                      {data.templates[0].template}
+                      <Image
+                        className="w-max mx-auto"
+                        src={data.templates[0].templateImage}
+                        alt="Resume Template"
+                      />
                     </div>
                     <Link
                       href={`/resume-builder/app/how-to-start/${data.id}`}
@@ -80,7 +84,7 @@ export default function Landing() {
                       Use Template
                     </Link>
                   </div>
-                  <div className="w-full pl-2 h-[120px]">
+                  <div className="w-full pl-2 h-max">
                     <p className="pt-6 text-base text-black/90 font-medium pb-2">
                       {data.name}
                     </p>

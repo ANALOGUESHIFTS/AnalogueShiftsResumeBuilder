@@ -46,25 +46,28 @@ export default function Landing() {
             Our Most Used Cover Letter Samples
           </p>
           <div className="w-full flex flex-wrap gap-x-4 gap-y-4">
-            {coverLetterTemplates.map((data) => {
+            {coverLetterTemplates.slice(0, 2).map((data) => {
               return (
                 <div
                   key={crypto.randomUUID()}
-                  href={data.path}
                   className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
                 >
-                  <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
-                    <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
-                      {data.templates[0].template}
+                  <div className="w-full h-max relative template-img-box">
+                    <div className="w-full h-max rounded-lg overflow-y-scroll scroll-hidden">
+                      <Image
+                        src={data.templates[0].templateImage}
+                        alt="Cover Letter Image"
+                        className="w-max mx-auto"
+                      />
                     </div>
                     <Link
-                      href={data.path}
-                      className="link-button absolute  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80"
+                      href={`/cover-letter-builder/app/how-to-start/${data.id}`}
+                      className="absolute button-row  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80"
                     >
                       Use Template
                     </Link>
                   </div>
-                  <div className="w-full pl-2 h-[120px]">
+                  <div className="w-full pl-2 h-max">
                     <p className="pt-6 text-base text-black/90 font-medium pb-2">
                       {data.name}
                     </p>

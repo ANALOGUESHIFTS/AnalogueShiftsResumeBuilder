@@ -1,20 +1,20 @@
 "use client";
 import { useEffect, useState } from "react";
-import AdvancedResumeTemplate from "../../components/templates/resume/Advanced";
 import { plans, years, months } from "../../homeComponents/data";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import Link from "next/link";
 import Image from "next/image";
+import { resumeTemplates } from "@/app/components/resources/resume/data";
 
 //Card Logos
 import MasterCard from "@/public/master-card.svg";
 import VisaCard from "@/public/visa-card.svg";
 import AmericanExpress from "@/public/american-express.svg";
-import ProfessionalResumeTemplate from "../../components/templates/resume/Professional";
 
 import { useAuth } from "../../components/contexts/AuthContext";
 import GuestLayout from "@/app/Layouts/GuestLayout";
+import SimpleTemplate from "@/app/components/templates/resume/Simple";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);
@@ -22,10 +22,6 @@ export default function FinishYourResume() {
   const { user } = useAuth();
   const router = useRouter();
   const cardLogos = [VisaCard, MasterCard, AmericanExpress];
-  const templates = {
-    advanced: <AdvancedResumeTemplate data={data ? data : {}} />,
-    professional: <ProfessionalResumeTemplate data={data ? data : {}} />,
-  };
 
   useEffect(() => {
     const storedData = Cookies.get("userData");
@@ -53,8 +49,11 @@ export default function FinishYourResume() {
         <div className="w-full mt-8 lg:mt-3  flex flex-col lg:flex-row justify-between h-max min-h-[650px] ">
           <div className="relative w-full lg:w-[calc(50%-15px)]  h-[600px] ">
             <div className="lg:w-[65%] w-[90%] h-[600px] bg-AnalogueShiftsTextColor fancy-border-radius"></div>
-            <div className="resume-box h-[calc(100%-90px)] left-[20px] lg:left-[28%] absolute top-[45px] overflow-y-auto shadow-lg">
-              {data && templates[data.template]}
+            <div className="resume-box lg:w-[85%] w-[calc(100%-40px)]  h-[calc(100%-90px)] left-[20px] lg:left-[15%] absolute top-[45px] overflow-y-auto shadow-lg">
+              {data &&
+                resumeTemplates
+                  .filter((item) => item.id === data.template)[0]
+                  .templates[0].component(data)}
             </div>
           </div>
           <div className=" lg:w-[calc(50%-15px)] w-full flex flex-col items-center lg:items-start gap-6 pt-12 pr-[20px]">

@@ -85,9 +85,9 @@ export default function SamplesSection() {
                         <p className="w-full pb-2 mb-3.5 border-b text-base font-medium text-black/70">
                           {child.name}
                         </p>
-                        <div className="w-full flex justify-between max-[540px]:flex-col max-[540px]:gap-5">
-                          <div className="w-3/5 overflow-y-scroll scroll-hidden max-[540px]:w-full h-[400px] rounded-lg shadow-xl">
-                            {child.template}
+                        <div className="w-full flex justify-between max-[540px]:flex-col max-[540px]:gap-5 pl-4">
+                          <div className="w-3/5 max-[540px]:w-full h-max rounded-lg">
+                            <Image src={child.template} alt="Template" />
                           </div>
                           <div className="w-[74%] max-[540px]:w-full max-[540px]:pt-0 max-[540px]:flex-col pt-6 h-max flex flex-wrap gap-y-2.5">
                             {child.relatedLinks.map((link) => {

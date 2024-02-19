@@ -30,9 +30,13 @@ export default function FreeCvTemplates() {
               className="w-full border-b pb-[80px] flex justify-between h-max max-[929px]:flex-col max-[929px]:gap-5"
               id={data.id}
             >
-              <div className="w-6/12  h-[500px] max-[929px]:w-full rounded-lg shadow-xl cursor-pointer duration-300 hover:translate-x-1 hover:translate-y-1 cv-template-box">
-                <div className="w-full overflow-y-scroll scroll-hidden h-full rounded-lg shadow-xl -translate-x-2 -translate-y-2 duration-300 cv-template-img">
-                  {data.template}
+              <div className="w-6/12  h-max max-[929px]:w-full rounded-lg shadow-xl cursor-pointer duration-300 hover:translate-x-1 hover:translate-y-1 cv-template-box">
+                <div className="w-full h-max overflow-y-hidden max-h-[500px] rounded-lg shadow-xl -translate-x-2 -translate-y-2 duration-300 cv-template-img">
+                  <Image
+                    src={data.template}
+                    alt="Cv Template Image"
+                    className="mx-auto w-max"
+                  />
                 </div>
               </div>
               <div className="w-6/12 pl-6 max-[929px]:w-full max-[929px]:pl-0 flex flex-col">

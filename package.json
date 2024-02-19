@@ -16,6 +16,7 @@
     "@tiptap/pm": "^2.1.13",
     "@tiptap/react": "^2.1.13",
     "@tiptap/starter-kit": "^2.1.13",
+    "@splidejs/react-splide": "^0.7.12",
     "axios": "^1.6.3",
     "js-cookie": "^3.0.5",
     "next": "14.0.2",

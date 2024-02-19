@@ -1,29 +1,31 @@
-import AdvancedResumeTemplate from "../../templates/resume/Advanced";
-import ProfessionalResumeTemplate from "../../templates/resume/Professional";
-import { dummyUserData } from "../data";
+// Templates Images
+import SimpleTemplate from "@/public/resume-images/simple-resume.jpg";
+import AdvancedTemplate from "@/public/resume-images/advanced-resume.png";
 
 export const cvTemplates = [
   {
+    id: "simple",
+    template: SimpleTemplate,
+    name: "Simple",
+    whyShouldYouUseThisTemplate: (
+      <p className="text-sm font-medium text-black/60">
+        Elevate your job application with the Professional Elegance Resume
+        Template, a sleek and modern design crafted to showcase your
+        qualifications in a clear and professional manner. This template
+        combines simplicity with a touch of sophistication, ensuring that your
+        resume stands out while maintaining a professional look.
+      </p>
+    ),
+  },
+  {
     id: "advanced",
-    template: <AdvancedResumeTemplate data={dummyUserData} />,
+    template: AdvancedTemplate,
     name: "Advanced",
     whyShouldYouUseThisTemplate: (
       <p className="text-sm font-medium text-black/60">
         The Advanced CV template is simple yet formal, making it the ideal CV
         design for anyone writing academic CVs, like an adjunct professor CV ,
         or a college professor CV .
-      </p>
-    ),
-  },
-  {
-    id: "professional",
-    template: <ProfessionalResumeTemplate data={dummyUserData} />,
-    name: "Professional",
-    whyShouldYouUseThisTemplate: (
-      <p className="text-sm font-medium text-black/60">
-        The Professional CV template is simple yet formal, making it the ideal
-        CV design for anyone writing academic CVs, like an adjunct professor CV
-        , or a college professor CV .
       </p>
     ),
   },
@@ -78,7 +80,7 @@ export const cvSamplesLinks = [
 
 export const cvSamplesData = [
   {
-    template: <AdvancedResumeTemplate data={dummyUserData} />,
+    template: SimpleTemplate,
     name: "Academic CV",
     id: "academic-cv",
     description:
@@ -87,7 +89,7 @@ export const cvSamplesData = [
     background: "#e4f0fe",
   },
   {
-    template: <AdvancedResumeTemplate data={dummyUserData} />,
+    template: SimpleTemplate,
     name: "Nurse CV",
     id: "nurse-cv",
     description:
