@@ -14,7 +14,6 @@ import AmericanExpress from "@/public/american-express.svg";
 
 import { useAuth } from "../../components/contexts/AuthContext";
 import GuestLayout from "@/app/Layouts/GuestLayout";
-import SimpleTemplate from "@/app/components/templates/resume/Simple";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);
@@ -53,7 +52,7 @@ export default function FinishYourResume() {
               {data &&
                 resumeTemplates
                   .filter((item) => item.id === data.template)[0]
-                  .templates[0].component(data)}
+                  .component(data)}
             </div>
           </div>
           <div className=" lg:w-[calc(50%-15px)] w-full flex flex-col items-center lg:items-start gap-6 pt-12 pr-[20px]">

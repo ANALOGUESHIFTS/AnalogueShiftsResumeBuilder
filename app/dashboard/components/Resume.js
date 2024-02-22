@@ -2,18 +2,13 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../components/contexts/AuthContext";
 import Link from "next/link";
-import AdvancedResumeTemplate from "../../components/templates/resume/Advanced";
-import ProfessionalResumeTemplate from "../../components/templates/resume/Professional";
 import Cookies from "js-cookie";
 import AuthenticatedLayout from "@/app/Layouts/AuthenticatedLayout";
+import { resumeTemplates } from "@/app/components/resources/resume/data";
 
 export default function Resumes() {
   const [data, setData] = useState(null);
   const { user } = useAuth();
-  const templates = {
-    advanced: <AdvancedResumeTemplate data={data ? data : {}} />,
-    professional: <ProfessionalResumeTemplate data={data ? data : {}} />,
-  };
 
   useEffect(() => {
     const resumeData = Cookies.get("userData");
@@ -61,7 +56,9 @@ export default function Resumes() {
               <div className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link">
                 <div className="w-full h-[500px] max-[900px]:h-max relative template-img-box">
                   <div className="w-full h-full max-[900px]:h-max rounded-lg overflow-y-scroll scroll-hidden">
-                    {data && templates[data.template]}
+                    {resumeTemplates
+                      .filter((item) => item.id === data.template)[0]
+                      .component(data)}
                   </div>
                   <Link
                     href={`/resume-builder/app/how-to-start/${data.template}/finish`}

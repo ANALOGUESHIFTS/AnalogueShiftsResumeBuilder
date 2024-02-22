@@ -33,7 +33,7 @@ export default function DownloadResume() {
           {data &&
             resumeTemplates
               .filter((item) => item.id === data.template)[0]
-              .templates[0].component(data)}
+              .component(data)}
         </div>
       )}
     </>
