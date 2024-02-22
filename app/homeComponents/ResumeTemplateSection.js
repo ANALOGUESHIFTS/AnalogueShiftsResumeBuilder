@@ -124,11 +124,11 @@ export default function ResumeTemplateSection() {
                 className="w-full flex items-center justify-center pb-14"
                 key={crypto.randomUUID()}
               >
-                <div className="relative mx-3 template-box h-[500px] max-w-full pb-2 rounded-lg bg-white">
+                <div className="relative mx-3 max-w-[450px] template-box h-[500px] pb-2 rounded-lg bg-white">
                   <div className="h-full w-full">
                     <div className="w-full h-full scroll-hidden rounded-t-xl  duration-300">
                       <Image
-                        src={data.templates[0].templateImage}
+                        src={data.templateImage}
                         alt="Template Image"
                         className="rounded-t-xl mx-auto h-full w-max object-fit"
                       />

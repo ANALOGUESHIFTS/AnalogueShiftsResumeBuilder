@@ -24,11 +24,11 @@ export default function GuestLayout({ children }) {
   }, []);
 
   return (
-    <>
+    <main className="w-full overflow-x-hidden">
       <ToastContainer position="top-center" />
       {!pathname.endsWith("/finish/download") && <NavBar />}
-      {children}
+      <div className="">{children}</div>
       {!pathname.endsWith("/finish/download") && <Footer />}
-    </>
+    </main>
   );
 }

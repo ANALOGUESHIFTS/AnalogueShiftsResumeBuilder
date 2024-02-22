@@ -133,14 +133,14 @@ export default function ContactSection() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col">
-      <input
+    <div className="w-full flex flex-col ">
+      {/* <input
         onChange={handleImageChange}
         ref={imageRef}
         accept=".jpg, .png, .jpeg"
         type="file"
         className="-z-10 opacity-0 absolute"
-      />
+      /> */}
       <p className="font-extrabold text-3xl text-black/80 pb-5">Contact</p>
       <p className="text-base text-black/80 pb-6">
         Let's start with the basics. To ensure employers can reach you, input at

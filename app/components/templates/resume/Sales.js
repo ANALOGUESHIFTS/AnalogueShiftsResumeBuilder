@@ -1,6 +1,6 @@
 import React from "react";
 
-const CorporateResume = ({ data }) => {
+const SalesResume = ({ data }) => {
   return (
     <div className="outline-none">
       <div className="flex h-full w-full lg:w-[800px] max-w-full">
@@ -226,4 +226,4 @@ const CorporateResume = ({ data }) => {
   );
 };
 
-export default CorporateResume;
+export default SalesResume;

@@ -93,7 +93,11 @@ export default function IndustryTailoredCV() {
                     </p>
                   </div>
                   <div className="w-full h-max py-6 px-3 bg-white">
-                    <Image src={data.template} alt="Cv template" />
+                    <Image
+                      src={data.template}
+                      alt="Cv template"
+                      className="max-h-[500px] w-max"
+                    />
                   </div>
                 </div>
               );

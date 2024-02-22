@@ -86,7 +86,7 @@ export default function NavBar() {
   }, [pathname]);
 
   return (
-    <nav className="w-full z-70">
+    <nav className="w-full  z-70">
       <div
         style={{ boxShadow: "1px 1px 50px rgba(0,0,0,0.1)" }}
         className="w-[calc(100%-12px)] z-80 h-16 backdrop-filter backdrop-blur-sm top-1.5 left-1.5 fixed rounded-full px-7 flex justify-between items-center"
