@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useContext, useState, useEffect } from "react";
-import LoadingComponent from "../LoadingComponent";
+import LoadingComponent from "../components/LoadingComponent";
 import { axiosResume } from "@/app/lib/axios";
 
 const ResumeTemplatesContext = createContext();

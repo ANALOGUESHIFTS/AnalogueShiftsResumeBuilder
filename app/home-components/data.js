@@ -1,10 +1,10 @@
 //Images
-import LeverageThePowerOfAi from "@/public/leverage-the-power-of-ai.svg";
-import GenerateBulletPoint from "@/public/generate-bullet-point.svg";
-import AutoFormatEachSection from "@/public/auto-format-each-section.svg";
-import InstantlyDownloadYourResume from "@/public/instantly-download-your-resume.svg";
-import GetExpertFeedback from "@/public/get-expert-feedback.svg";
-import LaunchYourJobHunt from "@/public/launch-your-job-hunt.svg";
+import LeverageThePowerOfAi from "@/public/images/leverage-the-power-of-ai.svg";
+import GenerateBulletPoint from "@/public/images/generate-bullet-point.svg";
+import AutoFormatEachSection from "@/public/images/auto-format-each-section.svg";
+import InstantlyDownloadYourResume from "@/public/images/instantly-download-your-resume.svg";
+import GetExpertFeedback from "@/public/images/get-expert-feedback.svg";
+import LaunchYourJobHunt from "@/public/images/launch-your-job-hunt.svg";
 
 export const serviceData = [
   {

@@ -1,19 +1,19 @@
 "use client";
 import { useEffect, useState } from "react";
-import { plans, years, months } from "../../homeComponents/data";
+import { plans, years, months } from "../../home-components/data";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import Link from "next/link";
 import Image from "next/image";
-import { resumeTemplates } from "@/app/components/resources/resume/data";
+import { resumeTemplates } from "@/app/resources/resume/data";
 
 //Card Logos
-import MasterCard from "@/public/master-card.svg";
-import VisaCard from "@/public/visa-card.svg";
-import AmericanExpress from "@/public/american-express.svg";
+import MasterCard from "@/public/images/master-card.svg";
+import VisaCard from "@/public/images/visa-card.svg";
+import AmericanExpress from "@/public/images/american-express.svg";
 
-import { useAuth } from "../../components/contexts/AuthContext";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import { useAuth } from "../../contexts/AuthContext";
+import GuestLayout from "@/app/layouts/GuestLayout";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);

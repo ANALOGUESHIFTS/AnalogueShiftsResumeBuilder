@@ -2,7 +2,7 @@
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { resumeTemplates } from "@/app/components/resources/resume/data";
+import { resumeTemplates } from "@/app/resources/resume/data";
 
 export default function DownloadResume() {
   const [data, setData] = useState(null);

@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import GridImage from "@/public/grid-icon.png";
-import LeafImage from "@/public/leaf.png";
-import RightArrowImage from "@/public/right-arrow-icon.png";
-import FileImage from "@/public/file-icon.png";
-import ResumeExample from "@/public/resume-example-nav.webp";
-import PhoneIcon from "@/public/phone-icon.png";
-import { coverLetterNavLinks } from "../resources/cover-letter/data";
-import ResumeFormat from "@/public/cover-letter-nav-image.webp";
+import GridImage from "@/public/images/grid-icon.png";
+import LeafImage from "@/public/images/leaf.png";
+import RightArrowImage from "@/public/images/right-arrow-icon.png";
+import FileImage from "@/public/images/file-icon.png";
+import ResumeExample from "@/public/images/resume-example-nav.webp";
+import PhoneIcon from "@/public/images/phone-icon.png";
+import { coverLetterNavLinks } from "@/app/resources/cover-letter/data";
+import ResumeFormat from "@/public/images/cover-letter-nav-image.webp";
 
 export default function CoverLetterSubMenu() {
   const [opacity, setOpacity] = useState(0);

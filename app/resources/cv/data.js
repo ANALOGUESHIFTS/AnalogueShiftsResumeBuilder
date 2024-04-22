@@ -1,6 +1,5 @@
 // Templates Images
-import SimpleTemplate from "@/public/resume-images/simple-resume.jpg";
-import AdvancedTemplate from "@/public/resume-images/advanced-resume.png";
+import SimpleTemplate from "@/public/images/resume-images/simple-resume.jpg";
 
 export const cvTemplates = [
   {
@@ -17,26 +16,9 @@ export const cvTemplates = [
       </p>
     ),
   },
-  {
-    id: "advanced",
-    template: AdvancedTemplate,
-    name: "Advanced",
-    whyShouldYouUseThisTemplate: (
-      <p className="text-sm font-medium text-black/60">
-        The Advanced CV template is simple yet formal, making it the ideal CV
-        design for anyone writing academic CVs, like an adjunct professor CV ,
-        or a college professor CV .
-      </p>
-    ),
-  },
 ];
 
 export const cvNavLinks = [
-  {
-    name: "Advanced",
-    subTitle: "AnalogueShifts Advanced CV Template",
-    path: "/cv-templates#advanced",
-  },
   {
     name: "Professional",
     subTitle: "AnalogueShifts Professional CV Template",

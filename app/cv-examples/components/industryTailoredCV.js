@@ -1,12 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  cvSamplesLinks,
-  cvSamplesData,
-} from "@/app/components/resources/cv/data";
-import SearchIcon from "@/public/search-icon.png";
-import RightArrow from "@/public/right-arrow-icon.png";
-import SideBarImage from "@/public/sidebar-image.svg";
+import { cvSamplesLinks, cvSamplesData } from "@/app/resources/cv/data";
+import SearchIcon from "@/public/images/search-icon.png";
+import RightArrow from "@/public/images/right-arrow-icon.png";
+import SideBarImage from "@/public/images/sidebar-image.svg";
 
 export default function IndustryTailoredCV() {
   return (

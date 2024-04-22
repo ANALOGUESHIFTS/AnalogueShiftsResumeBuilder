@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import RightArrow from "@/public/right-arrow-icon.png";
-import { levelUpLinks } from "../components/resources/data";
+import RightArrow from "@/public/images/right-arrow-icon.png";
+import { levelUpLinks } from "@/app/resources/data";
 
 export default function LevelUpJobHunt() {
   return (

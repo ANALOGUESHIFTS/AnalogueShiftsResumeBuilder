@@ -1,12 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-import FileImage from "@/public/file-icon.png";
+import FileImage from "@/public/images/file-icon.png";
 import Image from "next/image";
 import Link from "next/link";
 
 //Data
-import { resumeSampleLinks } from "../components/resources/resume/data";
-import { coverLetterSampleLinks } from "../components/resources/cover-letter/data";
+import { resumeSampleLinks } from "@/app/resources/resume/data";
+import { coverLetterSampleLinks } from "@/app/resources/cover-letter/data";
 
 export default function Examples() {
   const [selected, setSelected] = useState("Resume");

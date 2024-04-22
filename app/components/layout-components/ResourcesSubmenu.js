@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import RightArrowImage from "@/public/right-arrow-icon.png";
-import FileImage from "@/public/file-icon.png";
-import PhoneIcon from "@/public/phone-icon.png";
-import QuestionIcon from "@/public/question-icon.png";
-import { faqsData } from "../resources/data";
-import JobHuntImage from "@/public/resources-blog.jpg";
+import RightArrowImage from "@/public/images/right-arrow-icon.png";
+import FileImage from "@/public/images/file-icon.png";
+import PhoneIcon from "@/public/images/phone-icon.png";
+import QuestionIcon from "@/public/images/question-icon.png";
+import { faqsData } from "@/app/resources/data";
+import JobHuntImage from "@/public/images/resources-blog.jpg";
 
 export default function ResourcesSubMenu() {
   const [opacity, setOpacity] = useState(0);

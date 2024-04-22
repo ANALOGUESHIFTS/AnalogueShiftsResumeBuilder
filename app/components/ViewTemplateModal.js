@@ -1,4 +1,4 @@
-import XMark from "@/public/x-mark.png";
+import XMark from "@/public/images/x-mark.png";
 import Image from "next/image";
 import Link from "next/link";
 

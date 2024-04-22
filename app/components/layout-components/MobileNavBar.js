@@ -1,19 +1,19 @@
 "use client";
 import { useState, useEffect } from "react";
 //Datas
-import { buildersLink } from "../resources/data";
-import { resumeNavLinks } from "../resources/resume/data";
-import { coverLetterNavLinks } from "../resources/cover-letter/data";
-import { cvNavLinks } from "../resources/cv/data";
-import { faqsData } from "../resources/data";
+import { buildersLink } from "@/app/resources/data";
+import { resumeNavLinks } from "@/app/resources/resume/data";
+import { coverLetterNavLinks } from "@/app/resources/cover-letter/data";
+import { cvNavLinks } from "@/app/resources/cv/data";
+import { faqsData } from "@/app/resources/data";
 
-import LeftArrowImage from "@/public/left-arrow.png";
+import LeftArrowImage from "@/public/images/left-arrow.png";
 import Image from "next/image";
-import FileImage from "@/public/file-icon.png";
-import GridImage from "@/public/grid-icon.png";
-import LeafImage from "@/public/leaf.png";
-import QuestionIcon from "@/public/question-icon.png";
-import PhoneIcon from "@/public/phone-icon.png";
+import FileImage from "@/public/images/file-icon.png";
+import GridImage from "@/public/images/grid-icon.png";
+import LeafImage from "@/public/images/leaf.png";
+import QuestionIcon from "@/public/images/question-icon.png";
+import PhoneIcon from "@/public/images/phone-icon.png";
 import Link from "next/link";
 
 const navLinks = ["Builders", "Resumes", "Cover Letters", "CVs", "Resources"];

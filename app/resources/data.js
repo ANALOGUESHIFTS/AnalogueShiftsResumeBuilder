@@ -1,13 +1,13 @@
-import PickAResumeTemplate from "@/public/pick-a-resume-template.svg";
-import CustomizeEachSection from "@/public/generate-bullet-point.svg";
-import EmphasizeYourSkills from "@/public/emphasize-your-skill.svg";
-import AttachACoverLetter from "@/public/attach-cover-letter.svg";
-import ResumeBuilder from "@/public/resume-builder-nav-image-one.webp";
-import CoverLetterImage from "@/public/cover-letter-nav-image.webp";
-import CVMakerImage from "@/public/cv-maker-image.webp";
-import SettingsIcon from "@/public/settings-icon.svg";
-import CoverLetterFaqNavIcon from "@/public/cover-letter-faqs-nav-icon.svg";
-import ResumeFaqNavIcon from "@/public/resume-faqs-nav-icon.svg";
+import PickAResumeTemplate from "@/public/images/pick-a-resume-template.svg";
+import CustomizeEachSection from "@/public/images/generate-bullet-point.svg";
+import EmphasizeYourSkills from "@/public/images/emphasize-your-skill.svg";
+import AttachACoverLetter from "@/public/images/attach-cover-letter.svg";
+import ResumeBuilder from "@/public/images/resume-builder-nav-image-one.webp";
+import CoverLetterImage from "@/public/images/cover-letter-nav-image.webp";
+import CVMakerImage from "@/public/images/cv-maker-image.webp";
+import SettingsIcon from "@/public/images/settings-icon.svg";
+import CoverLetterFaqNavIcon from "@/public/images/cover-letter-faqs-nav-icon.svg";
+import ResumeFaqNavIcon from "@/public/images/resume-faqs-nav-icon.svg";
 
 export const dummyUserData = {
   contactData: {

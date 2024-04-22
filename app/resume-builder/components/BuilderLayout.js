@@ -1,5 +1,5 @@
 "use client";
-import { navSections } from "@/app/homeComponents/data";
+import { navSections } from "@/app/home-components/data";
 import { usePathname } from "next/navigation";
 
 export default function BuilderLayout({ children }) {

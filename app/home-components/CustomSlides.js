@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import ColorBox from "../components/ColorBox";
-import StepOne from "@/public/step1.webp";
-import StepTwo from "@/public/step2.webp";
-import StepThree from "@/public/step3.webp";
+import StepOne from "@/public/images/step1.webp";
+import StepTwo from "@/public/images/step2.webp";
+import StepThree from "@/public/images/step3.webp";
 import ImageBox from "../components/ImageBox";
 import LoadingProgress from "../components/LoadingProgress";
 

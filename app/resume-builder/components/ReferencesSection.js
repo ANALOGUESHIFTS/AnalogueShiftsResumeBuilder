@@ -2,7 +2,7 @@
 import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import IdiomProof from "@/app/components/LayoutComponents/IdiomProof";
+import IdiomProof from "@/app/components/layout-components/IdiomProof";
 
 export default function References() {
   const router = useRouter();
@@ -72,7 +72,6 @@ export default function References() {
 
   useEffect(() => {
     const storedData = JSON.parse(Cookies.get("userData"));
-    console.log(storedData);
     if (storedData && storedData.referencesData) {
       setReferences(storedData.referencesData);
     }

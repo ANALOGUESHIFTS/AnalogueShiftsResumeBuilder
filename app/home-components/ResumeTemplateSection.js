@@ -1,12 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-import FileImage from "@/public/file-icon.png";
+import FileImage from "@/public/images/file-icon.png";
 import Image from "next/image";
 import Link from "next/link";
 
 // Templates
-import { resumeTemplates } from "../components/resources/resume/data";
-import { coverLetterTemplates } from "../components/resources/cover-letter/data";
+import { resumeTemplates } from "@/app/resources/resume/data";
+import { coverLetterTemplates } from "@/app/resources/cover-letter/data";
 
 // Splide JS
 import "@splidejs/react-splide/css";

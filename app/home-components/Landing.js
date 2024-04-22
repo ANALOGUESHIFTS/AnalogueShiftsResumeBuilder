@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import curve from "@/public/curve.svg";
-import Hero from "@/public/hero-image.png";
+import curve from "@/public/images/curve.svg";
+import Hero from "@/public/images/hero-image.png";
 //Data
 import { serviceData } from "./data";
 

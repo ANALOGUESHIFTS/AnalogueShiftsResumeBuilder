@@ -1,19 +1,22 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useAuth } from "../../components/contexts/AuthContext";
 import Link from "next/link";
 import Cookies from "js-cookie";
-import AuthenticatedLayout from "@/app/Layouts/AuthenticatedLayout";
-import { resumeTemplates } from "@/app/components/resources/resume/data";
+import AuthenticatedLayout from "@/app/layouts/AuthenticatedLayout";
+import { resumeTemplates } from "@/app/resources/resume/data";
 
 export default function Resumes() {
   const [data, setData] = useState(null);
-  const { user } = useAuth();
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const resumeData = Cookies.get("userData");
+    let storedData = Cookies.get("analogueshifts");
     if (resumeData) {
       setData(JSON.parse(resumeData));
+    }
+    if (storedData) {
+      setUser(JSON.parse(Cookies.get("analogueshifts")));
     }
   }, []);
   return (

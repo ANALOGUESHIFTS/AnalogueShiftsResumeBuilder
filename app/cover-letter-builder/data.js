@@ -1,12 +1,12 @@
-import LeverageThePowerOfAi from "@/public/leverage-the-power-of-ai.svg";
-import SaveOursOfTime from "@/public/save-hours-of-time.svg";
-import MakeACohesiveApplication from "@/public/make-a-cohesive-application.svg";
-import TryOutDifferentTemplate from "@/public/try-out-different-template.svg";
-import GetPastApplicant from "@/public/get-past-applicant.svg";
-import AskForExpertSuggestion from "@/public/ask-for-expert-suggestion.svg";
-import StepOneIcon from "@/public/generate-bullet-point.svg";
-import StepTwoIcon from "@/public/try-out-different-template.svg";
-import StepThreeIcon from "@/public/instantly-download-your-resume.svg";
+import LeverageThePowerOfAi from "@/public/images/leverage-the-power-of-ai.svg";
+import SaveOursOfTime from "@/public/images/save-hours-of-time.svg";
+import MakeACohesiveApplication from "@/public/images/make-a-cohesive-application.svg";
+import TryOutDifferentTemplate from "@/public/images/try-out-different-template.svg";
+import GetPastApplicant from "@/public/images/get-past-applicant.svg";
+import AskForExpertSuggestion from "@/public/images/ask-for-expert-suggestion.svg";
+import StepOneIcon from "@/public/images/generate-bullet-point.svg";
+import StepTwoIcon from "@/public/images/try-out-different-template.svg";
+import StepThreeIcon from "@/public/images/instantly-download-your-resume.svg";
 
 export const serviceData = [
   {

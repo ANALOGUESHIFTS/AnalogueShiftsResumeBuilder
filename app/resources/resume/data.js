@@ -1,36 +1,35 @@
 // Template Images
-import SimpleResumeTemplateImage from "@/public/resume-images/simple-resume.jpg";
-import AdvanceResumeTemplateImage from "@/public/resume-images/advanced-resume.jpg";
-import CareerChangeTemplateImage from "@/public/resume-images/career-change-template.webp";
-import CombinationTemplateImage from "@/public/resume-images/combination-resume.webp";
-import CorporateTemplateImage from "@/public/resume-images/corporate-resume.webp";
-import ConsultingTemplateImage from "@/public/resume-images/consulting-resume.webp";
-import FederalTemplateImage from "@/public/resume-images/federal-resume.webp";
-import FreelanceTemplateImage from "@/public/resume-images/freelance-resume.webp";
-import InternationalTemplateImage from "@/public/resume-images/international-resume.webp";
-import InternshipTemplateImage from "@/public/resume-images/internship-resume.webp";
-import RemoteTemplateImage from "@/public/resume-images/remote-resume.webp";
-import ResearchTemplateImage from "@/public/resume-images/research-resume.webp";
-import SalesTemplateImage from "@/public/resume-images/sales-resume.webp";
-import TargetedTemplateImage from "@/public/resume-images/targeted-resume.webp";
-import VolunteerTemplateImage from "@/public/resume-images/volunteer-resume.webp";
+import SimpleResumeTemplateImage from "@/public/images/resume-images/simple-resume.jpg";
+import CareerChangeTemplateImage from "@/public/images/resume-images/career-change-template.webp";
+import CombinationTemplateImage from "@/public/images/resume-images/combination-resume.webp";
+import CorporateTemplateImage from "@/public/images/resume-images/corporate-resume.webp";
+import ConsultingTemplateImage from "@/public/images/resume-images/consulting-resume.webp";
+import FederalTemplateImage from "@/public/images/resume-images/federal-resume.webp";
+import FreelanceTemplateImage from "@/public/images/resume-images/freelance-resume.webp";
+import InternationalTemplateImage from "@/public/images/resume-images/international-resume.webp";
+import InternshipTemplateImage from "@/public/images/resume-images/internship-resume.webp";
+import RemoteTemplateImage from "@/public/images/resume-images/remote-resume.webp";
+import ResearchTemplateImage from "@/public/images/resume-images/research-resume.webp";
+import SalesTemplateImage from "@/public/images/resume-images/sales-resume.webp";
+import TargetedTemplateImage from "@/public/images/resume-images/targeted-resume.webp";
+import VolunteerTemplateImage from "@/public/images/resume-images/volunteer-resume.webp";
 
 // Template Components
-import AdvancedResumeTemplate from "../../templates/resume/Advanced";
-import SimpleTemplate from "../../templates/resume/Simple";
-import CareerChangeResume from "../../templates/resume/Career";
-import CombinationResume from "../../templates/resume/Combination";
-import ConsultingResume from "../../templates/resume/Consulting";
-import CorporateResume from "../../templates/resume/Corporate";
-import FederalResume from "../../templates/resume/Federal";
-import FreelanceResume from "../../templates/resume/Freelance";
-import InternationalResume from "../../templates/resume/International";
-import RemoteResume from "../../templates/resume/Remote";
-import ResearchResume from "../../templates/resume/Research";
-import SalesResume from "../../templates/resume/Sales";
-import TargetedResume from "../../templates/resume/Targeted";
-import VolunteerResume from "../../templates/resume/Volunteer";
-import InternshipResume from "../../templates/resume/Internship";
+import AdvancedResumeTemplate from "@/app/components/templates/resume/Advanced";
+import SimpleTemplate from "@/app/components/templates/resume/Simple";
+import CareerChangeResume from "@/app/components/templates/resume/Career";
+import CombinationResume from "@/app/components/templates/resume/Combination";
+import ConsultingResume from "@/app/components/templates/resume/Consulting";
+import CorporateResume from "@/app/components/templates/resume/Corporate";
+import FederalResume from "@/app/components/templates/resume/Federal";
+import FreelanceResume from "@/app/components/templates/resume/Freelance";
+import InternationalResume from "@/app/components/templates/resume/International";
+import RemoteResume from "@/app/components/templates/resume/Remote";
+import ResearchResume from "@/app/components/templates/resume/Research";
+import SalesResume from "@/app/components/templates/resume/Sales";
+import TargetedResume from "@/app/components/templates/resume/Targeted";
+import VolunteerResume from "@/app/components/templates/resume/Volunteer";
+import InternshipResume from "@/app/components/templates/resume/Internship";
 
 export const resumeSampleLinks = [
   {
@@ -57,16 +56,6 @@ export const resumeTemplates = [
       "Features a clean, straightforward layout with minimal design elements, suitable for traditional industries or those seeking a classic and professional appearance.",
   },
 
-  {
-    linkToTemplate: "/resume-templates#advanced",
-    id: "advanced",
-    name: "Advanced Template",
-    description:
-      "Incorporates cutting-edge design elements, interactive features, and multimedia components, often used by candidates in tech, design, or creative fields.",
-    templateImage: AdvanceResumeTemplateImage,
-    path: "/resume-builder/app/how-to-start/advanced",
-    component: (data) => <AdvancedResumeTemplate data={data} />,
-  },
   {
     linkToTemplate: "/resume-templates#career-change",
     id: "career-change",
@@ -205,12 +194,6 @@ export const resumeNavLinks = [
     subTitle: "AnalogueShifts Simple Resume Template",
     color: "#4b94ea",
     path: "/resume-templates#simple",
-  },
-  {
-    name: "Advanced",
-    subTitle: "AnalogueShifts Advanced Resume Template",
-    color: "#4b94ea",
-    path: "/resume-templates#advanced",
   },
 ];
 

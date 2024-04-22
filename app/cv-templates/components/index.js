@@ -5,7 +5,7 @@ import Faqs from "@/app/components/Faqs";
 import FreeCvTemplates from "./FreeCvTemplates";
 import MasonryGrid from "@/app/components/MansoryGrid";
 import { axiosBlog } from "@/app/lib/axios";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import GuestLayout from "@/app/layouts/GuestLayout";
 import Landing from "./Landing";
 
 export default function CvTemplatesPage() {
@@ -22,7 +22,6 @@ export default function CvTemplatesPage() {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false);
       });
   }, []);

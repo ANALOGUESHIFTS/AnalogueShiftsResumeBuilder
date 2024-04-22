@@ -1,20 +1,52 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import Cookies from "js-cookie";
 import Link from "next/link";
 import ApplicationLogo from "./ApplicationLogo";
 import ProfileDropDown from "./ProfileMenu";
+import LoadingComponent from "@/app/components/LoadingComponent";
 
 // Components
 import IdiomProof from "./IdiomProof";
-import { useAuth } from "../contexts/AuthContext";
 
 export default function AuthenticatedNavBar() {
-  const { user } = useAuth();
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  function handleLogout() {
-    localStorage.removeItem("analogueshifts");
-    window.location.href = "/login";
+  useEffect(() => {
+    let storedData = Cookies.get("analogueshifts");
+    if (storedData) {
+      setUser(JSON.parse(Cookies.get("analogueshifts")));
+    }
+  }, []);
+
+  async function handleLogout() {
+    const axios = require("axios");
+    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/logout";
+    let config = {
+      method: "POST",
+      url: url,
+      headers: {
+        Authorization: "Bearer " + user.token,
+      },
+    };
+    setLoading(true);
+
+    axios
+      .request(config)
+      .then((res) => {
+        Cookies.remove("analogueshifts");
+        window.location.href = "/login";
+      })
+      .catch((error) => {
+        setLoading(false);
+        toast.error(error.message, {
+          position: "top-right",
+          autoClose: 3000,
+        });
+      });
   }
 
   return (
@@ -32,6 +64,8 @@ export default function AuthenticatedNavBar() {
           handleLogout();
         }}
       />
+
+      {loading && <LoadingComponent />}
 
       {/* Guest Nav Bar */}
       <nav className="w-full z-70">

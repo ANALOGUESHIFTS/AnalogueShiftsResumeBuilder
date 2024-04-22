@@ -2,7 +2,7 @@
 import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import IdiomProof from "@/app/components/LayoutComponents/IdiomProof";
+import IdiomProof from "@/app/components/layout-components/IdiomProof";
 
 export default function Certification() {
   const router = useRouter();

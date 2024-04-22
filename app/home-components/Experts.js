@@ -1,10 +1,10 @@
 import Image from "next/image";
-import SalesForceLogo from "@/public/salesforce-logo.svg";
-import NewYorkLogo from "@/public/new-york-post-logo.svg";
-import MSNBC from "@/public/msnbc-logo.svg";
-import FOX from "@/public/fox-logo.svg";
-import Entrepreneur from "@/public/entrepreneur-logo.svg";
-import Zendesk from "@/public/zendesk-logo.svg";
+import SalesForceLogo from "@/public/images/salesforce-logo.svg";
+import NewYorkLogo from "@/public/images/new-york-post-logo.svg";
+import MSNBC from "@/public/images/msnbc-logo.svg";
+import FOX from "@/public/images/fox-logo.svg";
+import Entrepreneur from "@/public/images/entrepreneur-logo.svg";
+import Zendesk from "@/public/images/zendesk-logo.svg";
 
 export default function Experts() {
   const logos = [

@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import HomeIcon from "@/public/house-icon.png";
-import RightBracket from "@/public/right-bracket.png";
+import HomeIcon from "@/public/images/house-icon.png";
+import RightBracket from "@/public/images/right-bracket.png";
 import Link from "next/link";
-import { faqAndAnswers, faqNavLinks } from "../../components/resources/data";
+import { faqAndAnswers, faqNavLinks } from "../@/app/resources/data";
 import { useState } from "react";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import GuestLayout from "@/app/layouts/GuestLayout";
 
 export default function FaqPage() {
   const [selected, setSelected] = useState("");

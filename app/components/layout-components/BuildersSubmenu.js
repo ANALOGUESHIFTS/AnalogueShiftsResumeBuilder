@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import FileImage from "@/public/file-icon.png";
-import RightArrowImage from "@/public/right-arrow-icon.png";
-import PhoneIcon from "@/public/phone-icon.png";
+import FileImage from "@/public/images/file-icon.png";
+import RightArrowImage from "@/public/images/right-arrow-icon.png";
+import PhoneIcon from "@/public/images/phone-icon.png";
 
 //Data
-import { buildersLink } from "../resources/data";
+import { buildersLink } from "@/app/resources/data";
 
 import Link from "next/link";
 import Image from "next/image";

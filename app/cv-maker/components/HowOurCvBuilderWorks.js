@@ -1,12 +1,12 @@
 import Image from "next/image";
-import JobDescriptionImage from "@/public/Job-description.webp";
-import ListBlue from "@/public/list_blue.svg";
-import AutomaticFormat from "@/public/automatic-format.webp";
-import GridIcon from "@/public/layout-fluid_orange.svg";
-import BuilderDownload from "@/public/Builder-download.webp";
-import DownloadIcon from "@/public/inbox-in_green.svg";
-import CritiqueExpert from "@/public/critique-expert.webp";
-import Badge from "@/public/badge_pink.svg";
+import JobDescriptionImage from "@/public/images/Job-description.webp";
+import ListBlue from "@/public/images/list_blue.svg";
+import AutomaticFormat from "@/public/images/automatic-format.webp";
+import GridIcon from "@/public/images/layout-fluid_orange.svg";
+import BuilderDownload from "@/public/images/Builder-download.webp";
+import DownloadIcon from "@/public/images/inbox-in_green.svg";
+import CritiqueExpert from "@/public/images/critique-expert.webp";
+import Badge from "@/public/images/badge_pink.svg";
 
 import Link from "next/link";
 

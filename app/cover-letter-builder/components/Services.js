@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { serviceData } from "../data";
-import { coverLetterTemplates } from "@/app/components/resources/cover-letter/data";
+import { coverLetterTemplates } from "@/app/resources/cover-letter/data";
 
 export default function Services() {
   return (

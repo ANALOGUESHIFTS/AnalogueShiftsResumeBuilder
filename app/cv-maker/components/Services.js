@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { serviceData } from "../data";
-import { resumeTemplates } from "@/app/components/resources/resume/data";
+import { resumeTemplates } from "@/app/resources/resume/data";
 import ResumeList from "@/app/components/ResumeList";
 
 export default function Services() {

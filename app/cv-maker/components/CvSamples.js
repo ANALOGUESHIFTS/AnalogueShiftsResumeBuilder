@@ -1,7 +1,7 @@
 import Link from "next/link";
-import BlogIcon from "@/public/generate-bullet-point.svg";
+import BlogIcon from "@/public/images/generate-bullet-point.svg";
 import Image from "next/image";
-import { cvNavLinks } from "@/app/components/resources/cv/data";
+import { cvNavLinks } from "@/app/resources/cv/data";
 import { cvBlogData } from "../data";
 
 export default function CvSamples() {

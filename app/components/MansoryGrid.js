@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import Author from "@/public/author.png";
+import Author from "@/public/images/author.png";
 import Masonry from "react-masonry-css";
 import Link from "next/link";
 import Image from "next/image";
@@ -41,15 +41,15 @@ const MasonryGrid = ({ posts }) => {
         {posts.map((data) => (
           <Link
             key={crypto.randomUUID()}
-            href={`blog/${data.slug}`}
+            href={`blog/${data?.slug}`}
             className="w-full mb-6 hover:scale-[1.05] duration-300 h-max pb-6  overflow-hidden rounded-2xl shadow-xl flex flex-col blog-box"
           >
             <div className="flex flex-col justify-evenly w-full h-6/12">
               <div className="flex flex-col pb-5 w-full gap-3">
                 <div className="h-56 w-full">
                   <img
-                    src={data.yoast_head_json.og_image[0].url}
-                    alt={data.yoast_head_json.og_image[0].url}
+                    src={data?.yoast_head_json?.og_image[0].url}
+                    alt={data?.yoast_head_json?.og_image[0].url}
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -58,7 +58,7 @@ const MasonryGrid = ({ posts }) => {
                   <p className="text-base text-black/80 font-medium">
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: data.title.rendered,
+                        __html: data?.title.rendered,
                       }}
                     />
                   </p>
@@ -75,7 +75,7 @@ const MasonryGrid = ({ posts }) => {
                     AnalogueShifts
                   </p>
                   <p className="text-xs text-black/60 font-medium">
-                    {data.date}
+                    {data?.date}
                   </p>
                 </div>
               </div>

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 import Link from "next/link";
-import BriefCaseIcon from "@/public/briefcase-icon.svg";
+import BriefCaseIcon from "@/public/images/briefcase-icon.svg";
 import Image from "next/image";
 import ViewTemplateModal from "@/app/components/ViewTemplateModal";
 
@@ -10,7 +10,7 @@ import ViewTemplateModal from "@/app/components/ViewTemplateModal";
 import {
   resumeNavLinks,
   resumeTemplates,
-} from "../../components/resources/resume/data";
+} from "../@/app/resources/resume/data";
 
 export default function FreeResumeTemplates() {
   const [dataToView, setDataToView] = useState(null);
