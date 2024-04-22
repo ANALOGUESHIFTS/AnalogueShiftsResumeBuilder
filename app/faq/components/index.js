@@ -3,7 +3,7 @@ import Image from "next/image";
 import HomeIcon from "@/public/images/house-icon.png";
 import RightBracket from "@/public/images/right-bracket.png";
 import Link from "next/link";
-import { faqAndAnswers, faqNavLinks } from "../@/app/resources/data";
+import { faqAndAnswers, faqNavLinks } from "@/app/resources/data";
 import { useState } from "react";
 import GuestLayout from "@/app/layouts/GuestLayout";
 

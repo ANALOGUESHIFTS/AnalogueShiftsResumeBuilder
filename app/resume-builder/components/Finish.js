@@ -12,20 +12,23 @@ import MasterCard from "@/public/images/master-card.svg";
 import VisaCard from "@/public/images/visa-card.svg";
 import AmericanExpress from "@/public/images/american-express.svg";
 
-import { useAuth } from "../../contexts/AuthContext";
 import GuestLayout from "@/app/layouts/GuestLayout";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);
   const [selectedPaymentMenu, setSelectedPaymentMenu] = useState("14-day");
-  const { user } = useAuth();
+  const [user, setUser] = useState(null);
   const router = useRouter();
   const cardLogos = [VisaCard, MasterCard, AmericanExpress];
 
   useEffect(() => {
     const storedData = Cookies.get("userData");
+    const authData = Cookies.get("analogueshifts");
     if (storedData) {
       setData(JSON.parse(storedData));
+    }
+    if (authData) {
+      setUser(JSON.parse(authData));
     }
   }, []);
 

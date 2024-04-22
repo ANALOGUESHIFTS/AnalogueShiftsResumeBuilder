@@ -7,10 +7,7 @@ import Image from "next/image";
 import ViewTemplateModal from "@/app/components/ViewTemplateModal";
 
 //Data
-import {
-  resumeNavLinks,
-  resumeTemplates,
-} from "../@/app/resources/resume/data";
+import { resumeNavLinks, resumeTemplates } from "@/app/resources/resume/data";
 
 export default function FreeResumeTemplates() {
   const [dataToView, setDataToView] = useState(null);
