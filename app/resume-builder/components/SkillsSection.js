@@ -78,8 +78,8 @@ export default function Skills() {
       />
       <p className="font-extrabold text-3xl text-black/80 pb-5">Skills</p>
       <p className="text-base text-black/80 pb-6">
-        You're on a roll. Let's find relevant skills for the job your applying
-        for. Listing 6-10 skills is best.
+        You&apos;re on a roll. Let&apos;s find relevant skills for the job your
+        applying for. Listing 6-10 skills is best.
       </p>
 
       <div className="w-full flex flex-col gap-5">

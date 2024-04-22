@@ -156,7 +156,11 @@ export default function FinishYourResume() {
                 </p>
                 <div className="flex gap-2">
                   {cardLogos.map((logo) => (
-                    <Image src={logo} alt="Card Logo" />
+                    <Image
+                      key={crypto.randomUUID()}
+                      src={logo}
+                      alt="Card Logo"
+                    />
                   ))}
                 </div>
               </div>
@@ -208,9 +212,9 @@ export default function FinishYourResume() {
                   </select>
                 </div>
                 <p className="text-xs text-black/60">
-                  By clicking "Get My Resume" you agree to be charged $
-                  {selectedPaymentMenu === "Monthly" ? 7 : 2} now and accept our
-                  Terms of Use and Privacy Policy.
+                  By clicking &quot;Get My Resume&quot; you agree to be charged
+                  ${selectedPaymentMenu === "Monthly" ? 7 : 2} now and accept
+                  our Terms of Use and Privacy Policy.
                 </p>
                 <button
                   href="#checkout"

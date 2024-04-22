@@ -154,7 +154,10 @@ export default function SimpleTemplate({ data }) {
               <p className="text-[3vw] md:text-xl pb-2 border-b">Experience</p>
               {data.experienceData.map((experience) => {
                 return (
-                  <div className="flex flex-col gap-3">
+                  <div
+                    key={crypto.randomUUID()}
+                    className="flex flex-col gap-3"
+                  >
                     <span className="text-[2.5vw] md:text-sm font-semibold text-gray-700">
                       {experience.startMonth} {experience.startYear} -{" "}
                       {experience.currentlyWorkHere
@@ -185,7 +188,10 @@ export default function SimpleTemplate({ data }) {
               <div className="grid grid-cols-2 justify-between">
                 {data.referencesData.map((reference) => {
                   return (
-                    <div className="flex flex-col gap-3">
+                    <div
+                      key={crypto.randomUUID()}
+                      className="flex flex-col gap-3"
+                    >
                       <span className="text-[2.5vw] md:text-sm font-semibold text-gray-700">
                         {reference.firstName} {reference.lastName}
                       </span>
@@ -207,7 +213,7 @@ export default function SimpleTemplate({ data }) {
           {data.finalizeData.customDatas[0] &&
             data.finalizeData.customDatas.map((custom) => {
               return (
-                <div>
+                <div key={crypto.randomUUID()}>
                   <p className="text-[3vw] md:text-xl pb-2 mb-3 border-b">
                     {custom.name}
                   </p>

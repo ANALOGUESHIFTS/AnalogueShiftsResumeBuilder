@@ -259,7 +259,10 @@ export default function AdvancedResumeTemplate({ data }) {
           {data.finalizeData.customDatas[0] &&
             data.finalizeData.customDatas.map((custom) => {
               return (
-                <div className="mb-10 last-of-type:mb-0">
+                <div
+                  key={crypto.randomUUID()}
+                  className="mb-10 last-of-type:mb-0"
+                >
                   <div className="font-bold text-[#54afe4] tracking-wide uppercase mb-2.5">
                     {custom.name}
                   </div>

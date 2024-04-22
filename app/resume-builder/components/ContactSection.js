@@ -143,8 +143,8 @@ export default function ContactSection() {
       /> */}
       <p className="font-extrabold text-3xl text-black/80 pb-5">Contact</p>
       <p className="text-base text-black/80 pb-6">
-        Let's start with the basics. To ensure employers can reach you, input at
-        least your name, email, and phone number.
+        Let&apos;s start with the basics. To ensure employers can reach you,
+        input at least your name, email, and phone number.
       </p>
       {/*   <div className="w-full flex items-center gap-4 mb-6">
         <div className="w-24 h-24 rounded-lg bg-white border-gray-200 border-dashed border-2 flex justify-center items-center">
@@ -181,6 +181,7 @@ export default function ContactSection() {
         {formData.map((data) => {
           return (
             <input
+              key={data.label}
               type={data.type}
               onChange={(e) => handleInputChange(data.label, e.target.value)}
               className="px-4 py-3.5 max-[613px]:w-full rounded-xl border outline-AnalogueShiftsTextColor text-base text-black/70"

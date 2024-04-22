@@ -255,14 +255,14 @@ export const faqAndAnswers = [
             </p>
             <ul className="w-full flex list-inside list-disc flex-col gap-3">
               <li className="text-black/80 text-sm">
-                On Safari’s drop-down menu, select "Preferences" .
+                On Safari’s drop-down menu, select &quot;Preferences&quot; .
               </li>
               <li className="text-black/80 text-sm">
                 Go to the Advanced option.
               </li>
               <li className="text-black/80 text-sm">
-                At the bottom, select "Show Develop Menu" click "Develop" and
-                then select "Empty cache."
+                At the bottom, select &quot;Show Develop Menu&quot; click
+                &quot;Develop&quot; and then select &quot;Empty cache.&quot;
               </li>
             </ul>
             <p className="text-black/80 text-sm font-semibold py-5">
@@ -277,9 +277,10 @@ export const faqAndAnswers = [
                 A new tab will appear with the options to clear browsing data.
               </li>
               <li className="text-black/80 text-sm">
-                Select your "All time" on the "Time Range" drop-down menu. Make
-                sure to select the box marked "Cached images and files," and
-                then click the blue button marked "Clear Now."
+                Select your &quot;All time&quot; on the &quot;Time Range&quot;
+                drop-down menu. Make sure to select the box marked &quot;Cached
+                images and files,&quot; and then click the blue button marked
+                &quot;Clear Now.&quot;
               </li>
             </ul>
             <p className="text-black/80 py-5 text-sm">
@@ -331,16 +332,16 @@ export const faqAndAnswers = [
                   search bar.
                 </li>
                 <li className="text-black/80 text-sm">
-                  Select "More Tools," then choose the option marked as "Clear
-                  Browsing Data."
+                  Select &quot;More Tools,&quot; then choose the option marked
+                  as &quot;Clear Browsing Data.&quot;
                 </li>
                 <li className="text-black/80 text-sm">
                   Choose the desired time range and make sure to select the
-                  boxes marked "Cookies and other site data" and "Cached images
-                  and files."
+                  boxes marked &quot;Cookies and other site data&quot; and
+                  &quot;Cached images and files.&quot;
                 </li>
                 <li className="text-black/80 text-sm pb-2">
-                  Select "Clear data."
+                  Select &quot;Clear data.&quot;
                 </li>
               </ul>
               <li className="text-black/80 text-sm pb-6">
@@ -419,12 +420,13 @@ export const faqAndAnswers = [
               </li>
               <li className="text-black/80 text-sm">
                 Try to log into Analogue Shifts. If you do not know the
-                credentials, enter your email address on the "Forgot Password"
-                page. If an account exists under that email, you will receive a
-                password reset message which will allow you to choose a new
-                password and grant access for account verification. If you’ve
-                tried all of your emails and did not receive the password reset
-                email, most likely you do not have an account with us.
+                credentials, enter your email address on the &quot;Forgot
+                Password&quot; page. If an account exists under that email, you
+                will receive a password reset message which will allow you to
+                choose a new password and grant access for account verification.
+                If you’ve tried all of your emails and did not receive the
+                password reset email, most likely you do not have an account
+                with us.
               </li>
               <li className="text-black/80 text-sm pb-6">
                 If you tried the previous steps and you are still unsure if you

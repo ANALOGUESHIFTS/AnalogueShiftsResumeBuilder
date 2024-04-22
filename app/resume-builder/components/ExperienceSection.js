@@ -126,8 +126,8 @@ export default function Experience() {
       />
       <p className="font-extrabold text-3xl text-black/80 pb-5">Experience</p>
       <p className="text-base text-black/80 pb-6">
-        This is going to be easy, we promise! Let's start with your most recent
-        job.
+        This is going to be easy, we promise! Let&apos;s start with your most
+        recent job.
       </p>
 
       <form

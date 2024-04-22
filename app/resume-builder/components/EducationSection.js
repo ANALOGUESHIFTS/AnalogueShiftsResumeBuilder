@@ -122,8 +122,8 @@ export default function Education() {
       />
       <p className="font-extrabold text-3xl text-black/80 pb-5">Education</p>
       <p className="text-base text-black/80 pb-6">
-        Great job! You're onto the next section. Where did you attend college or
-        university?
+        Great job! You&apos;re onto the next section. Where did you attend
+        college or university?
       </p>
 
       <form

@@ -72,7 +72,7 @@ export default function LoginPage() {
             Login
           </p>
           <p className="text-gray-500/90 text-base text-center pb-5">
-            We're happy to see you back!
+            We&apos;re happy to see you back!
           </p>
           {/* <div className="w-full flex justify-center gap-y-3">
             <button className="w-[48%] max-[500px]:w-full h-9 border border-[#4285f4] rounded overflow-hidden flex">
@@ -117,7 +117,9 @@ export default function LoginPage() {
               required
             />
             <div className="w-full flex justify-end gap-1 pt-2 pr-2">
-              <p className="text-xs text-gray-400">Don't have an account?</p>
+              <p className="text-xs text-gray-400">
+                Don&apos;t have an account?
+              </p>
               <Link
                 href="/register"
                 className="text-xs underline text-gray-400"

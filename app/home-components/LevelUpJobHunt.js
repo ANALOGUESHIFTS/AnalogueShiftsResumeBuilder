@@ -15,8 +15,8 @@ export default function LevelUpJobHunt() {
       </p>
       <p className="text-black/60 w-[700px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
         Unlocking more interviews and securing superior job offers is just a few
-        steps away, and it all begins with your resume. Here's how to make your
-        application stand out today:
+        steps away, and it all begins with your resume. Here&apos;s how to make
+        your application stand out today:
       </p>
       <div className="w-full flex justify-between flex-wrap gap-y-5">
         {levelUpLinks.map((data) => {

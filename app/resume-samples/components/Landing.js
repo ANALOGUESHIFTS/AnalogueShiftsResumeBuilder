@@ -25,10 +25,10 @@ export default function Landing() {
             Resume Examples for Every Job or Experience Level
           </p>
           <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-            If you're in search of excellent resume examples, you've found the
-            right place. Each sample resume on this page has been approved by a
-            professional resume writer, is free to download, and includes
-            job-specific writing tips.
+            If you&apos;re in search of excellent resume examples, you&apos;ve
+            found the right place. Each sample resume on this page has been
+            approved by a professional resume writer, is free to download, and
+            includes job-specific writing tips.
           </p>
           <div className="w-full flex max-[500px]:flex-col justify-center">
             <Link

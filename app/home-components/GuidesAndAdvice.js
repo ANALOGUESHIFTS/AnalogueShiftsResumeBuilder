@@ -11,8 +11,8 @@ export default function GuidesAndAdvice({ blogData }) {
         Explore guides to enhance your resume
       </p>
       <p className="text-black/60 w-[800px] max-[900px]:w-[90%] max-[1050px]:text-center font-normal pb-10 tracking-normal text-base text-center">
-        Whether you're a newcomer to job hunting, transitioning fields, or
-        aiming for a higher-paying position, we'll guide you on crafting a
+        Whether you&apos;re a newcomer to job hunting, transitioning fields, or
+        aiming for a higher-paying position, we&apos;ll guide you on crafting a
         resume that attracts more interviews
       </p>
       <div className="w-full flex max-[500px]:flex-col justify-center pb-6">

@@ -77,10 +77,10 @@ export default function ResumeSamplePage() {
                 EXPERT ADVICE TO GET STARTED
               </p>
               <p className="text-black/60   font-normal tracking-normal text-base">
-                Once you've gathered ideas from our professional resume examples
-                and acquired the skills to create a resume, download a free
-                resume template to streamline the formatting process and save
-                time.
+                Once you&apos;ve gathered ideas from our professional resume
+                examples and acquired the skills to create a resume, download a
+                free resume template to streamline the formatting process and
+                save time.
               </p>
             </div>
           </div>
