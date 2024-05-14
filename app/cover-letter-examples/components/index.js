@@ -8,7 +8,7 @@ import {
   coverLetterSampleLinks,
   coverLetterSampleData,
 } from "@/app/resources/cover-letter/data";
-import GuestLayout from "@/app/layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 import Landing from "./Landing";
 
 export default function CoverLetterExamplePage() {

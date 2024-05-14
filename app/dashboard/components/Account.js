@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import AuthenticatedLayout from "@/app/layouts/AuthenticatedLayout";
+import AuthenticatedLayout from "@/app/components/layouts/AuthenticatedLayout";
 import Link from "next/link";
 import Cookies from "js-cookie";
 

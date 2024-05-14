@@ -1,8 +1,8 @@
 "use client";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import NavBar from "../components/layout-components/NavBar";
-import Footer from "../components/layout-components/Footer";
+import NavBar from "../layout-components/NavBar";
+import Footer from "../layout-components/Footer";
 
 //Toastify
 import { ToastContainer } from "react-toastify";

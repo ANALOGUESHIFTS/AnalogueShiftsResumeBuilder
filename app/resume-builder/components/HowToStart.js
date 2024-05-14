@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Background from "@/public/images/resumes-background.png";
 import { resumeTemplates } from "@/app/resources/resume/data";
-import GuestLayout from "@/app/layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 // Splide JS
 import "@splidejs/react-splide/css";
 import { SplideSlide, Splide } from "@splidejs/react-splide";

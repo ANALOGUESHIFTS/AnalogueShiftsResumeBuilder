@@ -6,7 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import LoadingComponent from "@/app/components/LoadingComponent";
 import { toast } from "react-toastify";
-import AuthenticationLayout from "@/app/layouts/AuthenticationLayout";
+import AuthenticationLayout from "@/app/components/layouts/AuthenticationLayout";
 import Cookies from "js-cookie";
 
 export default function LoginPage() {

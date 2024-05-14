@@ -12,7 +12,7 @@ import MasterCard from "@/public/images/master-card.svg";
 import VisaCard from "@/public/images/visa-card.svg";
 import AmericanExpress from "@/public/images/american-express.svg";
 
-import GuestLayout from "@/app/layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);

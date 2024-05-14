@@ -5,7 +5,7 @@ import LoadingComponent from "../../components/LoadingComponent";
 import Link from "next/link";
 import Image from "next/image";
 import Author from "@/public/images/author.png";
-import GuestLayout from "@/app/layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 
 // import Image from 'next/image'
 

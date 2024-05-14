@@ -12,7 +12,7 @@ import Experts from "./Experts";
 import Faqs from "../components/Faqs";
 import ReadyToMakeResume from "./ReadyToMakeResume";
 import Landing from "./Landing";
-import GuestLayout from "../layouts/GuestLayout";
+import GuestLayout from "../components/layouts/GuestLayout";
 
 export default function ResumeBuilderPage() {
   const [blogData, setBlogData] = useState("");

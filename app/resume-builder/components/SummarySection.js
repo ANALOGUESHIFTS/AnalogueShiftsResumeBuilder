@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-// import Tiptap from "@/app/components/Tiptap";
+import Tiptap from "@/app/components/Tiptap";
 import Cookies from "js-cookie";
 import { useRouter, usePathname } from "next/navigation";
 
@@ -62,14 +62,14 @@ export default function Summary() {
         the hiring manager in a few short sentences.
       </p>
 
-      {/* {initialData.length > 0 && (
+      {initialData.length > 0 && (
         <div className="w-full bg-white rounded-xl border pb-3 h-[340px] overflow-y-auto relative">
           <Tiptap
             changed={(data) => setSummary(data)}
             initialData={initialData}
           />
         </div>
-      )} */}
+      )}
 
       <div className="pt-7 flex gap-5 justify-between">
         <button

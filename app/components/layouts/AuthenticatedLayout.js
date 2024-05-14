@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
-import AuthenticatedNavBar from "../components/layout-components/AuthenticatedNavBar";
-import Footer from "../components/layout-components/Footer";
+import AuthenticatedNavBar from "../layout-components/AuthenticatedNavBar";
+import Footer from "../layout-components/Footer";
 import Cookies from "js-cookie";
 
 //Toastify

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Cookies from "js-cookie";
-import AuthenticatedLayout from "@/app/layouts/AuthenticatedLayout";
+import AuthenticatedLayout from "@/app/components/layouts/AuthenticatedLayout";
 import { resumeTemplates } from "@/app/resources/resume/data";
 
 export default function Resumes() {

@@ -7,7 +7,7 @@ import Faqs from "@/app/components/Faqs";
 import Landing from "./Landing";
 import Services from "./Services";
 import TopCompanies from "../../components/Topcompanies";
-import GuestLayout from "@/app/layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 
 export default function CoverLetterBuilderPage() {
   return (

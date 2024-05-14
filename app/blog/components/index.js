@@ -8,7 +8,7 @@ import SearchIcon from "@/public/images/search-icon.png";
 import { axiosBlog } from "@/app/lib/axios";
 import MasonryGrid from "@/app/components/MansoryGrid";
 import LoadingComponent from "../../components/LoadingComponent";
-import GuestLayout from "@/app/layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 export default function BlogPageDetails() {
   const [blogData, setBlogData] = useState([]);
   const [searchValue, setSearchValue] = useState("");

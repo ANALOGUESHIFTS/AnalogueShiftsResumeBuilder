@@ -7,7 +7,7 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import LoadingComponent from "@/app/components/LoadingComponent";
 import Cookies from "js-cookie";
-import AuthenticationLayout from "@/app/layouts/AuthenticationLayout";
+import AuthenticationLayout from "@/app/components/layouts/AuthenticationLayout";
 
 export default function RegisterPage() {
   const [name, setName] = useState("");

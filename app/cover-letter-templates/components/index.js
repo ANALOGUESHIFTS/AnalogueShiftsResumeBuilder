@@ -7,7 +7,7 @@ import Faqs from "@/app/components/Faqs";
 import FreeCoverLetterTemplates from "./FreeCoverLetter";
 import MasonryGrid from "@/app/components/MansoryGrid";
 import { axiosBlog } from "@/app/lib/axios";
-import GuestLayout from "@/app/layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 import Landing from "./Landing";
 
 export default function CoverLetterTemplatesPage() {

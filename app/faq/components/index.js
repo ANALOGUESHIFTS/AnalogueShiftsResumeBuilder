@@ -5,7 +5,7 @@ import RightBracket from "@/public/images/right-bracket.png";
 import Link from "next/link";
 import { faqAndAnswers, faqNavLinks } from "@/app/resources/data";
 import { useState } from "react";
-import GuestLayout from "@/app/layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 
 export default function FaqPage() {
   const [selected, setSelected] = useState("");

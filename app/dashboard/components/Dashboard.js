@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import AuthenticatedLayout from "@/app/layouts/AuthenticatedLayout";
+import AuthenticatedLayout from "@/app/components/layouts/AuthenticatedLayout";
 import Link from "next/link";
 
 export default function Dashboard() {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import TipMan from "@/public/images/tip-man.svg";
 import Faqs from "@/app/components/Faqs";
-import GuestLayout from "@/app/layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 import Landing from "./Landing";
 import IndustryTailoredCV from "./industryTailoredCV";
 
