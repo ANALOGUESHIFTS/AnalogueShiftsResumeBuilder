@@ -7,7 +7,7 @@ import CvSamples from "./CvSamples";
 import Landing from "./Landing";
 import Services from "./Services";
 import TopCompanies from "@/app/components/Topcompanies";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 
 export default function CvMakerPage() {
   return (

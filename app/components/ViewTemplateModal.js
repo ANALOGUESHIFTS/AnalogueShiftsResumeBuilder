@@ -1,4 +1,4 @@
-import XMark from "@/public/x-mark.png";
+import XMark from "@/public/images/x-mark.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ export default function ViewTemplateModal({ data, closeModal, builder }) {
           </div>
           <div className="w-6/12 max-[691px]:w-full h-screen overflow-y-auto pl-8 max-[552px]:pl-0 remove-scrollbar">
             <Link
-              href={data.linkToThisTemplate}
+              href={"#"}
               style={{
                 color: "#4b94ea",
               }}

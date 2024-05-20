@@ -1,7 +1,7 @@
 import Link from "next/link";
-import BlogIcon from "@/public/generate-bullet-point.svg";
+import BlogIcon from "@/public/images/generate-bullet-point.svg";
 import Image from "next/image";
-import { coverLetterSampleLinks } from "@/app/components/resources/cover-letter/data";
+import { coverLetterSampleLinks } from "@/app/resources/cover-letter/data";
 import { coverLetterBlogData } from "../data";
 
 export default function CoverLetterSamples() {

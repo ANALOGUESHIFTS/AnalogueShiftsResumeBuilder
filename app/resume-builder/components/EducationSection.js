@@ -2,7 +2,7 @@
 import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import IdiomProof from "@/app/components/LayoutComponents/IdiomProof";
+import IdiomProof from "@/app/components/layout-components/IdiomProof";
 
 let years = [
   2030, 2029, 2028, 2027, 2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018,
@@ -122,8 +122,8 @@ export default function Education() {
       />
       <p className="font-extrabold text-3xl text-black/80 pb-5">Education</p>
       <p className="text-base text-black/80 pb-6">
-        Great job! You're onto the next section. Where did you attend college or
-        university?
+        Great job! You&apos;re onto the next section. Where did you attend
+        college or university?
       </p>
 
       <form

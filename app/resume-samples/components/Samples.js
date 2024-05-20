@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import RightArrow from "@/public/right-arrow-icon.png";
-import SideBarImage from "@/public/sidebar-image.svg";
+import RightArrow from "@/public/images/right-arrow-icon.png";
+import SideBarImage from "@/public/images/sidebar-image.svg";
 import {
   resumeSampleLinks,
   resumeSampleData,
-} from "@/app/components/resources/resume/data";
+} from "@/app/resources/resume/data";
 
 export default function SamplesSection() {
   return (

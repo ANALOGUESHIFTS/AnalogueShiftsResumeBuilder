@@ -1,32 +1,34 @@
 "use client";
 import { useEffect, useState } from "react";
-import { plans, years, months } from "../../homeComponents/data";
+import { plans, years, months } from "../../home-components/data";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import Link from "next/link";
 import Image from "next/image";
-import { resumeTemplates } from "@/app/components/resources/resume/data";
+import { resumeTemplates } from "@/app/resources/resume/data";
 
 //Card Logos
-import MasterCard from "@/public/master-card.svg";
-import VisaCard from "@/public/visa-card.svg";
-import AmericanExpress from "@/public/american-express.svg";
+import MasterCard from "@/public/images/master-card.svg";
+import VisaCard from "@/public/images/visa-card.svg";
+import AmericanExpress from "@/public/images/american-express.svg";
 
-import { useAuth } from "../../components/contexts/AuthContext";
-import GuestLayout from "@/app/Layouts/GuestLayout";
-import SimpleTemplate from "@/app/components/templates/resume/Simple";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);
   const [selectedPaymentMenu, setSelectedPaymentMenu] = useState("14-day");
-  const { user } = useAuth();
+  const [user, setUser] = useState(null);
   const router = useRouter();
   const cardLogos = [VisaCard, MasterCard, AmericanExpress];
 
   useEffect(() => {
     const storedData = Cookies.get("userData");
+    const authData = Cookies.get("analogueshifts");
     if (storedData) {
       setData(JSON.parse(storedData));
+    }
+    if (authData) {
+      setUser(JSON.parse(authData));
     }
   }, []);
 
@@ -53,7 +55,7 @@ export default function FinishYourResume() {
               {data &&
                 resumeTemplates
                   .filter((item) => item.id === data.template)[0]
-                  .templates[0].component(data)}
+                  .component(data)}
             </div>
           </div>
           <div className=" lg:w-[calc(50%-15px)] w-full flex flex-col items-center lg:items-start gap-6 pt-12 pr-[20px]">
@@ -154,7 +156,11 @@ export default function FinishYourResume() {
                 </p>
                 <div className="flex gap-2">
                   {cardLogos.map((logo) => (
-                    <Image src={logo} alt="Card Logo" />
+                    <Image
+                      key={crypto.randomUUID()}
+                      src={logo}
+                      alt="Card Logo"
+                    />
                   ))}
                 </div>
               </div>
@@ -206,9 +212,9 @@ export default function FinishYourResume() {
                   </select>
                 </div>
                 <p className="text-xs text-black/60">
-                  By clicking "Get My Resume" you agree to be charged $
-                  {selectedPaymentMenu === "Monthly" ? 7 : 2} now and accept our
-                  Terms of Use and Privacy Policy.
+                  By clicking &quot;Get My Resume&quot; you agree to be charged
+                  ${selectedPaymentMenu === "Monthly" ? 7 : 2} now and accept
+                  our Terms of Use and Privacy Policy.
                 </p>
                 <button
                   href="#checkout"

@@ -2,7 +2,7 @@
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { resumeTemplates } from "@/app/components/resources/resume/data";
+import { resumeTemplates } from "@/app/resources/resume/data";
 
 export default function DownloadResume() {
   const [data, setData] = useState(null);
@@ -33,7 +33,7 @@ export default function DownloadResume() {
           {data &&
             resumeTemplates
               .filter((item) => item.id === data.template)[0]
-              .templates[0].component(data)}
+              .component(data)}
         </div>
       )}
     </>

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { serviceData } from "../data";
-import { resumeTemplates } from "@/app/components/resources/resume/data";
+import { resumeTemplates } from "@/app/resources/resume/data";
+import ResumeList from "@/app/components/ResumeList";
 
 export default function Services() {
   return (
@@ -30,7 +31,7 @@ export default function Services() {
           })}
         </div>
       </main>
-      <main className="w-full h-[1000px] pt-10 flex flex-col items-center bg-white relative">
+      <main className="w-full h-max pt-10 flex flex-col items-center bg-white relative">
         <p className="py-5 text-[2.6rem] max-[900px]:w-[90%] text-center max-[900px]:text-xl font-extrabold text-black/80">
           Our best CV templates
         </p>
@@ -45,35 +46,7 @@ export default function Services() {
           Build My CV Now
         </Link>
 
-        <div className="w-full items-center flex gap-5 px-7 overflow-x-auto h-max">
-          {resumeTemplates.slice(0, 2).map((data) => {
-            return (
-              <div
-                key={crypto.randomUUID()}
-                className="relative h-max template-box w-[450px] max-w-full pb-2 rounded-lg bg-white"
-              >
-                <div className="w-full ">
-                  <div className="w-full h-max scroll-hidden  duration-300 rounded-xl">
-                    <Image
-                      className="w-max mx-auto"
-                      src={data.templates[0].templateImage}
-                      alt="Resume Image"
-                    />
-                  </div>
-                  <p className="text-center py-2 border-t text-black/80 text-sm font-medium">
-                    {data.name}
-                  </p>
-                </div>
-                <Link
-                  className="template-link w-max absolute opacity-0  bottom-[20%] left-[25%] px-8 flex hover:scale-105 justify-center bg-AnalogueShiftsTextColor/80 items-center duration-300 text-black/80 font-medium text-sm py-3 rounded-lg"
-                  href={`/resume-builder/app/how-to-start/${data.id}`}
-                >
-                  Use This Template
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+        <ResumeList data={resumeTemplates.slice(0, 2)} />
       </main>
     </>
   );

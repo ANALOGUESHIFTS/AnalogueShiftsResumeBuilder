@@ -5,7 +5,7 @@ import FreeResumeTemplates from "./FreeResumeTemplates";
 import Faqs from "../../components/Faqs";
 import MasonryGrid from "../../components/MansoryGrid";
 import { axiosBlog } from "@/app/lib/axios";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 import Landing from "./Landing";
 import ReadyToBuildResume from "./ReadyToBuildResume";
 
@@ -23,7 +23,6 @@ export default function ResumeTemplatesPage() {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false);
       });
   }, []);

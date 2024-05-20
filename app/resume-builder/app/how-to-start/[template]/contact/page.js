@@ -1,5 +1,5 @@
 import ContactSection from "@/app/resume-builder/components/ContactSection";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 import BuilderLayout from "@/app/resume-builder/components/BuilderLayout";
 
 export const metadata = {

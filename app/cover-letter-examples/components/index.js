@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import RightArrow from "@/public/right-arrow-icon.png";
-import SideBarImage from "@/public/sidebar-image.svg";
-import TipMan from "@/public/tip-man.svg";
+import RightArrow from "@/public/images/right-arrow-icon.png";
+import SideBarImage from "@/public/images/sidebar-image.svg";
+import TipMan from "@/public/images/tip-man.svg";
 import Faqs from "@/app/components/Faqs";
 import {
   coverLetterSampleLinks,
   coverLetterSampleData,
-} from "@/app/components/resources/cover-letter/data";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+} from "@/app/resources/cover-letter/data";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 import Landing from "./Landing";
 
 export default function CoverLetterExamplePage() {

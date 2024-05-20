@@ -2,9 +2,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Background from "@/public/resumes-background.png";
-import { resumeTemplates } from "@/app/components/resources/resume/data";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import Background from "@/public/images/resumes-background.png";
+import { resumeTemplates } from "@/app/resources/resume/data";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 // Splide JS
 import "@splidejs/react-splide/css";
 import { SplideSlide, Splide } from "@splidejs/react-splide";
@@ -44,16 +44,16 @@ export default function HowToStartPage() {
           {resumeTemplates.map((data) => {
             return (
               <SplideSlide
-                className="w-full  items-center flex justify-center pb-14"
+                className="w-full flex items-center justify-center pb-14"
                 key={crypto.randomUUID()}
               >
-                <div className="relative mx-3 h-max template-box  max-w-full pb-2 rounded-lg bg-white">
-                  <div className="w-full">
-                    <div className="w-full h-max scroll-hidden rounded-t-xl  duration-300">
+                <div className="relative mx-3 template-box h-[500px] max-w-[450px] pb-2 rounded-lg bg-white">
+                  <div className="h-full w-full">
+                    <div className="w-full h-full scroll-hidden rounded-t-xl  duration-300">
                       <Image
-                        src={data.templates[0].templateImage}
+                        src={data.templateImage}
                         alt="Template Image"
-                        className="rounded-t-xl mx-auto w-max"
+                        className="rounded-t-xl mx-auto h-full w-max object-fit"
                       />
                     </div>
                     <p className="text-center py-2 border-t text-black/80 text-sm font-medium">
@@ -62,7 +62,7 @@ export default function HowToStartPage() {
                   </div>
                   <Link
                     className="template-link w-max absolute opacity-0  bottom-[20%] left-[25%] px-8 flex hover:scale-105 justify-center bg-AnalogueShiftsTextColor/80 items-center duration-300 text-black/80 font-medium text-sm py-3 rounded-lg"
-                    href={`/resume-builder/app/how-to-start/${data.id}`}
+                    href={data.path}
                   >
                     Use This Template
                   </Link>

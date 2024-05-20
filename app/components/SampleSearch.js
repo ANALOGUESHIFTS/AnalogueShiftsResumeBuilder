@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import SearchIcon from "@/public/search-icon.png";
+import SearchIcon from "@/public/images/search-icon.png";
 import Image from "next/image";
 import Link from "next/link";
 

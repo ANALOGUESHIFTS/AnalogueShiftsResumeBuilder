@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Tiptap from "../../components/Tiptap";
+import Tiptap from "@/app/components/Tiptap";
 import Cookies from "js-cookie";
 import { useRouter, usePathname } from "next/navigation";
 
@@ -45,7 +45,6 @@ export default function Summary() {
   // Checking for Stored Summary Data
   useEffect(() => {
     const storedData = JSON.parse(Cookies.get("userData"));
-
     if (storedData.summaryData) {
       setInitialData(storedData.summaryData);
     } else {
@@ -59,8 +58,8 @@ export default function Summary() {
         Professional Summary
       </p>
       <p className="text-base text-black/80 pb-6">
-        You're in the final stretch! We'll help you sell yourself to the hiring
-        manager in a few short sentences.
+        You&apos;re in the final stretch! We&apos;ll help you sell yourself to
+        the hiring manager in a few short sentences.
       </p>
 
       {initialData.length > 0 && (

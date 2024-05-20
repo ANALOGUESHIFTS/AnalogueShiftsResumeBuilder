@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import HomeIcon from "@/public/house-icon.png";
-import RightBracket from "@/public/right-bracket.png";
-import { resumeTemplates } from "@/app/components/resources/resume/data";
+import HomeIcon from "@/public/images/house-icon.png";
+import RightBracket from "@/public/images/right-bracket.png";
+import { resumeTemplates } from "@/app/resources/resume/data";
+import ResumeList from "@/app/components/ResumeList";
 
 export default function Landing() {
   return (
@@ -41,40 +42,7 @@ export default function Landing() {
         <p className="pb-6 text-[2.6rem] w-full text-center max-[900px]:text-xl font-extrabold text-black/80">
           Our Most Utilized CV Samples
         </p>
-        <div className="w-full flex flex-wrap items-center gap-x-4 gap-y-4">
-          {resumeTemplates.slice(0, 2).map((data) => {
-            return (
-              <div
-                key={crypto.randomUUID()}
-                className="h-max p-4 w-[450px] max-[1150px]:w-[calc(50%-16px)] max-[650px]:w-full bg-[#f8f9fb] rounded-lg resume-template-link"
-              >
-                <div className="w-full h-max relative template-img-box">
-                  <div className="w-full h-max rounded-lg overflow-y-scroll scroll-hidden">
-                    <Image
-                      className="w-max mx-auto"
-                      src={data.templates[0].templateImage}
-                      alt="CV Image"
-                    />
-                  </div>
-                  <Link
-                    href={`/resume-builder/app/how-to-start/${data.id}`}
-                    className="absolute button-row  opacity-0 translate-y-2 duration-300 bottom-4 left-4 w-[calc(100%-32px)] py-3 hover:bg-AnalogueShiftsTextColor/80 flex justify-center rounded-lg bg-AnalogueShiftsTextColor text-sm font-medium text-black/80"
-                  >
-                    Use Template
-                  </Link>
-                </div>
-                <div className="w-full pl-2">
-                  <p className="pt-6 text-base text-black/90 font-medium pb-2">
-                    {data.name}
-                  </p>
-                  <p className="text-black/60 font-medium text-sm">
-                    {data.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <ResumeList data={resumeTemplates.slice(0, 2)} />
       </section>
     </>
   );

@@ -2,12 +2,12 @@
 import { useState, useEffect } from "react";
 import LoadingComponent from "../../components/LoadingComponent";
 import Link from "next/link";
-import { coverLetterTemplates } from "@/app/components/resources/cover-letter/data";
+import { coverLetterTemplates } from "@/app/resources/cover-letter/data";
 import Faqs from "@/app/components/Faqs";
 import FreeCoverLetterTemplates from "./FreeCoverLetter";
 import MasonryGrid from "@/app/components/MansoryGrid";
 import { axiosBlog } from "@/app/lib/axios";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 import Landing from "./Landing";
 
 export default function CoverLetterTemplatesPage() {
@@ -24,7 +24,6 @@ export default function CoverLetterTemplatesPage() {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false);
       });
   }, []);

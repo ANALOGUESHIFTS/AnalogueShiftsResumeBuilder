@@ -2,7 +2,7 @@
 import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import IdiomProof from "@/app/components/LayoutComponents/IdiomProof";
+import IdiomProof from "@/app/components/layout-components/IdiomProof";
 
 let years = [
   2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012,
@@ -126,8 +126,8 @@ export default function Experience() {
       />
       <p className="font-extrabold text-3xl text-black/80 pb-5">Experience</p>
       <p className="text-base text-black/80 pb-6">
-        This is going to be easy, we promise! Let's start with your most recent
-        job.
+        This is going to be easy, we promise! Let&apos;s start with your most
+        recent job.
       </p>
 
       <form

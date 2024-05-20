@@ -2,13 +2,13 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import HomeIcon from "@/public/house-icon.png";
-import RightBracket from "@/public/right-bracket.png";
-import SearchIcon from "@/public/search-icon.png";
+import HomeIcon from "@/public/images/house-icon.png";
+import RightBracket from "@/public/images/right-bracket.png";
+import SearchIcon from "@/public/images/search-icon.png";
 import { axiosBlog } from "@/app/lib/axios";
 import MasonryGrid from "@/app/components/MansoryGrid";
 import LoadingComponent from "../../components/LoadingComponent";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 export default function BlogPageDetails() {
   const [blogData, setBlogData] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -20,12 +20,10 @@ export default function BlogPageDetails() {
       .get("/posts")
       .then((res) => {
         const data = res.data;
-        console.log(data[0]);
         setBlogData(data);
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false);
       });
   }, []);

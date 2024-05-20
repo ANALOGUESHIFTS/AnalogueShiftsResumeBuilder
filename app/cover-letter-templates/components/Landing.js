@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import HomeIcon from "@/public/house-icon.png";
-import RightBracket from "@/public/right-bracket.png";
-import { coverLetterTemplates } from "@/app/components/resources/cover-letter/data";
+import HomeIcon from "@/public/images/house-icon.png";
+import RightBracket from "@/public/images/right-bracket.png";
+import { coverLetterTemplates } from "@/app/resources/cover-letter/data";
 
 export default function Landing() {
   return (

@@ -1,5 +1,5 @@
-import SimpleResumeTemplateImage from "@/public/resume-images/simple-resume.jpg";
-import FileIcon from "@/public/upload-file.png";
+import SimpleResumeTemplateImage from "@/public/images/resume-images/simple-resume.jpg";
+import FileIcon from "@/public/images/upload-file.png";
 import Image from "next/image";
 import Link from "next/link";
 

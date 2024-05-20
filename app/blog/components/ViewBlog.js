@@ -4,8 +4,8 @@ import { axiosBlog } from "../../lib/axios";
 import LoadingComponent from "../../components/LoadingComponent";
 import Link from "next/link";
 import Image from "next/image";
-import Author from "@/public/author.png";
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import Author from "@/public/images/author.png";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 
 // import Image from 'next/image'
 

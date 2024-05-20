@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import HeroBg from "@/public/hero-image.png";
+import HeroBg from "@/public/images/hero-image.png";
 
 export default function Landing() {
   return (

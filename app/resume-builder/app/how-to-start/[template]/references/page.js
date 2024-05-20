@@ -1,4 +1,4 @@
-import GuestLayout from "@/app/Layouts/GuestLayout";
+import GuestLayout from "@/app/components/layouts/GuestLayout";
 import BuilderLayout from "@/app/resume-builder/components/BuilderLayout";
 import References from "@/app/resume-builder/components/ReferencesSection";
 

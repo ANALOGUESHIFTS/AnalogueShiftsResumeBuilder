@@ -1,12 +1,13 @@
 "use client";
-import ApplicationLogo from "@/app/components/LayoutComponents/ApplicationLogo";
-import GoogleImage from "@/public/GoogleIcon.png";
+import ApplicationLogo from "@/app/components/layout-components/ApplicationLogo";
+import GoogleImage from "@/public/images/GoogleIcon.png";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import LoadingComponent from "@/app/components/LoadingComponent";
 import { toast } from "react-toastify";
-import AuthenticationLayout from "@/app/Layouts/AuthenticationLayout";
+import AuthenticationLayout from "@/app/components/layouts/AuthenticationLayout";
+import Cookies from "js-cookie";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -25,22 +26,26 @@ export default function LoginPage() {
     });
 
     let config = {
-      method: "post",
-      maxBodyLength: Infinity,
+      method: "POST",
       url: url,
       headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
       },
-      data: data,
+      data: JSON.stringify({
+        email: email,
+        password: password,
+      }),
     };
     setLoading(true);
 
     axios
       .request(config)
       .then(async (response) => {
-        const userData = JSON.stringify(response.data.user);
-        localStorage.setItem("analogueshifts", userData);
+        const userData = JSON.stringify({
+          ...response.data.data.user,
+          token: response.data.data.token,
+        });
+        Cookies.set("analogueshifts", userData);
         setLoading(false);
         toast.success("Login Successful", {
           position: "top-right",
@@ -50,11 +55,10 @@ export default function LoginPage() {
       })
       .catch((error) => {
         setLoading(false);
-        toast.error("Invalid email or password", {
+        toast.error(error.message, {
           position: "top-right",
           autoClose: 3000,
         });
-        console.log(error);
       });
   };
 
@@ -68,9 +72,9 @@ export default function LoginPage() {
             Login
           </p>
           <p className="text-gray-500/90 text-base text-center pb-5">
-            We're happy to see you back!
+            We&apos;re happy to see you back!
           </p>
-          <div className="w-full flex justify-center gap-y-3">
+          {/* <div className="w-full flex justify-center gap-y-3">
             <button className="w-[48%] max-[500px]:w-full h-9 border border-[#4285f4] rounded overflow-hidden flex">
               <div className="w-1/5 max-[500px]:w-[40px] h-full flex justify-center items-center bg-transparent">
                 <Image
@@ -85,12 +89,12 @@ export default function LoginPage() {
                 </p>
               </div>
             </button>
-          </div>
-          <div className="w-full pt-5 flex justify-between items-center">
+          </div> */}
+          {/* <div className="w-full pt-5 flex justify-between items-center">
             <div className="w-[45%] border-b"></div>
             <p className="text-sm text-gray-500/90">or</p>
             <div className="w-[45%] border-b"></div>
-          </div>
+          </div> */}
           <form
             onSubmit={handleSubmit}
             method="POST"
@@ -113,7 +117,9 @@ export default function LoginPage() {
               required
             />
             <div className="w-full flex justify-end gap-1 pt-2 pr-2">
-              <p className="text-xs text-gray-400">Don't have an account?</p>
+              <p className="text-xs text-gray-400">
+                Don&apos;t have an account?
+              </p>
               <Link
                 href="/register"
                 className="text-xs underline text-gray-400"

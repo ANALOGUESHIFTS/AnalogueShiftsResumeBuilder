@@ -1,10 +1,18 @@
 "use client";
-import AuthenticatedLayout from "@/app/Layouts/AuthenticatedLayout";
-import { useAuth } from "@/app/components/contexts/AuthContext";
+import { useState, useEffect } from "react";
+import AuthenticatedLayout from "@/app/components/layouts/AuthenticatedLayout";
 import Link from "next/link";
+import Cookies from "js-cookie";
 
 export default function Account() {
-  const { user } = useAuth();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    let storedData = Cookies.get("analogueshifts");
+    if (storedData) {
+      setUser(JSON.parse(Cookies.get("analogueshifts")));
+    }
+  }, []);
 
   return (
     <AuthenticatedLayout>

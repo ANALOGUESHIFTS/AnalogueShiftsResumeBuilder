@@ -2,7 +2,7 @@
 import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import IdiomProof from "@/app/components/LayoutComponents/IdiomProof";
+import IdiomProof from "@/app/components/layout-components/IdiomProof";
 
 export default function Skills() {
   const router = useRouter();
@@ -78,8 +78,8 @@ export default function Skills() {
       />
       <p className="font-extrabold text-3xl text-black/80 pb-5">Skills</p>
       <p className="text-base text-black/80 pb-6">
-        You're on a roll. Let's find relevant skills for the job your applying
-        for. Listing 6-10 skills is best.
+        You&apos;re on a roll. Let&apos;s find relevant skills for the job your
+        applying for. Listing 6-10 skills is best.
       </p>
 
       <div className="w-full flex flex-col gap-5">

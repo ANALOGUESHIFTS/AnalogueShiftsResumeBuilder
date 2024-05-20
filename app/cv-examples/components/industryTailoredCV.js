@@ -1,12 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  cvSamplesLinks,
-  cvSamplesData,
-} from "@/app/components/resources/cv/data";
-import SearchIcon from "@/public/search-icon.png";
-import RightArrow from "@/public/right-arrow-icon.png";
-import SideBarImage from "@/public/sidebar-image.svg";
+import { cvSamplesLinks, cvSamplesData } from "@/app/resources/cv/data";
+import SearchIcon from "@/public/images/search-icon.png";
+import RightArrow from "@/public/images/right-arrow-icon.png";
+import SideBarImage from "@/public/images/sidebar-image.svg";
 
 export default function IndustryTailoredCV() {
   return (
@@ -93,7 +90,11 @@ export default function IndustryTailoredCV() {
                     </p>
                   </div>
                   <div className="w-full h-max py-6 px-3 bg-white">
-                    <Image src={data.template} alt="Cv template" />
+                    <Image
+                      src={data.template}
+                      alt="Cv template"
+                      className="max-h-[500px] w-max"
+                    />
                   </div>
                 </div>
               );

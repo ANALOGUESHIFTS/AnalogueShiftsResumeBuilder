@@ -1,12 +1,13 @@
 "use client";
-import ApplicationLogo from "@/app/components/LayoutComponents/ApplicationLogo";
-import GoogleImage from "@/public/GoogleIcon.png";
+import ApplicationLogo from "@/app/components/layout-components/ApplicationLogo";
+import GoogleImage from "@/public/images/GoogleIcon.png";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import LoadingComponent from "@/app/components/LoadingComponent";
-import AuthenticationLayout from "@/app/Layouts/AuthenticationLayout";
+import Cookies from "js-cookie";
+import AuthenticationLayout from "@/app/components/layouts/AuthenticationLayout";
 
 export default function RegisterPage() {
   const [name, setName] = useState("");
@@ -28,11 +29,9 @@ export default function RegisterPage() {
     });
 
     let config = {
-      method: "post",
-      maxBodyLength: Infinity,
+      method: "POST",
       url: url,
       headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
       },
       data: data,
@@ -42,8 +41,11 @@ export default function RegisterPage() {
     axios
       .request(config)
       .then(async (response) => {
-        const userData = JSON.stringify(response.data.user);
-        localStorage.setItem("analogueshifts", userData);
+        const userData = JSON.stringify({
+          ...response.data[0].data.user,
+          token: response.data[0].data.token,
+        });
+        Cookies.set("analogueshifts", userData);
         setLoading(false);
         toast.success("Account Created Successfully", {
           position: "top-right",
@@ -52,9 +54,8 @@ export default function RegisterPage() {
         window.location.href = "/dashboard/account";
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false);
-        toast.error("Invalid email or password", {
+        toast.error(error.message, {
           position: "top-right",
           autoClose: 3000,
         });
@@ -73,7 +74,7 @@ export default function RegisterPage() {
           <p className="text-gray-500/90 text-base text-center pb-5">
             Join us today by creating an account!
           </p>
-          <div className="w-full flex justify-center gap-y-3">
+          {/* <div className="w-full flex justify-center gap-y-3">
             <button className="w-[48%] max-[500px]:w-full h-9 border border-[#4285f4] rounded overflow-hidden flex">
               <div className="w-1/5 max-[500px]:w-[40px] h-full flex justify-center items-center bg-transparent">
                 <Image
@@ -88,12 +89,12 @@ export default function RegisterPage() {
                 </p>
               </div>
             </button>
-          </div>
-          <div className="w-full pt-5 flex justify-between items-center">
+          </div> */}
+          {/* <div className="w-full pt-5 flex justify-between items-center">
             <div className="w-[45%] border-b"></div>
             <p className="text-sm text-gray-500/90">or</p>
             <div className="w-[45%] border-b"></div>
-          </div>
+          </div> */}
           <form
             onSubmit={handleSubmit}
             method="POST"

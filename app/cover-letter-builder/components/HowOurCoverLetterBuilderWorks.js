@@ -1,10 +1,10 @@
 import Image from "next/image";
-import BuilderAutomaticFormat from "@/public/builder-automatic-format.webp";
-import BuilderAutomaticFormatIcon from "@/public/builder-automatic-format-icon.webp";
-import ATSFriendly from "@/public/ats-friendly.webp";
-import ATSFriendlyIcon from "@/public/ats-friendly-icon.webp";
-import AIGeneratedExplanation from "@/public/AI-generated-explanation.webp";
-import AIGeneratedExplanationIcon from "@/public/AI-generated-explanation-icon.webp";
+import BuilderAutomaticFormat from "@/public/images/builder-automatic-format.webp";
+import BuilderAutomaticFormatIcon from "@/public/images/builder-automatic-format-icon.webp";
+import ATSFriendly from "@/public/images/ats-friendly.webp";
+import ATSFriendlyIcon from "@/public/images/ats-friendly-icon.webp";
+import AIGeneratedExplanation from "@/public/images/AI-generated-explanation.webp";
+import AIGeneratedExplanationIcon from "@/public/images/AI-generated-explanation-icon.webp";
 import Link from "next/link";
 
 export default function HowOurCoverLetterBuilderWorks() {

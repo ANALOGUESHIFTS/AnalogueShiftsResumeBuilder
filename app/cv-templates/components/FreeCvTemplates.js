@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 //Data
-import { cvNavLinks, cvTemplates } from "@/app/components/resources/cv/data";
+import { cvNavLinks, cvTemplates } from "@/app/resources/cv/data";
 
 export default function FreeCvTemplates() {
   return (
