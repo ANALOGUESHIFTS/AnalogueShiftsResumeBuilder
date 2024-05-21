@@ -1,4 +1,4 @@
-// File: C:\Users\tesli\Desktop\projects\web\ANALOGUESHIFTS\resume\app\resume-builder\app\how-to-start\[template]\contact\page.js
+// File: C:\Users\tesli\Desktop\projects\web\analogueshifts\resume\app\resume-builder\app\how-to-start\[template]\contact\page.js
 import * as entry from '../../../../../../../../app/resume-builder/app/how-to-start/[template]/contact/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

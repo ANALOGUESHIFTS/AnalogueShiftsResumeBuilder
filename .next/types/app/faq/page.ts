@@ -1,4 +1,4 @@
-// File: C:\Users\tesli\Desktop\projects\web\ANALOGUESHIFTS\resume\app\faq\page.js
+// File: C:\Users\tesli\Desktop\projects\web\analogueshifts\resume\app\faq\page.js
 import * as entry from '../../../../app/faq/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

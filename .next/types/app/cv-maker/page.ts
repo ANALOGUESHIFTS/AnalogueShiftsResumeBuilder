@@ -1,4 +1,4 @@
-// File: C:\Users\tesli\Desktop\projects\web\ANALOGUESHIFTS\resume\app\cv-maker\page.js
+// File: C:\Users\tesli\Desktop\projects\web\analogueshifts\resume\app\cv-maker\page.js
 import * as entry from '../../../../app/cv-maker/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
