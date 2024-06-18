@@ -2,9 +2,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import TipMan from "@/public/images/tip-man.svg";
-import Faqs from "@/app/components/Faqs";
-import GuestLayout from "@/app/components/layouts/GuestLayout";
-import Landing from "./Landing";
+import Faqs from "@/components/application/faqs";
+import GuestLayout from "@/components/application/layouts/guest";
+import Landing from "./landing";
 import SamplesSection from "./Samples";
 
 export default function ResumeSamplePage() {

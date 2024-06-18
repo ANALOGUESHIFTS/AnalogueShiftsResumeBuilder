@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Save hours of time",
+    "subTitle": "Our CV maker is a major timesaver. Simply choose your favorite CV template, and the builder will help you fill out each section. ",
+    "image": "/images/save-hours-of-time.svg"
+  },
+  {
+    "title": "Make a matching cover letter",
+    "subTitle": "Pair your CV with a customized cover letter to target a specific position and boost your chance of landing an interview for the role.",
+    "image": "/images/make-a-cohesive-application.svg"
+  },
+  {
+    "title": "Autogenerate bullet points",
+    "subTitle": " Our CV maker pulls information from job ads and academic listings, then  applies AI to generate custom bullet points to add to your CV. ",
+    "image": "/images/leverage-the-power-of-ai.svg"
+  },
+  {
+    "title": "Make a CV summary in seconds",
+    "subTitle": " Start your CV off strong with an introduction that showcases why you’re a qualified and capable great candidate.",
+    "image": "/images/try-out-different-template.svg"
+  },
+  {
+    "title": "Autoformat an easy-to-read CV",
+    "subTitle": " Each CV template in our builder is easy to read for humans and the computer programs big companies use to vet candidates. ",
+    "image": "/images/get-past-applicant.svg"
+  },
+  {
+    "title": "Get CV tips from experts",
+    "subTitle": " After you’ve made your CV, our team of CV experts will gladly provide you with suggestions and tweaks to perfect your document.",
+    "image": "/images/ask-for-expert-suggestion.svg"
+  }
+]

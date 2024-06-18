@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
-import LoadingComponent from "../../components/LoadingComponent";
-import FreeResumeTemplates from "./FreeResumeTemplates";
-import Faqs from "../../components/Faqs";
-import MasonryGrid from "../../components/MansoryGrid";
+import LoadingComponent from "@/components/application/LoadingComponent";
+import FreeResumeTemplates from "./free-resume-templates";
+import Faqs from "@/components/application/faqs";
+import MasonryGrid from "@/components/application/mansory-grid";
 import { axiosBlog } from "@/app/lib/axios";
-import GuestLayout from "@/app/components/layouts/GuestLayout";
-import Landing from "./Landing";
-import ReadyToBuildResume from "./ReadyToBuildResume";
+import GuestLayout from "@/components/application/layouts/guest";
+import Landing from "./landing";
+import ReadyToBuildResume from "./build-a-resume";
 
 export default function ResumeTemplatesPage() {
   const [loading, setLoading] = useState(false);

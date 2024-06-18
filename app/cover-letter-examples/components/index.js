@@ -3,13 +3,11 @@ import Image from "next/image";
 import RightArrow from "@/public/images/right-arrow-icon.png";
 import SideBarImage from "@/public/images/sidebar-image.svg";
 import TipMan from "@/public/images/tip-man.svg";
-import Faqs from "@/app/components/Faqs";
-import {
-  coverLetterSampleLinks,
-  coverLetterSampleData,
-} from "@/app/resources/cover-letter/data";
-import GuestLayout from "@/app/components/layouts/GuestLayout";
-import Landing from "./Landing";
+import Faqs from "@/components/application/faqs";
+import coverLetterExamples from "@/resources/cover-letter-builder/cover-letter-examples.json";
+import coverLetterSampleLinks from "@/resources/cover-letter-builder/samples-links.json";
+import GuestLayout from "@/components/application/layouts/guest";
+import Landing from "./landing";
 
 export default function CoverLetterExamplePage() {
   return (
@@ -28,22 +26,7 @@ export default function CoverLetterExamplePage() {
             largest collections of industry-specific cover letter examples on
             the internet.
           </p>
-          {/* <div className="w-full px-10 max-[800px]:px-5 z-60 py-5 sticky top-0 left-0 bg-[#fafbfc]">
-            <div
-              onClick={() => setSearchModal(true)}
-              className="w-full h-max overflow-hidden bg-white rounded-lg border flex items-center pl-3"
-            >
-              <Image
-                className="cursor-pointer w-5 h-5 mr-3 opacity-70"
-                src={SearchIcon}
-                alt="Search Icon"
-              />
-              <input
-                placeholder="Search job title (e.g. 'Engineer')"
-                className="text font-normal w-[calc(100%-28px)] py-3.5 outline-none border-none text-black/40 text-[15px]"
-              />
-            </div>
-          </div> */}
+
           <div className="w-full pt-10 relative flex justify-between px-10 max-[800px]:px-5 max-[974px]:flex-col max-[974px]:gap-8">
             <div className="w-[30%] max-[974px]:w-full flex flex-col gap-5">
               <div
@@ -94,7 +77,7 @@ export default function CoverLetterExamplePage() {
               </div>
             </div>
             <div className="w-[65%] max-[974px]:w-full h-max flex flex-col gap-8">
-              {coverLetterSampleData.map((data) => {
+              {coverLetterExamples.map((data) => {
                 return (
                   <div
                     key={crypto.randomUUID()}
@@ -118,11 +101,6 @@ export default function CoverLetterExamplePage() {
                         {data.whyIsThisAGoodExample}
                       </p>
                     </div>
-                    {data.template && (
-                      <div className="w-full h-[500px] overflow-y-scroll scroll-hidden py-6 px-3 bg-white">
-                        {data.template}
-                      </div>
-                    )}
                   </div>
                 );
               })}

@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-import Faqs from "@/app/components/Faqs";
-import UseOurCVBuilder from "./UseOurCVBuilder";
-import HowOurCvBuilderWorks from "./HowOurCvBuilderWorks";
-import CvSamples from "./CvSamples";
-import Landing from "./Landing";
-import Services from "./Services";
-import TopCompanies from "@/app/components/Topcompanies";
-import GuestLayout from "@/app/components/layouts/GuestLayout";
+import Faqs from "@/components/application/faqs";
+import UseOurCVBuilder from "./use-our-cv-builder";
+import HowOurCvBuilderWorks from "./how-our-cv-builder-works";
+import CvSamples from "./cv-sample";
+import Landing from "./landing";
+import Services from "./services";
+import Experts from "@/components/application/home-components/experts";
+import GuestLayout from "@/components/application/layouts/guest";
 
 export default function CvMakerPage() {
   return (
@@ -15,13 +15,7 @@ export default function CvMakerPage() {
       <main className="w-full h-auto">
         <Landing />
         <Services />
-        <TopCompanies
-          title="Our experts have been cited in top publications around the world"
-          description=" All our authors are authorities in job hunting, interviewing, and CV
-            writing. Some of the publications that have cited our experts
-            include:"
-        />
-
+        <Experts />
         <UseOurCVBuilder />
         <div className="px-5 w-full flex justify-center">
           <p className="py-5 text-[2.6rem] text-center  max-[900px]:text-xl font-extrabold text-black/70">

@@ -1,0 +1,17 @@
+[
+  {
+    "image": "/images/settings-icon.svg",
+    "title": "Technical Assistance",
+    "path": "/faq#technical-assistance"
+  },
+  {
+    "image": "/images/cover-letter-faqs-nav-icon.svg",
+    "title": "Payment Information",
+    "path": "/faq#payment-information"
+  },
+  {
+    "image": "/images/resume-faqs-nav-icon.svg",
+    "title": "Delete or request data",
+    "path": "/faq#delete-or-request-data"
+  }
+]

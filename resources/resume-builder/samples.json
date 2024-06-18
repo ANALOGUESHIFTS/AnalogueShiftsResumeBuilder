@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Arts, Culture & Media",
+    "id": "arts-culture-media",
+    "description": "For creative professionals, while your portfolio and artistic accomplishments take precedence, your resume remains vital for showcasing experience and professional skills. Gain insights from our sample resumes to effectively create your own.",
+    "color": "#4b94ea",
+    "background": "#e4f0fe",
+    "samples": [
+      {
+        "name": "Fine Arts & Aesthetics",
+        "template": "/images/resume-images/simple-resume.jpg",
+        "relatedLinks": []
+      }
+    ]
+  },
+  {
+    "name": "Banking & Finance",
+    "id": "banking-finance",
+    "description": "Finance jobs are competitive due to attractive pay and benefits. Learn how to create a resume that positions you for success in these roles by highlighting your finance-related skills and experience.",
+    "color": "#ea723c",
+    "background": "#fdf1eb",
+    "samples": [
+      {
+        "name": "Accounting",
+        "template": "/images/resume-images/simple-resume.jpg",
+        "relatedLinks": []
+      }
+    ]
+  }
+]

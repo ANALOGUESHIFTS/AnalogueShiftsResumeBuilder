@@ -2,10 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import RightArrow from "@/public/images/right-arrow-icon.png";
 import SideBarImage from "@/public/images/sidebar-image.svg";
-import {
-  resumeSampleLinks,
-  resumeSampleData,
-} from "@/app/resources/resume/data";
+import resumeSamples from "@/resources/resume-builder/samples.json";
+import sampleLinks from "@/resources/resume-builder/samples-links.json";
 
 export default function SamplesSection() {
   return (
@@ -20,7 +18,7 @@ export default function SamplesSection() {
               Categories
             </p>
             <div className="w-full max-[974px]:flex-row max-[540px]:flex-col max-[974px]:flex-wrap max-[974px]:gap-y-1.5 max-[974px]:gap-x-0 flex flex-col gap-1.5">
-              {resumeSampleLinks.map((data) => {
+              {sampleLinks.map((data) => {
                 return (
                   <Link
                     key={crypto.randomUUID()}
@@ -60,7 +58,7 @@ export default function SamplesSection() {
           </div>
         </div>
         <div className="w-[65%] max-[974px]:w-full h-max flex flex-col gap-8">
-          {resumeSampleData.map((data) => {
+          {resumeSamples.map((data) => {
             return (
               <div
                 key={crypto.randomUUID()}
@@ -87,7 +85,12 @@ export default function SamplesSection() {
                         </p>
                         <div className="w-full flex justify-between max-[540px]:flex-col max-[540px]:gap-5 pl-4">
                           <div className="w-3/5 max-[540px]:w-full h-max rounded-lg">
-                            <Image src={child.template} alt="Template" />
+                            <Image
+                              width={300}
+                              height={300}
+                              src={child.template}
+                              alt="Template"
+                            />
                           </div>
                           <div className="w-[74%] max-[540px]:w-full max-[540px]:pt-0 max-[540px]:flex-col pt-6 h-max flex flex-wrap gap-y-2.5">
                             {child.relatedLinks.map((link) => {

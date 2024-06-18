@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { serviceData } from "../data";
-import { coverLetterTemplates } from "@/app/resources/cover-letter/data";
+import perks from "@/resources/cover-letter-builder/perks.json";
+import coverLetterTemplates from "@/resources/cover-letter-builder/cover-letter-templates.json";
 
 export default function Services() {
   return (
     <>
       <main className="w-full bg-white box-border items-center h-[950px] max-[1150px]:pt-[280px] max-[986px]:pt-[180px] max-[800px]:pt-[100px] max-[600px]:pt-[260px] max-[450px]:pt-[200px] max-[1150px]:h-max relative pt-[380px] px-5 flex flex-col">
         <div className="w-full px-10 max-[600px]:px-0 h-auto flex flex-wrap gap-x-10 gap-y-10">
-          {serviceData.map((data) => {
+          {perks.map((data) => {
             return (
               <div
                 key={crypto.randomUUID()}
@@ -18,13 +18,17 @@ export default function Services() {
                   <Image
                     src={data.image}
                     alt="Icon"
+                    width={40}
+                    height={40}
                     className="w-[60%] h-[60%]"
                   />
                 </div>
                 <p className="text-black/80 font-bold text-lg pl-2">
                   {data.title}
                 </p>
-                {data.subTitle}
+                <p className="text-black/60 max-[1050px]:text-center font-normal tracking-normal text-base pl-2">
+                  {data.subTitle}
+                </p>
               </div>
             );
           })}

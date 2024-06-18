@@ -1,3 +1,4 @@
+import AuthenticationLayout from "@/components/application/layouts/authentication";
 import RegisterPage from "./components";
 
 export const metadata = {
@@ -6,5 +7,9 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <RegisterPage />;
+  return (
+    <AuthenticationLayout>
+      <RegisterPage />
+    </AuthenticationLayout>
+  );
 }

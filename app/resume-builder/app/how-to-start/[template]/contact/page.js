@@ -1,6 +1,6 @@
-import ContactSection from "@/app/resume-builder/components/ContactSection";
-import GuestLayout from "@/app/components/layouts/GuestLayout";
-import BuilderLayout from "@/app/resume-builder/components/BuilderLayout";
+import ContactSection from "./components/contact-section";
+import GuestLayout from "@/components/application/layouts/guest";
+import BuilderLayout from "@/app/resume-builder/components/builder-layout";
 
 export const metadata = {
   title: "Resume Builder",

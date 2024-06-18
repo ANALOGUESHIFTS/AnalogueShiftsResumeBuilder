@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HomeIcon from "@/public/images/house-icon.png";
 import RightBracket from "@/public/images/right-bracket.png";
-import { coverLetterTemplates } from "@/app/resources/cover-letter/data";
+import coverLetterTemplates from "@/resources/cover-letter-builder/cover-letter-templates.json";
 
 export default function Landing() {
   return (

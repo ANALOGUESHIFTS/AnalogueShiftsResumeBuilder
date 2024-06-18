@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import HomeIcon from "@/public/images/house-icon.png";
 import RightBracket from "@/public/images/right-bracket.png";
-import { resumeTemplates } from "@/app/resources/resume/data";
-import ResumeList from "@/app/components/ResumeList";
+import resumeTemplates from "@/resources/resume-builder/resume-templates.json";
+import ResumeList from "@/components/application/resume-list";
 
 export default function Landing() {
   return (

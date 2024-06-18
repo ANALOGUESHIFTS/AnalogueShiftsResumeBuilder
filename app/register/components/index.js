@@ -1,151 +1,159 @@
 "use client";
-import ApplicationLogo from "@/app/components/layout-components/ApplicationLogo";
-import GoogleImage from "@/public/images/GoogleIcon.png";
+import Group from "@/public/images/login/group.png";
+import Avatar from "@/public/images/login/avatar.png";
 import Image from "next/image";
-import { useState } from "react";
+import ApplicationLogo from "@/components/application/layout-components/application-logo";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { toast } from "react-toastify";
-import LoadingComponent from "@/app/components/LoadingComponent";
+import LoadingComponent from "@/components/application/LoadingComponent";
+import { successToast } from "@/utils/success-toast";
+import { errorToast } from "@/utils/error-toast";
 import Cookies from "js-cookie";
-import AuthenticationLayout from "@/app/components/layouts/AuthenticationLayout";
+import FormInput from "@/components/application/form-input";
 
-export default function RegisterPage() {
-  const [name, setName] = useState("");
+export default function Register() {
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/register";
 
-  // Make Register Request
-  const handleSubmit = async (e) => {
+  async function submit(e) {
     e.preventDefault();
-    const axios = require("axios");
-    let data = JSON.stringify({
-      name: name,
-      email: email,
-      password: password,
-      password_confirmation: confirm_password,
-    });
 
-    let config = {
-      method: "POST",
-      url: url,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: data,
-    };
+    // Check for Confirm Password
+    if (password !== confirm_password) {
+      errorToast("Bad Input", "Password Must Match with Confirm Password");
+      return;
+    }
 
     setLoading(true);
-    axios
-      .request(config)
-      .then(async (response) => {
-        const userData = JSON.stringify({
-          ...response.data[0].data.user,
-          token: response.data[0].data.token,
-        });
-        Cookies.set("analogueshifts", userData);
-        setLoading(false);
-        toast.success("Account Created Successfully", {
-          position: "top-right",
-          autoClose: 3000,
-        });
-        window.location.href = "/dashboard/account";
-      })
-      .catch((error) => {
-        setLoading(false);
-        toast.error(error.message, {
-          position: "top-right",
-          autoClose: 3000,
-        });
+
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          secret_key: process.env.NEXT_PUBLIC_SECRET_KEY,
+        },
+        body: JSON.stringify({
+          first_name: first_name,
+          last_name: last_name,
+          email: email,
+          password: password,
+          password_confirmation: confirm_password,
+          device_token: crypto.randomUUID(),
+        }),
       });
-  };
+      const data = await res.json();
+      if (data[0].success) {
+        Cookies.set("analogueshifts", JSON.stringify(data[0].data));
+        successToast(
+          "Account created successfully",
+          "Redirecting You to your Dashboard."
+        );
+
+        window.location.href = "/my-resumes";
+      }
+
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      errorToast(
+        "Failed To create Account",
+        error?.response?.data?.message ||
+          error.message ||
+          "Failed To Create Account"
+      );
+    }
+  }
 
   return (
-    <AuthenticationLayout>
+    <>
+      {" "}
       {loading && <LoadingComponent />}
-      <main className="w-full pb-12 pt-[100px] bg-[#f0f0f0] flex flex-col items-center justify-center  gap-[70px]">
-        <ApplicationLogo />
-        <div className="max-w-[90%] w-[500px] rounded-xl h-max p-8 bg-white shadow-xl flex flex-col max-[500px]:p-4">
-          <p className="text-black/70 text-2xl text-center font-extrabold pb-3">
-            Sign Up
-          </p>
-          <p className="text-gray-500/90 text-base text-center pb-5">
-            Join us today by creating an account!
-          </p>
-          {/* <div className="w-full flex justify-center gap-y-3">
-            <button className="w-[48%] max-[500px]:w-full h-9 border border-[#4285f4] rounded overflow-hidden flex">
-              <div className="w-1/5 max-[500px]:w-[40px] h-full flex justify-center items-center bg-transparent">
-                <Image
-                  src={GoogleImage}
-                  alt="Google Imaage"
-                  className="w-6/12 h-6/12"
-                />
-              </div>
-              <div className="w-4/5 max-[500px]:w-[calc(100%-40px)] h-full bg-[#4285f4] flex justify-center items-center">
-                <p className="text-white text-xs font-medium">
-                  Sign in with Google
-                </p>
-              </div>
-            </button>
-          </div> */}
-          {/* <div className="w-full pt-5 flex justify-between items-center">
-            <div className="w-[45%] border-b"></div>
-            <p className="text-sm text-gray-500/90">or</p>
-            <div className="w-[45%] border-b"></div>
-          </div> */}
-          <form
-            onSubmit={handleSubmit}
-            method="POST"
-            className="w-full pt-5 flex flex-col"
-          >
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              type="text"
-              placeholder="Full Name"
-              className="w-full border mb-4 rounded-md px-4 py-3.5 outline-none text-sm font-medium text-gray-500"
-              required
-            />
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="Enter Email"
-              className="w-full border mb-4 rounded-md px-4 py-3.5 outline-none text-sm font-medium text-gray-500"
-              required
-            />
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              type="password"
-              placeholder="Create a Password"
-              className="w-full mb-4 border rounded-md px-4 py-3.5 outline-none text-sm font-medium text-gray-500"
-              required
-            />
-            <input
-              value={confirm_password}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              type="password"
-              placeholder="Confirm Password"
-              className="w-full border rounded-md px-4 py-3.5 outline-none text-sm font-medium text-gray-500"
-              required
-            />
-            <div className="w-full flex justify-end gap-1 pt-2 pr-2">
-              <p className="text-xs text-gray-400">Already have an account?</p>
-              <Link href="/login" className="text-xs underline text-gray-400">
-                Login
-              </Link>
+      <main className="w-full h-max min-h-screen mx-auto flex justify-center items-center px-5 py-10">
+        <section className="max-w-full lg:w-[1000px] md:w-[800px] md:flex-row flex-col flex justify-between items-center">
+          <div className="hidden md:flex"></div>
+          <div className="w-max h-screen top-0 items-center justify-center fixed hidden md:flex">
+            <div className="lg:w-[450px] md:w-[350px] relative flex  justify-center items-center">
+              <Image src={Group} alt="" className="absolute" />
+              <Image src={Avatar} alt="" />
             </div>
-            <input
-              type="submit"
-              value="Continue"
-              className="w-full rounded-md px-4 py-3.5 outline-none cursor-pointer mt-5 text-sm font-medium text-white bg-black/90 text-center"
-            />
-          </form>
-        </div>
+          </div>
+          <div className="lg:w-[450px] md:w-[350px] flex flex-col">
+            <ApplicationLogo />
+            <form onSubmit={submit} className="pt-11 w-full flex flex-col">
+              <p className="font-medium text-lg text-tremor-content-grayText pb-4">
+                Welcome!
+              </p>
+              <p className="font-bold text-3xl text-[#292929] pb-5">
+                Join our Community
+              </p>
+              <FormInput
+                icon="fa-solid fa-signature"
+                type="text"
+                onChange={(e) => setFirstName(e.target.value)}
+                label="First Name"
+                placeholder="First Name"
+                value={first_name}
+              />
+              <FormInput
+                icon="fa-solid fa-signature"
+                type="text"
+                onChange={(e) => setLastName(e.target.value)}
+                label="Last Name"
+                placeholder="Last Name"
+                value={last_name}
+              />
+              <FormInput
+                icon="fa-solid fa-envelope"
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+                label="Email"
+                placeholder="Enter Email"
+                value={email}
+              />
+              <FormInput
+                icon="fa-solid fa-lock"
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                label="Password"
+                placeholder="Enter Password"
+                value={password}
+              />
+              <FormInput
+                icon="fa-solid fa-lock"
+                type="password"
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                label="Confirm Password"
+                placeholder="Enter Password"
+                value={confirm_password}
+              />
+              <button
+                type="submit"
+                className="w-full bg-tremor-background-lightYellow font-semibold text-base text-[#FDFAEF] flex items-center justify-center hover:bg-tremor-background-lightYellow/80 duration-300 h-12 rounded-2xl "
+              >
+                Sign Up
+              </button>
+              <div className="w-full pt-4 flex justify-center items-center gap-1">
+                <p className="font-normal text-sm text-black/90">
+                  Already have an account?
+                </p>
+                <Link
+                  href="/login"
+                  className="font-normal text-sm text-tremor-background-darkYellow"
+                >
+                  Sign In
+                </Link>
+              </div>
+            </form>
+          </div>
+        </section>
       </main>
-    </AuthenticationLayout>
+    </>
   );
 }

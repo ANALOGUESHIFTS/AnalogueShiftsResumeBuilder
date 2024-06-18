@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-import UseOurBuilder from "./UseOurBuilder";
-import HowOurCoverLetterBuilderWorks from "./HowOurCoverLetterBuilderWorks";
-import CoverLetterSamples from "./CoverLetterSamples";
-import Faqs from "@/app/components/Faqs";
-import Landing from "./Landing";
-import Services from "./Services";
-import TopCompanies from "../../components/Topcompanies";
-import GuestLayout from "@/app/components/layouts/GuestLayout";
+import UseOurBuilder from "./use-our-builder";
+import HowOurCoverLetterBuilderWorks from "./how-it-works";
+import CoverLetterSamples from "./samples";
+import Faqs from "@/components/application/faqs";
+import Landing from "./landing";
+import Services from "./services";
+import GuestLayout from "@/components/application/layouts/guest";
+import Experts from "@/components/application/home-components/experts";
 
 export default function CoverLetterBuilderPage() {
   return (
@@ -15,12 +15,7 @@ export default function CoverLetterBuilderPage() {
       <main className="w-full h-auto">
         <Landing />
         <Services />
-        <TopCompanies
-          title="Get job offers from top companies"
-          description="The outcomes of our cover letter generator speak volumes. Our users
-          have successfully secured positions at some of the most competitive
-          companies in the world:"
-        />
+        <Experts />
         <UseOurBuilder />
         <div className="px-5 w-full flex justify-center">
           <p className="py-5 text-[2.6rem] text-center  max-[900px]:text-xl font-extrabold text-black/70">

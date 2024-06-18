@@ -1,0 +1,23 @@
+[
+  {
+    "step": "1ST STEP",
+    "color": "#4b94ea",
+    "title": "Fill in a few quick details",
+    "description": "Input your basic information and let our software handle the writing and formatting.",
+    "icon": "/images/generate-bullet-point.svg"
+  },
+  {
+    "step": "2ND STEP",
+    "color": "#ea723c",
+    "title": "Pick a professional template",
+    "description": "Each template in our cover letter builder is proven to help job seekers land interviews.",
+    "icon": "/images/try-out-different-template.svg"
+  },
+  {
+    "step": "3RD STEP",
+    "color": "#2ca482",
+    "title": "Download your new cover letter",
+    "description": "PDF & Word formats available. With your letter, you're ready to enhance your job hunt.",
+    "icon": "/images/instantly-download-your-resume.svg"
+  }
+]

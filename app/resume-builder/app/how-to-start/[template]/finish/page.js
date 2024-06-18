@@ -1,4 +1,4 @@
-import FinishYourResume from "@/app/resume-builder/components/Finish";
+import FinishYourResume from "./components/Finish";
 
 export const metadata = {
   title: "Download Your Resume | AnalogueShifts Resume Builder",

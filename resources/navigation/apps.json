@@ -1,0 +1,23 @@
+[
+    {
+      "name": "RESUME BUILDER",
+      "path": "/",
+      "image": "/images/resume-builder-nav-image-one.webp",
+      "subTitle":
+        "Making a resume is easy with the right tool. Our professional builder will do the hard work for you."
+    },
+    {
+      "name": "COVER LETTER GENERATOR",
+      "path": "/cover-letter-builder",
+      "image": "/images/cover-letter-nav-image.webp",
+      "subTitle":
+        "Short on time or simply don't like writing? Try our cover letter generator and make a cover letter fast."
+    },
+    {
+      "name": "CV MAKER",
+      "path": "/cv-maker",
+      "image": "/images/cv-maker-image.webp",
+      "subTitle":
+        "CVs are often longer than resumes. But with our CV maker, you can create a CV in the same amount of time."
+    }
+  ]

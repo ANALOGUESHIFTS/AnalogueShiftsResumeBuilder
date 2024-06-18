@@ -15,34 +15,21 @@ import TargetedTemplateImage from "@/public/images/resume-images/targeted-resume
 import VolunteerTemplateImage from "@/public/images/resume-images/volunteer-resume.webp";
 
 // Template Components
-import AdvancedResumeTemplate from "@/app/components/templates/resume/Advanced";
-import SimpleTemplate from "@/app/components/templates/resume/Simple";
-import CareerChangeResume from "@/app/components/templates/resume/Career";
-import CombinationResume from "@/app/components/templates/resume/Combination";
-import ConsultingResume from "@/app/components/templates/resume/Consulting";
-import CorporateResume from "@/app/components/templates/resume/Corporate";
-import FederalResume from "@/app/components/templates/resume/Federal";
-import FreelanceResume from "@/app/components/templates/resume/Freelance";
-import InternationalResume from "@/app/components/templates/resume/International";
-import RemoteResume from "@/app/components/templates/resume/Remote";
-import ResearchResume from "@/app/components/templates/resume/Research";
-import SalesResume from "@/app/components/templates/resume/Sales";
-import TargetedResume from "@/app/components/templates/resume/Targeted";
-import VolunteerResume from "@/app/components/templates/resume/Volunteer";
-import InternshipResume from "@/app/components/templates/resume/Internship";
-
-export const resumeSampleLinks = [
-  {
-    title: "Arts, Culture & Media",
-    color: "#79b2f0",
-    path: "/resume-samples#arts-culture-media",
-  },
-  {
-    title: "Banking & Finance",
-    color: "#ee7856",
-    path: "/resume-samples#banking-finance",
-  },
-];
+import AdvancedResumeTemplate from "@/components/application/templates/resume/Advanced";
+import SimpleTemplate from "@/components/application/templates/resume/Simple";
+import CareerChangeResume from "@/components/application/templates/resume/Career";
+import CombinationResume from "@/components/application/templates/resume/Combination";
+import ConsultingResume from "@/components/application/templates/resume/Consulting";
+import CorporateResume from "@/components/application/templates/resume/Corporate";
+import FederalResume from "@/components/application/templates/resume/Federal";
+import FreelanceResume from "@/components/application/templates/resume/Freelance";
+import InternationalResume from "@/components/application/templates/resume/International";
+import RemoteResume from "@/components/application/templates/resume/Remote";
+import ResearchResume from "@/components/application/templates/resume/Research";
+import SalesResume from "@/components/application/templates/resume/Sales";
+import TargetedResume from "@/components/application/templates/resume/Targeted";
+import VolunteerResume from "@/components/application/templates/resume/Volunteer";
+import InternshipResume from "@/components/application/templates/resume/Internship";
 
 export const resumeTemplates = [
   {
@@ -185,48 +172,6 @@ export const resumeTemplates = [
     templateImage: VolunteerTemplateImage,
     path: "/resume-builder/app/how-to-start/volunteer",
     component: (data) => <VolunteerResume data={data} />,
-  },
-];
-
-export const resumeNavLinks = [
-  {
-    name: "Simple",
-    subTitle: "AnalogueShifts Simple Resume Template",
-    color: "#4b94ea",
-    path: "/resume-templates#simple",
-  },
-];
-
-export const resumeSampleData = [
-  {
-    name: "Arts, Culture & Media",
-    id: "arts-culture-media",
-    description:
-      "For creative professionals, while your portfolio and artistic accomplishments take precedence, your resume remains vital for showcasing experience and professional skills. Gain insights from our sample resumes to effectively create your own.",
-    color: "#4b94ea",
-    background: "#e4f0fe",
-    samples: [
-      {
-        name: "Fine Arts & Aesthetics",
-        template: SimpleResumeTemplateImage,
-        relatedLinks: [],
-      },
-    ],
-  },
-  {
-    name: "Banking & Finance",
-    id: "banking-finance",
-    description:
-      "Finance jobs are competitive due to attractive pay and benefits. Learn how to create a resume that positions you for success in these roles by highlighting your finance-related skills and experience.",
-    color: "#ea723c",
-    background: "#fdf1eb",
-    samples: [
-      {
-        name: "Accounting",
-        template: SimpleResumeTemplateImage,
-        relatedLinks: [],
-      },
-    ],
   },
 ];
 

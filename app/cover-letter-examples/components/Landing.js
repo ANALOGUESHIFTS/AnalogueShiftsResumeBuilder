@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import HomeIcon from "@/public/images/house-icon.png";
 import RightBracket from "@/public/images/right-bracket.png";
-import { coverLetterTemplates } from "@/app/resources/cover-letter/data";
+import coverLetterTemplates from "@/resources/cover-letter-builder/cover-letter-templates.json";
 
 export default function Landing() {
   return (
@@ -55,6 +55,8 @@ export default function Landing() {
                   <div className="w-full h-max relative template-img-box">
                     <div className="w-full h-max rounded-lg overflow-y-scroll scroll-hidden">
                       <Image
+                        width={300}
+                        height={300}
                         src={data.templates[0].templateImage}
                         alt="Cover Letter Image"
                         className="w-max mx-auto"

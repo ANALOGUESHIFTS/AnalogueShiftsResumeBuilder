@@ -3,9 +3,10 @@ import Image from "next/image";
 import HomeIcon from "@/public/images/house-icon.png";
 import RightBracket from "@/public/images/right-bracket.png";
 import Link from "next/link";
-import { faqAndAnswers, faqNavLinks } from "@/app/resources/data";
+import faqNavLinks from "@/resources/navigation/faqs.json";
+import { faqAndAnswers } from "@/utils/faqs/questions-and-answers";
 import { useState } from "react";
-import GuestLayout from "@/app/components/layouts/GuestLayout";
+import GuestLayout from "@/components/application/layouts/guest";
 
 export default function FaqPage() {
   const [selected, setSelected] = useState("");

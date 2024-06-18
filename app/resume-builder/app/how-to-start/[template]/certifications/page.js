@@ -1,6 +1,6 @@
-import Certification from "@/app/resume-builder/components/CertificationSection";
-import GuestLayout from "@/app/components/layouts/GuestLayout";
-import BuilderLayout from "@/app/resume-builder/components/BuilderLayout";
+import Certification from "./components/certifications";
+import GuestLayout from "@/components/application/layouts/guest";
+import BuilderLayout from "@/app/resume-builder/components/builder-layout";
 
 export const metadata = {
   title: "Resume Builder",

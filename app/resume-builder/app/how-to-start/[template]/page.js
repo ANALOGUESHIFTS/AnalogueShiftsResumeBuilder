@@ -1,5 +1,5 @@
 "use client";
-import GuestLayout from "@/app/components/layouts/GuestLayout";
+import GuestLayout from "@/components/application/layouts/guest";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 

@@ -1,0 +1,32 @@
+[
+    {
+      "title": "Save hours of time",
+      "subTitle":"Eliminate the hassle of writing your cover letter. Simply input your information, select a template, and download the letter directly from  your dashboard.",
+      "image": "/images/save-hours-of-time.svg"
+    },
+    {
+      "title": "Create a cohesive application.",
+      "subTitle": "Enhance your application by pairing your cover letter template with a matching resume template, making it stand out to hiring managers and employers.",
+      "image": "/images/make-a-cohesive-application.svg"
+    },
+    {
+      "title": "Harness the power of AI technology.",
+      "subTitle": "Our software extracts information from authentic job advertisements, then analyzes and rewrites it to generate compelling sentences for your  personalized letter.",
+      "image": "/images/leverage-the-power-of-ai.svg"
+    },
+    {
+      "title": "Experiment with various templates.",
+      "subTitle": "Save your cover letter from the dashboard and try it with different templates. The appropriate cover letter template can significantly impact your application.",
+      "image": "/images/try-out-different-template.svg"
+    },
+    {
+      "title": "Navigate past applicant tracking software.",
+      "subTitle":"Every aspect of our builder, from the templates to the content generator, was designed to circumvent the software that companies use to filter out candidates.",
+      "image": "/images/get-past-applicant.svg"
+    },
+    {
+      "title": "Seek expert recommendations.",
+      "subTitle":"The Ask the Experts feature offers insights from certified career coaches on your completed letter. Gain valuable advice on  perfecting each section to increase your chances of securing more  interviews.",
+      "image": "/images/ask-for-expert-suggestion.svg"
+    }
+  ]

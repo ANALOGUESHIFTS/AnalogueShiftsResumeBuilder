@@ -1,140 +1,122 @@
 "use client";
-import ApplicationLogo from "@/app/components/layout-components/ApplicationLogo";
-import GoogleImage from "@/public/images/GoogleIcon.png";
+import Group from "@/public/images/login/group.png";
+import Avatar from "@/public/images/login/avatar.png";
+import LoadingComponent from "@/components/application/LoadingComponent";
 import Image from "next/image";
-import { useState } from "react";
+import ApplicationLogo from "@/components/application/layout-components/application-logo";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import LoadingComponent from "@/app/components/LoadingComponent";
-import { toast } from "react-toastify";
-import AuthenticationLayout from "@/app/components/layouts/AuthenticationLayout";
+import { successToast } from "@/utils/success-toast";
+import { errorToast } from "@/utils/error-toast";
 import Cookies from "js-cookie";
+import FormInput from "@/components/application/form-input";
 
-export default function LoginPage() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/login";
 
-  // Make Login Request
-  const handleSubmit = async (e) => {
+  async function submit(e) {
     e.preventDefault();
-
-    const axios = require("axios");
-    let data = JSON.stringify({
-      email: email,
-      password: password,
-    });
-
-    let config = {
-      method: "POST",
-      url: url,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    };
     setLoading(true);
 
-    axios
-      .request(config)
-      .then(async (response) => {
-        const userData = JSON.stringify({
-          ...response.data.data.user,
-          token: response.data.data.token,
-        });
-        Cookies.set("analogueshifts", userData);
-        setLoading(false);
-        toast.success("Login Successful", {
-          position: "top-right",
-          autoClose: 3000,
-        });
-        window.location.href = "/dashboard/account";
-      })
-      .catch((error) => {
-        setLoading(false);
-        toast.error(error.message, {
-          position: "top-right",
-          autoClose: 3000,
-        });
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          secret_key: process.env.NEXT_PUBLIC_SECRET_KEY,
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          device_token: crypto.randomUUID(),
+        }),
       });
-  };
+      const data = await res.json();
+      if (data.success) {
+        console.log(data);
+        Cookies.set("analogueshifts", JSON.stringify(data.data));
+        successToast("Login Successful", "Redirecting You to your Dashboard.");
+        window.location.href = "/my-resumes";
+      }
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      errorToast(
+        "Failed To Login",
+        error?.response?.data?.message || error.message || "Failed To Login"
+      );
+    }
+  }
 
   return (
-    <AuthenticationLayout>
+    <>
       {loading && <LoadingComponent />}
-      <main className="w-full pb-12 pt-[100px] bg-[#f0f0f0] flex flex-col items-center justify-center  gap-[70px]">
-        <ApplicationLogo />
-        <div className="max-w-[90%] w-[500px] rounded-xl h-max p-8 bg-white shadow-xl flex flex-col max-[500px]:p-4">
-          <p className="text-black/70 text-2xl text-center font-extrabold pb-3">
-            Login
-          </p>
-          <p className="text-gray-500/90 text-base text-center pb-5">
-            We&apos;re happy to see you back!
-          </p>
-          {/* <div className="w-full flex justify-center gap-y-3">
-            <button className="w-[48%] max-[500px]:w-full h-9 border border-[#4285f4] rounded overflow-hidden flex">
-              <div className="w-1/5 max-[500px]:w-[40px] h-full flex justify-center items-center bg-transparent">
-                <Image
-                  src={GoogleImage}
-                  alt="Google Imaage"
-                  className="w-6/12 h-6/12"
-                />
-              </div>
-              <div className="w-4/5 max-[500px]:w-[calc(100%-40px)] h-full bg-[#4285f4] flex justify-center items-center">
-                <p className="text-white text-xs font-medium">
-                  Sign in with Google
-                </p>
-              </div>
-            </button>
-          </div> */}
-          {/* <div className="w-full pt-5 flex justify-between items-center">
-            <div className="w-[45%] border-b"></div>
-            <p className="text-sm text-gray-500/90">or</p>
-            <div className="w-[45%] border-b"></div>
-          </div> */}
-          <form
-            onSubmit={handleSubmit}
-            method="POST"
-            className="w-full pt-5 flex flex-col"
-          >
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="Enter Email"
-              className="w-full border mb-4 rounded-md px-4 py-3.5 outline-none text-sm font-medium text-gray-500"
-              required
-            />
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              type="password"
-              placeholder="Enter Password"
-              className="w-full border rounded-md px-4 py-3.5 outline-none text-sm font-medium text-gray-500"
-              required
-            />
-            <div className="w-full flex justify-end gap-1 pt-2 pr-2">
-              <p className="text-xs text-gray-400">
-                Don&apos;t have an account?
+      <main className="w-full h-max min-h-screen mx-auto flex justify-center items-center px-5 py-10">
+        <section className="max-w-full lg:w-[1000px] md:w-[800px] md:flex-row flex-col flex justify-between items-center">
+          <div className="lg:w-[450px] md:w-[350px] relative hidden md:flex justify-center items-center">
+            <Image src={Group} alt="" className="absolute" />
+            <Image src={Avatar} alt="" />
+          </div>
+          <div className="lg:w-[450px] md:w-[350px] flex flex-col">
+            <ApplicationLogo />
+            <form onSubmit={submit} className="pt-11 w-full flex flex-col">
+              <p className="font-medium text-lg text-tremor-content-grayText pb-4">
+                Welcome!
               </p>
-              <Link
-                href="/register"
-                className="text-xs underline text-gray-400"
+              <p className="font-bold text-3xl text-[#292929] pb-5">
+                Sign Into Your Account
+              </p>
+
+              <FormInput
+                icon="fa-solid fa-envelope"
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+                label="Email"
+                placeholder="Enter Email"
+                value={email}
+              />
+
+              <FormInput
+                icon="fa-solid fa-lock"
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                label="Password"
+                placeholder="Enter Password"
+                value={password}
+              />
+              <button
+                type="submit"
+                className="w-full bg-tremor-background-lightYellow font-semibold text-base text-[#FDFAEF] flex items-center justify-center hover:bg-tremor-background-lightYellow/80 duration-300 h-12 rounded-2xl "
               >
-                Sign Up
-              </Link>
-            </div>
-            <input
-              type="submit"
-              value="Continue"
-              className="w-full rounded-md px-4 py-3.5 outline-none cursor-pointer mt-5 text-sm font-medium text-white bg-black/90 text-center"
-            />
-          </form>
-        </div>
+                Login
+              </button>
+              <div className="w-full pt-4 flex justify-center items-center gap-1">
+                <Link
+                  href="https://www.analogueshifts.com/forgot-password"
+                  className="font-normal cursor-pointer text-sm text-black/90"
+                >
+                  Forgotten Password?
+                </Link>
+              </div>
+              <div className="w-full pt-2 flex justify-center items-center gap-1">
+                <p className="font-normal text-sm text-black/90">
+                  Don&apos;t have an account?
+                </p>
+                <Link
+                  href="/register"
+                  className="font-normal text-sm text-tremor-background-darkYellow"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            </form>
+          </div>
+        </section>
       </main>
-    </AuthenticationLayout>
+    </>
   );
 }

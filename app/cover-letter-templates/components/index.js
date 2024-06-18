@@ -1,14 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
-import LoadingComponent from "../../components/LoadingComponent";
+import LoadingComponent from "@/components/application/LoadingComponent";
 import Link from "next/link";
-import { coverLetterTemplates } from "@/app/resources/cover-letter/data";
-import Faqs from "@/app/components/Faqs";
-import FreeCoverLetterTemplates from "./FreeCoverLetter";
-import MasonryGrid from "@/app/components/MansoryGrid";
+import coverLetterTemplates from "@/resources/cover-letter-builder/cover-letter-templates.json";
+import Faqs from "@/components/application/faqs";
+import FreeCoverLetterTemplates from "./free-cover-letter";
+import MasonryGrid from "@/components/application/mansory-grid";
 import { axiosBlog } from "@/app/lib/axios";
-import GuestLayout from "@/app/components/layouts/GuestLayout";
-import Landing from "./Landing";
+import GuestLayout from "@/components/application/layouts/guest";
+import Landing from "./landing";
 
 export default function CoverLetterTemplatesPage() {
   const [loading, setLoading] = useState(false);

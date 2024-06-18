@@ -1,0 +1,42 @@
+[
+    {
+      "path": "/resume-templates#advanced",
+      "number": "01",
+      "color": "#4b94ea",
+      "icon": "/images/pick-a-resume-template.svg",
+      "title": "Pick A Resume Template",
+      "description":
+        "With a good resume template, you don't need to worry about details like formatting.",
+      "linkText": "Get a professional template"
+    },
+    {
+      "path": "/blog",
+      "number": "02",
+      "color": "#ea723c",
+      "icon": "/images/generate-bullet-point.svg",
+      "title": "Customize Each Section",
+      "description":
+        "Fill in your personal information and write about your work experience.",
+      "linkText": "Learn how to write a resume"
+    },
+    {
+      "path": "/blog",
+      "number": "03",
+      "color": "#2ca482",
+      "icon": "/images/emphasize-your-skill.svg",
+      "title": "Emphasize Your Skills",
+      "description":
+        "Take skills from the job advertisement, then tie them into your resume.",
+      "linkText": "Pick skills for your resume"
+    },
+    {
+      "path": "/blog",
+      "number": "04",
+      "color": "#f892bc",
+      "icon": "/images/attach-cover-letter.svg",
+      "title": "Attach A Cover Letter",
+      "description":
+        "A resume will get you the job, but a cover letter will get your foot in the door.",
+      "linkText": "Write a winning cover letter"
+    }
+  ]
