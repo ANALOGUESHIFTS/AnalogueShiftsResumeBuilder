@@ -8,7 +8,7 @@ import FreeCoverLetterTemplates from "./free-cover-letter";
 import MasonryGrid from "@/components/application/mansory-grid";
 import { axiosBlog } from "@/app/lib/axios";
 import GuestLayout from "@/components/application/layouts/guest";
-import Landing from "./landing";
+import Landing from "./Landing";
 
 export default function CoverLetterTemplatesPage() {
   const [loading, setLoading] = useState(false);

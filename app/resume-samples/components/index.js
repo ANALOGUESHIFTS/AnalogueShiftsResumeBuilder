@@ -4,7 +4,7 @@ import Image from "next/image";
 import TipMan from "@/public/images/tip-man.svg";
 import Faqs from "@/components/application/faqs";
 import GuestLayout from "@/components/application/layouts/guest";
-import Landing from "./landing";
+import Landing from "./Landing";
 import SamplesSection from "./Samples";
 
 export default function ResumeSamplePage() {

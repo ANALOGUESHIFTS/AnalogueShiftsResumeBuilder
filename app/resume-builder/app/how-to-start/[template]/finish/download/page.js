@@ -1,4 +1,4 @@
-import DownloadResume from "./components/Download";
+import DownloadResume from "./components/download";
 
 export const metadata = {
   title: "Download Your Resume | AnalogueShifts Resume Builder",

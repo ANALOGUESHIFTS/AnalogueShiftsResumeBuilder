@@ -4,8 +4,8 @@ import UseOurBuilder from "./use-our-builder";
 import HowOurCoverLetterBuilderWorks from "./how-it-works";
 import CoverLetterSamples from "./samples";
 import Faqs from "@/components/application/faqs";
-import Landing from "./landing";
-import Services from "./services";
+import Landing from "./Landing";
+import Services from "./Services";
 import GuestLayout from "@/components/application/layouts/guest";
 import Experts from "@/components/application/home-components/experts";
 

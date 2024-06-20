@@ -7,7 +7,7 @@ import Faqs from "@/components/application/faqs";
 import coverLetterExamples from "@/resources/cover-letter-builder/cover-letter-examples.json";
 import coverLetterSampleLinks from "@/resources/cover-letter-builder/samples-links.json";
 import GuestLayout from "@/components/application/layouts/guest";
-import Landing from "./landing";
+import Landing from "./Landing";
 
 export default function CoverLetterExamplePage() {
   return (

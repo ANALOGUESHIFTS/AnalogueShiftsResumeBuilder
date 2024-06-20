@@ -4,8 +4,8 @@ import Faqs from "@/components/application/faqs";
 import UseOurCVBuilder from "./use-our-cv-builder";
 import HowOurCvBuilderWorks from "./how-our-cv-builder-works";
 import CvSamples from "./cv-sample";
-import Landing from "./landing";
-import Services from "./services";
+import Landing from "./Landing";
+import Services from "./Services";
 import Experts from "@/components/application/home-components/experts";
 import GuestLayout from "@/components/application/layouts/guest";
 
