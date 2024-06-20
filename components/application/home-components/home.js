@@ -11,7 +11,7 @@ import LevelUpJobHunt from "./level-up-job-hunt";
 import Experts from "./experts";
 import Faqs from "../faqs";
 import ReadyToMakeResume from "./ready-to-make-resume";
-import Landing from "./Landing";
+import Landing from "./landing";
 import GuestLayout from "../layouts/guest";
 
 export default function ResumeBuilderPage() {

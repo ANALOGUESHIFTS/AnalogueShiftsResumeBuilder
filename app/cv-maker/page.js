@@ -1,4 +1,4 @@
-import CvMakerPage from "./components";
+import CvMakerPage from "./components/home";
 
 export const metadata = {
   title: "AnalogueShifts Cv Maker",

@@ -1,4 +1,4 @@
-import CoverLetterBuilderPage from "./components";
+import CoverLetterBuilderPage from "./components/home";
 
 export const metadata = {
   title: "AnalogueShifts Cover Letter Builder",
