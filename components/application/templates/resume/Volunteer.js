@@ -1,6 +1,4 @@
-import React from "react";
-
-const VolunteerResume = ({ data }) => {
+export default function VolunteerResume ({ data }) {
   return (
     <div className="outline-none">
       <div className="relative flex min-h-screen flex-col overflow-hidden bg-white py-6 sm:py-12">
@@ -93,4 +91,3 @@ const VolunteerResume = ({ data }) => {
   );
 };
 
-export default VolunteerResume;

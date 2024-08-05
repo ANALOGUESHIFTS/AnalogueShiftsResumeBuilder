@@ -1,6 +1,4 @@
-import React from "react";
-
-const CorporateResume = ({ data }) => {
+export default function CorporateResume({ data }) {
   return (
     <div className="outline-none">
       <div className="relative flex min-h-screen flex-col overflow-hidden bg-white py-6 sm:py-12">
@@ -48,7 +46,7 @@ const CorporateResume = ({ data }) => {
               <p class="mt-3 font-bold uppercase text-blue-600">education</p>
               <div class=" ml-1 border-l-2 border-slate-400">
                 {data.educationData.map((education, index) => (
-                  <div>
+                  <div key={index}>
                     <p class="ml-3">
                       <span class="uppercase">{education.degreeOfProgram} in {education.fieldOfStudy}</span>
                       <div class="ml-3">
@@ -79,4 +77,3 @@ const CorporateResume = ({ data }) => {
   );
 };
 
-export default CorporateResume;

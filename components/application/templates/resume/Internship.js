@@ -1,6 +1,4 @@
-import React from "react";
-
-const InternshipResume = ({ data }) => {
+export default function InternshipResume ({ data }) {
   return (
     <div className="outline-none">
       <div class="relative flex min-h-screen flex-col overflow-hidden bg-white py-6 sm:py-12">
@@ -15,7 +13,7 @@ const InternshipResume = ({ data }) => {
           <div class="mb-4">
             <p class="uppercase mt-4 text-2xl font-bold text-red-500 mb-2">skills</p>
             <p>{data.skillsData.map((skill, index) => (
-                <i>{skill.skill}, </i>
+                <i key={index}>{skill.skill}, </i>
               ))}</p>
           </div>
           <div>
@@ -25,7 +23,7 @@ const InternshipResume = ({ data }) => {
           <div class="mb-4">
             <p class="text-red-500 text-2xl font-bold uppercase">experience</p>
             {data.experienceData.map((experience, index) => (
-              <div>
+              <div key={index}>
               <p>{experience.startMonth} {experience.startYear} -{" "}
               {experience.currentlyWorkHere ? "Present" : `${experience.endMonth} ${experience.endYear}`}</p>
               <p class="capitalize"><b>{experience.companyName}| {experience.city}, {experience.State}</b> - <i>{experience.jobTitle}</i></p>
@@ -40,7 +38,7 @@ const InternshipResume = ({ data }) => {
           <div class="mb-4">
             <p class="text-red-500 text-2xl font-bold uppercase">education</p>
             {data.educationData.map((education, index) => (
-              <div>
+              <div key={index}>
               <p>{education.graduationMonth}{education.graduationYear}</p>
               <p class="capitalize"><b>{education.schoolName}, {education.schoolLocation}</b> - <i>{education.degreeOfProgram}</i></p>
               <p>{education.additionalInfo}</p>
@@ -57,4 +55,3 @@ const InternshipResume = ({ data }) => {
   );
 };
 
-export default InternshipResume;

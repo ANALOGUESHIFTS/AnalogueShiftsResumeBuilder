@@ -1,6 +1,4 @@
-import React from "react";
-
-const RemoteResume = ({ data }) => {
+export default function RemoteResume ({ data }) {
   return (
     <div className="outline-none">
       <div className="relative flex min-h-screen flex-col overflow-hidden bg-white py-6 sm:py-12">
@@ -52,7 +50,7 @@ const RemoteResume = ({ data }) => {
               <div class="col-span-8">
                 <hr class="border-y-[1.5px] border-black mb-3"/>
                 <p>{data.skillsData.map((skill, index) => (
-                <i>{skill.skill}, </i>
+                <i key={index}>{skill.skill}, </i>
                 ))}</p>
               </div>
             </div>
@@ -104,4 +102,3 @@ const RemoteResume = ({ data }) => {
   );
 };
 
-export default RemoteResume;

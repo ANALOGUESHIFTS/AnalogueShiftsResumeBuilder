@@ -1,6 +1,4 @@
-import React from "react";
-
-const CombinationTemplate = ({ data }) => {
+export default function CombinationTemplate ({ data }) {
   return (
     <div className="outline-none">
       <div class="relative flex min-h-screen flex-col overflow-hidden bg-white py-6 sm:py-12">
@@ -82,4 +80,3 @@ const CombinationTemplate = ({ data }) => {
   );
 };
 
-export default CombinationTemplate;

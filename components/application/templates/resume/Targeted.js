@@ -1,6 +1,4 @@
-import React from "react";
-
-const TargetedResume = ({ data }) => {
+export default function TargetedResume ({ data }) {
   return (
     <div className="outline-none">
       <div className="flex h-full w-full lg:w-[800px] max-w-full">
@@ -226,4 +224,3 @@ const TargetedResume = ({ data }) => {
   );
 };
 
-export default TargetedResume;

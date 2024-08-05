@@ -1,6 +1,4 @@
-import React from "react";
-
-const InternationalTemplate = ({ data }) => {
+export default function InternationalTemplate ({ data }) {
   return (
     <div className="outline-none">
       <div className="relative flex min-h-screen flex-col overflow-hidden bg-white py-6 sm:py-12">
@@ -110,4 +108,3 @@ const InternationalTemplate = ({ data }) => {
   );
 };
 
-export default InternationalTemplate;

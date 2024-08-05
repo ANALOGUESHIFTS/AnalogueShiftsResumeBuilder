@@ -1,6 +1,4 @@
-import React from "react";
-
-const FederalResume = ({ data }) => {
+export default function FederalResume ({ data }) {
   return (
     <div className="outline-none">
       <div className="relative flex min-h-screen flex-col overflow-hidden bg-white py-6 sm:py-12">
@@ -27,7 +25,7 @@ const FederalResume = ({ data }) => {
           <div class="mt-3">
             <p class="font-bold uppercase tracking-tighter">professional experience</p>
             {data.experienceData.map((experience, index) => (
-              <div>
+              <div key={index}>
                 <p class="mt-3 capitalize text-orange-500 font-bold">{experience.jobTitle}</p>
                 <p>
                   <span class="capitalize">{experience.startMonth} {experience.startYear} -{" "}
@@ -45,7 +43,7 @@ const FederalResume = ({ data }) => {
           <div class="mt-3">
             <p class="uppercase font-bold tracking-tighter">education</p>
             {data.educationData.map((education, index) => (
-              <div>
+              <div key={index}>
                 <p class="mt-4">
                   <span class="font-semibold capitalize text-orange-500 ">{education.degreeOfProgram}, {education.fieldOfStudy}</span>
                   <br/>
@@ -72,4 +70,3 @@ const FederalResume = ({ data }) => {
   );
 };
 
-export default FederalResume;
