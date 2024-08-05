@@ -64,6 +64,44 @@ export default function FederalResume ({ data }) {
               ))}
            </ul>
           </div>
+          <div>
+            {data.certificationData[0] && (
+              <div class="mt-3">
+                <p class="uppercase font-bold tracking-tighter">certification</p>
+                {data.certificationData.map((certification) => (
+                  <span key={certification.id} class="font-semibold">{certification.certification}</span>
+                ))}
+              </div>
+            )}
+          </div>
+          <div>
+            {data.finalizeData.awards[0] && (
+              <div class="mt-3">
+                <p class="uppercase font-bold tracking-tighter">awards</p>
+                {data.finalizeData.awards.map((award, index) => (
+                  <span key={index} class="font-semibold">{award.award}</span>
+                ))}
+              </div>
+            )}
+          </div>
+          <div>
+            {data.finalizeData.publication[0] && (
+              <div>
+                <p class="uppercase font-bold tracking-tighter">publication</p>
+                {data.finalizeData.publication.map((publication, index) => (
+                  <span key={index} class="font-semibold">{publication.publication}</span>
+                ))}
+              </div>
+            )}
+          </div>
+          <div>
+            {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) => (
+              <div key={index}>
+                <p class="uppercase font-bold tracking-tighter">{custom.name}</p>
+                <p>{custom.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

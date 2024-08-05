@@ -71,6 +71,44 @@ export default function CorporateResume({ data }) {
                 </ul>
               </div>
             </div>
+            <div>
+              {data.certificationData[0] && (
+                <div>
+                  <p class="mt-3 font-bold uppercase text-blue-600">certifications</p>
+                  <div class=" ml-1 border-l-2 border-slate-400">
+                      {data.certificationData.map((certification) => (
+                        <span key={certification.id} class="font-semibold ml-2">{certification.certification}</span>
+                      ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            <div>
+              {data.finalizeData.awards[0] && (
+                <div>
+                  <p class="mt-3 font-bold uppercase text-blue-600">awards</p>
+                  <div class=" ml-1 border-l-2 border-slate-400">
+                    <ul class="ml-8 grid grid-cols-2 list-disc w-[600px]">
+                    {data.finalizeData.awards.map((award, index) => (
+                      <li key={index} class="mr-[2px]">{award.award}</li>
+                    ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div>
+              {data.finalizeData.publications[0] && (
+                <div>
+                <p class="mt-3 font-bold uppercase text-blue-600">publication</p>
+                <div class=" ml-1 border-l-2 border-slate-400">
+                  {data.finalizeData.publications.map((publication) => (
+                    <p key={publication.id} class="italic ml-2">{publication.publication}</p>
+                  ))}
+                </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
     </div>
