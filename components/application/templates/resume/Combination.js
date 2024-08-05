@@ -45,6 +45,26 @@ export default function CombinationTemplate ({ data }) {
                   ))}
                   
                 </div>
+                <div>
+                  {data.finalizeData.customdatas[0] && data.finalizeData.customDatas.map((custom, index) => (
+                    <div key={index} class="ml-3 mt-3">
+                      <p class="uppercase text-blue-700 font-semibold mb-2">{custom.name}</p>
+                      <p>{custom.description}</p>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  {data.finalizeData.publications[0] && (
+                    <div class="ml-3 mt-3">
+                      <p class="uppercase text-blue-700 font-semibold mb-2">publications</p>
+                      {data.finalizeData.publications.map((publications, index) => (
+                        <div key={index}>
+                          <p>{custom.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
             <div class="col-span-5 bg-slate-200">
@@ -54,14 +74,26 @@ export default function CombinationTemplate ({ data }) {
                   <ul class="ml-6 list-disc">
                   <li>{data.contactData["Phone"]}</li>
                   <li>{data.contactData["Email"]}</li>
-                  <li>{data.contactData["City"]}</li>
-                  <li>{data.contactData["State / Province"]}</li>
-                  <li>{data.contactData["LinkedIn"]}</li>
+                  <li>{data.contactData["City"]}, {data.contactData["State / Province"]}</li>
+                  <li>{data.contactData["LinkedIn Url"]}</li>
                   </ul>
                 </div>
                 <div>
                   <p class="mt-4 mb-2 text-blue-700 font-semibold uppercase">career objective</p>
                   <p>{data.summaryData}</p>
+                </div>
+                <div>
+                  {data.certificationData[0] && (
+                    <div>
+                      <p class="mt-4 mb-2 text-blue-700 font-semibold uppercase">certifications</p>
+                      <ul class="list-disc ml-6">
+                        {data.certificationData.map((certification) => (
+                          <li key={certification.id}>{certification.certification}</li>
+                        ))}
+                      </ul>
+                      
+                    </div>
+                  )}
                 </div>
                 <div>
                   <p class="mt-4 mb-2 text-blue-700 font-semibold uppercase">skills</p>
@@ -70,6 +102,19 @@ export default function CombinationTemplate ({ data }) {
                     <li key={index}>{skill.skill}</li>
                   ))}
                   </ul>
+                </div>
+                
+                <div>
+                  {data.finalizeData.awards[0] && (
+                    <div>
+                     <p class="mt-4 mb-2 text-blue-700 font-semibold uppercase">awards</p>
+                     <ul class="list-disc ml-6">
+                        {data.finalizeData.awards.map((award, index) => (
+                          <li key={index}>{award.award}</li>
+                        ))}
+                       </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
