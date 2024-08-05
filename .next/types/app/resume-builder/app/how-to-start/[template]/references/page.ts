@@ -1,4 +1,4 @@
-// File: C:\Users\USER\Promise\AnalogueShifts\resume.analogueshifts.com\app\resume-builder\app\how-to-start\[template]\references\page.js
+// File: /mnt/c/Users/OPE/Desktop/resume.analogueshifts.com/app/resume-builder/app/how-to-start/[template]/references/page.js
 import * as entry from '../../../../../../../../app/resume-builder/app/how-to-start/[template]/references/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
