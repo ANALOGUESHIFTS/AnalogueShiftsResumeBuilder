@@ -1,15 +1,15 @@
 {
   "pages": {
+    "/resume-builder/app/how-to-start/[template]/finish/download/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/resume-builder/app/how-to-start/[template]/finish/download/page.js"
+    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/finish/download/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/finish/download/page.js"
     ]
   }
 }

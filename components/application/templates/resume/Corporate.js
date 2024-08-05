@@ -109,6 +109,18 @@ export default function CorporateResume({ data }) {
                 </div>
               )}
             </div>
+            <div>
+              {data.finalizeData.customDatas[0] && (
+                <div class=" ml-1 border-l-2 border-slate-400">
+                  {data.finalizeData.customDatas.map((custom) => (
+                    <div  key={custom.id}>
+                      <p class="mt-3 font-bold uppercase text-blue-600">{custom.name}</p>
+                      <p class="italic ml-2">{custom.description}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
     </div>
