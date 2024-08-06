@@ -111,18 +111,18 @@ export default function InternationalTemplate ({ data }) {
                 <div className="grid grid-cols-2 gap-4 mt-4">
                   {data.referencesData.map((reference, index) => (
                     <div key={index} className="flex flex-col gap-2">
-                      <span className="text-gray-700 font-semibold">
+                      <span className="font-semibold">
                         {reference.firstName} {reference.lastName}
                       </span>
-                      <span className="text-gray-700">
+                      <span>
                         {reference.positionTitle} - {reference.companyName}
                       </span>
-                      <span className="text-gray-700">
+                      <span>
                         Phone: {reference.phone}
                       </span>
-                      <span className="text-gray-700">
+                      <p>
                         Email: {reference.email}
-                      </span>
+                      </p>
                     </div>
                   ))}
                 </div>

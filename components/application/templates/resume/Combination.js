@@ -54,7 +54,7 @@ export default function CombinationTemplate ({ data }) {
                   ))}
                 </div>
                 <div>
-                  {data.finalizeData.publications[0] && (
+                  {data.finalizeData.publications.length > 0 && (
                     <div className="ml-3 mt-3">
                       <p className="uppercase text-blue-700 font-semibold mb-2">publications</p>
                       {data.finalizeData.publications.map((publications, index) => (

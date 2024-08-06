@@ -77,18 +77,18 @@ export default function ProficiencyTemplate ({ data }) {
                                     <div className="grid grid-cols-2 gap-4 mt-4">
                                     {data.referencesData.map((reference, index) => (
                                         <div key={index} className="flex flex-col gap-2">
-                                        <span className="text-gray-700 font-semibold">
+                                        <p className="font-semibold">
                                             {reference.firstName} {reference.lastName}
-                                        </span>
-                                        <span className="text-gray-700">
+                                        </p>
+                                        <p>
                                             {reference.positionTitle} - {reference.companyName}
-                                        </span>
-                                        <span className="text-gray-700">
+                                        </p>
+                                        <p>
                                             Phone: {reference.phone}
-                                        </span>
-                                        <span className="text-gray-700">
+                                        </p>
+                                        <p>
                                             Email: {reference.email}
-                                        </span>
+                                        </p>
                                         </div>
                                     ))}
                                     </div>

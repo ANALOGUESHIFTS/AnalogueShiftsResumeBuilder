@@ -24,7 +24,7 @@ export default function ResearchResume ({ data }) {
                 {data.contactData["Country"] && data.contactData["Country"]}
               </span>
               </p>
-              <p><b>LinkedIn </b>{data.contactData["LinkedIn"]}</p>
+              <p>{data.contactData["LinkedIn Url"]}</p>
             </div>
           </div>
           <hr className="border-blue-300 border-y-4" />
@@ -60,9 +60,32 @@ export default function ResearchResume ({ data }) {
             </p>
             ))}
           </div>
+          {data.referencesData.length > 0 && (
+            <div>
+              <p>
+                <b className="uppercase text-2xl font-serif">references</b>
+              </p>
+              {data.referencesData.map((reference, index) => (
+                <div key={index} className="flex flex-col gap-2">
+                  <p className="font-semibold">
+                      {reference.firstName} {reference.lastName}
+                  </p>
+                  <p>
+                      {reference.positionTitle} - {reference.companyName}
+                  </p>
+                  <p>
+                      Phone: {reference.phone}
+                  </p>
+                  <p>
+                      Email: {reference.email}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
           <div>
           <p className="uppercase text-2xl font-bold font-serif mb-1">
-                  Education
+            Education
           </p>
             {data.educationData.map((education, index) => (
               <div key={index} className="flex flex-col">
@@ -78,6 +101,28 @@ export default function ResearchResume ({ data }) {
                 </div>
             ))}
           </div>
+          {data.certificationData.length > 0 && (
+            <div>
+              <p className="uppercase text-2xl font-bold font-serif mb-1">
+                certificates
+              </p>
+              <ul className="list-disc grid grid-cols-2 ml-8">
+                {data.certificationData.map((certification) => (
+                  <li key={certification.id}>{certification.certification}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {data.finalizeData.awards.length > 0 && (
+            <div>
+              <p className="uppercase text-2xl font-bold font-serif mb-1">awards</p>
+              <ul className="list-disc grid grid-cols-2 ml-8">
+                {data.finalizeData.awards.map((award, index) => (
+                  <li key={index}>{award.award}</li>
+                ))}
+                </ul>
+            </div>
+          )}
           <div>
             <p className="uppercase text-2xl font-serif font-bold mt-3">skills</p>
             <ul className="list-disc grid grid-cols-2 ml-8">
@@ -86,6 +131,22 @@ export default function ResearchResume ({ data }) {
             ))}
             </ul>
           </div>
+          {data.finalizeData.customDatas.length > 0 && data.finalizeData.customDatas.map((custom, index) => (
+            <div key={index}>
+              <p className="uppercase text-2xl font-serif font-bold mt-3">{custom.name}</p>
+              <p>{custom.description}</p>
+            </div>
+          ))}
+          {data.finalizeData.publications.length > 0 && (
+            <div>
+              <p className="uppercase text-2xl font-serif font-bold mt-3">publications</p>
+              {data.finalizeData.publications.map((publications, index) => (
+                <div key={index}>
+                  <p>{publications.publications}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
