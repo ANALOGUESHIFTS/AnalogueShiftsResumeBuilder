@@ -35,6 +35,19 @@ export default function InternshipResume ({ data }) {
               </div>
             ))}
           </div>
+          <div>
+            {data.certificationData[0] && (
+              <div class="mb-4">
+                <p class="text-red-500 text-2xl font-bold uppercase">certificates</p>
+                <ul className="list-disc ml-6">
+                  {data.certificationData.map((certification) => (
+                    <li key={certification.id}>{certification.certification}</li>
+                  ))}
+                </ul>
+                
+              </div>
+            )}
+          </div>
           <div class="mb-4">
             <p class="text-red-500 text-2xl font-bold uppercase">education</p>
             {data.educationData.map((education, index) => (
@@ -45,9 +58,60 @@ export default function InternshipResume ({ data }) {
             </div>
             ))}
           </div>
-          <div class="mb-4">
-            <p class="text-red-500 text-2xl font-bold uppercase">awards</p>
-            <p>additional information </p>
+          <div>
+            {data.finalizeData.awards[0] && (
+              <div class="mb-4">
+                <p class="text-red-500 text-2xl font-bold uppercase">awards</p>
+                <ul className="list-disc ml-6">
+                  {data.finalizeData.awards.map((award, index) => (
+                    <li key={index}>{award.award}</li>
+                  ))}
+                  </ul>
+              </div>
+            )}
+          </div>
+          {data.referencesData.length > 0 && (
+              <div className="mb-4">
+                <p class="text-red-500 text-2xl font-bold uppercase">References</p>
+                <div className="grid grid-cols-2 gap-4 mt-4">
+                  {data.referencesData.map((reference, index) => (
+                    <div key={index} className="flex flex-col gap-2">
+                      <span className="text-gray-700 font-semibold">
+                        {reference.firstName} {reference.lastName}
+                      </span>
+                      <span className="text-gray-700">
+                        {reference.positionTitle} - {reference.companyName}
+                      </span>
+                      <span className="text-gray-700">
+                        Phone: {reference.phone}
+                      </span>
+                      <span className="text-gray-700">
+                        Email: {reference.email}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          <div>
+            {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) => (
+              <div key={index} className="mb-4">
+                <p class="text-red-500 text-2xl font-bold uppercase">{custom.name}</p>
+                <p>{custom.description}</p>
+              </div>
+            ))}
+          </div>
+          <div>
+            {data.finalizeData.publications[0] && (
+              <div className="mb-4">
+                <p class="text-red-500 text-2xl font-bold uppercase">publications</p>
+                {data.finalizeData.publications.map((publications, index) => (
+                  <div key={index}>
+                    <p>{publications.publications}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

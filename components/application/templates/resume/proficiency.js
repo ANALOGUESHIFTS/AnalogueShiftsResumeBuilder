@@ -70,23 +70,39 @@ export default function ProficiencyTemplate ({ data }) {
                                 </div>
                             </div>
                             <div>
-                                <div>
+                            {data.referencesData.length > 0 && (
+                                <div className="m-4">
                                     <p className="text-3xl font-bold mb-0">References</p>
-                                    <hr className="border-black border-y-2" />
-                                </div>
-                                <div>
-                                    {data.referencesData.map((reference) => (
-                                        <div key={crypto.randomUUID()}>
-                                            <p className="text-2xl font-semibold  mt-0">{reference.title}</p>
-                                            <p><b className="text-red-950 ">Name</b>: {reference.firstName} {reference.lastName}</p>
-                                            <p><b className="text-red-950 ">Position</b>: {reference.positionTitle}</p>
-                                            <p><b className="text-red-950 ">Email</b>: {reference.email}</p>
-                                            <p><b className="text-red-950 ">Contact</b>: {reference.phone}</p>
-                                            <p><b className="text-red-950 ">Relation</b>: {reference.relationshipToYou}</p>
-                                            <p><b className="text-red-950 ">Company Name</b>: {reference.companyName}</p>
+                                    <hr className="border-y-black border-y-2" />
+                                    <div className="grid grid-cols-2 gap-4 mt-4">
+                                    {data.referencesData.map((reference, index) => (
+                                        <div key={index} className="flex flex-col gap-2">
+                                        <span className="text-gray-700 font-semibold">
+                                            {reference.firstName} {reference.lastName}
+                                        </span>
+                                        <span className="text-gray-700">
+                                            {reference.positionTitle} - {reference.companyName}
+                                        </span>
+                                        <span className="text-gray-700">
+                                            Phone: {reference.phone}
+                                        </span>
+                                        <span className="text-gray-700">
+                                            Email: {reference.email}
+                                        </span>
                                         </div>
                                     ))}
+                                    </div>
                                 </div>
+                            )}
+                            </div>
+                            <div>
+                            {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) => (
+                                <div key={index} className="m-4">
+                                <p className="text-3xl font-bold mb-0">{custom.name}</p>
+                                <hr className="border-y-black border-y-2" />
+                                <p>{custom.description}</p>
+                                </div>
+                            ))}
                             </div>
                         </div>
                         <div className="col-span-5 p-2">
@@ -119,6 +135,32 @@ export default function ProficiencyTemplate ({ data }) {
                                         <li key={crypto.randomUUID()}>{skill.skill}</li>
                                     ))}
                                 </ul>
+                            </div>
+                            <div>
+                                {data.finalizeData.awards[0] && (
+                                    <div>
+                                    <p className="text-3xl font-bold mb-0">awards</p>
+                                    <hr className="border-black border-y-2" />
+                                    <ul className="list-disc ml-6">
+                                        {data.finalizeData.awards.map((award, index) => (
+                                        <li key={index}>{award.award}</li>
+                                        ))}
+                                    </ul>
+                                    </div>
+                                )}
+                                </div>
+                            <div>
+                            {data.finalizeData.publications[0] && (
+                                <div className="ml-3 mt-3">
+                                <p className="text-3xl font-bold mb-0">publications</p>
+                                <hr className="border-black border-y-2" />
+                                {data.finalizeData.publications.map((publications, index) => (
+                                    <div key={index}>
+                                    <p>{publications.publications}</p>
+                                    </div>
+                                ))}
+                                </div>
+                            )}
                             </div>
                         </div>
                     </div>

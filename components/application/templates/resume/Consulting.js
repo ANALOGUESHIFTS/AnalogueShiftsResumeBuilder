@@ -75,7 +75,50 @@ export default function ConsultingResume ({ data }) {
               ))}
                 
           </div>
-          <div>
+          <div className="mt-2">
+            {data.finalizeData.awards[0] && (
+              <div>
+                 <p className="text-2xl font-serif uppercase text-blue-900 font-semibold">
+                    awards
+                  </p>
+                  <hr className="border-blue-900 mt-2"/>
+                  <ul className="capitalize grid grid-cols-2 list-disc ml-8">
+                    {data.finalizeData.awards.map((award, index) => (
+                      <li key={index}>{award.award}</li>
+                    ))}
+                  </ul>
+              </div>
+            )}
+          </div>
+          <div className="mt-2">
+            {data.certificationData[0] && (
+              <div>
+                <p className="text-2xl font-serif uppercase text-blue-900 font-semibold">
+                    certificates
+                  </p>
+                  <hr className="border-blue-900 mt-2"/>
+                  <ul className="capitalize grid grid-cols-2 list-disc ml-8">
+                  {data.certificationData.map((certification) => (
+                    <li key={certification.id}>{certification.certification}</li>
+                  ))}
+                  </ul>
+              </div>
+            )}
+          </div>
+          <div className="mt-2">
+            {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) => (
+              <div key={index}>
+                <p className="text-2xl font-serif uppercase text-blue-900 font-semibold">
+                  {custom.name}
+                </p>
+                <hr class="border-y-[1.5px] border-blue-400 mb-2"/>
+                <p>
+                  {custom.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-2">
             <p className="text-2xl font-serif uppercase text-blue-900 font-semibold">
               skills
             </p>
@@ -85,6 +128,21 @@ export default function ConsultingResume ({ data }) {
                 <li key={index}>{skill.skill}</li>
               ))}
               </ul>
+          </div>
+          <div className="mt-2">
+            {data.finalizeData.publications[0] && (
+              <div className="mt-2">
+                <p className="text-2xl font-serif uppercase text-blue-900 font-semibold">
+                  publications
+                </p>
+                <hr className="border-blue-900 mt-2"/>
+                {data.finalizeData.publications.map((publications, index) => (
+                  <div key={index}>
+                    <p>{publications.publications}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         

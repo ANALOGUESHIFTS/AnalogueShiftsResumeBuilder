@@ -56,6 +56,50 @@ export default function FreelanceResume ({ data }) {
             ))}
             
           </div>
+          <div>
+            {data.certificationData[0] && (
+              <div class="grid grid-cols-12 mt-2">
+                <div class="col-span-4 text-amber-700 font-bold uppercase">
+                  certifications
+                </div>
+                <div class="col-span-8 ml-4">
+                  <ul class="list-disc ml-5">
+                  {data.certificationData.map((certification, index) => (
+                    <li key={index}>{certification.certification}</li>
+                  ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+          <div>
+            {data.finalizeData.awards[0] && (
+              <div class="grid grid-cols-12 mt-2">
+                <div class="col-span-4 text-amber-700 font-bold uppercase">
+                  awards
+                </div>
+                <div class="col-span-8 ml-4">
+                  <ul class="list-disc ml-5">
+                  {data.finalizeData.awards.map((award, index) => (
+                    <li key={index}>{award.award}</li>
+                  ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+          <div>
+            {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) =>(
+              <div key={index} class="grid grid-cols-12 mt-2">
+                <div class="col-span-4 text-amber-700 font-bold uppercase">
+                  {custom.name}
+                </div>
+                <div class="col-span-8 ml-4">
+                <p>{custom.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
           <div class="grid grid-cols-12 mt-2">
             <div class="col-span-4 text-amber-700 font-bold uppercase">
               skills
@@ -67,6 +111,23 @@ export default function FreelanceResume ({ data }) {
               ))}
               </ul>
             </div>
+          </div>
+          
+          <div>
+            {data.finalizeData.publications[0] && (
+              <div class="grid grid-cols-12 mt-2">
+                <div class="col-span-4 text-amber-700 font-bold uppercase">
+                  publications
+                </div>
+                <div class="col-span-8 ml-4">
+                  <ul class="list-disc ml-5">
+                  {data.finalizeData.awards.map((publications, index) => (
+                    <li key={index}>{publications.publications}</li>
+                  ))}
+                  </ul>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

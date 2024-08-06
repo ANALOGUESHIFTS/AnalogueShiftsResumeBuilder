@@ -1,4 +1,12 @@
 {
-  "/resume-builder/app/how-to-start/[template]/finish/download/page": "app/resume-builder/app/how-to-start/[template]/finish/download/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/resume-builder/app/how-to-start/[template]/contact/page": "app/resume-builder/app/how-to-start/[template]/contact/page.js",
+  "/resume-builder/app/how-to-start/[template]/experience/page": "app/resume-builder/app/how-to-start/[template]/experience/page.js",
+  "/resume-builder/app/how-to-start/[template]/education/page": "app/resume-builder/app/how-to-start/[template]/education/page.js",
+  "/resume-builder/app/how-to-start/[template]/certifications/page": "app/resume-builder/app/how-to-start/[template]/certifications/page.js",
+  "/resume-builder/app/how-to-start/[template]/skills/page": "app/resume-builder/app/how-to-start/[template]/skills/page.js",
+  "/resume-builder/app/how-to-start/[template]/summary/page": "app/resume-builder/app/how-to-start/[template]/summary/page.js",
+  "/resume-builder/app/how-to-start/[template]/references/page": "app/resume-builder/app/how-to-start/[template]/references/page.js",
+  "/resume-builder/app/how-to-start/[template]/finalize/page": "app/resume-builder/app/how-to-start/[template]/finalize/page.js",
+  "/resume-builder/app/how-to-start/[template]/finish/page": "app/resume-builder/app/how-to-start/[template]/finish/page.js",
+  "/resume-builder/app/how-to-start/[template]/finish/download/page": "app/resume-builder/app/how-to-start/[template]/finish/download/page.js"
 }

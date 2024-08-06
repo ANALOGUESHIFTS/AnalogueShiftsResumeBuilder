@@ -44,6 +44,33 @@ export default function InternationalTemplate ({ data }) {
                   ))}
                 </ul>
               </div>
+              <div>
+                {data.finalizeData.awards[0] && (
+                  <div>
+                    <p className="uppercase font-semibold mt-8">awards</p>
+                    <hr className="border-black" />
+                    <ul className="list-disc ml-8">
+                      {data.finalizeData.awards.map((award, index) => (
+                        <li key={index}>{award.award}</li>
+                      ))}
+                      </ul>
+                  </div>
+                )}
+              </div>
+              <div>
+                {data.certificationData[0] && (
+                  <div>
+                    <p className="uppercase font-semibold mt-8">certificates</p>
+                    <hr className="border-black" />
+                    <ul className="list-disc ml-8">
+                      {data.certificationData.map((certification) => (
+                        <li key={certification.id}>{certification.certification}</li>
+                      ))}
+                    </ul>
+                    
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           {/* Right panel */}
@@ -101,6 +128,25 @@ export default function InternationalTemplate ({ data }) {
                 </div>
               </div>
             )}
+            {data.finalizeData.publications[0] && (
+              <div className="m-4">
+                <p className="uppercase font-semibold">publications</p>
+                <hr className="border-black" />
+                <ul className="list-disc ml-8"></ul>
+                {data.finalizeData.publications.map((publications, index) => (
+                  <div key={index}>
+                    <li>{publications.publications}</li>
+                  </div>
+                ))}
+              </div>
+            )}
+            {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) => (
+              <div key={index} className="m-4">
+                <p className="uppercase font-semibold">{custom.name}</p>
+                <hr className="border-black" />
+                <p>{custom.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
