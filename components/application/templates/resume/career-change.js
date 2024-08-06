@@ -60,7 +60,7 @@ export default function CareerChangeResume ({ data }) {
               ))}
             </div>
             <div class="mt-2">
-              {data.finalizeData.awards[0] && (
+              {data.finalizeData.awards.length > 0 && (
                 <div>
                   <p class="uppercase font-bold">awards</p>
                   <hr class="border-y-[1.5px] border-blue-400 w-16 mb-2"/>
@@ -73,7 +73,7 @@ export default function CareerChangeResume ({ data }) {
               )}
             </div>
             <div>
-              {data.certificationData[0] && (
+              {data.certificationData.length > 0 && (
                 <div class="mt-2">
                   <p class="uppercase font-bold">certifications</p>
                   <hr class="border-y-[1.5px] border-blue-400 w-32 mb-2"/>
@@ -88,7 +88,7 @@ export default function CareerChangeResume ({ data }) {
               )}
             </div>
             <div class="mt-2">
-              {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) => (
+              {data.finalizeData.customDatas.length > 0 && data.finalizeData.customDatas.map((custom, index) => (
                 <div key={index}>
                   <p class="uppercase font-bold">{custom.name}</p>
                   <hr class="border-y-[1.5px] border-blue-400 mb-2"/>
@@ -98,6 +98,17 @@ export default function CareerChangeResume ({ data }) {
                 </div>
               ))}
             </div>
+            {data.finalizeData.publications.length > 0 && (
+            <div class="mt-2">
+              <p class="uppercase font-bold">awards</p>
+              <hr class="border-y-[1.5px] border-blue-400 mb-2"/>
+              <ul className="list-disc ml-8">
+                {data.finalizeData.publications.map((publications, index) => (
+                  <li key={index}>{publications.publications}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           </div>
         </div>
       </div>

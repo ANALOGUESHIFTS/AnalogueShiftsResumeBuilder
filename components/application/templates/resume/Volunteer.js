@@ -17,7 +17,7 @@ export default function VolunteerResume ({ data }) {
               <p>{data.contactData["Phone"]}</p>
               <p>{data.contactData["Email"]}</p>
               <p>{data.contactData["City"]}, {data.contactData["State / Province"]}</p>
-              <p>{data.contactData["LinkedIn"]}</p>
+              <p>{data.contactData["LinkedIn Url"]}</p>
             </ul>
             <hr className="border-blue-950 mt-2"/>
           </div>
@@ -50,9 +50,36 @@ export default function VolunteerResume ({ data }) {
                 </ul>
                 </div>
               ))}
-              
             </div>
           </div>
+          {data.referencesData.length > 0 && (
+            <div className="mb-4">
+              <div>
+                <div>
+                  <p className="text-2xl font-serif uppercase text-blue-950 font-semibold">reference</p>
+                  <hr className="border-blue-950 mt-2"/>
+                </div>
+                <div>
+                  {data.referencesData.map((reference, index) => (
+                    <div key={index} className="flex flex-col gap-2">
+                      <p className="font-semibold">
+                          {reference.firstName} {reference.lastName}
+                      </p>
+                      <p>
+                          {reference.positionTitle} - {reference.companyName}
+                      </p>
+                      <p>
+                          Phone: {reference.phone}
+                      </p>
+                      <p>
+                          Email: {reference.email}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
           <div className="mb-4"> 
             <p className="text-2xl font-serif uppercase text-blue-950 font-semibold">
               education
@@ -71,8 +98,20 @@ export default function VolunteerResume ({ data }) {
                   <p>{education.additionalInfo}</p>
                 </div>
               ))}
-                
           </div>
+          {data.certificationData.length > 0 && (
+            <div class="mb-4">
+              <p className="text-2xl font-serif uppercase text-blue-950 font-semibold">certifications</p>
+              <hr className="border-blue-950 mt-2"/>
+              <div>
+                {data.certificationData.map((certification) => (
+                  <p key={certification.id}>
+                    {certification.certification}
+                  </p>
+                ))}
+              </div>
+            </div>
+          )}
           <div>
             <p className="text-2xl font-serif uppercase text-blue-950 font-semibold">
               skills
@@ -84,8 +123,38 @@ export default function VolunteerResume ({ data }) {
               ))}
               </ul>
           </div>
+          {data.finalizeData.awards.length > 0 && (
+            <div>
+              <p className="text-2xl font-serif uppercase text-blue-950 font-semibold">awards</p>
+              <hr className="border-blue-950 mt-2"/>
+              <ul className="list-disc ml-8">
+                {data.finalizeData.awards.map((award, index) => (
+                  <li key={index}>{award.award}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {data.finalizeData.customDatas.length > 0 && data.finalizeData.customDatas.map((custom, index) => (
+            <div key={index}>
+              <p className="text-2xl font-serif uppercase text-blue-950 font-semibold">{custom.name}</p>
+              <hr className="border-blue-950 mt-2"/>
+              <p>
+                {custom.description}
+              </p>
+            </div>
+          ))}
+          {data.finalizeData.publications.length > 0 && (
+            <div>
+              <p className="text-2xl font-serif uppercase text-blue-950 font-semibold">awards</p>
+              <hr className="border-blue-950 mt-2"/>
+              <ul className="list-disc ml-8">
+                {data.finalizeData.publications.map((publications, index) => (
+                  <li key={index}>{publications.publications}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
-        
       </div>
     </div>
   );

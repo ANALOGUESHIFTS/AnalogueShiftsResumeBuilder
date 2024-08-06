@@ -22,19 +22,7 @@ export default function ProficiencyTemplate ({ data }) {
                                 <li>{data.contactData["Phone"]}</li>
                                 <li>{data.contactData["City"]}</li>
                                 <li>
-                                    <a href={data.contactData["LinkedIn"]} className="text-blue-500">
-                                        LinkedIn
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={data.contactData["GitHub"]} className="text-blue-500">
-                                        GitHub
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={data.contactData["Website"]} className="text-blue-500">
-                                        {data.contactData["Website"]}
-                                    </a>
+                                    {data.contactData["LinkedIn Url"]}
                                 </li>
                             </ul>
                         </div>

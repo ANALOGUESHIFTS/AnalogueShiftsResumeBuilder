@@ -4,7 +4,7 @@ export default function SalesResume ({ data }) {
       <div class="relative flex min-h-screen flex-col overflow-hidden bg-white py-6 sm:py-12">
         <div class="grid grid-cols-12">
           {/*right panel*/}
-          <div class="col-span-4">
+          <div class="col-span-4 bg-slate-200 ml-1">
             {/*top right panel*/}
             <div class="bg-slate-300 ml-1">
               <div class="ml-3 mr-2 justify-center">
@@ -22,7 +22,7 @@ export default function SalesResume ({ data }) {
                   <li>{data.contactData["Email"]}</li>
                   <li>{data.contactData["City"]}</li>
                   <li>{data.contactData["State / Province"]}</li>
-                  <li>{data.contactData["LinkedIn"]}</li>
+                  <li>{data.contactData["LinkedIn Url"]}</li>
                   </ul>
                   <br/>
                 </p>
@@ -44,12 +44,32 @@ export default function SalesResume ({ data }) {
                       <div key={index}>
                         <p class="mt-2">{education.graduationYear}</p>
                         <p class="capitalize font-bold text-[14px] text-blue-500">{education.degreeOfProgram} - {education.fieldOfStudy}</p>
-                        <p>{education.schoolNmae} | {education.city}, {education.state}</p>
+                        <p>{education.schoolName} | {education.schoolLocation}</p>
                         <p>{education.additionalInfo}</p>
                       </div>
                     ))}
                   </div>
                 </div>
+                {data.certificationData.length > 0 && (
+                  <div>
+                    <p class="uppercase mt-4 font-bold text-blue-500">certificates</p>
+                    <ul className="list-disc ml-8">
+                      {data.certificationData.map((certification) => (
+                        <li key={certification.id}>{certification.certification}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {data.finalizeData.awards[0] && (
+                  <div>
+                  <p class="uppercase mt-4 font-bold text-blue-500">awards</p>
+                  <ul className="list-disc ml-8">
+                      {data.finalizeData.awards.map((award, index) => (
+                      <li key={index}>{award.award}</li>
+                      ))}
+                  </ul>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -76,6 +96,27 @@ export default function SalesResume ({ data }) {
                   ))}
                 </div>
               </div>
+              {data.referencesData.length > 0 && (
+                <div>
+                  <p class="text-[20px] font-bold text-blue-500 uppercase mb-2">reference</p>
+                    {data.referencesData.map((reference, index) => (
+                      <div key={index} className="flex flex-col gap-2">
+                        <p className="font-semibold">
+                            {reference.firstName} {reference.lastName}
+                        </p>
+                        <p>
+                            {reference.positionTitle} - {reference.companyName}
+                        </p>
+                        <p>
+                            Phone: {reference.phone}
+                        </p>
+                        <p>
+                            Email: {reference.email}
+                        </p>
+                      </div>
+                    ))}
+                </div>
+              )}
               <div>
                 <p class="text-[20px] font-bold text-blue-500 uppercase mb-2">
                   skills
@@ -86,6 +127,22 @@ export default function SalesResume ({ data }) {
                 ))}
                 </ul>
               </div>
+              {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) => (
+                <div key={index} className="ml-3 mt-3">
+                  <p class="text-[20px] font-bold text-blue-500 uppercase mb-2">{custom.name}</p>
+                  <p>{custom.description}</p>
+                </div>
+              ))}
+              {data.finalizeData.publications.length > 0 && (
+                <div>
+                  <p class="text-[20px] font-bold text-blue-500 uppercase mb-2">publications</p>
+                  <ul class="ml-8 list-disc">
+                    {data.finalizeData.publications.map((publications, index) => (
+                        <li key={index}>{publications.publications}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </div>
