@@ -38,7 +38,7 @@ export default function ConsultingResume ({ data }) {
                 <div key={index}>
                   <ul className="capitalize grid grid-cols-2 font-bold">
                   <li>{experience.companyName}</li>
-                  <li className="text-right"></li>
+                  <li className="text-right">{experience.city}, {experience.State}</li>
                 </ul>
                 <ul className="capitalize font-semibold grid grid-cols-2">
                   <li>{experience.jobTitle}</li>

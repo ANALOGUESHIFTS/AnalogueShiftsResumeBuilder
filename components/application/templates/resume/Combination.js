@@ -68,13 +68,13 @@ export default function CombinationTemplate ({ data }) {
                       <p className="uppercase"><b className="capitalize">{education.degreeOfProgram} in {education.fieldOfStudy}</b></p>
                       <p className="text-[14px] text-blue-700">{education.additionalInfo}</p>
                       <p className="text-[14px] capitalize">{education.schoolName}, {education.schoolLocation}</p>
-                      <p className=" text-[14px] capitalize text-blue-700">{education.graduationMonth}, {education.graduationYear}</p>
+                      <p className=" text-[14px] capitalize text-blue-700">{education.graduationYear}</p>
                     </div>
                   ))}
                   
                 </div>
                 <div>
-                  {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) => (
+                  {data.finalizeData.customDatas.length > 0 && data.finalizeData.customDatas.map((custom, index) => (
                     <div key={index} className="ml-3 mt-3">
                       <p className="uppercase text-blue-700 font-semibold mb-2">{custom.name}</p>
                       <p>{custom.description}</p>
@@ -111,7 +111,7 @@ export default function CombinationTemplate ({ data }) {
                   <p>{data.summaryData}</p>
                 </div>
                 <div>
-                  {data.certificationData[0] && (
+                  {data.certificationData.length > 0 && (
                     <div>
                       <p className="mt-4 mb-2 text-blue-700 font-semibold uppercase">certifications</p>
                       <ul className="list-disc ml-6">
@@ -133,7 +133,7 @@ export default function CombinationTemplate ({ data }) {
                 </div>
                 
                 <div>
-                  {data.finalizeData.awards[0] && (
+                  {data.finalizeData.awards.length > 0 && (
                     <div>
                      <p className="mt-4 mb-2 text-blue-700 font-semibold uppercase">awards</p>
                      <ul className="list-disc ml-6">

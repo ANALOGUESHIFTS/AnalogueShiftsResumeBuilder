@@ -1,4 +1,5 @@
 {
+  "/resume-builder/app/how-to-start/[template]/skills/page": "app/resume-builder/app/how-to-start/[template]/skills/page.js",
   "/resume-builder/app/how-to-start/[template]/summary/page": "app/resume-builder/app/how-to-start/[template]/summary/page.js",
   "/resume-builder/app/how-to-start/[template]/references/page": "app/resume-builder/app/how-to-start/[template]/references/page.js",
   "/resume-builder/app/how-to-start/[template]/finalize/page": "app/resume-builder/app/how-to-start/[template]/finalize/page.js",
