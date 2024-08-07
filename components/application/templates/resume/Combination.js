@@ -31,8 +31,36 @@ export default function CombinationTemplate ({ data }) {
                       </div>
                     </div>
                   ))}
-  
                 </div>
+                </div>
+                {data.referencesData.length > 0 && (
+                  <div className="ml-3 mt-3">
+                    <div>
+                      <div>
+                        <p className="uppercase font-semibold text-blue-700">reference</p>
+                        <hr className="border-blue-700 mt-2 w-0"/>
+                      </div>
+                      <div>
+                        {data.referencesData.map((reference, index) => (
+                          <div key={index} className="flex flex-col gap-2">
+                            <p className="font-semibold">
+                                {reference.firstName} {reference.lastName}
+                            </p>
+                            <p>
+                                {reference.positionTitle} - {reference.companyName}
+                            </p>
+                            <p>
+                                Phone: {reference.phone}
+                            </p>
+                            <p>
+                                Email: {reference.email}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className="ml-3 mt-3">
                   <p className="uppercase text-blue-700 font-semibold mb-2">education</p>
                   {data.educationData.map((education, index) => (
@@ -65,7 +93,7 @@ export default function CombinationTemplate ({ data }) {
                     </div>
                   )}
                 </div>
-              </div>
+              
             </div>
             <div className="col-span-5 bg-slate-200">
               <div className="ml-3 mt-3">

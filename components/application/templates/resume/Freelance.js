@@ -6,7 +6,7 @@ export default function FreelanceResume ({ data }) {
           <div>
             <p class="text-center text-3xl font-bold font-serif text-amber-800">{data.contactData["First Name"]} {data.contactData["Last Name"]}</p>
             <p class="font-bold capitalize text-center text-2xl font-serif">{data.contactData["Desired Job Title"]}</p>
-            <p class="text-center bg-amber-700 pt-2 pb-2 font-serif">{data.contactData["City"]}, {data.contactData["State / Province"]} | {data.contactData["Phone"]} | {data.contactData["Email"]} | {data.contactData["LinkedIn"]} </p>
+            <p class="text-center bg-amber-700 pt-2 pb-2 font-serif">{data.contactData["City"]}, {data.contactData["State / Province"]} | {data.contactData["Phone"]} | {data.contactData["Email"]} | {data.contactData["LinkedIn Url"]} </p>
           </div>
           <div class="grid grid-cols-12 mt-3">
             <div class="col-span-4 text-amber-700 font-bold uppercase">
@@ -40,6 +40,31 @@ export default function FreelanceResume ({ data }) {
               ))}
             </div>
           </div>
+          {data.referencesData.length > 0 && (
+            <div class="grid grid-cols-12 mt-2">
+                <div class="col-span-4 font-bold uppercase">
+                  <p class="mt-3 font-bold uppercase text-amber-700">reference</p>
+                </div>
+                <div class="col-span-8 ml-4">
+                  {data.referencesData.map((reference, index) => (
+                    <div key={index} className="flex flex-col gap-2 ml-2">
+                      <p className="font-semibold">
+                          {reference.firstName} {reference.lastName}
+                      </p>
+                      <p>
+                          {reference.positionTitle} - {reference.companyName}
+                      </p>
+                      <p>
+                          Phone: {reference.phone}
+                      </p>
+                      <p>
+                          Email: {reference.email}
+                      </p>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
           <div class="grid grid-cols-12 mt-2">
             <div class="col-span-4 text-amber-700 font-bold uppercase">
               education

@@ -40,8 +40,33 @@ export default function CorporateResume({ data }) {
               </div>
             ))}
            </div>
-          
-          
+           {data.referencesData.length > 0 && (
+            <div className="mb-4">
+              <div>
+                <div>
+                  <p class="mt-3 font-bold uppercase text-blue-600">reference</p>
+                </div>
+                <div class=" ml-1 border-l-2 border-slate-400">
+                  {data.referencesData.map((reference, index) => (
+                    <div key={index} className="flex flex-col gap-2 ml-2">
+                      <p className="font-semibold">
+                          {reference.firstName} {reference.lastName}
+                      </p>
+                      <p>
+                          {reference.positionTitle} - {reference.companyName}
+                      </p>
+                      <p>
+                          Phone: {reference.phone}
+                      </p>
+                      <p>
+                          Email: {reference.email}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
             <div>
               <p class="mt-3 font-bold uppercase text-blue-600">education</p>
               <div class=" ml-1 border-l-2 border-slate-400">
@@ -111,11 +136,11 @@ export default function CorporateResume({ data }) {
             </div>
             <div>
               {data.finalizeData.customDatas[0] && (
-                <div class=" ml-1 border-l-2 border-slate-400">
+                <div>
                   {data.finalizeData.customDatas.map((custom) => (
                     <div  key={custom.id}>
                       <p class="mt-3 font-bold uppercase text-blue-600">{custom.name}</p>
-                      <p class="italic ml-2">{custom.description}</p>
+                      <p class="italic ml-2 pl-2 border-l-2 border-slate-400">{custom.description}</p>
                     </div>
                   ))}
                 </div>

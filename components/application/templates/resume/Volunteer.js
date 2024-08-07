@@ -145,7 +145,7 @@ export default function VolunteerResume ({ data }) {
           ))}
           {data.finalizeData.publications.length > 0 && (
             <div>
-              <p className="text-2xl font-serif uppercase text-blue-950 font-semibold">awards</p>
+              <p className="text-2xl font-serif uppercase text-blue-950 font-semibold">publications</p>
               <hr className="border-blue-950 mt-2"/>
               <ul className="list-disc ml-8">
                 {data.finalizeData.publications.map((publications, index) => (

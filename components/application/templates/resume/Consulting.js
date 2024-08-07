@@ -52,9 +52,36 @@ export default function ConsultingResume ({ data }) {
                 </ul>
                 </div>
               ))}
-              
             </div>
           </div>
+          {data.referencesData.length > 0 && (
+            <div className="mb-4">
+              <div>
+                <div>
+                  <p className="text-2xl font-serif uppercase text-blue-900 font-semibold">reference</p>
+                  <hr className="border-blue-900 mt-2"/>
+                </div>
+                <div>
+                  {data.referencesData.map((reference, index) => (
+                    <div key={index} className="flex flex-col gap-2">
+                      <p className="font-semibold">
+                          {reference.firstName} {reference.lastName}
+                      </p>
+                      <p>
+                          {reference.positionTitle} - {reference.companyName}
+                      </p>
+                      <p>
+                          Phone: {reference.phone}
+                      </p>
+                      <p>
+                          Email: {reference.email}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
           <div className="mb-4"> 
             <p className="text-2xl font-serif uppercase text-blue-900 font-semibold">
               education

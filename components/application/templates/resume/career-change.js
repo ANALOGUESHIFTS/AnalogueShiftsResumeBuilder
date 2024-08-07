@@ -51,6 +51,34 @@ export default function CareerChangeResume ({ data }) {
               </div>
             ))}
           </div>
+          {data.referencesData.length > 0 && (
+            <div className="mb-2">
+              <div>
+                <div>
+                  <p class="uppercase font-bold">reference</p>
+                  <hr class="border-y-[1.5px] border-blue-400 w-24 mb-2"/>
+                </div>
+                <div>
+                  {data.referencesData.map((reference, index) => (
+                    <div key={index} className="flex flex-col gap-2">
+                      <p className="font-semibold">
+                          {reference.firstName} {reference.lastName}
+                      </p>
+                      <p>
+                          {reference.positionTitle} - {reference.companyName}
+                      </p>
+                      <p>
+                          Phone: {reference.phone}
+                      </p>
+                      <p>
+                          Email: {reference.email}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
           <div>
             <p class="uppercase font-bold">skills</p>
             <hr class="border-y-[1.5px] border-blue-400 w-14 mb-2"/>
@@ -75,7 +103,7 @@ export default function CareerChangeResume ({ data }) {
             <div>
               {data.certificationData.length > 0 && (
                 <div class="mt-2">
-                  <p class="uppercase font-bold">certifications</p>
+                  <p class="uppercase font-bold">certificates</p>
                   <hr class="border-y-[1.5px] border-blue-400 w-32 mb-2"/>
                   <div>
                     {data.certificationData.map((certification) => (

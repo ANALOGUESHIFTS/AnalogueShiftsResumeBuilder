@@ -53,9 +53,34 @@ export default function FederalResume ({ data }) {
                 </p>
               </div>
             ))}
-            
-            
           </div>
+          {data.referencesData.length > 0 && (
+            <div className="mt-3">
+              <div>
+                <div>
+                  <p class="uppercase font-bold tracking-tighter">reference</p>
+                </div>
+                <div  class="mt-4">
+                  {data.referencesData.map((reference, index) => (
+                    <div key={index} className="flex flex-col gap-2 ml-2">
+                      <p className="font-semibold">
+                          {reference.firstName} {reference.lastName}
+                      </p>
+                      <p>
+                          {reference.positionTitle} - {reference.companyName}
+                      </p>
+                      <p>
+                          Phone: {reference.phone}
+                      </p>
+                      <p>
+                          Email: {reference.email}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
           <div class="mt-3">
             <p class="uppercase font-bold tracking-tighter">skills</p>
             <ul class="list-disc ml-8">
@@ -65,7 +90,7 @@ export default function FederalResume ({ data }) {
            </ul>
           </div>
           <div>
-            {data.certificationData[0] && (
+            {data.certificationData.length > 0 && (
               <div class="mt-3">
                 <p class="uppercase font-bold tracking-tighter">certification</p>
                 {data.certificationData.map((certification) => (
@@ -75,7 +100,7 @@ export default function FederalResume ({ data }) {
             )}
           </div>
           <div class="mt-3">
-            {data.finalizeData.awards[0] && (
+            {data.finalizeData.awards.length > 0 && (
               <div class="mt-3">
                 <p class="uppercase font-bold tracking-tighter">awards</p>
                 {data.finalizeData.awards.map((award, index) => (
@@ -85,7 +110,7 @@ export default function FederalResume ({ data }) {
             )}
           </div>
           <div class="mt-3">
-            {data.finalizeData.publications[0] && (
+            {data.finalizeData.publications.length > 0 && (
               <div>
                 <p class="uppercase font-bold tracking-tighter">publication</p>
                 {data.finalizeData.publications.map((publications, index) => (
@@ -95,7 +120,7 @@ export default function FederalResume ({ data }) {
             )}
           </div>
           <div class="mt-3">
-            {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) => (
+            {data.finalizeData.customDatas.length > 0 && data.finalizeData.customDatas.map((custom, index) => (
               <div key={index} class="mt-3">
                 <p class="uppercase font-bold tracking-tighter">{custom.name}</p>
                 <p>{custom.description}</p>
