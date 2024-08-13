@@ -1,6 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/resume-builder/app/how-to-start/[template]/education/page": "app/resume-builder/app/how-to-start/[template]/education/page.js",
   "/resume-builder/app/how-to-start/[template]/certifications/page": "app/resume-builder/app/how-to-start/[template]/certifications/page.js",
   "/resume-builder/app/how-to-start/[template]/skills/page": "app/resume-builder/app/how-to-start/[template]/skills/page.js",
   "/resume-builder/app/how-to-start/[template]/summary/page": "app/resume-builder/app/how-to-start/[template]/summary/page.js",
