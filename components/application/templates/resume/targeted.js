@@ -113,9 +113,9 @@ export default function TargetedResume ({ data }) {
               <p><span className="bg-blue-400 text-white pl-1 pr-1">additional skills</span><hr className="border-y-[1px] border-slate-400 ml-[118px] mr-5"/></p>
               <ul className="list-disc ml-8 grid grid-cols-2">
                   {data.skillsData.map((skill, index) => (
-                    <div>
-                      <li key={index} className="mr-5">{skill.skill}</li>
-                      <li key={index}>{skill.skill}</li>
+                    <div key={index}>
+                      <li className="mr-5">{skill.skill}</li>
+                      <li>{skill.skill}</li>
                     </div>
                   ))}
               </ul>
