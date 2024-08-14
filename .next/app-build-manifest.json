@@ -1,290 +1,39 @@
 {
   "pages": {
-    "/_not-found": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/app/_not-found-f487c626f6837023.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/css/3ca4cbbb20b53176.css",
-      "static/chunks/app/layout-12f5c139a651ab32.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/page-a26d5b2bba58f0be.js"
-    ],
-    "/resume-builder/app/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/app/resume-builder/app/page-8fdd9281804b6e41.js"
-    ],
-    "/resume-builder/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/app/resume-builder/page-46b147902f4ae482.js"
-    ],
-    "/cover-letter-builder/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/cover-letter-builder/page-d905c603500df32d.js"
-    ],
-    "/blog/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/263-68e3d5a4bbc6fd1c.js",
-      "static/chunks/414-2a8c3d1074c3e6fb.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/blog/page-f3af2ff18a2b10e0.js"
-    ],
-    "/cover-letter-examples/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/cover-letter-examples/page-e9ce0e5a731ef983.js"
-    ],
-    "/cover-letter-templates/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/263-68e3d5a4bbc6fd1c.js",
-      "static/chunks/414-2a8c3d1074c3e6fb.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/cover-letter-templates/page-213acc107f96b389.js"
-    ],
-    "/cv-maker/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/cv-maker/page-2eef9049530f4f26.js"
-    ],
-    "/faq/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/faq/page-b432c5e89838fd26.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/login/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/login/page-b288b061aa04e280.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/login/page.css",
+      "static/chunks/app/login/page.js"
     ],
     "/my-resumes/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/628-4ab663e828d5a56b.js",
-      "static/chunks/263-68e3d5a4bbc6fd1c.js",
-      "static/chunks/994-05d733ec28e8a409.js",
-      "static/chunks/721-748ee816d1b9ec5c.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/my-resumes/page-ee37148b908ae4d0.js"
-    ],
-    "/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/263-68e3d5a4bbc6fd1c.js",
-      "static/chunks/414-2a8c3d1074c3e6fb.js",
-      "static/css/757ce66cba5740ec.css",
-      "static/chunks/141-a3fc987242d796ae.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/chunks/app/page-2f08abcd12be7907.js"
-    ],
-    "/register/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/register/page-4795d25597b84cdf.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/certifications/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/628-4ab663e828d5a56b.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/certifications/page-87a3d12088928c2a.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/contact/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/263-68e3d5a4bbc6fd1c.js",
-      "static/chunks/994-05d733ec28e8a409.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/contact/page-d285c4e627be4e4b.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/education/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/628-4ab663e828d5a56b.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/education/page-2789de91211a5e89.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/experience/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/628-4ab663e828d5a56b.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/experience/page-71b376a1c85115e2.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/finalize/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/finalize/page-5b0fc4d2b5cc774e.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/finish/download/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/finish/download/page-c1d20c2b4e54bc18.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/finish/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/finish/page-3a0bbdec96dd1b90.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/references/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/628-4ab663e828d5a56b.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/references/page-886adbf882d8751d.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/skills/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/628-4ab663e828d5a56b.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/skills/page-dbdc03b2b4461356.js"
-    ],
-    "/resume-builder/app/how-to-start/[template]/summary/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/70e0d97a-e0394f3f3421b985.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/965-06ae834c00f44d85.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/4b8425863967fd84.css",
-      "static/chunks/app/resume-builder/app/how-to-start/[template]/summary/page-7ae0c3a355b69663.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/my-resumes/page.css",
+      "static/chunks/app/my-resumes/page.js"
     ],
     "/resume-builder/app/how-to-start/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/css/757ce66cba5740ec.css",
-      "static/chunks/141-a3fc987242d796ae.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/chunks/app/resume-builder/app/how-to-start/page-ef4f8828da0802ee.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/resume-builder/app/how-to-start/page.css",
+      "static/chunks/app/resume-builder/app/how-to-start/page.js"
     ],
-    "/resume-samples/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-samples/page-85228250f3e977b7.js"
-    ],
-    "/resume-templates/page": [
-      "static/chunks/webpack-af70005f55f04da5.js",
-      "static/chunks/fd9d1056-3b9a0534d152fea6.js",
-      "static/chunks/472-42582b8d3ac4618e.js",
-      "static/chunks/main-app-79f114e962c7225d.js",
-      "static/chunks/938-2e5965eeed446629.js",
-      "static/chunks/263-68e3d5a4bbc6fd1c.js",
-      "static/chunks/414-2a8c3d1074c3e6fb.js",
-      "static/chunks/553-6f165d8f657ac39e.js",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/resume-templates/page-e5fb70f9a0c4a2e8.js"
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/not-found.js"
     ]
   }
 }

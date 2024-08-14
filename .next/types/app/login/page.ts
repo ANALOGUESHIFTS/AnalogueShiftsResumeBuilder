@@ -1,4 +1,4 @@
-// File: C:\Users\USER\Promise\AnalogueShifts\resume.analogueshifts.com\app\login\page.js
+// File: C:\Users\tesli\Desktop\projects\static\analogueshifts\resume\app\login\page.js
 import * as entry from '../../../../app/login/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
