@@ -1,6 +1,9 @@
 {
   "/not-found": "app/not-found.js",
-  "/login/page": "app/login/page.js",
-  "/resume-builder/app/how-to-start/page": "app/resume-builder/app/how-to-start/page.js",
-  "/my-resumes/page": "app/my-resumes/page.js"
+  "/resume-builder/app/how-to-start/[template]/summary/page": "app/resume-builder/app/how-to-start/[template]/summary/page.js",
+  "/resume-builder/app/how-to-start/[template]/skills/page": "app/resume-builder/app/how-to-start/[template]/skills/page.js",
+  "/resume-builder/app/how-to-start/[template]/references/page": "app/resume-builder/app/how-to-start/[template]/references/page.js",
+  "/resume-builder/app/how-to-start/[template]/finalize/page": "app/resume-builder/app/how-to-start/[template]/finalize/page.js",
+  "/resume-builder/app/how-to-start/[template]/finish/page": "app/resume-builder/app/how-to-start/[template]/finish/page.js",
+  "/resume-builder/app/how-to-start/[template]/finish/download/page": "app/resume-builder/app/how-to-start/[template]/finish/download/page.js"
 }

@@ -1,4 +1,4 @@
-// File: C:\Users\tesli\Desktop\projects\static\analogueshifts\resume\app\layout.js
+// File: /mnt/c/Users/OPE/Desktop/analogue_shifts/resume.analogueshifts.com/app/layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
