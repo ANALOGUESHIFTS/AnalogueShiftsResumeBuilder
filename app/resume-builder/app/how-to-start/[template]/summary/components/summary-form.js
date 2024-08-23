@@ -10,6 +10,13 @@ export default function Summary() {
   const [summary, setSummary] = useState("");
   const [initialData, setInitialData] = useState("");
 
+  // Function to remove HTML tags
+  const stripHtmlTags = (input) => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = input;
+    return tempDiv.textContent || tempDiv.innerText || "";
+  };
+
   // Continue
   const handleContinue = () => {
     let storedData = localStorage.getItem("resumeInfo");
@@ -43,9 +50,9 @@ export default function Summary() {
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("resumeInfo"));
     if (storedData.summaryData) {
-      setInitialData(storedData.summaryData);
+      setInitialData(stripHtmlTags(storedData.summaryData));
     } else {
-      setInitialData("<p></p>");
+      setInitialData("");
     }
   }, []);
 
@@ -62,7 +69,7 @@ export default function Summary() {
       {initialData.length > 0 && (
         <div className="w-full bg-white rounded-xl border pb-3 h-[340px] overflow-y-auto relative">
           <Tiptap
-            changed={(data) => setSummary(data)}
+            changed={(data) => setSummary(stripHtmlTags(data))}
             initialData={initialData}
           />
         </div>

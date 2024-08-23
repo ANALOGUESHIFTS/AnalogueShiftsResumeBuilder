@@ -1,229 +1,162 @@
-import React from "react";
-
-const FreelanceResume = ({ data }) => {
+export default function FreelanceResume ({ data }) {
   return (
     <div className="outline-none">
-      <div className="flex h-full w-full lg:w-[800px] max-w-full">
-        {/* Left Panel */}
-        <div className="grid gap-16 bg-slate-700 text-white w-[40%] py-16 px-3 md:px-5">
-          {/* Contact Section */}
-          <div className="flex flex-col gap-5">
-            <p className="text-[3vw] md:text-xl font-semibold border-b pb-2">
-              Contact
-            </p>
-            {data.contactData["Phone"] && (
-              <div>
-                <p className="text-[3vw] md:text-xl font-semibold">Phone</p>
-                <span className="text-[2vw] md:text-sm">
-                  {data.contactData["Phone"]}
-                </span>
+      <div className="relative flex min-h-screen flex-col overflow-hidden bg-white py-6 sm:py-12">
+        <div class="m-3">
+          <div>
+            <p class="text-center text-3xl font-bold font-serif text-amber-800">{data.contactData["First Name"]} {data.contactData["Last Name"]}</p>
+            <p class="font-bold capitalize text-center text-2xl font-serif">{data.contactData["Desired Job Title"]}</p>
+            <p class="text-center bg-amber-700 pt-2 pb-2 font-serif">{data.contactData["City"]}, {data.contactData["State / Province"]} | {data.contactData["Phone"]} | {data.contactData["Email"]} | {data.contactData["LinkedIn Url"]} </p>
+          </div>
+          <div class="grid grid-cols-12 mt-3">
+            <div class="col-span-4 text-amber-700 font-bold uppercase">
+              <p>career objective</p>
+            </div>
+            <div class="col-span-8 ml-4">
+              {data.summaryData}
+            </div>
+          </div>
+          <div class="grid grid-cols-12 mt-2">
+            <div class="col-span-4 text-amber-700 font-bold uppercase mr-[2px]">
+              Professional experience 
+            </div>
+            <div class="col-span-8">
+              {data.experienceData.map((experience, index) => (
+                <div key={index} >
+                  <div>
+                    <ul class="grid grid-cols-2 border-l-[4px] border-amber-700 pl-4">
+                    <li class="font-bold text-amber-700 capitalize">{experience.jobTitle}</li>
+                    <li>{experience.startMonth} {experience.startYear} -{" "}
+                    {experience.currentlyWorkHere ? "Present" : `${experience.endMonth} ${experience.endYear}`}</li>
+                    <li>{experience.companyName} | {experience.city}, {experience.State}</li>
+                  </ul>
+                  <ul class="border-l-[2px] list-disc list-inside list pl-4">
+                  {experience.description.split('\n').map((desc, descIndex) => (
+                    <li key={descIndex}>{desc}</li>
+                  ))}
+                  </ul>
+                  </div>
+              </div>
+              ))}
+            </div>
+          </div>
+          {data.referencesData.length > 0 && (
+            <div class="grid grid-cols-12 mt-2">
+                <div class="col-span-4 font-bold uppercase">
+                  <p class="mt-3 font-bold uppercase text-amber-700">reference</p>
+                </div>
+                <div class="col-span-8 ml-4">
+                  {data.referencesData.map((reference, index) => (
+                    <div key={index} className="flex flex-col gap-2 ml-2">
+                      <p className="font-semibold">
+                          {reference.firstName} {reference.lastName}
+                      </p>
+                      <p>
+                          {reference.positionTitle} - {reference.companyName}
+                      </p>
+                      <p>
+                          Phone: {reference.phone}
+                      </p>
+                      <p>
+                          Email: {reference.email}
+                      </p>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
+          <div class="grid grid-cols-12 mt-2">
+            <div class="col-span-4 text-amber-700 font-bold uppercase">
+              education
+            </div>
+            {data.educationData.map((education, index) => (
+              <div key={index} class="col-span-8 ml-4">
+                <p class="grid grid-cols-2">
+                  <span class="font-bold text-amber-700 capitalize">{education.degreeOfProgram} in {education.fieldOfStudy}</span>
+                  <span class="text-right">{education.graduationMonth}, {education.graduationYear}</span>
+                </p>
+                <p>{education.schoolName}, {education.schoolLocation}</p>
+                <p class="italic">{education.additionalInfo}</p>
+              </div>
+            ))}
+            
+          </div>
+          <div>
+            {data.certificationData[0] && (
+              <div class="grid grid-cols-12 mt-2">
+                <div class="col-span-4 text-amber-700 font-bold uppercase">
+                  certifications
+                </div>
+                <div class="col-span-8 ml-4">
+                  <ul class="list-disc ml-5">
+                  {data.certificationData.map((certification, index) => (
+                    <li key={index}>{certification.certification}</li>
+                  ))}
+                  </ul>
+                </div>
               </div>
             )}
-            <div>
-              <p className="text-[3vw] md:text-xl font-semibold">Email</p>
-              <span className="text-[2vw] md:text-sm">
-                {data.contactData["Email"]}
-              </span>
+          </div>
+          <div>
+            {data.finalizeData.awards[0] && (
+              <div class="grid grid-cols-12 mt-2">
+                <div class="col-span-4 text-amber-700 font-bold uppercase">
+                  awards
+                </div>
+                <div class="col-span-8 ml-4">
+                  <ul class="list-disc ml-5">
+                  {data.finalizeData.awards.map((award, index) => (
+                    <li key={index}>{award.award}</li>
+                  ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+          <div>
+            {data.finalizeData.customDatas[0] && data.finalizeData.customDatas.map((custom, index) =>(
+              <div key={index} class="grid grid-cols-12 mt-2">
+                <div class="col-span-4 text-amber-700 font-bold uppercase">
+                  {custom.name}
+                </div>
+                <div class="col-span-8 ml-4">
+                <p>{custom.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="grid grid-cols-12 mt-2">
+            <div class="col-span-4 text-amber-700 font-bold uppercase">
+              skills
             </div>
-            <div>
-              <p className="text-[3vw] md:text-xl font-semibold">Address</p>
-              <span className="text-[2vw] md:text-sm">
-                {data.contactData["City"] && data.contactData["City"] + ", "}
-                {data.contactData["State / Province"] &&
-                  data.contactData["State / Province"] + ", "}
-                {data.contactData["Country"] && data.contactData["Country"]}
-              </span>
+            <div class="col-span-8 ml-4">
+              <ul class="list-disc ml-5">
+              {data.skillsData.map((skill, index) => (
+                <li key={index}>{skill.skill}</li>
+              ))}
+              </ul>
             </div>
           </div>
-          {/* Education Section */}
-          {data.educationData[0] && (
-            <div className="flex flex-col gap-5">
-              <p className="text-[3vw] md:text-xl font-semibold border-b pb-2">
-                Education
-              </p>
-              {data.educationData.map((education) => (
-                <div key={crypto.randomUUID()} className="flex flex-col gap-3">
-                  <span className="text-[2vw] md:text-sm">
-                    {education.graduationYear}
-                  </span>
-                  <span className="text-[2vw] md:text-sm font-semibold">
-                    {education.degreeOfProgram} - {education.fieldOfStudy}
-                  </span>
-                  <span className="text-[2vw] md:text-sm">
-                    {education.schoolName}
-                  </span>
+          
+          <div>
+            {data.finalizeData.publications[0] && (
+              <div class="grid grid-cols-12 mt-2">
+                <div class="col-span-4 text-amber-700 font-bold uppercase">
+                  publications
                 </div>
-              ))}
-            </div>
-          )}
-          {/* Skills Section */}
-          {data.skillsData[0] && (
-            <div className="flex flex-col gap-5">
-              <p className="text-[3vw] md:text-xl font-semibold border-b pb-2">
-                Expertise
-              </p>
-              <div className="flex flex-col gap-3">
-                {data.skillsData.map((skill) => (
-                  <p
-                    key={skill.id}
-                    className="text-[2vw] md:text-sm font-semibold"
-                  >
-                    {skill.skill}
-                  </p>
-                ))}
+                <div class="col-span-8 ml-4">
+                  <ul class="list-disc ml-5">
+                  {data.finalizeData.awards.map((publications, index) => (
+                    <li key={index}>{publications.publications}</li>
+                  ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          )}
-          {/* Certifications Section */}
-          {data.certificationData[0] && (
-            <div className="flex flex-col gap-2">
-              <p className="text-[3vw] md:text-xl font-semibold border-b pb-2">
-                Certifications
-              </p>
-              <div className="flex flex-col gap-3">
-                {data.certificationData.map((certification) => (
-                  <p
-                    key={certification.id}
-                    className="text-[2vw] md:text-sm font-semibold"
-                  >
-                    {certification.certification}
-                  </p>
-                ))}
-              </div>
-            </div>
-          )}
-          {/* Awards Section */}
-          {data.finalizeData.awards[0] && (
-            <div className="flex flex-col gap-2">
-              <p className="text-[3vw] md:text-xl font-semibold border-b pb-2">
-                Awards
-              </p>
-              <div className="flex flex-col gap-3">
-                {data.finalizeData.awards.map((award) => (
-                  <p
-                    key={award.id}
-                    className="text-[2vw] md:text-sm font-semibold"
-                  >
-                    {award.award}
-                  </p>
-                ))}
-              </div>
-            </div>
-          )}
-          {/* Publications Section */}
-          {data.finalizeData.publications[0] && (
-            <div className="flex flex-col gap-2">
-              <p className="text-[3vw] md:text-xl font-semibold border-b pb-2">
-                Publications
-              </p>
-              <div className="flex flex-col gap-3">
-                {data.finalizeData.publications.map((publication) => (
-                  <p
-                    key={publication.id}
-                    className="text-[2vw] md:text-sm font-semibold"
-                  >
-                    {publication.publication}
-                  </p>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-        {/* Right Panel */}
-        <div className="grid gap-5 bg-white w-[60%] py-16 px-5 md:px-16">
-          <div className="flex flex-col gap-5">
-            {/* Name and Job Title Section */}
-            <p className="text-[4vw] md:text-base pb-2 border-b">
-              {data.contactData["First Name"]} {data.contactData["Last Name"]}
-            </p>
-            <div>
-              <p className="text-[3vw] md:text-xl py-4">
-                {data.contactData["Desired Job Title"]}
-              </p>
-              {/* Summary Section */}
-              {data.summaryData.split(">")[1][0] !== "<" && (
-                <span
-                  dangerouslySetInnerHTML={{ __html: data.summaryData }}
-                  className="text-[2vw] md:text-sm text-gray-700 text-justify"
-                ></span>
-              )}
-            </div>
+            )}
           </div>
-          {/* Experience Section */}
-          {data.experienceData[0] && (
-            <div className="flex flex-col gap-3">
-              <p className="text-[3vw] md:text-xl pb-2 border-b">Experience</p>
-              {data.experienceData.map((experience) => (
-                <div className="flex flex-col gap-3" key={crypto.randomUUID()}>
-                  <span className="text-[2.5vw] md:text-sm font-semibold text-gray-700">
-                    {experience.startMonth} {experience.startYear} -{" "}
-                    {experience.currentlyWorkHere
-                      ? "Present"
-                      : `${experience.endMonth} ${experience.endYear}`}
-                  </span>
-                  <span className="text-gray-700 text-[2.5vw] md:text-sm">
-                    {experience.companyName} | {experience.country}
-                    {experience.state.trim().length > 0 &&
-                      `, ${experience.state}`}
-                    {experience.city.trim().length > 0 &&
-                      `, ${experience.city}`}
-                  </span>
-                  <span className="text-[2.5vw] md:text-sm font-semibold text-gray-700">
-                    {experience.jobTitle}
-                  </span>
-                  <span className="text-[2vw] md:text-sm text-gray-700 text-justify">
-                    {experience.description}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-          {/* References Section */}
-          {data.referencesData[0] && (
-            <div>
-              <p className="text-[3vw] md:text-xl pb-2 border-b">References</p>
-              <div className="grid grid-cols-2 justify-between">
-                {data.referencesData.map((reference) => (
-                  <div
-                    className="flex flex-col gap-3"
-                    key={crypto.randomUUID()}
-                  >
-                    <span className="text-[2.5vw] md:text-sm font-semibold text-gray-700">
-                      {reference.firstName} {reference.lastName}
-                    </span>
-                    <span className="text-gray-700 text-[2.5vw] md:text-sm">
-                      {reference.positionTitle} - {reference.companyName}
-                    </span>
-                    <span className="text-[2vw] md:text-sm text-gray-700">
-                      Phone: {reference.phone}
-                    </span>
-                    <span className="text-[2vw] md:text-sm text-gray-700">
-                      Email: {reference.email}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-          {/* Custom Data Section */}
-          {data.finalizeData.customDatas[0] && (
-            <div>
-              {data.finalizeData.customDatas.map((custom) => (
-                <div key={crypto.randomUUID()}>
-                  <p className="text-[3vw] md:text-xl pb-2 mb-3 border-b">
-                    {custom.name}
-                  </p>
-                  <span className="text-[2vw] md:text-sm text-gray-700 text-justify">
-                    {custom.description}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default FreelanceResume;
