@@ -14,7 +14,7 @@ export default function ValidateToken() {
 
     if (!token) {
       // If no token, redirect the user to the external auth page
-      window.location.href = "https://auth.analogueshifts.com";
+      window.location.href = "https://auth.analogueshifts.app?app=resume";
     } else {
       // If token exists, grant access (redirect to the dashboard or home page)
       router.push("/my-resumes"); // Redirect to dashboard or desired page
