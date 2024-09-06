@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { inputs } from "@/utils/resume-builder/builder/contact";
-import { errorToast } from "@/utils/error-toast";
+//import { errorToast } from "@/utils/error-toast";
 
 export default function ContactSection() {
   const router = useRouter();
