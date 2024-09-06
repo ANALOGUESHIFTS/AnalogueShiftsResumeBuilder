@@ -4,12 +4,13 @@ import { plans } from "@/utils/resume-builder/builder/finish";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import Link from "next/link";
-
+import resumeTemplates from "@/resources/resume-builder/resume-templates.json";
 import GuestLayout from "@/components/application/layouts/guest";
 import CheckoutForm from "./checkout-form";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);
+  const [TemplateComponent, setTemplateComponent] = useState(null);  // Add this state for the template component
   const [selectedPaymentMenu, setSelectedPaymentMenu] = useState("14-day");
   const [user, setUser] = useState(null);
   const router = useRouter();
@@ -24,6 +25,22 @@ export default function FinishYourResume() {
       setUser(JSON.parse(authData));
     }
   }, []);
+
+  useEffect(() => {
+    if (data) {
+      const templateEntry = resumeTemplates.find(template => template.id === data.template);
+      if (templateEntry && templateEntry.linkToTemplate) {
+        import(`@/components/application/templates/resume/${data.template}`).then(module => {
+          const TemplateComponent = module.default;
+          setTemplateComponent(() => TemplateComponent);
+        }).catch(error => {
+          console.error("Error importing template:", error);
+        });
+      } else {
+        console.error("Template path not found for:", data.template);
+      }
+    }
+  }, [data]);
 
   const handleContinueForFree = () => {
     if (!user) {
@@ -41,11 +58,16 @@ export default function FinishYourResume() {
         <p className=" text-[2.2rem] max-w-[90%] w-[900px] px-5 text-center max-[900px]:text-xl font-extrabold text-black/80">
           Upgrade now for Unlimited Access to all pro features!
         </p>
-        <div className="w-full mt-8 lg:mt-3  flex flex-col lg:flex-row justify-between h-max min-h-[650px] ">
-          <div className="relative w-full lg:w-[calc(50%-15px)]  h-[600px] ">
+        <div className="w-full mt-8 lg:mt-3 flex flex-col lg:flex-row justify-between h-max min-h-[650px]">
+          <div className="relative w-full lg:w-[calc(50%-15px)] h-[600px]">
             <div className="lg:w-[65%] w-[90%] h-[600px] bg-AnalogueShiftsTextColor fancy-border-radius"></div>
-            <div className="resume-box lg:w-[85%] w-[calc(100%-40px)]  h-[calc(100%-90px)] left-[20px] lg:left-[15%] absolute top-[45px] overflow-y-auto shadow-lg">
+            <div className="resume-box lg:w-[85%] w-[calc(100%-40px)] h-[calc(100%-90px)] left-[20px] lg:left-[15%] absolute top-[45px] overflow-y-auto shadow-lg">
               {/* Render Preview Of Resume With User Info */}
+              {TemplateComponent ? (
+                <TemplateComponent data={data} />
+              ) : (
+                <div>Loading...</div>
+              )}
             </div>
           </div>
           <div className=" lg:w-[calc(50%-15px)] w-full flex flex-col items-center lg:items-start gap-6 pt-12 pr-[20px]">
@@ -113,7 +135,7 @@ export default function FinishYourResume() {
             {data && (
               <button
                 onClick={handleContinueForFree}
-                className="lg:w-[65%] flex justify-center max-w-[90%] md:max-w-full w-[600px] py-2.5  rounded-full border border-black/20 text-black/80 text-base font-bold"
+                className="lg:w-[65%] flex justify-center max-w-[90%] md:max-w-full w-[600px] py-2.5 rounded-full border border-black/20 text-black/80 text-base font-bold"
               >
                 Download For Free
               </button>
