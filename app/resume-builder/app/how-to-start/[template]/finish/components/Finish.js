@@ -1,19 +1,22 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { plans } from "@/utils/resume-builder/builder/finish";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import Link from "next/link";
+import html2canvas from "html2canvas";
 import resumeTemplates from "@/resources/resume-builder/resume-templates.json";
 import GuestLayout from "@/components/application/layouts/guest";
 import CheckoutForm from "./checkout-form";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);
-  const [TemplateComponent, setTemplateComponent] = useState(null);  // Add this state for the template component
+  const [TemplateComponent, setTemplateComponent] = useState(null);
+  const [imageSrc, setImageSrc] = useState(null);
   const [selectedPaymentMenu, setSelectedPaymentMenu] = useState("14-day");
   const [user, setUser] = useState(null);
   const router = useRouter();
+  const templateRef = useRef();
 
   useEffect(() => {
     const storedResumeData = localStorage.getItem("resumeInfo");
@@ -42,6 +45,18 @@ export default function FinishYourResume() {
     }
   }, [data]);
 
+  // Convert the rendered template to an image using html2canvas
+  useEffect(() => {
+    if (TemplateComponent && data) {
+      html2canvas(templateRef.current).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        setImageSrc(imgData);
+      }).catch(error => {
+        console.error("Error generating image:", error);
+      });
+    }
+  }, [TemplateComponent, data]);
+
   const handleContinueForFree = () => {
     if (!user) {
       router.push("/login");
@@ -63,10 +78,12 @@ export default function FinishYourResume() {
             <div className="lg:w-[65%] w-[90%] h-[600px] bg-AnalogueShiftsTextColor fancy-border-radius"></div>
             <div className="resume-box lg:w-[85%] w-[calc(100%-40px)] h-[calc(100%-90px)] left-[20px] lg:left-[15%] absolute top-[45px] overflow-y-auto shadow-lg">
               {/* Render Preview Of Resume With User Info */}
-              {TemplateComponent ? (
-                <TemplateComponent data={data} />
+              {TemplateComponent && !imageSrc ? (
+                <div ref={templateRef}>
+                  <TemplateComponent data={data} />
+                </div>
               ) : (
-                <div>Loading...</div>
+                imageSrc ? <img src={imageSrc} alt="Resume Preview" /> : <div>Loading...</div>
               )}
             </div>
           </div>
