@@ -1,15 +1,15 @@
 "use client";
 import React, { createContext, useContext, useState } from "react";
 
-// Create a Context for the toast notifications
-const ToastContext = createContext();
+// Create the ToastContext
+const ToastContext = createContext(null);
 
 // Custom hook to use the ToastContext
 export const useToast = () => {
   return useContext(ToastContext);
 };
 
-// Provider component to wrap your application
+// ToastProvider component to wrap your application
 export const ToastProvider = ({ children }) => {
   const [toast, setToast] = useState("");
   const [message, setMessage] = useState("");
