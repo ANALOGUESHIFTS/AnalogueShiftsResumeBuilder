@@ -1,44 +1,86 @@
-"use client"; // Mark the component as client-side
-
+"use client";
+import Group from "@/public/images/login/group.png";
+import Avatar from "@/public/images/login/avatar.png";
+import LoadingComponent from "@/components/application/LoadingComponent";
+import Image from "next/image";
+import ApplicationLogo from "@/components/application/layout-components/application-logo";
 import { useEffect, useState } from "react";
+import { successToast } from "@/utils/success-toast";
+import { errorToast } from "@/utils/error-toast";
+import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 
-export default function ValidateToken() {
+export default function Login() {
   const [loading, setLoading] = useState(true); // To display "Verifying..." text while token is being checked
   const router = useRouter();
-
-  const getCookie = (name) => {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(";");
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) === " ") c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-  };
+  const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/login";
 
   useEffect(() => {
     // Check if the token exists in the cookies
-    const token = getCookie("analogueshifts");
+    const token = Cookies.get("analogueshifts");
 
-    if (!token) {
-      // If no token, redirect the user to the external auth page
-      window.location.href = "https://auth.analogueshifts.app?app=resume";
+    if (token) {
+      // If token exists, authenticate with it
+      authenticateWithToken(JSON.parse(token));
     } else {
-      // If token exists, grant access (redirect to the dashboard or home page)
-      router.push("/my-resumes"); // Redirect to dashboard or desired page
+      // If no token exists, redirect to external authentication
+      window.location.href = "https://auth.analogueshifts.app?app=resume";
     }
+  }, []);
 
-    setLoading(false); // Stop loading once token check is complete
-  }, [router]);
+  const authenticateWithToken = async (tokenData) => {
+    setLoading(true);
+    try {
+      // Replace with actual logic to validate the tokenData (e.g., making a request to the server)
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          secret_key: process.env.NEXT_PUBLIC_SECRET_KEY,
+        },
+        body: JSON.stringify({
+          token: tokenData.token,
+          device_token: crypto.randomUUID(),
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        successToast("Login Successful", "Redirecting You to your Dashboard.");
+        router.push("/my-resumes");
+      } else {
+        throw new Error("Token validation failed");
+      }
+    } catch (error) {
+      // If the token fails, clear the cookie and redirect to the auth page
+      Cookies.remove("analogueshifts");
+      errorToast(
+        "Failed To Login",
+        error?.response?.data?.message || error.message || "Failed To Login"
+      );
+      window.location.href = "https://auth.analogueshifts.app?app=resume";
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <main className="w-full h-max min-h-screen flex justify-center items-center">
-      {/* Display "Verifying..." text while the token is being checked */}
-      {loading ? (
-        <h2 className="text-2xl font-semibold">Verifying...</h2>
-      ) : null}
-    </main>
+    <>
+      {loading && <LoadingComponent />}
+      <main className="w-full h-max min-h-screen mx-auto flex justify-center items-center px-5 py-10">
+        <section className="max-w-full lg:w-[1000px] md:w-[800px] md:flex-row flex-col flex justify-between items-center">
+          <div className="lg:w-[450px] md:w-[350px] relative hidden md:flex justify-center items-center">
+            <Image src={Group} alt="Group Image" className="absolute" />
+            <Image src={Avatar} alt="Avatar Image" />
+          </div>
+          <div className="lg:w-[450px] md:w-[350px] flex flex-col">
+            <ApplicationLogo />
+            <div className="pt-11 w-full flex flex-col">
+              <p>Verifying</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
