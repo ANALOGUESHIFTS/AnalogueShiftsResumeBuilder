@@ -28,25 +28,30 @@ export default function ValidateToken() {
   useEffect(() => {
     const handleValidation = async () => {
       if (token) {
-        // Save the token as a cookie to be used later
-        setCookie("authToken", token, 7); // Cookie expires in 7 days
+        // Construct the URL to retrieve the user token
+        const userTokenUrl = `https://api.analogueshifts.app/api/app/callback/${token}`;
 
         try {
-          // Mock validation process
-          const isValid = true; // Replace with actual validation logic
+          // Fetch the user token
+          const response = await fetch(userTokenUrl);
+          if (!response.ok) throw new Error("Failed to fetch user token");
+          
+          const data = await response.json();
+          const userToken = data?.userToken; // Assuming the response contains a 'userToken'
 
-          if (isValid) {
-            alert("Token validated successfully!"); // Notify the user of success
+          // Save the user token as a cookie
+          setCookie("userToken", userToken, 7); // Cookie expires in 7 days
 
-            // Redirect the user after validation
-            setTimeout(() => {
-              router.push("/"); // Redirect to the homepage or any route
-            }, 1500); // Delay for user feedback
-          } else {
-            throw new Error("Token validation failed");
-          }
+          // Notify the user of success
+          alert("User token retrieved and stored successfully!");
+
+          // Redirect the user after validation
+          setTimeout(() => {
+            router.push("/"); // Redirect to the homepage or any route
+          }, 1500); // Delay for user feedback
+
         } catch (error) {
-          alert("Token validation failed!"); // Notify the user of failure
+          alert("Failed to retrieve user token!"); // Notify the user of failure
           router.push("/"); // Redirect to the homepage or any route
         }
       } else {
