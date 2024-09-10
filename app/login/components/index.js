@@ -17,7 +17,7 @@ export default function Login() {
 
   useEffect(() => {
     // Check if the token exists in the cookies
-    const token = Cookies.get("analogueshifts");
+    const token = Cookies.get("authToken");
 
     if (token) {
       // If token exists, authenticate with it
@@ -53,7 +53,7 @@ export default function Login() {
       }
     } catch (error) {
       // If the token fails, clear the cookie and redirect to the auth page
-      Cookies.remove("analogueshifts");
+      Cookies.remove("authToken");
       errorToast(
         "Failed To Login",
         error?.response?.data?.message || error.message || "Failed To Login"
@@ -76,7 +76,31 @@ export default function Login() {
           <div className="lg:w-[450px] md:w-[350px] flex flex-col">
             <ApplicationLogo />
             <div className="pt-11 w-full flex flex-col">
-              <p>Verifying</p>
+              <p className="font-medium text-lg text-tremor-content-grayText pb-4">
+                Welcome!
+              </p>
+              <p className="font-bold text-3xl text-[#292929] pb-5">
+                Sign Into Your Account
+              </p>
+              <div className="w-full pt-4 flex justify-center items-center gap-1">
+                <Link
+                  href="https://www.analogueshifts.com/forgot-password"
+                  className="font-normal cursor-pointer text-sm text-black/90"
+                >
+                  Forgotten Password?
+                </Link>
+              </div>
+              <div className="w-full pt-2 flex justify-center items-center gap-1">
+                <p className="font-normal text-sm text-black/90">
+                  Don&apos;t have an account?
+                </p>
+                <Link
+                  href="/register"
+                  className="font-normal text-sm text-tremor-background-darkYellow"
+                >
+                  Sign Up
+                </Link>
+              </div>
             </div>
           </div>
         </section>
