@@ -11,51 +11,49 @@ import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
-  const [loading, setLoading] = useState(true); // To display "Verifying..." text while token is being checked
+  const [loading, setLoading] = useState(true); // To display "Verifying..." text while fetching user data
+  const [userData, setUserData] = useState(null); // State to store user details
   const router = useRouter();
-  const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/login";
 
   useEffect(() => {
     // Check if the token exists in the cookies
     const token = Cookies.get("authToken");
 
     if (token) {
-      // If token exists, authenticate with it
-      authenticateWithToken(JSON.parse(token));
+      // If token exists, fetch user data with it
+      fetchUserData(JSON.parse(token));
     } else {
       // If no token exists, redirect to external authentication
       window.location.href = "https://auth.analogueshifts.app?app=resume";
     }
   }, []);
 
-  const authenticateWithToken = async (tokenData) => {
-    setLoading(true);
+  const fetchUserData = async (tokenData) => {
     try {
-      // Use the token directly for authentication
-      const res = await fetch(url, {
-        method: "POST",
+      const res = await fetch("https://api.analogueshifts.app/api/user", {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
           Authorization: `Bearer ${tokenData.token}`, // Pass the token in the Authorization header
         },
-        body: JSON.stringify({
-          device_token: crypto.randomUUID(),
-        }),
       });
+
+      if (!res.ok) throw new Error("Failed to fetch user information");
+
       const data = await res.json();
-      if (data.success) {
-        successToast("Login Successful", "Redirecting You to your Dashboard.");
-        router.push("/my-resumes");
-      } else {
-        throw new Error("Token validation failed");
-      }
+      setUserData(data); // Store the fetched user details in state
+
+      successToast("User Information Retrieved Successfully");
+      // Redirect to the dashboard or another route if needed
+      router.push("/my-resumes");
+
     } catch (error) {
-      // If the token fails, clear the cookie and redirect to the auth page
+      // Handle any errors by clearing the token and redirecting to auth page
       Cookies.remove("authToken");
       errorToast(
-        "Failed To Login",
-        error?.response?.data?.message || error.message || "Failed To Login"
+        "Failed To Retrieve User Information",
+        error.message || "Failed to fetch user data"
       );
       window.location.href = "https://auth.analogueshifts.app?app=resume";
     } finally {
@@ -76,8 +74,9 @@ export default function Login() {
             <ApplicationLogo />
             <div className="pt-11 w-full flex flex-col">
               <p className="font-medium text-lg text-tremor-content-grayText pb-4">
-                Verifying...
+                {loading ? "Verifying..." : `Welcome, ${userData?.name || "User"}`}
               </p>
+              {/* Additional UI to display user information can be added here */}
             </div>
           </div>
         </section>
