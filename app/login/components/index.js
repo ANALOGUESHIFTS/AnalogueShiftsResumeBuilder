@@ -77,30 +77,8 @@ export default function Login() {
             <ApplicationLogo />
             <div className="pt-11 w-full flex flex-col">
               <p className="font-medium text-lg text-tremor-content-grayText pb-4">
-                Welcome!
+                Verifying
               </p>
-              <p className="font-bold text-3xl text-[#292929] pb-5">
-                Sign Into Your Account
-              </p>
-              <div className="w-full pt-4 flex justify-center items-center gap-1">
-                <Link
-                  href="https://www.analogueshifts.com/forgot-password"
-                  className="font-normal cursor-pointer text-sm text-black/90"
-                >
-                  Forgotten Password?
-                </Link>
-              </div>
-              <div className="w-full pt-2 flex justify-center items-center gap-1">
-                <p className="font-normal text-sm text-black/90">
-                  Don&apos;t have an account?
-                </p>
-                <Link
-                  href="/register"
-                  className="font-normal text-sm text-tremor-background-darkYellow"
-                >
-                  Sign Up
-                </Link>
-              </div>
             </div>
           </div>
         </section>
