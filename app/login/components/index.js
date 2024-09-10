@@ -31,16 +31,15 @@ export default function Login() {
   const authenticateWithToken = async (tokenData) => {
     setLoading(true);
     try {
-      // Replace with actual logic to validate the tokenData (e.g., making a request to the server)
+      // Use the token directly for authentication
       const res = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          secret_key: process.env.NEXT_PUBLIC_SECRET_KEY,
+          Authorization: `Bearer ${tokenData.token}`, // Pass the token in the Authorization header
         },
         body: JSON.stringify({
-          token: tokenData.token,
           device_token: crypto.randomUUID(),
         }),
       });
@@ -77,7 +76,7 @@ export default function Login() {
             <ApplicationLogo />
             <div className="pt-11 w-full flex flex-col">
               <p className="font-medium text-lg text-tremor-content-grayText pb-4">
-                Verifying
+                Verifying...
               </p>
             </div>
           </div>
