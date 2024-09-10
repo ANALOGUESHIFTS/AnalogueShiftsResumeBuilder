@@ -17,7 +17,7 @@ export default function Login() {
 
   useEffect(() => {
     // Check if the token exists in the cookies
-    const token = Cookies.get("analogueshifts");
+    const token = Cookies.get("authToken");
 
     if (token) {
       // If token exists, authenticate with it
@@ -53,7 +53,7 @@ export default function Login() {
       }
     } catch (error) {
       // If the token fails, clear the cookie and redirect to the auth page
-      Cookies.remove("analogueshifts");
+      Cookies.remove("authToken");
       errorToast(
         "Failed To Login",
         error?.response?.data?.message || error.message || "Failed To Login"
@@ -76,7 +76,9 @@ export default function Login() {
           <div className="lg:w-[450px] md:w-[350px] flex flex-col">
             <ApplicationLogo />
             <div className="pt-11 w-full flex flex-col">
-              <p>Verifying</p>
+              <p className="font-medium text-lg text-tremor-content-grayText pb-4">
+                Verifying
+              </p>
             </div>
           </div>
         </section>
