@@ -1,47 +1,63 @@
 "use client"; // Mark the component as client-side
 
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-import Cookies from "js-cookie";
-import { useAuth } from "@/hooks/auth"; // Import the custom auth hook
+import { useRouter, useSearchParams } from "next/navigation"; // Next.js native hooks
+import { useEffect } from "react"; // React's useEffect hook
 
 export default function ValidateToken() {
   const searchParams = useSearchParams(); // Access query parameters
   const token = searchParams.get("token"); // Extract the token from the URL
   const router = useRouter(); // For programmatic navigation
 
-  const { validateApp, notifyUser } = useAuth(); // Use validateApp and notifyUser from the auth hook
+  const setCookie = (name, value, days) => {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000); // Set cookie expiration time
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`; // Save the cookie
+  };
+
+  const getCookie = (name) => {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(";");
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === " ") c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  };
 
   useEffect(() => {
     const handleValidation = async () => {
       if (token) {
         // Save the token as a cookie to be used later
-        Cookies.set("authToken", token, { expires: 7 }); // Cookie expires in 7 days
+        setCookie("authToken", token, 7); // Cookie expires in 7 days
 
         try {
-          // Validate the token using the validateApp function from useAuth
-          await validateApp({ appToken: token });
+          // Mock validation process
+          const isValid = true; // Replace with actual validation logic
 
-          // Notify the user of success after validation
-          notifyUser("success", "Token validated successfully", "right");
+          if (isValid) {
+            alert("Token validated successfully!"); // Notify the user of success
 
-          // Redirect the user after validation
-          setTimeout(() => {
-            router.push("/"); // Redirect to the homepage or any route
-          }, 1500); // Delay for user feedback
+            // Redirect the user after validation
+            setTimeout(() => {
+              router.push("/"); // Redirect to the homepage or any route
+            }, 1500); // Delay for user feedback
+          } else {
+            throw new Error("Token validation failed");
+          }
         } catch (error) {
-          notifyUser("error", "Token validation failed", "right");
+          alert("Token validation failed!"); // Notify the user of failure
           router.push("/"); // Redirect to the homepage or any route
         }
       } else {
         // If no token is found, redirect to the saved redirection link or default route
-        let RedirectionLink = Cookies.get("RedirectionLink");
+        let RedirectionLink = getCookie("RedirectionLink");
         router.push(RedirectionLink || "/"); // Redirect to the saved link or the homepage
       }
     };
 
     handleValidation(); // Execute the validation logic
-  }, [token, router, validateApp, notifyUser]); // Dependency array includes token, router, and auth functions
+  }, [token, router]); // Dependency array includes token and router
 
   return (
     <main className="w-full h-max py-28 flex justify-center items-center">
