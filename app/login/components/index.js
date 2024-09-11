@@ -38,6 +38,8 @@ export default function Login() {
           Authorization: `Bearer ${token}`, // Pass the token in the Authorization header
         },
       });
+      
+      console.log(res);
 
       if (!res.ok) throw new Error("Failed to fetch user information");
 
