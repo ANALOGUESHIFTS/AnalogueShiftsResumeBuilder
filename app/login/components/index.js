@@ -21,21 +21,21 @@ export default function Login() {
 
     if (token) {
       // If token exists, fetch user data with it
-      fetchUserData(JSON.parse(token));
+      fetchUserData(token); // Pass the token as a string
     } else {
       // If no token exists, redirect to external authentication
       window.location.href = "https://auth.analogueshifts.app?app=resume";
     }
   }, []);
 
-  const fetchUserData = async (tokenData) => {
+  const fetchUserData = async (token) => {
     try {
       const res = await fetch("https://api.analogueshifts.app/api/user", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: `Bearer ${tokenData.token}`, // Pass the token in the Authorization header
+          Authorization: `Bearer ${token}`, // Pass the token in the Authorization header
         },
       });
 
@@ -70,7 +70,7 @@ export default function Login() {
             <Image src={Group} alt="Group Image" className="absolute" />
             <Image src={Avatar} alt="Avatar Image" />
           </div>
-          <div className="lg:w-[450px] md:w-[350px] flex flex-col">
+          <div className="lg:w-[450px] md:w/[350px] flex flex-col">
             <ApplicationLogo />
             <div className="pt-11 w-full flex flex-col">
               <p className="font-medium text-lg text-tremor-content-grayText pb-4">
