@@ -37,17 +37,17 @@ export default function ValidateToken() {
           if (!response.ok) throw new Error("Failed to fetch user token");
           
           const data = await response.json();
-          const userToken = data?.userToken; // Assuming the response contains a 'userToken'
+          const userToken = data?.userToken;
 
           // Save the user token as a cookie
-          setCookie("userToken", userToken, 7); // Cookie expires in 7 days
+          setCookie("analogueshifts", userToken, 7); // Cookie expires in 7 days
 
           // Notify the user of success
           alert("User token retrieved and stored successfully!");
 
           // Redirect the user after validation
           setTimeout(() => {
-            router.push("/"); // Redirect to the homepage or any route
+            router.push("/login"); // Redirect to the homepage or any route
           }, 1500); // Delay for user feedback
 
         } catch (error) {

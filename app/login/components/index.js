@@ -17,7 +17,7 @@ export default function Login() {
 
   useEffect(() => {
     // Check if the token exists in the cookies
-    const token = Cookies.get("authToken");
+    const token = Cookies.get("analogueshifts");
 
     if (token) {
       // If token exists, fetch user data with it
