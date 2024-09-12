@@ -39,6 +39,8 @@ export default function Resumes() {
     }
   };
 
+  console.log(fetchUserData)
+
   if (loading) {
     return <p>Loading...</p>; // Display loading state
   }
