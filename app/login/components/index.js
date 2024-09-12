@@ -4,7 +4,7 @@ import Avatar from "@/public/images/login/avatar.png";
 import LoadingComponent from "@/components/application/LoadingComponent";
 import Image from "next/image";
 import ApplicationLogo from "@/components/application/layout-components/application-logo";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { successToast } from "@/utils/success-toast";
 import { errorToast } from "@/utils/error-toast";

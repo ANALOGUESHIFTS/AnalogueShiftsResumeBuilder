@@ -77,7 +77,7 @@ export default function ContactSection() {
 
   // Upload File To DataBase
   const uploadFile = async (file) => {
-    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/upload";
+    const url = process.env.NEXT_PUBLIC_FILE_UPLOAD_URL + "/upload";
     const axios = require("axios");
     const formData = new FormData();
     formData.append("upload", file);
