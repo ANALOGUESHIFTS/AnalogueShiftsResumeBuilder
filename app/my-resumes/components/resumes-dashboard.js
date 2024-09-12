@@ -3,41 +3,44 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
 export default function Resumes() {
-  const [user, setUser] = useState(null); // State to store user information
-  const [loading, setLoading] = useState(true); // State to manage loading status
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const authToken = Cookies.get("analogueshifts"); // Retrieve the stored token
 
+    const fetchUserData = async (token) => {
+      try {
+        const res = await fetch("https://api.analogueshifts.app/api/user", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+  
+        if (!res.ok) throw new Error("Failed to fetch user information");
+  
+        const data = await res.json();
+        setUser(data); // Store the user details in state
+      } catch (error) {
+        console.error("Error fetching user data:", error.message);
+      } finally {
+        setLoading(false); // Stop loading after the fetch is complete
+      }
+    };
+
     if (authToken) {
       // If token exists, fetch user data from the API
+      console.log("user token exists")
       fetchUserData(authToken);
     } else {
       setLoading(false); // No token, stop loading
     }
   }, []);
 
-  const fetchUserData = async (token) => {
-    try {
-      const res = await fetch("https://api.analogueshifts.app/api/user", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: `Bearer ${token}`, // Pass the token in the Authorization header
-        },
-      });
-
-      if (!res.ok) throw new Error("Failed to fetch user information");
-
-      const data = await res.json();
-      setUser(data); // Store the user details in state
-    } catch (error) {
-      console.error("Error fetching user data:", error.message);
-    } finally {
-      setLoading(false); // Stop loading after the fetch is complete
-    }
-  };
+ 
 
   console.log(fetchUserData)
 
