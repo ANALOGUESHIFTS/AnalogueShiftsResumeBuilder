@@ -16,6 +16,8 @@ export default function Login() {
     // Check if the token exists in the cookies
     const token = Cookies.get("analogueshifts");
 
+    console.log('The User token is' + token)
+
     if (token) {
       // If token exists, redirect to /my-resumes
       router.push("/my-resumes");
