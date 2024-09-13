@@ -2,17 +2,18 @@
 import { useState, useRef, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { inputs } from "@/utils/resume-builder/builder/contact";
-import { errorToast } from "@/utils/error-toast";
+//import { errorToast } from "@/utils/error-toast";
 
 export default function ContactSection() {
   const router = useRouter();
   const pathname = usePathname();
-  const [imageUrl, setImageUrl] = useState(null);
+  // const [imageUrl, setImageUrl] = useState(null); // Commented out image state
   const chosenTemplate = pathname.split("/")[4];
   const [formData, setFormData] = useState(inputs);
-  const imageRef = useRef();
+  // const imageRef = useRef(); // Commented out image ref
 
   // Handling Image Upload
+  /*
   const handleImageChange = async (event) => {
     const maxFileSize = 5 * 1024 * 1024;
     const selectedFile = event.target.files[0];
@@ -27,6 +28,7 @@ export default function ContactSection() {
       uploadFile(selectedFile);
     }
   };
+  */
 
   // Handling Form Input Change
   const handleInputChange = (label, value) => {
@@ -45,9 +47,10 @@ export default function ContactSection() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Create The Contact Information Object
-    const data = { imageUrl: imageUrl };
+    // const data = { imageUrl: imageUrl }; // Commented out imageUrl
 
     // Iterate Over The FormData Array and Add Each input to the Contact Object
+    const data = {};
     formData.forEach((item) => {
       data[item.label] = item.value;
     });
@@ -76,6 +79,7 @@ export default function ContactSection() {
   };
 
   // Upload File To DataBase
+  /*
   const uploadFile = async (file) => {
     const url = process.env.NEXT_PUBLIC_FILE_UPLOAD_URL + "/upload";
     const axios = require("axios");
@@ -104,6 +108,7 @@ export default function ContactSection() {
       );
     }
   };
+  */
 
   // Checking For Stored Resume data
   useEffect(() => {
@@ -124,6 +129,8 @@ export default function ContactSection() {
 
   return (
     <div className="w-full flex flex-col ">
+      {/* Image input and image preview are commented out */}
+      {/*
       <input
         onChange={handleImageChange}
         ref={imageRef}
@@ -131,11 +138,15 @@ export default function ContactSection() {
         type="file"
         className="-z-10 opacity-0 absolute"
       />
+      */}
       <p className="font-extrabold text-3xl text-black/80 pb-5">Contact</p>
       <p className="text-base text-black/80 pb-6">
         Let&apos;s start with the basics. To ensure employers can reach you,
         input at least your name, email, and phone number.
       </p>
+
+      {/* Image display section commented out */}
+      {/*
       <div className="w-full flex items-center gap-4 mb-6">
         <div className="w-24 h-24 rounded-lg bg-white border-gray-200 border-dashed border-2 flex justify-center items-center">
           {!imageUrl && (
@@ -163,6 +174,8 @@ export default function ContactSection() {
           </button>
         </div>
       </div>
+      */}
+      
       <form
         onSubmit={handleFormSubmit}
         method="post"
