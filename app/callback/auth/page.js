@@ -37,6 +37,7 @@ export default function ValidateToken() {
           if (!response.ok) throw new Error("Failed to fetch user token");
           
           const data = await response.json();
+          console.log(data)
           const userToken = data?.userToken;
 
           // Save the user token as a cookie
@@ -48,7 +49,7 @@ export default function ValidateToken() {
           // Redirect the user after validation
           setTimeout(() => {
             router.push("/login"); // Redirect to the homepage or any route
-          }, 1500); // Delay for user feedback
+          }, 6000); // Delay for user feedback
 
         } catch (error) {
           alert("Failed to retrieve user token!"); // Notify the user of failure
