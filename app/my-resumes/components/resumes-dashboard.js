@@ -21,9 +21,8 @@ export default function Resumes() {
   const fetchUserData = async (token) => {
     try {
       const res = await fetch("https://api.analogueshifts.app/api/user", {
-        method: "POST",
+        method: "GET",
         headers: {
-          "Content-Type": "application/json",
           Accept: "application/json",
           Authorization: `Bearer ${token}`, // Pass the token in the Authorization header
         },
@@ -32,6 +31,9 @@ export default function Resumes() {
       if (!res.ok) throw new Error("Failed to fetch user information");
 
       const data = await res.json();
+
+      console.log(data)
+
       setUser(data); // Store the user details in state
     } catch (error) {
       console.error("Error fetching user data:", error.message);
@@ -40,7 +42,7 @@ export default function Resumes() {
     }
   };
 
-  console.log(fetchUserData)
+  
 
   if (loading) {
     return <p>Loading...</p>; // Display loading state
@@ -50,7 +52,7 @@ export default function Resumes() {
     <main className="w-full h-auto pt-[80px]">
       <main className="py-10 bg-[rgb(43,58,69)] px-10 max-[800px]:px-5">
         <p className="pb-5 text-base font-semibold text-white">
-          Welcome Back, {user?.first_name || "User"}!
+          Welcome Back, {data.first_name || "User"}!
         </p>
         <p className="pb-10 font-bold text-white text-xl">
           Edit and Download Professional resumes to get your dream Job!
