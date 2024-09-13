@@ -21,7 +21,7 @@ export default function Resumes() {
   const fetchUserData = async (token) => {
     try {
       const res = await fetch("https://api.analogueshifts.app/api/user", {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -40,7 +40,7 @@ export default function Resumes() {
     }
   };
 
-  console.log(fetchUserData)
+  console.log(user)
 
   if (loading) {
     return <p>Loading...</p>; // Display loading state
