@@ -17,6 +17,7 @@ export default function FinishYourResume() {
   const [user, setUser] = useState(null);
   const router = useRouter();
   const templateRef = useRef();
+  const containerRef = useRef(); // Reference for the container to get its dimensions
 
   useEffect(() => {
     const storedResumeData = localStorage.getItem("resumeInfo");
@@ -76,14 +77,54 @@ export default function FinishYourResume() {
         <div className="w-full mt-8 lg:mt-3 flex flex-col lg:flex-row justify-between h-max min-h-[650px]">
           <div className="relative w-full lg:w-[calc(50%-15px)] h-[600px]">
             <div className="lg:w-[65%] w-[90%] h-[600px] bg-AnalogueShiftsTextColor fancy-border-radius"></div>
-            <div className="resume-box lg:w-[85%] w-[calc(100%-40px)] h-[calc(100%-90px)] left-[20px] lg:left-[15%] absolute top-[45px] overflow-y-auto shadow-lg">
+            <div
+              className="resume-box lg:w-[85%] w-[calc(100%-40px)] h-[calc(100%-90px)] left-[20px] lg:left-[15%] absolute top-[45px] overflow-hidden shadow-lg"
+              ref={containerRef} // Reference for the container
+            >
+              {/* Watermark over entire image in diagonal */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  backgroundImage: "url('data:image/svg+xml;base64," + btoa(`
+                    <svg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'>
+                      <text x='50%' y='50%' fill='rgba(0, 0, 0, 0.05)' font-size='60' text-anchor='middle' dominant-baseline='middle' transform='rotate(-45 400 400)'>
+                        ANALOGUESHIFTS RESUME BUILDER
+                      </text>
+                    </svg>
+                  `) + "')",
+                  backgroundRepeat: "repeat",
+                  backgroundSize: "400px 400px",
+                }}
+              />
               {/* Render Preview Of Resume With User Info */}
               {TemplateComponent && !imageSrc ? (
-                <div ref={templateRef}>
+                <div
+                  ref={templateRef}
+                  className="relative"
+                  style={{
+                    height: "100%", // Make sure the template uses the full height of its container
+                    width: "auto",  // The width is adjusted automatically
+                    maxHeight: "100%", // Ensures the template won't overflow vertically
+                    maxWidth: "100%",  // Ensures the template won't overflow horizontally
+                    transform: `scale(${Math.min(
+                      containerRef.current?.clientWidth / templateRef.current?.clientWidth,
+                      containerRef.current?.clientHeight / templateRef.current?.clientHeight
+                    ) || 1})`,
+                    transformOrigin: "top left", // Ensures the scaling is done from the top-left corner
+                  }}
+                >
                   <TemplateComponent data={data} />
                 </div>
               ) : (
-                imageSrc ? <img src={imageSrc} alt="Resume Preview" /> : <div>Loading...</div>
+                imageSrc ? (
+                  <img
+                    src={imageSrc}
+                    alt="Resume Preview"
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <div>Loading...</div>
+                )
               )}
             </div>
           </div>
