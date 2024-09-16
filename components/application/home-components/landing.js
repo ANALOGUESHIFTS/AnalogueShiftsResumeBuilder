@@ -7,7 +7,7 @@ import methods from "@/resources/resume-builder/methods.json";
 export default function Landing() {
   return (
     <>
-      <main className="w-full box-border curvy-box h-[800px] relative pt-[150px] max-[1050px]:pt-[50px] px-10 max-[500px]:px-5 flex justify-between max-[1050px]:h-auto max-[1050px]:flex-col max-[1050px]:items-center">
+      <main className=" w-full box-border curvy-box h-[800px] relative pt-[150px] max-[1050px]:pt-[50px] px-10 max-[500px]:px-5 flex justify-between max-[1050px]:h-auto max-[1050px]:flex-col max-[1050px]:items-center">
         <div className="w-[50%] pr-[50px] max-[900px]:px-0 h-[610px] max-[800px]:h-auto max-[800px]:py-16 flex flex-col justify-center max-[1050px]:items-center max-[1050px]:w-full max-[1050px]:presume-0">
           <p className="text-black/50 max-[1050px]:text-center font-bold tracking-wide text-[13px]">
             THE BEST RESUME BUILDER ONLINE
@@ -36,7 +36,7 @@ export default function Landing() {
           <Image src={Hero} alt="Hero BG" />
         </div>
       </main>
-      <Image className="w-full absolute" src={curve} alt="Curve" />
+      <Image className="w-full absolute " src={curve} alt="Curve" />
       <div className="w-full px-10 h-auto py-[120px] max-[1000px]:py-[40px] flex flex-wrap gap-x-10 gap-y-10">
         {methods.map((data) => {
           return (

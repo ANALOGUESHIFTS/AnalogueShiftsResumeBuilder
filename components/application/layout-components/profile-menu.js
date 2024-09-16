@@ -1,87 +1,112 @@
-import Link from "next/link";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+"use client";
 import { useRouter } from "next/navigation";
-import { ChevronDown, Plus, LogOut, LayoutDashboard } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+
+import { AnimatePresence, motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-export default function ProfileDropDown({ user, logout }) {
+import Image from "next/image";
+import ChevronDown from "@/public/images/chevron-down.svg";
+import { useUser } from "@/contexts/user";
+import { useAuth } from "@/hooks/auth";
+
+export default function ProfileDropdown() {
+  const [isOpen, setIsOpen] = useState(false);
+  const { user } = useUser();
+  const { logout } = useAuth();
+
+  const dropdownRef = useRef(null);
   const router = useRouter();
 
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const closeDropdown = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", closeDropdown);
+    return () => {
+      document.removeEventListener("click", closeDropdown);
+    };
+  }, []);
+
+  const RenderMenu = ({ item }) => (
+    <button
+      onClick={() => item.action()}
+      className="w-max flex gap-4 items-center duration-300 hover:translate-x-1"
+    >
+      <Image width={40} height={40} src={item.image} alt="" />
+      <div className="flex flex-col items-start gap-1.5">
+        <h3 className="text-black font-semibold text-base">{item.title}</h3>
+        <p className="text-tremor-brand-boulder400 font-normal text-[9.8px]">
+          {item.description}
+        </p>
+      </div>
+    </button>
+  );
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="outline-none outline-transparent">
-        <div className="flex gap-2 items-center cursor-pointer p-1 rounded-full bg-gray-700/5 hover:bg-gray-700/10">
-          <Avatar className="w-8 h-8">
-            <AvatarImage
-              className="object-cover"
-              src={user?.user?.profile}
-              alt="Profile"
-            />
-            <AvatarFallback className="bg-tremor-background-darkYellow text-white text-sm font-bold">
-              {user?.user?.email.slice(0, 1)?.toUpperCase()}
-            </AvatarFallback>
-          </Avatar>
-          <h4 className="text-xs hidden md:block font-bold">
-            {user?.user?.first_name}{" "}
-            {user?.user?.last_name && " " + user.user.last_name}
-          </h4>
-          <div className="mr-2.5 ml-1">
-            <ChevronDown width={15} />
-          </div>
+    <div ref={dropdownRef} className="relative">
+      <div
+        onClick={toggleDropdown}
+        className="profile-menu hidden lg:flex gap-2 bg-gray-50 items-center cursor-pointer p-1 rounded-full"
+      >
+        <Avatar className="w-7 h-7">
+          <AvatarImage
+            className="object-cover"
+            src={user?.user_profile?.avatar}
+            alt="Profile"
+          />
+          <AvatarFallback className="bg-tremor-background-darkYellow text-white text-sm font-bold ">
+            {user?.email.slice(0, 1)?.toUpperCase()}
+          </AvatarFallback>
+        </Avatar>
+
+        <div className="profile-chevron duration-300">
+          <Image width={14} height={14} src={ChevronDown} alt="" />
         </div>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-72 max-w-full">
-        <div className="w-full px-5 py-4 flex flex-col gap-5">
-          <div className="w-full flex justify-between items-center">
-            <h3 className="text-base text-primary-boulder700 font-semibold">
-              Free
-            </h3>
-            <div className="p-1.5 rounded-lg bg-gray-700/5">
-              <p className="text-tremor-background-darkYellow text-xs fot-bold">
-                Current plan
-              </p>
-            </div>
-          </div>
-          <Link
-            className="w-full flex items-center h-12 text-sm text-tremor-brand-boulder950 font-semibold justify-center rounded-md border border-tremor-brand-boulder300 hover:bg-gray-700/5"
-            href=""
+      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="our-apps-menu flex flex-col gap-6 large:gap-8 w-max absolute top-10 rounded-[18px] -right-10 bg-white py-9 large:py-10 large:px-14 px-12"
           >
-            Manage Plan
-          </Link>
-        </div>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem
-          onClick={() => router.push("/resume-builder/app/how-to-start")}
-          className="px-5 py-4 focus:bg-gray-700/5 cursor-pointer text-sm font-semibold text-tremor-brand-boulder950"
-        >
-          <Plus className="mr-2 h-4 w-4" />
-          <span>Build Resume</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => router.push("/my-resumes")}
-          className="px-5 py-4 focus:bg-gray-700/5 cursor-pointer text-sm font-semibold text-tremor-brand-boulder950"
-        >
-          <LayoutDashboard className="mr-2 h-4 w-4" />
-          <span>My Resumes</span>
-        </DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem
-          onClick={logout}
-          className="px-5 py-4 focus:bg-gray-700/5 cursor-pointer text-sm font-semibold text-tremor-brand-boulder950"
-        >
-          <LogOut className="mr-2 h-4 w-4" />
-          <span>
-            Log out <br />{" "}
-            <small className="truncate">{user?.user?.email}</small>
-          </span>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+            <RenderMenu
+              item={{
+                title: "My Resumes",
+                description: "Overview of your resumes.",
+                image: "/images/profile/dashboard.svg",
+                action: () => router.push("/my-resumes"),
+              }}
+            />
+            <RenderMenu
+              item={{
+                title: "Create New Resume",
+                description: "Create a new resume",
+                image: "/images/profile/hire.svg",
+                action: () => router.push("/resume-builder/app/how-to-start"),
+              }}
+            />
+
+            <RenderMenu
+              item={{
+                title: "Log Out",
+                description: "End your session securely",
+                image: "/images/profile/logout.svg",
+                action: logout,
+              }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

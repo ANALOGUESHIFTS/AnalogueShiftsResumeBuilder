@@ -2,44 +2,44 @@
 import { useEffect, useState, useRef } from "react";
 import { plans } from "@/utils/resume-builder/builder/finish";
 import { useRouter } from "next/navigation";
-import Cookies from "js-cookie";
 import Link from "next/link";
 import html2canvas from "html2canvas";
 import resumeTemplates from "@/resources/resume-builder/resume-templates.json";
 import GuestLayout from "@/components/application/layouts/guest";
 import CheckoutForm from "./checkout-form";
+import { useUser } from "@/contexts/user";
 
 export default function FinishYourResume() {
   const [data, setData] = useState(null);
   const [TemplateComponent, setTemplateComponent] = useState(null);
   const [imageSrc, setImageSrc] = useState(null);
   const [selectedPaymentMenu, setSelectedPaymentMenu] = useState("14-day");
-  const [user, setUser] = useState(null);
+  const { user } = useUser();
   const router = useRouter();
   const templateRef = useRef();
   const containerRef = useRef(); // Reference for the container to get its dimensions
 
   useEffect(() => {
     const storedResumeData = localStorage.getItem("resumeInfo");
-    const authData = Cookies.get("analogueshifts");
     if (storedResumeData) {
       setData(JSON.parse(storedResumeData));
-    }
-    if (authData) {
-      setUser(JSON.parse(authData));
     }
   }, []);
 
   useEffect(() => {
     if (data) {
-      const templateEntry = resumeTemplates.find(template => template.id === data.template);
+      const templateEntry = resumeTemplates.find(
+        (template) => template.id === data.template
+      );
       if (templateEntry && templateEntry.linkToTemplate) {
-        import(`@/components/application/templates/resume/${data.template}`).then(module => {
-          const TemplateComponent = module.default;
-          setTemplateComponent(() => TemplateComponent);
-        }).catch(error => {
-          console.error("Error importing template:", error);
-        });
+        import(`@/components/application/templates/resume/${data.template}`)
+          .then((module) => {
+            const TemplateComponent = module.default;
+            setTemplateComponent(() => TemplateComponent);
+          })
+          .catch((error) => {
+            console.error("Error importing template:", error);
+          });
       } else {
         console.error("Template path not found for:", data.template);
       }
@@ -49,18 +49,20 @@ export default function FinishYourResume() {
   // Convert the rendered template to an image using html2canvas
   useEffect(() => {
     if (TemplateComponent && data) {
-      html2canvas(templateRef.current).then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        setImageSrc(imgData);
-      }).catch(error => {
-        console.error("Error generating image:", error);
-      });
+      html2canvas(templateRef.current)
+        .then((canvas) => {
+          const imgData = canvas.toDataURL("image/png");
+          setImageSrc(imgData);
+        })
+        .catch((error) => {
+          console.error("Error generating image:", error);
+        });
     }
   }, [TemplateComponent, data]);
 
   const handleContinueForFree = () => {
     if (!user) {
-      router.push("/login");
+      router.push("https://auth.analogueshifts.app?app=resume");
     } else {
       router.push(
         `/resume-builder/app/how-to-start/${data.template}/finish/download`
@@ -115,16 +117,10 @@ export default function FinishYourResume() {
                 >
                   <TemplateComponent data={data} />
                 </div>
+              ) : imageSrc ? (
+                <img src={imageSrc} alt="Resume Preview" />
               ) : (
-                imageSrc ? (
-                  <img
-                    src={imageSrc}
-                    alt="Resume Preview"
-                    className="w-full h-full object-contain"
-                  />
-                ) : (
-                  <div>Loading...</div>
-                )
+                <div>Loading...</div>
               )}
             </div>
           </div>

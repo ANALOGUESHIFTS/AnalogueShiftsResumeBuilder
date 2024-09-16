@@ -17,6 +17,12 @@ module.exports = {
       },
     },
     extend: {
+      zIndex: {
+        60: "60",
+        70: "70",
+        80: "80",
+        90: "90",
+      },
       colors: {
         as: "#E5BE39",
         AnalogueShiftsTextColor: "#FAE315",
@@ -81,6 +87,7 @@ module.exports = {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

@@ -2,11 +2,12 @@
 import { useState, useRef, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { inputs } from "@/utils/resume-builder/builder/contact";
-//import { errorToast } from "@/utils/error-toast";
+import { useToast } from "@/contexts/toast";
 
 export default function ContactSection() {
   const router = useRouter();
   const pathname = usePathname();
+  const { notifyUser } = useToast();
   // const [imageUrl, setImageUrl] = useState(null); // Commented out image state
   const chosenTemplate = pathname.split("/")[4];
   const [formData, setFormData] = useState(inputs);
@@ -18,9 +19,9 @@ export default function ContactSection() {
     const maxFileSize = 5 * 1024 * 1024;
     const selectedFile = event.target.files[0];
     if (selectedFile && selectedFile.size > maxFileSize) {
-      errorToast(
+      notifyUser("error"
         "File size exceeds the limit (5 MB)",
-        "File Size Must not exceed the Limit"
+        "right"
       );
       return;
     }
@@ -81,7 +82,7 @@ export default function ContactSection() {
   // Upload File To DataBase
   /*
   const uploadFile = async (file) => {
-    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/upload";
+    const url = process.env.NEXT_PUBLIC_FILE_UPLOAD_URL + "/upload";
     const axios = require("axios");
     const formData = new FormData();
     formData.append("upload", file);
@@ -100,11 +101,11 @@ export default function ContactSection() {
     try {
       const data = await axios.request(config);
     } catch (error) {
-      errorToast(
-        "Error Uploading File",
+      notifyUser(
+        "error",
         error?.response?.data?.message ||
-          error.message ||
-          "Failed To Upload File"
+          error?.response?.data?data?.message || error?.message ||
+          "Failed To Upload File", "right"
       );
     }
   };
@@ -175,7 +176,7 @@ export default function ContactSection() {
         </div>
       </div>
       */}
-      
+
       <form
         onSubmit={handleFormSubmit}
         method="post"

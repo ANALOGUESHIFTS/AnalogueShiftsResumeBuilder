@@ -18,7 +18,7 @@ export default function BuildersSubMenu() {
   return (
     <div
       style={{ opacity: opacity }}
-      className=" absolute duration-500 top-[70px] -left-6 w-screen h-[450px] bg-white"
+      className="absolute duration-500 top-[70px] -left-6 w-screen h-[450px] bg-white"
     >
       <div className="w-full p-8 flex justify-between border-b">
         {apps.map((link) => {
