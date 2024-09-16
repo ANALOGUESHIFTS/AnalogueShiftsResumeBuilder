@@ -14,6 +14,9 @@ import LeafImage from "@/public/images/leaf.png";
 import QuestionIcon from "@/public/images/question-icon.png";
 import PhoneIcon from "@/public/images/phone-icon.png";
 import Link from "next/link";
+import { useUser } from "@/contexts/user";
+import { useAuth } from "@/hooks/auth";
+import { useRouter } from "next/navigation";
 
 // Nav Menu Tabs
 const navLinks = ["Builders", "Resumes", "Cover Letters", "CVs", "Resources"];
@@ -23,6 +26,9 @@ export default function MobileNavBar({
   setSelectedMobileMenu,
 }) {
   const [position, setPosition] = useState(-1500);
+  const { user } = useUser();
+  const { logout } = useAuth();
+  const router = useRouter();
 
   // updates the selected mobileMenu
   const updateSelectedMenu = (menu) => {
@@ -309,18 +315,22 @@ export default function MobileNavBar({
         </div>
       )}
       <div className="w-full flex flex-col gap-4 pt-8">
-        <Link
+        <button
+          onClick={
+            user
+              ? logout
+              : () => router.push("https://auth.analogueshifts.app?app=resume")
+          }
           className="border-black/70 w-full flex justify-center items-center border duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2.5 rounded-lg"
-          href="/login"
         >
-          Login
-        </Link>
+          {user ? "Logout" : "Login"}
+        </button>
 
         <Link
           className="bg-AnalogueShiftsTextColor w-full flex justify-center items-center duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2.5 rounded-lg"
-          href="/resume-builder/app/how-to-start"
+          href={user ? "/my-resumes" : "/resume-builder/app/how-to-start"}
         >
-          Build My Resume
+          {user ? "My resumes" : " Build My Resume"}
         </Link>
       </div>
       <div className="py-2 border-t absolute bottom-0 w-full flex justify-center items-center gap-2">

@@ -1,30 +1,35 @@
 "use client";
 import { useEffect } from "react";
-import AuthenticatedNavBar from "../layout-components/authenticated-navbar";
 import Footer from "../layout-components/footer";
 import Cookies from "js-cookie";
-
-//Toastify
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useAuth } from "@/hooks/auth";
+import { useUser } from "@/contexts/user";
+import NavBar from "../layout-components/navigation";
 
 export default function AuthenticatedLayout({ children }) {
-  const router = useRouter();
+  const token = Cookies.get("analogueshifts");
+  const pathname = usePathname();
+  const { getUser } = useAuth();
+  const { user } = useUser();
 
   // Check If a user's session is still active
   useEffect(() => {
-    let storedData = Cookies.get("analogueshifts");
-    if (!storedData) {
-      router.push("/login");
+    // Redirect To Login if User is not Authenticated
+    if (!user && !token) {
+      Cookies.set("RedirectionLink", pathname);
+      window.location.href = "https://auth.analogueshifts.app?app=main";
+
+      return null;
+    } else if (!user && token) {
+      //    Fetch User
+      getUser({ setLoading: (v) => {}, layout: "authenticated" });
     }
   }, []);
 
   return (
     <>
-      <ToastContainer position="top-center" />
-      <AuthenticatedNavBar />
+      <NavBar />
       {children}
       <Footer />
     </>

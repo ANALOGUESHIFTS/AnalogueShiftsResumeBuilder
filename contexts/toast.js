@@ -1,36 +1,37 @@
 "use client";
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-// Create the ToastContext
 const ToastContext = createContext(null);
 
-// Custom hook to use the ToastContext
-export const useToast = () => {
-  return useContext(ToastContext);
-};
-
-// ToastProvider component to wrap your application
 export const ToastProvider = ({ children }) => {
-  const [toast, setToast, message] = useState("");
-  const [position, setPosition] = useState("right"); // Example positions: 'right', 'left', 'top', 'bottom'
+  const [toast, setToast] = useState("");
+  const [position, setPosition] = useState("right");
+  const [message, setMessage] = useState("");
+
+  const notifyUser = (toast, message, position) => {
+    setToast(toast);
+    setMessage(message);
+    setPosition(position);
+
+    setTimeout(() => {
+      setMessage("");
+      setToast("");
+      setPosition("right");
+    }, 4000);
+  };
 
   return (
     <ToastContext.Provider
-      value={{ toast, setToast, message, position, setPosition }}
+      value={{
+        toast,
+        position,
+        message,
+        notifyUser,
+      }}
     >
       {children}
-      {toast && (
-        <div
-          style={{
-            position: "fixed",
-            [position]: "10px",
-            bottom: "10px",
-            zIndex: 9999,
-          }}
-        >
-          <div className="toast">{message}</div>
-        </div>
-      )}
     </ToastContext.Provider>
   );
 };
+
+export const useToast = () => useContext(ToastContext);

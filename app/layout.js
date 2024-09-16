@@ -3,6 +3,10 @@ import "./globals.css";
 import Script from "next/script";
 import { cn } from "@/lib/utils";
 
+import { UserProvider } from "@/contexts/user";
+import { ToastProvider } from "@/contexts/toast";
+import ToastMessage from "@/components/application/toast-message";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
@@ -23,7 +27,15 @@ export default function RootLayout({ children }) {
             `}
         </Script>
       </head>
-      <body className={cn(inter.className)}>{children}</body>
+      <body className={cn(inter.className)}>
+        {" "}
+        <UserProvider>
+          <ToastProvider>
+            <ToastMessage />
+            {children}
+          </ToastProvider>
+        </UserProvider>
+      </body>
       <Script
         src="https://kit.fontawesome.com/39a80cd06c.js"
         crossorigin="anonymous"

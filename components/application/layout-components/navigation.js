@@ -12,6 +12,8 @@ import ResourcesSubMenu from "./resources-sub-menu";
 
 // Components
 import MobileNavBar from "./mobile-navigation";
+import { useUser } from "@/contexts/user";
+import ProfileDropdown from "./profile-menu";
 
 // Nav Menu Tabs
 const menuTabs = ["Builders", "Resumes", "Cover Letters", "CVs", "Resources"];
@@ -25,6 +27,8 @@ export default function NavBar() {
   const [selectedMenu, setSelectedMenu] = useState("");
   const [selectedMobileMenu, setSelectedMobileMenu] = useState("");
   const [subMenuComponent, setSubMenuComponent] = useState("");
+
+  const { user } = useUser();
 
   // THandles Opening and Closing Of the mobile Menu and Reshaping the Hamburger button
   const toggleMenu = () => {
@@ -122,12 +126,16 @@ export default function NavBar() {
             );
           })}
 
-          <Link
-            className="border-black/70 border duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2 px-12 rounded-lg"
-            href="/login"
-          >
-            Login
-          </Link>
+          {user ? (
+            <ProfileDropdown />
+          ) : (
+            <Link
+              className="border-black/70 border duration-300 hover:-translate-y-1 text-black/80 font-medium text-sm py-2 px-12 rounded-lg"
+              href="https://auth.analogueshifts.app?app=resume"
+            >
+              Login
+            </Link>
+          )}
         </div>
 
         {/* Mobile Hamburger Menu Button */}

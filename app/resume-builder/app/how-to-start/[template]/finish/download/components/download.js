@@ -12,7 +12,7 @@ export default function DownloadResume() {
   useEffect(() => {
     const storedData = Cookies.get("analogueshifts");
     if (!storedData) {
-      router.push("/login");
+      router.push("https://auth.analogueshifts.app?app=resume");
     } else {
       const resumeData = localStorage.getItem("resumeInfo");
       if (resumeData) {
@@ -23,14 +23,18 @@ export default function DownloadResume() {
 
   useEffect(() => {
     if (data) {
-      const templateEntry = resumeTemplates.find(template => template.id === data.template);
+      const templateEntry = resumeTemplates.find(
+        (template) => template.id === data.template
+      );
       if (templateEntry && templateEntry.linkToTemplate) {
-        import(`@/components/application/templates/resume/${data.template}`).then(module => {
-          const TemplateComponent = module.default;
-          setTemplateComponent(() => TemplateComponent);
-        }).catch(error => {
-          console.error("Error importing template:", error);
-        });
+        import(`@/components/application/templates/resume/${data.template}`)
+          .then((module) => {
+            const TemplateComponent = module.default;
+            setTemplateComponent(() => TemplateComponent);
+          })
+          .catch((error) => {
+            console.error("Error importing template:", error);
+          });
       } else {
         console.error("Template path not found for:", data.template);
       }
@@ -57,7 +61,7 @@ export default function DownloadResume() {
 }
 
 // Add the following CSS to handle page breaks
-const style = document.createElement('style');
+const style = document.createElement("style");
 style.innerHTML = `
 @media print {
   .print-container {
