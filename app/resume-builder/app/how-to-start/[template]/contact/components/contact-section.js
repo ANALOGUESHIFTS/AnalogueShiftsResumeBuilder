@@ -23,7 +23,7 @@ export default function ContactSection() {
         "File size exceeds the limit (5 MB)",
         "right"
       );
-      return;
+      return;j
     }
     if (selectedFile) {
       uploadFile(selectedFile);
